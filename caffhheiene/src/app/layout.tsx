@@ -1,6 +1,6 @@
 import './globals.css';
 import '../../public/font.css';
-import TopNavigator from '@/app/main/TopNavigator';
+import TopNavigator from '@/components/main/TopNavigator';
 
 export const metadata = {
   title: 'Caffhheiene',

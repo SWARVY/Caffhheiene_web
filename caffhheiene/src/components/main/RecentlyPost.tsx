@@ -1,7 +1,7 @@
 import React from 'react';
-import CardComponent from '@/app/main/CardComponent';
+import Card from '@/components/main/Card';
 
-export default function MainRecentlyPost() {
+export default function RecentlyPost() {
   const mockData = [
     {
       date: '2023-07-06',
@@ -27,7 +27,7 @@ export default function MainRecentlyPost() {
         <h1 className="text-3xl md:text-5xl font-MBC_1961_M drop-shadow-xl">Recently Posts</h1>
         <div className="mt-8 grid grid-cols-4 gap-4">
           {mockData.map((data) => (
-            <CardComponent data={data} />
+            <Card data={data} />
           ))}
         </div>
       </div>

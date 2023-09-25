@@ -9,7 +9,7 @@ interface CardComponentProps {
   data: CardData;
 }
 
-export default function CardComponent({ data }: CardComponentProps) {
+export default function Card({ data }: CardComponentProps) {
   return (
     <div className="grid grid-cols-1 rounded-lg bg-white_hover">
       <img className="rounded-t-lg" src="http://via.placeholder.com/640x480" alt="sample" />

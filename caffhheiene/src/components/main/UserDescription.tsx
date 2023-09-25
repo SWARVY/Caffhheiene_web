@@ -1,7 +1,7 @@
 import { ChevronDoubleRightIcon } from '@heroicons/react/20/solid';
 import React from 'react';
 
-export default function MainUserDescription() {
+export default function UserDescription() {
   return (
     <>
       <div className="flex w-full text-start">

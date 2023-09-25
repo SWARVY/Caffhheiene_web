@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'LINE_Bd';
+  src: url('fonts/LINESeedKR-Bd.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LINE_Rg';
+  src: url('fonts/LINESeedKR-Rg.ttf');
+}
+
+@font-face {
+  font-family: 'LINE_Th';
+  src: url('fonts/LINESeedKR-Th.ttf');
+}
+
+@font-face {
+  font-family: 'MBC_1961_M';
+  src: url('fonts/MBC_1961_M.ttf');
+}

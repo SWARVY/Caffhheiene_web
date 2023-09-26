@@ -8,10 +8,11 @@ export default function TopNavigator() {
       <div className="flex justify-between font-LINE_Bd w-full">
         <div className="flex h-full items-center gap-x-3">
           {NAVBAR.tags.map(({ tag, link }) => (
-            <Link href={link}>
-              <h1 className="h-full p-2 mr-2 items-center rounded-lg font-LINE_Th hover:bg-white_hover">
-                {tag}
-              </h1>
+            <Link
+              className="transition ease-in h-full p-2 mr-2 items-center rounded-lg hover:bg-white_hover"
+              href={link}
+            >
+              {tag}
             </Link>
           ))}
         </div>

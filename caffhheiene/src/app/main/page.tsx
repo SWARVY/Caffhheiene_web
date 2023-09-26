@@ -1,6 +1,6 @@
 import RecentlyPost from "@/components/main/RecentlyPost";
 
-export default function page() {
+export default function main() {
   return (
     <RecentlyPost />
   );

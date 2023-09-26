@@ -19,7 +19,7 @@ const tags = [
   },
 ];
 
-export default function Page() {
+export default function posts() {
   return (
     <div className="flex flex-col mt-4 z-10 w-full items-center justify-center lg:flex">
       <div className="flex w-full text-start">

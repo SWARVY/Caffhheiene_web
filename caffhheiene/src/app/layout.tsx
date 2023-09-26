@@ -1,6 +1,6 @@
 import './globals.css';
 import '../../public/font.css';
-import TopNavigator from '@/components/main/TopNavigator';
+import TopNavigator from '@/components/TopNavigator';
 
 export const metadata = {
   title: 'Caffhheiene',
@@ -11,7 +11,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <TopNavigator />
-      <body className="flex min-h-screen flex-col font-LINE_Rg items-center justify-between p-24">{children}</body>
+      <body className="flex min-h-screen flex-col font-LINE_Rg items-center justify-between p-24">
+        {children}
+      </body>
     </html>
   );
 }

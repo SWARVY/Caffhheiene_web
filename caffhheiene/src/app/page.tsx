@@ -1,6 +1,6 @@
 import React from 'react';
-import UserDescription from '@/components/main/UserDescription';
-import RecentlyPost from '@/components/main/RecentlyPost';
+import UserDescription from '@/containers/main/UserDescription';
+import RecentlyPost from '@/containers/main/RecentlyPost';
 
 export default function Page() {
   return (

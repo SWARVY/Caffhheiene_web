@@ -1,5 +1,5 @@
 import './globals.css';
-import '../../public/font.css';
+import '../../public/fonts/font.css';
 import TopNavigator from '@/components/TopNavigator';
 
 export const metadata = {

@@ -1,4 +1,4 @@
-import { NAVBAR } from '@/constants/Navbar';
+import { NAVBAR } from '@/constants/navbar';
 import { StarIcon, SunIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 

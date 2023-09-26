@@ -1,7 +1,6 @@
 import { TITLE } from '@/constants/title';
 import { USER } from '@/constants/user';
 import Badges from '@/containers/main/Badges';
-import React from 'react';
 
 export default function UserDescription() {
   return (

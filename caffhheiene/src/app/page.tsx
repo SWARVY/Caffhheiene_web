@@ -1,4 +1,3 @@
-import React from 'react';
 import UserDescription from '@/containers/main/UserDescription';
 import RecentlyPost from '@/containers/main/RecentlyPost';
 

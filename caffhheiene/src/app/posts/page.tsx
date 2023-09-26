@@ -1,6 +1,5 @@
 import { FILTERS } from '@/constants/tags';
 import { TITLE } from '@/constants/title';
-import React from 'react';
 
 export default function posts() {
   return (

@@ -1,25 +1,25 @@
 @font-face {
   font-family: 'LINE_Bd';
-  src: url('fonts/LINESeedKR-Bd.ttf');
+  src: url('LINESeedKR-Bd.ttf');
 }
 
 @font-face {
   font-family: 'LINE_Rg';
-  src: url('fonts/LINESeedKR-Rg.ttf');
+  src: url('LINESeedKR-Rg.ttf');
 }
 
 @font-face {
   font-family: 'LINE_Th';
-  src: url('fonts/LINESeedKR-Th.ttf');
+  src: url('LINESeedKR-Th.ttf');
 }
 
 @font-face {
   font-family: 'MABINOGI_Classic';
-  src: url('fonts/Mabinogi_Classic_TTF.ttf');
+  src: url('Mabinogi_Classic_TTF.ttf');
 }
 
 @font-face {
   font-family: 'DOS_Bd';
-  src: url('fonts/DOSIyagiBoldface.ttf');
+  src: url('DOSIyagiBoldface.ttf');
 }
 

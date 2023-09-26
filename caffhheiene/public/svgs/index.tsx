@@ -8,6 +8,8 @@ import NextJsSVG from './nextjs.svg';
 import InstagramSVG from './instagram.svg';
 import GithubSVG from './github.svg';
 import NaverSVG from './naver.svg';
+import Html5SVG from './html5.svg';
+import CSS3SVG from './css3.svg';
 
 export {
   JavaScriptSVG,
@@ -20,4 +22,6 @@ export {
   InstagramSVG,
   GithubSVG,
   NaverSVG,
+  Html5SVG,
+  CSS3SVG,
 };

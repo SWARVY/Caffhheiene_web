@@ -1,5 +1,7 @@
 import {
+  CSS3SVG,
   GithubSVG,
+  Html5SVG,
   InstagramSVG,
   JavaScriptSVG,
   NaverSVG,
@@ -37,6 +39,11 @@ export const SNS_BADGES = [
 
 export const TECH_BADGES = [
   {
+    svg: <ReactSVG width="20px" height="20px" />,
+    name: 'React',
+    color: '#61DAFB',
+  },
+  {
     svg: <JavaScriptSVG width="20px" height="20px" />,
     name: 'JavaScript',
     color: '#F7DF1E',
@@ -45,11 +52,6 @@ export const TECH_BADGES = [
     svg: <TypeScriptSVG width="20px" height="20px" />,
     name: 'TypeScript',
     color: '#3178C6',
-  },
-  {
-    svg: <TailwindcssSVG width="20px" height="20px" />,
-    name: 'TailwindCSS',
-    color: '#06B6D4',
   },
   {
     svg: <NextJsSVG width="20px" height="20px" />,
@@ -67,8 +69,18 @@ export const TECH_BADGES = [
     color: '#3578E5',
   },
   {
-    svg: <ReactSVG width="20px" height="20px" />,
-    name: 'React',
-    color: '#61DAFB',
+    svg: <TailwindcssSVG width="20px" height="20px" />,
+    name: 'TailwindCSS',
+    color: '#06B6D4',
+  },
+  {
+    svg: <Html5SVG width="20px" height="20px" />,
+    name: 'HTML5',
+    color: '#E34F26',
+  },
+  {
+    svg: <CSS3SVG width="20px" height="20px" />,
+    name: 'CSS3',
+    color: '#1572B6',
   },
 ];

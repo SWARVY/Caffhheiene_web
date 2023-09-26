@@ -6,6 +6,7 @@ module.exports = {
       LINE_Bd: ['LINE_Bd', 'sans-serif'],
       LINE_Rg: ['LINE_Rg', 'sans-serif'],
       LINE_Th: ['LINE_Th', 'sans-serif'],
+      GIANTS_Bd: ['GIANTS_Bd', 'sans-serif'],
       MBC_1961_M: ['MBC_1961_M', 'sans-serif'],
     },
     extend: {

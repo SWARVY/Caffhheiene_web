@@ -14,6 +14,11 @@
 }
 
 @font-face {
+  font-family: 'GIANTS_Bd';
+  src: url('fonts/Giants-Bold.ttf');
+}
+
+@font-face {
   font-family: 'MBC_1961_M';
   src: url('fonts/MBC_1961_M.ttf');
 }

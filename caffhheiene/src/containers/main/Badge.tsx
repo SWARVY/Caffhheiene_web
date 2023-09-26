@@ -8,9 +8,9 @@ interface BadgeProps {
 
 export default function Badge({ svgImage, name, color }: BadgeProps) {
   return (
-    <div className="flex p-2 items-center" style={{ backgroundColor: `${color}` }}>
+    <div className="flex p-2 items-center rounded-sm" style={{ backgroundColor: `${color}` }}>
       <div className="w-full mr-2">{svgImage}</div>
-      <h1 style={{ color: `${color === '#000000' ? 'white' : 'black'}` }}>{name}</h1>
+      <h1 className={`${color === '#000000' ? 'text-white' : 'text-black'} text-sm`}>{name}</h1>
     </div>
   );
 }

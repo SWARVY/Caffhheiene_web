@@ -18,7 +18,7 @@ export default function Card({ data }: CardComponentProps) {
           <CalendarIcon className="w-3 h-full items-center mr-2" />
           <p className="text-xs">{data.date}</p>
         </div>
-        <h1 className="p-2 text-xl font-LINE_Bd">{data.title}</h1>
+        <h1 className="p-2 text-xl">{data.title}</h1>
       </div>
     </div>
   );

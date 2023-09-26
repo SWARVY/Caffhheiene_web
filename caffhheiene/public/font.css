@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'LINE_Bd';
-  src: url('fonts/LINESeedKR-Bd.ttf') format('truetype');
+  src: url('fonts/LINESeedKR-Bd.ttf');
 }
 
 @font-face {
@@ -14,11 +14,12 @@
 }
 
 @font-face {
-  font-family: 'GIANTS_Bd';
-  src: url('fonts/Giants-Bold.ttf');
+  font-family: 'MABINOGI_Classic';
+  src: url('fonts/Mabinogi_Classic_TTF.ttf');
 }
 
 @font-face {
-  font-family: 'MBC_1961_M';
-  src: url('fonts/MBC_1961_M.ttf');
+  font-family: 'DOS_Bd';
+  src: url('fonts/DOSIyagiBoldface.ttf');
 }
+

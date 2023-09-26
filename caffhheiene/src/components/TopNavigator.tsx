@@ -1,10 +1,10 @@
 import { NAVBAR } from '@/constants/navbar';
-import { StarIcon, SunIcon } from '@heroicons/react/20/solid';
+import { SunIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 export default function TopNavigator() {
   return (
-    <nav className="fixed bg-white top-0 left-0 right-0 py-8 px-14 flex justify-between items-center">
+    <nav className="fixed z-10 bg-white bg-opacity-60 top-0 left-0 right-0 py-8 px-14 flex justify-between items-center">
       <div className="flex justify-between font-LINE_Bd w-full">
         <div className="flex h-full items-center gap-x-3">
           {NAVBAR.tags.map(({ tag, link }) => (

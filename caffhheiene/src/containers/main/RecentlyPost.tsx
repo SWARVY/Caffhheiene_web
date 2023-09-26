@@ -1,7 +1,7 @@
 import { TestPostData } from '@/containers/main/TestSources/TestPostData';
 import { TITLE } from '@/constants/title';
 import React from 'react';
-import Card from '@/containers/main/Card';
+import Card from '@/components/Card';
 
 export default function RecentlyPost() {
   return (

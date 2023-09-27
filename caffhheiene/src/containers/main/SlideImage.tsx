@@ -6,9 +6,9 @@ interface SlideImageProps {
 
 export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
   return (
-    <div className="relative group">
+    <div className="relative w-full h-[27rem]">
       <img
-        className="transition ease-in-out duration-300 w-full h-[27rem] object-fill relative group-hover:brightness-75"
+        className="w-full h-full transition ease-in-out duration-300 object-fill group-hover:brightness-75"
         src={src}
         alt="slideImage"
         loading="lazy"

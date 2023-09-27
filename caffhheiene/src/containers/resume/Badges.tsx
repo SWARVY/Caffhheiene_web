@@ -1,5 +1,5 @@
 import { SNS_BADGES, TECH_BADGES } from '@/constants/user';
-import Badge from '@/containers/main/Badge';
+import Badge from '@/containers/resume/Badge';
 
 interface BadgesProps {
   type: 'TECH' | 'SNS';

@@ -10,14 +10,14 @@ export default function Badges({ type }: BadgesProps) {
     <div className="grid grid-cols-3 gap-1.5">
       {type === 'TECH' ? (
         <>
-          {TECH_BADGES.map((data) => (
-            <Badge svgImage={data.svg} name={data.name} color={data.color} />
+          {TECH_BADGES.map((data, idx) => (
+            <Badge key={idx} svgImage={data.svg} name={data.name} color={data.color} />
           ))}
         </>
       ) : (
         <>
-          {SNS_BADGES.map((data) => (
-            <Badge svgImage={data.svg} name={data.name} color={data.color} />
+          {SNS_BADGES.map((data, idx) => (
+            <Badge key={idx} svgImage={data.svg} name={data.name} color={data.color} />
           ))}
         </>
       )}

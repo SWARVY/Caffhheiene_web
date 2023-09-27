@@ -82,5 +82,15 @@ export const BADGES = Object.freeze({
   },
 });
 
-export const TECH_BADGES = Object.values(BADGES);
+export const TECH_BADGES = [
+  BADGES.react,
+  BADGES.javascript,
+  BADGES.typescript,
+  BADGES.nextjs,
+  BADGES.recoil,
+  BADGES.reactQuery,
+  BADGES.html5,
+  BADGES.css3,
+  BADGES.tailwindcss,
+];
 export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver];

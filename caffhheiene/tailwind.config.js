@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontFamily: {
       LINE_Bd: ['LINE_Bd', 'sans-serif'],
       LINE_Rg: ['LINE_Rg', 'sans-serif'],
       LINE_Th: ['LINE_Th', 'sans-serif'],
+      GIANTS_Bd: ['GIANTS_Bd', 'sans-serif'],
+      MABINOGI_Classic: ['MABINOGI_Classic', 'sans-serif'],
+      DOS_Bd: ['DOS_Bd', 'sans-serif'],
       MBC_1961_M: ['MBC_1961_M', 'sans-serif'],
     },
     extend: {

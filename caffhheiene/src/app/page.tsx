@@ -1,11 +1,18 @@
-import React from 'react';
-import UserDescription from '@/components/main/UserDescription';
-import RecentlyPost from '@/components/main/RecentlyPost';
+import { TITLE } from '@/constants/title';
+import ImageSlider from '@/containers/main/ImageSlider';
+import SlideImage from '@/containers/main/SlideImage';
+import { TestCarouselData } from '@/containers/main/TestSources/TestCarouselData';
+import RecentlyPost from '@/containers/main/RecentlyPost';
 
 export default function Page() {
   return (
-    <div className="flex flex-col mt-4 z-10 w-full items-center justify-center gap-3 lg:flex">
-      <UserDescription />
+    <div className="flex-col w-full space-y-20">
+      <h1 className="text-center text-7xl">{TITLE.welcome}</h1>
+      <ImageSlider>
+        {TestCarouselData.map((data) => (
+          <SlideImage src={data.src} title={data.title} subtitle={data.subtitle} />
+        ))}
+      </ImageSlider>
       <RecentlyPost />
     </div>
   );

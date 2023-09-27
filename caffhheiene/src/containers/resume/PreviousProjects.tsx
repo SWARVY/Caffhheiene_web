@@ -13,7 +13,7 @@ export default function PreviousProjects() {
               <h1 className="p-3">사용 기술스택</h1>
             </div>
             <hr className="border-black" />
-            <div className="grid grid-cols-3 p-3 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 p-3 gap-2">
               {data.stack.map((tech, idx) => (
                 <Badge key={idx} svgImage={tech.svg} name={tech.name} color={tech.color} />
               ))}

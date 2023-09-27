@@ -1,13 +1,13 @@
 'use client';
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
-import { PropsWithChildren, ReactNode } from 'react';
-import Slider, { Settings } from 'react-slick';
+import { type ReactNode } from 'react';
+import Slider, { type Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './style/Slick.css';
 
-interface SlideProps extends PropsWithChildren<{}> {
+interface SlideProps {
   settings?: Settings;
   children: ReactNode;
 }

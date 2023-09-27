@@ -4,9 +4,12 @@ import Badge from '@/containers/resume/Badge';
 export default function PreviousProjects() {
   return (
     <div className="grid gap-10">
+      <h1>* 제목 클릭 시 새 창에서 깃허브 레포지토리가 열립니다</h1>
       {PREVIOUS_PROJECTS.map((data, idx) => (
         <div key={idx} className="grid gap-3">
-          <h1 className="text-3xl">{data.name}</h1>
+          <a href={data.link} target="_blank" rel="noreferrer">
+            <h1 className="text-3xl">{data.name}</h1>
+          </a>
           <h2 className="">{data.description}</h2>
           <div className="border border-black rounded-md overflow-hidden">
             <div className="bg-slate-300">

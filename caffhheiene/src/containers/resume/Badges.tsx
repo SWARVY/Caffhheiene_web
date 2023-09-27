@@ -1,4 +1,4 @@
-import { SNS_BADGES, TECH_BADGES } from '@/constants/user';
+import { SNS_BADGES, TECH_BADGES } from '@/constants/badge';
 import Badge from '@/containers/resume/Badge';
 
 interface BadgesProps {

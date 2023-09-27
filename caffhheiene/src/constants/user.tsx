@@ -19,6 +19,21 @@ export const USER = Object.freeze({
   github: 'Visit my github portfolio!',
 });
 
+export const USER_CAREER = Object.freeze([
+  {
+    date: '2019. 03. ~',
+    name: '경기대학교 컴퓨터공학부',
+  },
+  {
+    date: '2022. 10. ~',
+    name: '경기대학교 InQ FE Developer & Tutor',
+  },
+  {
+    date: '2023. 03. ~ 2023. 10. 03.',
+    name: '42SEOUL CADET',
+  },
+]);
+
 export const SNS_BADGES = [
   {
     svg: <GithubSVG width="20px" height="20px" />,

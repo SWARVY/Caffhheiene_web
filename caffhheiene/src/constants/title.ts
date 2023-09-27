@@ -1,7 +1,7 @@
 export const TITLE = {
+  welcome: 'WELCOME!',
   introduce: 'Introduce',
   currentlyLearning: 'Currently Learning',
   contact: 'Contact',
-  recentlyPost: 'Recently Posts',
   posts: 'Posts',
 };

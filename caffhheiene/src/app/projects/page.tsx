@@ -1,4 +1,4 @@
-import PreviousProjects from '@/containers/resume/PreviousProjects';
+import PreviousProjects from '@/containers/projects/PreviousProjects';
 
 export default function projects() {
   return (

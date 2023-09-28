@@ -1,5 +1,5 @@
 import { PREVIOUS_PROJECTS } from '@/constants/user';
-import Badge from '@/containers/resume/Badge';
+import Badge from '@/components/Badge';
 
 export default function PreviousProjects() {
   return (

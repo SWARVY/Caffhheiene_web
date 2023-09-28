@@ -12,14 +12,16 @@ export default function UserDescription() {
         <div className="grid gap-10">
           <div className="space-y-3">
             <h1 className="text-4xl">{TITLE.introduce}</h1>
-            <p className="text-lg text-slate-500">{USER.description}</p>
-            <div className="flex-col w-3/4 p-2 space-y-1">
-              {USER_CAREER.map((data, idx) => (
-                <div key={idx} className="grid grid-cols-2 gap-x-3">
-                  <h1 className="text-gray-500">{data.date}</h1>
-                  <h1>{data.name}</h1>
-                </div>
-              ))}
+            <div className="p-2">
+              <p className="text-lg text-slate-500">{USER.description}</p>
+              <div className="flex-col w-3/4 space-y-1 p-2">
+                {USER_CAREER.map((data, idx) => (
+                  <div key={idx} className="grid grid-cols-2 gap-x-3">
+                    <h1 className="text-gray-500">{data.date}</h1>
+                    <h1>{data.name}</h1>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="space-y-3">

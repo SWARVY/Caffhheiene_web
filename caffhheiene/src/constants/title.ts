@@ -1,7 +1,7 @@
 export const TITLE = {
   welcome: 'WELCOME!',
   introduce: '🌠 Introduce',
-  currentlyLearning: '🔖 Currently Learning',
+  currentlyLearning: '📚 Currently Learning',
   contact: '🫱🏻‍🫲🏻 Contact',
   posts: '📫 Posts',
 };

@@ -1,17 +1,4 @@
-import {
-  CSS3SVG,
-  GithubSVG,
-  Html5SVG,
-  InstagramSVG,
-  JavaScriptSVG,
-  NaverSVG,
-  NextJsSVG,
-  ReactQuerySVG,
-  ReactSVG,
-  RecoilSVG,
-  TailwindcssSVG,
-  TypeScriptSVG,
-} from '../../public/svgs';
+import { BADGES } from '@/constants/badge';
 
 export const USER = Object.freeze({
   id: 'Caffhheiene',
@@ -19,68 +6,48 @@ export const USER = Object.freeze({
   github: 'Visit my github portfolio!',
 });
 
-export const SNS_BADGES = [
+export const USER_CAREER = Object.freeze([
   {
-    svg: <GithubSVG width="20px" height="20px" />,
-    name: 'Github',
-    color: '#000000',
+    date: '2019. 03. ~',
+    name: '경기대학교 컴퓨터공학부',
   },
   {
-    svg: <InstagramSVG width="20px" height="20px" />,
-    name: 'Instagram',
-    color: '#E4405F',
+    date: '2022. 10. ~',
+    name: '경기대학교 InQ FE Developer & Tutor',
   },
   {
-    svg: <NaverSVG width="20px" height="20px" />,
-    name: 'Naver',
-    color: '#03C75A',
+    date: '2023. 01. ~ 2023. 02.',
+    name: '42SEOUL PISCINER',
   },
-];
+  {
+    date: '2023. 03. ~ 2023. 10. 03.',
+    name: '42SEOUL CADET',
+  },
+]);
 
-export const TECH_BADGES = [
+export const PREVIOUS_PROJECTS = [
   {
-    svg: <ReactSVG width="20px" height="20px" />,
-    name: 'React',
-    color: '#61DAFB',
+    link: 'https://github.com/SWARVY/KUBS',
+    name: '⏱️ KUBS (경기대학교 종합 예약 시스템)',
+    description: '학교 시설물들에 대한 대여 시스템을 웹에서 제공하는 서비스를 개발하였습니다',
+    stack: [BADGES.react, BADGES.redux, BADGES.javascript],
   },
   {
-    svg: <JavaScriptSVG width="20px" height="20px" />,
-    name: 'JavaScript',
-    color: '#F7DF1E',
+    link: 'https://github.com/SWARVY/Ezipnaezip_web',
+    name: '🏠 이집내집',
+    description: '웹에서 DALL.E를 사용한 AI 인테리어 디자인 / 커뮤니티 서비스를 개발하였습니다',
+    stack: [BADGES.react, BADGES.recoil, BADGES.reactQuery, BADGES.javascript, BADGES.tailwindcss],
   },
   {
-    svg: <TypeScriptSVG width="20px" height="20px" />,
-    name: 'TypeScript',
-    color: '#3178C6',
+    link: 'https://github.com/TeamCommerce',
+    name: '💸 팀커머스',
+    description: '이 커머스 웹 플랫폼(피팅노트)을 클론 코딩하였습니다',
+    stack: [BADGES.react, BADGES.recoil, BADGES.reactQuery, BADGES.typescript, BADGES.tailwindcss],
   },
   {
-    svg: <NextJsSVG width="20px" height="20px" />,
-    name: 'Next',
-    color: '#000000',
-  },
-  {
-    svg: <ReactQuerySVG width="20px" height="20px" />,
-    name: 'ReactQuery',
-    color: '#FF4154',
-  },
-  {
-    svg: <RecoilSVG width="20px" height="20px" />,
-    name: 'Recoil',
-    color: '#3578E5',
-  },
-  {
-    svg: <TailwindcssSVG width="20px" height="20px" />,
-    name: 'TailwindCSS',
-    color: '#06B6D4',
-  },
-  {
-    svg: <Html5SVG width="20px" height="20px" />,
-    name: 'HTML5',
-    color: '#E34F26',
-  },
-  {
-    svg: <CSS3SVG width="20px" height="20px" />,
-    name: 'CSS3',
-    color: '#1572B6',
+    link: 'https://github.com/SWARVY/Caffhheiene_web',
+    name: '⚙️ Caffhheiene (개인 기술블로그)',
+    description: '지금 보고계시는 이 블로그를 직접 만들었습니다',
+    stack: [BADGES.nextjs, BADGES.recoil, BADGES.reactQuery, BADGES.typescript, BADGES.tailwindcss],
   },
 ];

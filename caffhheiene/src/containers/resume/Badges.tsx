@@ -1,5 +1,5 @@
-import { SNS_BADGES, TECH_BADGES } from '@/constants/user';
-import Badge from '@/containers/resume/Badge';
+import { SNS_BADGES, TECH_BADGES } from '@/constants/badge';
+import Badge from '@/components/Badge';
 
 interface BadgesProps {
   type: 'TECH' | 'SNS';
@@ -7,7 +7,7 @@ interface BadgesProps {
 
 export default function Badges({ type }: BadgesProps) {
   return (
-    <div className="grid grid-cols-3 gap-1.5">
+    <div className="grid grid-cols-3 gap-1.5 p-2">
       {type === 'TECH' ? (
         <>
           {TECH_BADGES.map((data, idx) => (

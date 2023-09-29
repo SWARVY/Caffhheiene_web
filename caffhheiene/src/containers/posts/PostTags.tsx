@@ -1,21 +1,18 @@
-import { FILTERS } from '@/constants/tags';
 import { TITLE } from '@/constants/title';
+import Filter from '@/containers/posts/Filter';
+import { getCategoryData } from '@/utils/getPostData';
 
 export default function PostTags() {
+  const tagData = getCategoryData();
+
   return (
     <div className="flex-col w-full space-y-3 items-center justify-center">
       <div className="flex w-full text-start">
         <h1 className="text-4xl md:text-5xl drop-shadow-xl font-bold">{TITLE.posts}</h1>
       </div>
-      <div className="flex w-full justify-start  gap-x-5">
-        {FILTERS.map((filter, idx) => (
-          <div
-            key={idx}
-            className="flex transition ease-in rounded-lg bg-white_hover hover:bg-white_hover_weight pr-2 pl-2 pt-1 pb-1"
-          >
-            <h3 className="mr-1">{filter.name}</h3>
-            <p className="text-xs">(0)</p>
-          </div>
+      <div className="grid grid-cols-6 justify-items-center">
+        {tagData.map((tag, idx) => (
+          <Filter key={idx} name={tag.name} amount={tag.amount} />
         ))}
       </div>
     </div>

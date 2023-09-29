@@ -1,4 +1,5 @@
 import { USER } from '@/constants/user';
+import Tag from '@/containers/posts/Tag';
 import TailwindMarkdownRenderer from '@/containers/posts/TailwindMarkdownRenderer';
 import { getDetailPostData } from '@/utils/getPostData';
 import Image from 'next/image';
@@ -24,12 +25,7 @@ export default function PostDetail({ id }: { id: string }) {
           </div>
           <div className="flex gap-2">
             {postData.data.category.map((tag: string, idx: number) => (
-              <div
-                key={idx}
-                className="flex bg-slate-400 text-white pt-0.5 pb-0.5 pl-2 pr-2 rounded-md "
-              >
-                {tag}
-              </div>
+              <Tag key={idx} tag={tag} />
             ))}
           </div>
         </div>

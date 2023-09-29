@@ -1,4 +1,5 @@
 import { USER } from '@/constants/user';
+import Tag from '@/containers/posts/Tag';
 import { getSortedPostData } from '@/utils/getPostData';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,12 +34,7 @@ export default function PostList() {
             </div>
             <div className="flex gap-2">
               {post.data.category.map((tag: string, idx: number) => (
-                <div
-                  key={idx}
-                  className="flex bg-slate-400 text-white pt-0.5 pb-0.5 pl-2 pr-2 rounded-md "
-                >
-                  {tag}
-                </div>
+                <Tag key={idx} tag={tag} />
               ))}
             </div>
           </li>

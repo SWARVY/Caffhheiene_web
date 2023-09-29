@@ -57,7 +57,10 @@ export default function ImageSlider({ children }: SlideProps) {
   };
 
   return (
-    <Slider className="rounded-md max-w-full max-h-[27rem] overflow-hidden group" {...settings}>
+    <Slider
+      className="rounded-md max-w-full h-[25rem] max-h-[32rem] overflow-hidden group"
+      {...settings}
+    >
       {children}
     </Slider>
   );

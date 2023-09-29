@@ -2,6 +2,7 @@ import { BADGES } from '@/constants/badge';
 
 export const USER = Object.freeze({
   id: 'Caffhheiene',
+  name: '신현호',
   description: 'Frontend Developer',
   github: 'Visit my github portfolio!',
 });

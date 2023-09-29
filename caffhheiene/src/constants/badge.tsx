@@ -24,6 +24,7 @@ export const BADGES = Object.freeze({
     svg: <GithubSVG width="20px" height="20px" />,
     color: '#000000',
     name: 'Github',
+    link: 'https://github.com/SWARVY',
   },
   html5: {
     svg: <Html5SVG width="20px" height="20px" />,
@@ -34,6 +35,7 @@ export const BADGES = Object.freeze({
     svg: <InstagramSVG width="20px" height="20px" />,
     color: '#E4405F',
     name: 'Instagram',
+    link: 'https://www.instagram.com/caffhheine/',
   },
   javascript: {
     svg: <JavaScriptSVG width="20px" height="20px" />,
@@ -44,6 +46,7 @@ export const BADGES = Object.freeze({
     svg: <NaverSVG width="20px" height="20px" />,
     color: '#03C75A',
     name: 'Naver',
+    link: 'mailto:swarvy0826@naver.com',
   },
   nextjs: {
     svg: <NextJsSVG width="20px" height="20px" />,

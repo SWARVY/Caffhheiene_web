@@ -4,7 +4,6 @@ export const USER = Object.freeze({
   id: 'Caffhheiene',
   name: '신현호',
   description: 'Frontend Developer',
-  github: 'Visit my github portfolio!',
 });
 
 export const USER_CAREER = Object.freeze([

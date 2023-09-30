@@ -11,7 +11,7 @@ export default function UserDescription() {
       <div className="grid w-full">
         <div className="grid gap-10">
           <div className="space-y-3">
-            <h1 className="text-4xl">{SUB_TITLE.introduce}</h1>
+            <h1 className="text-4xl font-bold italic">{SUB_TITLE.introduce}</h1>
             <div className="p-2">
               <p className="text-lg text-slate-500">{USER.description}</p>
               <div className="flex-col w-full md:w-3/4 space-y-1 p-2">
@@ -25,11 +25,11 @@ export default function UserDescription() {
             </div>
           </div>
           <div className="space-y-3">
-            <h1 className="text-4xl">{SUB_TITLE.currentlyLearning}</h1>
+            <h1 className="text-4xl font-bold italic">{SUB_TITLE.currentlyLearning}</h1>
             <Badges type="TECH" />
           </div>
           <div className="space-y-3">
-            <h1 className="text-4xl">{SUB_TITLE.contact}</h1>
+            <h1 className="text-4xl font-bold italic">{SUB_TITLE.contact}</h1>
             <Badges type="SNS" />
           </div>
         </div>

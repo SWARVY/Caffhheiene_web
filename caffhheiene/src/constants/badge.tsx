@@ -1,5 +1,6 @@
 import {
   CSS3SVG,
+  FramerSVG,
   GithubSVG,
   Html5SVG,
   InstagramSVG,
@@ -24,6 +25,7 @@ export const BADGES = Object.freeze({
     svg: <GithubSVG width="20px" height="20px" />,
     color: '#000000',
     name: 'Github',
+    link: 'https://github.com/SWARVY',
   },
   html5: {
     svg: <Html5SVG width="20px" height="20px" />,
@@ -34,6 +36,7 @@ export const BADGES = Object.freeze({
     svg: <InstagramSVG width="20px" height="20px" />,
     color: '#E4405F',
     name: 'Instagram',
+    link: 'https://www.instagram.com/caffhheine/',
   },
   javascript: {
     svg: <JavaScriptSVG width="20px" height="20px" />,
@@ -44,6 +47,7 @@ export const BADGES = Object.freeze({
     svg: <NaverSVG width="20px" height="20px" />,
     color: '#03C75A',
     name: 'Naver',
+    link: 'mailto:swarvy0826@naver.com',
   },
   nextjs: {
     svg: <NextJsSVG width="20px" height="20px" />,
@@ -80,6 +84,11 @@ export const BADGES = Object.freeze({
     color: '#3178C6',
     name: 'TypeScript',
   },
+  framer: {
+    svg: <FramerSVG width="20px" height="20px" />,
+    color: '#0055FF',
+    name: 'Framer',
+  },
 });
 
 export const TECH_BADGES = [
@@ -92,5 +101,6 @@ export const TECH_BADGES = [
   BADGES.html5,
   BADGES.css3,
   BADGES.tailwindcss,
+  BADGES.framer,
 ];
 export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver];

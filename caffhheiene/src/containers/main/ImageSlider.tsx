@@ -5,7 +5,7 @@ import { type ReactNode } from 'react';
 import Slider, { type Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './style/Slick.css';
+import '@/containers/style/Slick.css';
 
 interface SlideProps {
   settings?: Settings;
@@ -57,7 +57,10 @@ export default function ImageSlider({ children }: SlideProps) {
   };
 
   return (
-    <Slider className="rounded-md max-w-full max-h-[27rem] overflow-hidden group" {...settings}>
+    <Slider
+      className="rounded-md max-w-full max-h-[25rem] md:max-h-[32rem] overflow-hidden group"
+      {...settings}
+    >
       {children}
     </Slider>
   );

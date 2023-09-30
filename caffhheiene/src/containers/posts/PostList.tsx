@@ -32,7 +32,7 @@ export default function PostList() {
                 <h1 className="text-sm text-gray-400">{post.data.date}</h1>
               </div>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {post.data.category.map((tag: string, idx: number) => (
                 <Tag key={idx} tag={tag} />
               ))}

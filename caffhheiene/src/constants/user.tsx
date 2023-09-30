@@ -4,7 +4,6 @@ export const USER = Object.freeze({
   id: 'Caffhheiene',
   name: '신현호',
   description: 'Frontend Developer',
-  github: 'Visit my github portfolio!',
 });
 
 export const USER_CAREER = Object.freeze([
@@ -49,6 +48,13 @@ export const PREVIOUS_PROJECTS = [
     link: 'https://github.com/SWARVY/Caffhheiene_web',
     name: '⚙️ Caffhheiene (개인 기술블로그)',
     description: '지금 보고계시는 이 블로그를 직접 만들었습니다',
-    stack: [BADGES.nextjs, BADGES.recoil, BADGES.reactQuery, BADGES.typescript, BADGES.tailwindcss],
+    stack: [
+      BADGES.nextjs,
+      BADGES.recoil,
+      BADGES.reactQuery,
+      BADGES.typescript,
+      BADGES.tailwindcss,
+      BADGES.framer,
+    ],
   },
 ];

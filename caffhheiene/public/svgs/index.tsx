@@ -11,6 +11,7 @@ import NaverSVG from './naver.svg';
 import Html5SVG from './html5.svg';
 import CSS3SVG from './css3.svg';
 import ReduxSVG from './redux.svg';
+import FramerSVG from './framer.svg';
 
 export {
   JavaScriptSVG,
@@ -26,4 +27,5 @@ export {
   Html5SVG,
   CSS3SVG,
   ReduxSVG,
+  FramerSVG,
 };

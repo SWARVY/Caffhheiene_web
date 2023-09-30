@@ -5,7 +5,7 @@ import { type ReactNode } from 'react';
 import Slider, { type Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './style/Slick.css';
+import '@/containers/style/Slick.css';
 
 interface SlideProps {
   settings?: Settings;

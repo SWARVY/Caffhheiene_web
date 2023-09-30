@@ -12,7 +12,7 @@ interface CardComponentProps {
 
 export default function Card({ data }: CardComponentProps) {
   return (
-    <div className="grid grid-cols-1 rounded-md border-2 bg-white_hover overflow-hidden">
+    <div className="grid grid-cols-1 transition ease-in rounded-md border-2 bg-white_hover overflow-hidden hover:-translate-y-2">
       <img className="border-b" src="http://via.placeholder.com/640x480" alt="sample" />
       <div className="flex flex-col p-3 bg-white">
         <div className="grid grid-cols-1 p-2 items-center">

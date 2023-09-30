@@ -1,3 +1,4 @@
+import { MAIN_SETTING } from '@/constants/mainSetting';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -18,6 +19,15 @@ export function getSortedPostData() {
   });
 
   return postData.sort((a, b) => a.data.date - b.data.date);
+}
+
+export function getRecentlyPostData() {
+  const sortedPostData = getSortedPostData();
+
+  if (sortedPostData.length > MAIN_SETTING.recentlyPostDataAmount) {
+    return sortedPostData.slice(0, MAIN_SETTING.recentlyPostDataAmount + 1);
+  }
+  return sortedPostData;
 }
 
 export function getDetailPostData(index: number) {

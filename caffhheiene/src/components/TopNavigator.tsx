@@ -1,4 +1,4 @@
-import ProgressBar from '@/components/ProgressBar';
+// import ProgressBar from '@/components/ProgressBar';
 import { TOP_NAVBAR } from '@/constants/navbar';
 import { SunIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
@@ -28,7 +28,7 @@ export default function TopNavigator() {
           </div>
         </div>
       </div>
-      <ProgressBar />
+      {/* <ProgressBar /> */}
     </nav>
   );
 }

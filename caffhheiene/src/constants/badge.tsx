@@ -1,7 +1,9 @@
 import {
+  AxiosSVG,
   CSS3SVG,
   FramerSVG,
   GithubSVG,
+  GitSVG,
   Html5SVG,
   InstagramSVG,
   JavaScriptSVG,
@@ -89,18 +91,30 @@ export const BADGES = Object.freeze({
     color: '#0055FF',
     name: 'Framer',
   },
+  git: {
+    svg: <GitSVG width="20px" height="20px" />,
+    color: '#F05032',
+    name: 'Git',
+  },
+  axios: {
+    svg: <AxiosSVG width="20px" height="20px" />,
+    color: '#5A29E4',
+    name: 'Axios',
+  },
 });
 
 export const TECH_BADGES = [
+  BADGES.git,
   BADGES.react,
+  BADGES.nextjs,
   BADGES.javascript,
   BADGES.typescript,
-  BADGES.nextjs,
   BADGES.recoil,
-  BADGES.reactQuery,
   BADGES.html5,
   BADGES.css3,
+  BADGES.axios,
   BADGES.tailwindcss,
   BADGES.framer,
+  BADGES.reactQuery,
 ];
 export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver];

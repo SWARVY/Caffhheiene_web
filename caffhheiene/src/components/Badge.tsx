@@ -1,3 +1,4 @@
+import getTextColorByBackgroundColor from '@/utils/getTextColorByBackgroundColor';
 import { type ReactNode } from 'react';
 
 interface BadgeProps {
@@ -7,13 +8,15 @@ interface BadgeProps {
 }
 
 export default function Badge({ svgImage, name, color }: BadgeProps) {
+  const adaptiveColor = getTextColorByBackgroundColor(color);
+
   return (
     <div
-      className="flex transition ease-in duration-150 p-2 items-center rounded-sm hover:brightness-90"
+      className="flex transition ease-in duration-150 p-2 items-center rounded-sm shadow-lg hover:brightness-90"
       style={{ backgroundColor: `${color}` }}
     >
-      <div className="w-full mr-2">{svgImage}</div>
-      <h1 className={`${color === '#000000' ? 'text-white' : 'text-black'} text-sm`}>{name}</h1>
+      <div className={`w-full mr-2 fill-${adaptiveColor}`}>{svgImage}</div>
+      <h1 className={`text-${adaptiveColor} text-sm`}>{name}</h1>
     </div>
   );
 }

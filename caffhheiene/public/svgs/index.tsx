@@ -12,6 +12,13 @@ import Html5SVG from './html5.svg';
 import CSS3SVG from './css3.svg';
 import ReduxSVG from './redux.svg';
 import FramerSVG from './framer.svg';
+import GitSVG from './git.svg';
+import AxiosSVG from './axios.svg';
+import BearSmileSVG from './bearsmile.svg';
+import GamepadSVG from './gamepad.svg';
+import MarkdownSVG from './markdown.svg';
+import BookReadSVG from './bookread.svg';
+import UserSmileSVG from './usersmile.svg';
 
 export {
   JavaScriptSVG,
@@ -28,4 +35,11 @@ export {
   CSS3SVG,
   ReduxSVG,
   FramerSVG,
+  AxiosSVG,
+  GitSVG,
+  BearSmileSVG,
+  GamepadSVG,
+  MarkdownSVG,
+  BookReadSVG,
+  UserSmileSVG,
 };

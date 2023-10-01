@@ -1,8 +1,8 @@
 export const MAIN_TITLE = {
   welcome: 'WELCOME!',
-  posts: '📫 Posts',
-  resume: '🚀 Resume',
-  projects: '🎮 Projects',
+  posts: 'Posts',
+  info: 'Info',
+  projects: 'Projects',
 };
 
 export const SUB_TITLE = {

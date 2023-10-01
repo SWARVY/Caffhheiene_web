@@ -11,13 +11,6 @@ export default function PostDetail({ id }: { id: string }) {
   return (
     <div className="grid gap-20">
       <div className="grid gap-6">
-        <Image
-          className="rounded-md w-full"
-          src={postData.data.thumbnail}
-          alt="thumnail"
-          width={1024}
-          height={1024}
-        />
         <h1 className="text-5xl font-bold">{postData.data.title}</h1>
         <div className="grid p-1 gap-4">
           <div className="flex items-center gap-3">
@@ -30,7 +23,13 @@ export default function PostDetail({ id }: { id: string }) {
             ))}
           </div>
         </div>
-        <hr />
+        <Image
+          className="rounded-md w-full"
+          src={postData.data.thumbnail}
+          alt="thumnail"
+          width={1024}
+          height={1024}
+        />
       </div>
       <TailwindMarkdownRenderer content={postData.content} />
       <PostWriterInfo />

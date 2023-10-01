@@ -1,4 +1,5 @@
 import { USER } from '@/constants/user';
+import PostWriterInfo from '@/containers/posts/PostWriterInfo';
 import Tag from '@/containers/posts/Tag';
 import TailwindMarkdownRenderer from '@/containers/posts/TailwindMarkdownRenderer';
 import { getDetailPostData } from '@/utils/getPostData';
@@ -10,16 +11,16 @@ export default function PostDetail({ id }: { id: string }) {
   return (
     <div className="grid gap-20">
       <div className="grid gap-6">
+        <Image
+          className="rounded-md w-full"
+          src={postData.data.thumbnail}
+          alt="thumnail"
+          width={1024}
+          height={1024}
+        />
         <h1 className="text-5xl font-bold">{postData.data.title}</h1>
-        <div className="grid gap-4">
+        <div className="grid p-1 gap-4">
           <div className="flex items-center gap-3">
-            <Image
-              className="rounded-full w-7 h-7"
-              src="/images/Profile_glassed_icon.jpg"
-              alt="profile"
-              width={32}
-              height={32}
-            />
             <h1 className="text-lg">{USER.name}</h1>
             <h1 className="text-md text-gray-400">{postData.data.date}</h1>
           </div>
@@ -32,6 +33,7 @@ export default function PostDetail({ id }: { id: string }) {
         <hr />
       </div>
       <TailwindMarkdownRenderer content={postData.content} />
+      <PostWriterInfo />
     </div>
   );
 }

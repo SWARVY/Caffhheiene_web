@@ -8,7 +8,7 @@ export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
   return (
     <div className="relative w-full md:[25rem] h-[32rem]">
       <img
-        className="w-full h-full transition ease-in-out duration-300 object-fill group-hover:brightness-75"
+        className="w-full h-full transition ease-in-out duration-300 object-cover group-hover:brightness-75"
         src={src}
         alt="slideImage"
         loading="lazy"

@@ -20,8 +20,8 @@ export default function Client({ children }: TransitionDivProps) {
     >
       <motion.div
         key={pathName}
-        initial={{ translateY: 20, opacity: 0 }}
-        animate={{ translateY: 0, opacity: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
         {children}

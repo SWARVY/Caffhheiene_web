@@ -9,9 +9,12 @@ export default function ProgressBar() {
   const { scrollYProgress } = useScroll();
 
   return (
-    <motion.div
-      className={`${regExp.test(pathName) ? 'visible' : 'invisible'} origin-left bg-gray-600 h-3`}
-      style={{ scaleX: scrollYProgress }}
-    />
+    <>
+      {regExp.test(pathName) ? (
+        <motion.div className={'origin-left bg-gray-600 h-3'} style={{ scaleX: scrollYProgress }} />
+      ) : (
+        <></>
+      )}
+    </>
   );
 }

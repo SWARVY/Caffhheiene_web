@@ -1,7 +1,7 @@
 export const TOP_NAVBAR = Object.freeze({
   tags: [
-    { tag: 'Posts', link: '/posts' },
     { tag: 'Info', link: '/info' },
+    { tag: 'Posts', link: '/posts' },
     { tag: 'Projects', link: '/projects' },
   ],
 });

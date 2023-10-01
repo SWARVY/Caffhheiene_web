@@ -11,7 +11,7 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/${id + 1}`}>
-      <div className="grid grid-cols-1 transition ease-in rounded-md border-2 bg-white_hover overflow-hidden hover:-translate-y-2">
+      <div className="grid transition ease-in rounded-md bg-white_hover overflow-hidden shadow-lg hover:-translate-y-2">
         <img className="border-b" src={post.data.thumbnail} alt="sample" />
         <div className="flex flex-col p-3 bg-white">
           <div className="grid grid-cols-1 p-2 items-center">

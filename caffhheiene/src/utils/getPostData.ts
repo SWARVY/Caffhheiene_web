@@ -18,7 +18,7 @@ export function getSortedPostData() {
     return matter(fileContents);
   });
 
-  return postData.sort((a, b) => a.data.date - b.data.date);
+  return postData.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 }
 
 export function getRecentlyPostData() {
@@ -32,7 +32,11 @@ export function getRecentlyPostData() {
 
 export function getDetailPostData(index: number) {
   const sortedPostData = getSortedPostData();
-  return sortedPostData[index - 1];
+  return {
+    prev: sortedPostData[sortedPostData.length - index + 1] ?? null,
+    curr: sortedPostData[sortedPostData.length - index],
+    next: sortedPostData[sortedPostData.length - index - 1] ?? null,
+  };
 }
 
 export function getCategoryData() {
@@ -48,7 +52,7 @@ export function getCategoryData() {
       const targetIndex = TagList.findIndex((item) => item.name === tag);
 
       if (targetIndex === -1) {
-        TagList.push({ name: tag, amount: 0 });
+        TagList.push({ name: tag, amount: 1 });
       } else {
         TagList[targetIndex].amount += 1;
       }

@@ -7,7 +7,7 @@ export default function PostList() {
   return (
     <ul className="grid gap-8">
       {posts.map((post, idx) => (
-        <PostItem key={idx} id={idx} post={post} />
+        <PostItem key={idx} id={posts.length - idx - 1} post={post} />
       ))}
     </ul>
   );

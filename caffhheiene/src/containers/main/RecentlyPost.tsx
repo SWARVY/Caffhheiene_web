@@ -12,7 +12,7 @@ export default function RecentlyPost() {
       <SubTitle subTitle={SUB_TITLE.recentlyPosts} />
       <div className="mt-8 grid grid-cols-2 gap-4">
         {posts.map((post, idx) => (
-          <Card key={idx} id={idx} post={post} />
+          <Card key={idx} id={posts.length - idx - 1} post={post} />
         ))}
       </div>
     </div>

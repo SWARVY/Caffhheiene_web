@@ -113,8 +113,8 @@ export const TECH_BADGES = [
   BADGES.html5,
   BADGES.css3,
   BADGES.axios,
+  BADGES.reactQuery,
   BADGES.tailwindcss,
   BADGES.framer,
-  BADGES.reactQuery,
 ];
 export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver];

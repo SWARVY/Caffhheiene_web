@@ -1,38 +1,38 @@
-import { CalendarIcon } from '@heroicons/react/20/solid';
-import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline';
-import { type GrayMatterFile } from 'gray-matter';
-import Link from 'next/link';
+import { type Post } from '@/contentlayer/generated'
+import { CalendarIcon } from '@heroicons/react/20/solid'
+import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 interface CardComponentProps {
-  id: number;
-  post: GrayMatterFile<string>;
+  id: number
+  post: Post
 }
 
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/${id + 1}`}>
-      <div className="grid transition ease-in rounded-md bg-white_hover overflow-hidden shadow-lg hover:-translate-y-2">
-        <img className="border-b" src={post.data.thumbnail} alt="sample" />
-        <div className="flex flex-col p-3 bg-white">
-          <div className="grid grid-cols-1 p-2 items-center">
+      <div className="grid overflow-hidden rounded-md bg-white_hover shadow-lg transition ease-in hover:-translate-y-2">
+        <img className="border-b" src={post.thumbnail} alt="sample" />
+        <div className="flex flex-col bg-white p-3">
+          <div className="grid grid-cols-1 items-center p-2">
             <div className="flex h-full justify-items-end">
-              <CalendarIcon className="w-3 h-3 items-center mr-2" />
-              <span className="text-xs">{post.data.date}</span>
+              <CalendarIcon className="mr-2 h-3 w-3 items-center" />
+              <span className="text-xs">{post.date}</span>
             </div>
           </div>
-          <div className="grid p-2 gap-1">
-            <h1 className="text-xl font-bold">{post.data.title}</h1>
-            <p className="text-md text-gray-500">{post.data.description}</p>
+          <div className="grid gap-1 p-2">
+            <h1 className="text-xl font-bold">{post.title}</h1>
+            <p className="text-md text-gray-500">{post.description}</p>
           </div>
           <hr />
-          <div className="grid grid-cols-1 mt-2 p-2 items-center">
+          <div className="mt-2 grid grid-cols-1 items-center p-2">
             <div className="flex h-full justify-items-end">
-              <ChatBubbleOvalLeftIcon className="w-3 h-3 items-center mr-2" />
+              <ChatBubbleOvalLeftIcon className="mr-2 h-3 w-3 items-center" />
               <span className="text-xs">0</span>
             </div>
           </div>
         </div>
       </div>
     </Link>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { SNS_BADGES, TECH_BADGES } from '@/constants/badge';
-import Badge from '@/components/Badge';
+import { SNS_BADGES, TECH_BADGES } from '@/constants/badge'
+import Badge from '@/components/Badge'
 
 interface BadgesProps {
-  type: 'TECH' | 'SNS';
+  type: 'TECH' | 'SNS'
 }
 
 export default function Badges({ type }: BadgesProps) {
@@ -11,7 +11,12 @@ export default function Badges({ type }: BadgesProps) {
       {type === 'TECH' ? (
         <>
           {TECH_BADGES.map((data, idx) => (
-            <Badge key={idx} svgImage={data.svg} name={data.name} color={data.color} />
+            <Badge
+              key={idx}
+              svgImage={data.svg}
+              name={data.name}
+              color={data.color}
+            />
           ))}
         </>
       ) : (
@@ -24,5 +29,5 @@ export default function Badges({ type }: BadgesProps) {
         </>
       )}
     </div>
-  );
+  )
 }

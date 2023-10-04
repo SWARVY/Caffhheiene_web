@@ -8,8 +8,11 @@ import { UserSmileSVG } from '../../../public/svgs';
 
 export default function UserInfo() {
   return (
-    <div className="flex-col w-full space-y-10">
-      <Title svg={<UserSmileSVG className="w-14 h-14" />} title={MAIN_TITLE.info} />
+    <div className="w-full flex-col space-y-10">
+      <Title
+        svg={<UserSmileSVG className="h-14 w-14" />}
+        title={MAIN_TITLE.info}
+      />
       <div className="grid w-full">
         <div className="grid gap-10">
           <div className="space-y-3">

@@ -7,9 +7,11 @@ interface TitleProps {
 
 export default function Title({ svg, title }: TitleProps) {
   return (
-    <div className="flex w-full items-center justify-center md:justify-start gap-2 drop-shadow-lg">
+    <div className="flex w-full items-center justify-center gap-2 drop-shadow-lg md:justify-start">
       {svg}
-      <h1 className="text-6xl md:text-5xl mt-2 drop-shadow-xl font-bold">{title}</h1>
+      <h1 className="mt-2 text-6xl font-bold drop-shadow-xl md:text-5xl">
+        {title}
+      </h1>
     </div>
   );
 }

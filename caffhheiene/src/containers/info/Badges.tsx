@@ -11,7 +11,12 @@ export default function Badges({ type }: BadgesProps) {
       {type === 'TECH' ? (
         <>
           {TECH_BADGES.map((data, idx) => (
-            <Badge key={idx} svgImage={data.svg} name={data.name} color={data.color} />
+            <Badge
+              key={idx}
+              svgImage={data.svg}
+              name={data.name}
+              color={data.color}
+            />
           ))}
         </>
       ) : (

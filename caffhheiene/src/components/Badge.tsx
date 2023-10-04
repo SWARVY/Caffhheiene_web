@@ -12,10 +12,9 @@ export default function Badge({ svgImage, name, color }: BadgeProps) {
 
   return (
     <div
-      className="flex transition ease-in duration-150 p-2 items-center rounded-sm shadow-lg hover:brightness-90"
-      style={{ backgroundColor: `${color}` }}
-    >
-      <div className={`w-full mr-2 fill-${adaptiveColor}`}>{svgImage}</div>
+      className="flex items-center rounded-sm p-2 shadow-lg transition duration-150 ease-in hover:brightness-90"
+      style={{ backgroundColor: `${color}` }}>
+      <div className={`mr-2 w-full fill-${adaptiveColor}`}>{svgImage}</div>
       <h1 className={`text-${adaptiveColor} text-sm`}>{name}</h1>
     </div>
   );

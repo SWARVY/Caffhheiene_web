@@ -10,7 +10,9 @@ export default function ProgressBar() {
 
   return (
     <motion.div
-      className={`${regExp.test(pathName) ? 'visible' : 'invisible'} origin-left bg-gray-600 h-3`}
+      className={`${
+        regExp.test(pathName) ? 'visible' : 'invisible'
+      } h-3 origin-left bg-gray-600`}
       style={{ scaleX: scrollYProgress }}
     />
   );

@@ -6,7 +6,12 @@ export default function Carousel() {
   return (
     <ImageSlider>
       {MAIN_CAROUSEL_SETTING.map((data, idx) => (
-        <SlideImage key={idx} src={data.src} title={data.title} subtitle={data.subtitle} />
+        <SlideImage
+          key={idx}
+          src={data.src}
+          title={data.title}
+          subtitle={data.subtitle}
+        />
       ))}
     </ImageSlider>
   );

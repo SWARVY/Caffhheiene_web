@@ -1,10 +1,10 @@
 import PostList from '@/containers/posts/PostList';
-import PostTags from '@/containers/posts/PostTags';
+import PostFilters from '@/containers/posts/PostFilters';
 
 export default function posts() {
   return (
     <div className="grid gap-10">
-      <PostTags />
+      <PostFilters />
       <PostList />
     </div>
   );

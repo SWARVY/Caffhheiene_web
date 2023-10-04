@@ -1,8 +1,8 @@
 import PostItem from '@/containers/posts/PostItem';
-import { getSortedPostData } from '@/utils/getPostData';
+import { getAllPost } from '@/utils/getPost';
 
 export default function PostList() {
-  const posts = getSortedPostData();
+  const posts = getAllPost();
 
   return (
     <ul className="grid gap-8">

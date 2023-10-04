@@ -7,8 +7,11 @@ import { GamepadSVG } from '../../../public/svgs';
 export default function PreviousProjects() {
   return (
     <div className="grid gap-10">
-      <Title svg={<GamepadSVG className="w-14 h-14" />} title={MAIN_TITLE.projects} />
-      <h1 className="p-3 rounded-md shadow-md transition ease-in bg-white_hover hover:bg-white_hover_weight">
+      <Title
+        svg={<GamepadSVG className="h-14 w-14" />}
+        title={MAIN_TITLE.projects}
+      />
+      <h1 className="rounded-md bg-white_hover p-3 shadow-md transition ease-in hover:bg-white_hover_weight">
         {SUB_TITLE.notice}
       </h1>
       {PREVIOUS_PROJECTS.map((data, idx) => (

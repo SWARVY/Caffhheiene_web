@@ -4,8 +4,8 @@ import RecentlyPost from '@/containers/main/RecentlyPost';
 
 export default function Page() {
   return (
-    <div className="flex-col w-full space-y-20">
-      <h1 className="text-center text-7xl md:text-8xl font-bold drop-shadow-lg">
+    <div className="w-full flex-col space-y-20">
+      <h1 className="text-center text-7xl font-bold drop-shadow-lg md:text-8xl">
         {MAIN_TITLE.welcome}
       </h1>
       <Carousel />

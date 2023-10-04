@@ -10,7 +10,7 @@
 //   content: string;
 // }
 //
-// export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
+// export default function MdRenderer({ content }: MarkdownRendererProps) {
 //   return (
 //     <Markdown
 //       className="markdown"

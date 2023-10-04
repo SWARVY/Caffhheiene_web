@@ -8,7 +8,7 @@ export default function TopNavigator() {
   return (
     <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center">
       <div className="flex w-full bg-white bg-opacity-60 px-14 py-8">
-        <div className="flex font-bold w-full justify-between">
+        <div className="flex w-full justify-between font-bold">
           <div className="flex h-full items-center gap-x-2 md:gap-x-5">
             <Link href="/">
               <BearSmileSVG className="h-8 w-8 drop-shadow-md" />

@@ -2,12 +2,14 @@
 module.exports = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
+    hljs: {
+      theme: 'monokai-sublime',
+    },
     fontFamily: {
-      LINE_Bd: ['LINE_Bd', 'sans-serif'],
-      LINE_Rg: ['LINE_Rg', 'sans-serif'],
-      LINE_Th: ['LINE_Th', 'sans-serif'],
       MABINOGI_Classic: ['MABINOGI_Classic', 'sans-serif'],
-      DOS_Bd: ['DOS_Bd', 'sans-serif'],
+      AppleGothic_Lg: ['AppleGothic_Lg', 'sans-serif'],
+      AppleGothic_Rg: ['AppleGothic_Rg', 'sans-serif'],
+      AppleGothic_Md: ['AppleGothic_Md', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -23,7 +25,10 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
+  plugins: [require('@tailwindcss/typography'), require('tailwind-highlightjs')],
+  safelist: [
+    {
+      pattern: /hljs+/,
+    }
   ],
 };

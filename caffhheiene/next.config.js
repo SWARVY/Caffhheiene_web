@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
+const { withContentlayer } = require("next-contentlayer");
+
 const nextConfig = {
   experimental: {
     appDir: true,
+    swcMinify: true,
   },
   webpack(config) {
     config.module.rules.push({
@@ -13,4 +16,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);

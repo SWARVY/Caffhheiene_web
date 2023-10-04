@@ -1,8 +1,8 @@
-import { SNS_BADGES, TECH_BADGES } from '@/constants/badge'
-import Badge from '@/components/Badge'
+import { SNS_BADGES, TECH_BADGES } from '@/constants/badge';
+import Badge from '@/components/Badge';
 
 interface BadgesProps {
-  type: 'TECH' | 'SNS'
+  type: 'TECH' | 'SNS';
 }
 
 export default function Badges({ type }: BadgesProps) {
@@ -29,5 +29,5 @@ export default function Badges({ type }: BadgesProps) {
         </>
       )}
     </div>
-  )
+  );
 }

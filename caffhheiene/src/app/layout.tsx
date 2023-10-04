@@ -1,14 +1,14 @@
-import './globals.css'
-import '../../public/fonts/font.css'
-import BottomNavigator from '@/components/BottomNavigator'
-import Client from '@/app/client'
-import TopNavigator from '@/components/TopNavigator'
-import { type ReactNode } from 'react'
+import './globals.css';
+import '../../public/fonts/font.css';
+import BottomNavigator from '@/components/BottomNavigator';
+import Client from '@/app/client';
+import TopNavigator from '@/components/TopNavigator';
+import { type ReactNode } from 'react';
 
 export const metadata = {
   title: 'Caffhheiene',
   description: 'welcome! this is Caffhheiene',
-}
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -23,5 +23,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <BottomNavigator />
       </body>
     </html>
-  )
+  );
 }

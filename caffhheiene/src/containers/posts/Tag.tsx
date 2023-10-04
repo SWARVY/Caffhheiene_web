@@ -1,5 +1,5 @@
 interface TagProps {
-  tag: string
+  tag: string;
 }
 
 export default function Tag({ tag }: TagProps) {
@@ -7,5 +7,5 @@ export default function Tag({ tag }: TagProps) {
     <div className="flex rounded-md bg-white_hover pb-0.5 pl-2 pr-2 pt-0.5 transition ease-in hover:bg-white_hover_weight">
       {tag}
     </div>
-  )
+  );
 }

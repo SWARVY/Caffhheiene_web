@@ -1,6 +1,6 @@
 export const MAIN_SETTING = {
   recentlyPostDataAmount: 4,
-}
+};
 
 export const MAIN_CAROUSEL_SETTING = [
   {
@@ -15,4 +15,4 @@ export const MAIN_CAROUSEL_SETTING = [
     subtitle: '이 사이트는 Vercel을 통해 호스팅되고있습니다.',
     link: '',
   },
-]
+];

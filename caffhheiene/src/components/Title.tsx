@@ -1,8 +1,8 @@
-import { type ReactNode } from 'react'
+import { type ReactNode } from 'react';
 
 interface TitleProps {
-  svg: ReactNode
-  title: string
+  svg: ReactNode;
+  title: string;
 }
 
 export default function Title({ svg, title }: TitleProps) {
@@ -13,5 +13,5 @@ export default function Title({ svg, title }: TitleProps) {
         {title}
       </h1>
     </div>
-  )
+  );
 }

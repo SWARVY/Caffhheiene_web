@@ -1,16 +1,16 @@
-import Badge from '@/components/Badge'
-import { SUB_TITLE } from '@/constants/title'
-import { type ReactNode } from 'react'
+import Badge from '@/components/Badge';
+import { SUB_TITLE } from '@/constants/title';
+import { type ReactNode } from 'react';
 
 interface ProjectItemProps {
-  link: string
-  name: string
-  description: string
+  link: string;
+  name: string;
+  description: string;
   stack: Array<{
-    svg: ReactNode
-    name: string
-    color: string
-  }>
+    svg: ReactNode;
+    name: string;
+    color: string;
+  }>;
 }
 
 export default function ProjectItem({
@@ -41,5 +41,5 @@ export default function ProjectItem({
         </div>
       </div>
     </div>
-  )
+  );
 }

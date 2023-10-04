@@ -1,8 +1,8 @@
-import PostItem from '@/containers/posts/PostItem'
-import { getAllPost } from '@/utils/getPost'
+import PostItem from '@/containers/posts/PostItem';
+import { getAllPost } from '@/utils/getPost';
 
 export default function PostList() {
-  const posts = getAllPost()
+  const posts = getAllPost();
 
   return (
     <ul className="grid gap-8">
@@ -10,5 +10,5 @@ export default function PostList() {
         <PostItem key={idx} id={posts.length - idx - 1} post={post} />
       ))}
     </ul>
-  )
+  );
 }

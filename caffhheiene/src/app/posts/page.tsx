@@ -1,5 +1,5 @@
-import PostList from '@/containers/posts/PostList'
-import PostFilters from '@/containers/posts/PostFilters'
+import PostList from '@/containers/posts/PostList';
+import PostFilters from '@/containers/posts/PostFilters';
 
 export default function posts() {
   return (
@@ -7,5 +7,5 @@ export default function posts() {
       <PostFilters />
       <PostList />
     </div>
-  )
+  );
 }

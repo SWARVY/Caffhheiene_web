@@ -1,5 +1,5 @@
 interface SubTitleProps {
-  subTitle: string
+  subTitle: string;
 }
 
 export default function SubTitle({ subTitle }: SubTitleProps) {
@@ -7,5 +7,5 @@ export default function SubTitle({ subTitle }: SubTitleProps) {
     <h1 className="text-4xl font-bold italic drop-shadow-md hover:underline hover:underline-offset-1">
       {subTitle}
     </h1>
-  )
+  );
 }

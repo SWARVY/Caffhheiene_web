@@ -1,11 +1,11 @@
-import SubTitle from '@/components/SubTitle'
-import { SUB_TITLE } from '@/constants/title'
-import { getRecentPost } from '@/utils/getPost'
-import React from 'react'
-import Card from '@/components/Card'
+import SubTitle from '@/components/SubTitle';
+import { SUB_TITLE } from '@/constants/title';
+import { getRecentPost } from '@/utils/getPost';
+import React from 'react';
+import Card from '@/components/Card';
 
 export default function RecentlyPost() {
-  const posts = getRecentPost()
+  const posts = getRecentPost();
 
   return (
     <div className="mt-3 w-full flex-col">
@@ -16,5 +16,5 @@ export default function RecentlyPost() {
         ))}
       </div>
     </div>
-  )
+  );
 }

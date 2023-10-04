@@ -1,4 +1,4 @@
-import { USER_CAREER } from '@/constants/user'
+import { USER_CAREER } from '@/constants/user';
 
 export default function UserCareer() {
   return (
@@ -10,5 +10,5 @@ export default function UserCareer() {
         </div>
       ))}
     </div>
-  )
+  );
 }

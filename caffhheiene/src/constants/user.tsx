@@ -3,7 +3,7 @@ export const USER = Object.freeze({
   name: '신현호',
   description: 'Frontend Developer',
   profileImg: '/profile/Profile_glassed_icon.jpg',
-})
+});
 
 export const USER_CAREER = Object.freeze([
   {
@@ -22,4 +22,4 @@ export const USER_CAREER = Object.freeze([
     date: '2023. 03. ~ 2023. 10. 03.',
     name: '42SEOUL CADET',
   },
-])
+]);

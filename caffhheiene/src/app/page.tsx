@@ -1,6 +1,6 @@
-import { MAIN_TITLE } from '@/constants/title'
-import Carousel from '@/containers/main/Carousel'
-import RecentlyPost from '@/containers/main/RecentlyPost'
+import { MAIN_TITLE } from '@/constants/title';
+import Carousel from '@/containers/main/Carousel';
+import RecentlyPost from '@/containers/main/RecentlyPost';
 
 export default function Page() {
   return (
@@ -11,5 +11,5 @@ export default function Page() {
       <Carousel />
       <RecentlyPost />
     </div>
-  )
+  );
 }

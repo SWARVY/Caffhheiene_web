@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
-import { type ReactNode } from 'react'
-import Slider, { type Settings } from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import '@/containers/style/Slick.css'
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
+import { type ReactNode } from 'react';
+import Slider, { type Settings } from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '@/containers/style/Slick.css';
 
 interface SlideProps {
-  settings?: Settings
-  children: ReactNode
+  settings?: Settings;
+  children: ReactNode;
 }
 
 function PrevArrow(props: any) {
-  const { style, onClick } = props
+  const { style, onClick } = props;
 
   return (
     <div
@@ -22,11 +22,11 @@ function PrevArrow(props: any) {
       onClick={onClick}>
       <ChevronLeftIcon className="h-10 w-10" />
     </div>
-  )
+  );
 }
 
 function NextArrow(props: any) {
-  const { style, onClick } = props
+  const { style, onClick } = props;
 
   return (
     <div
@@ -35,7 +35,7 @@ function NextArrow(props: any) {
       onClick={onClick}>
       <ChevronRightIcon className="h-10 w-10" />
     </div>
-  )
+  );
 }
 
 export default function ImageSlider({ children }: SlideProps) {
@@ -52,7 +52,7 @@ export default function ImageSlider({ children }: SlideProps) {
     autoplaySpeed: 7000,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
-  }
+  };
 
   return (
     <Slider
@@ -60,5 +60,5 @@ export default function ImageSlider({ children }: SlideProps) {
       {...settings}>
       {children}
     </Slider>
-  )
+  );
 }

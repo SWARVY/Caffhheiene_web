@@ -1,11 +1,11 @@
-import { type Post } from '@/contentlayer/generated'
-import { CalendarIcon } from '@heroicons/react/20/solid'
-import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
+import { type Post } from '@/contentlayer/generated';
+import { CalendarIcon } from '@heroicons/react/20/solid';
+import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 interface CardComponentProps {
-  id: number
-  post: Post
+  id: number;
+  post: Post;
 }
 
 export default function Card({ id, post }: CardComponentProps) {
@@ -34,5 +34,5 @@ export default function Card({ id, post }: CardComponentProps) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

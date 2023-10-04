@@ -1,8 +1,8 @@
-import Title from '@/components/Title'
-import { PREVIOUS_PROJECTS } from '@/constants/previousProjects'
-import { MAIN_TITLE, SUB_TITLE } from '@/constants/title'
-import ProjectItem from '@/containers/projects/ProjectItem'
-import { GamepadSVG } from '../../../public/svgs'
+import Title from '@/components/Title';
+import { PREVIOUS_PROJECTS } from '@/constants/previousProjects';
+import { MAIN_TITLE, SUB_TITLE } from '@/constants/title';
+import ProjectItem from '@/containers/projects/ProjectItem';
+import { GamepadSVG } from '../../../public/svgs';
 
 export default function PreviousProjects() {
   return (
@@ -24,5 +24,5 @@ export default function PreviousProjects() {
         />
       ))}
     </div>
-  )
+  );
 }

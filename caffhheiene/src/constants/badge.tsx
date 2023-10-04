@@ -15,7 +15,7 @@ import {
   ReduxSVG,
   TailwindcssSVG,
   TypeScriptSVG,
-} from '../../public/svgs'
+} from '../../public/svgs';
 
 export const BADGES = Object.freeze({
   css3: {
@@ -101,7 +101,7 @@ export const BADGES = Object.freeze({
     color: '#5A29E4',
     name: 'Axios',
   },
-})
+});
 
 export const TECH_BADGES = [
   BADGES.git,
@@ -116,5 +116,5 @@ export const TECH_BADGES = [
   BADGES.reactQuery,
   BADGES.tailwindcss,
   BADGES.framer,
-]
-export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver]
+];
+export const SNS_BADGES = [BADGES.github, BADGES.instagram, BADGES.naver];

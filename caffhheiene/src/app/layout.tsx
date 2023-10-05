@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="w-full flex-col font-MABINOGI_Classic">
         <TopNavigator />
         <Client>
-          <div className="p-5 pt-40 sm:pl-20 sm:pr-20 md:pl-40 md:pr-40 lg:pl-60 lg:pr-60 xl:pl-80 xl:pr-80 ">
+          <div className="p-[3%] pt-40 sm:pl-[5%] sm:pr-[5%] md:pl-[10%] md:pr-[10%] lg:pl-[20%] lg:pr-[20%] xl:pl-[30%] xl:pr-[30%] ">
             {children}
           </div>
         </Client>

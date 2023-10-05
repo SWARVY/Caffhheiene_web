@@ -3,6 +3,7 @@ export const MAIN_TITLE = {
   posts: 'Posts',
   info: 'Info',
   projects: 'Projects',
+  studies: 'Studies',
 };
 
 export const SUB_TITLE = {

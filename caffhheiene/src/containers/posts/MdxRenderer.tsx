@@ -9,7 +9,16 @@ interface MdxRendererProps {
 }
 
 const mdxComponents: MDXComponents = {
-  a: ({ href, children }) => <Link href={href as string}>{children}</Link>,
+  a: ({ href, children }) => (
+    <Link
+      className="text-lg text-gray-500 no-underline transition duration-150 ease-in hover:text-black"
+      href={href as string}>
+      {children}
+    </Link>
+  ),
+  h1: ({ children }) => (
+    <h1 className="hover:underline-offset-3 hover:underline">{children}</h1>
+  ),
 };
 
 export default function MdxRenderer({ post }: MdxRendererProps) {

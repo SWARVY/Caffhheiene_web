@@ -1,5 +1,6 @@
 import { MAIN_SETTING } from '@/constants/mainSetting';
-import { allPosts } from '@/contentlayer/generated';
+import { POST_SETTING } from '@/constants/postSetting';
+import { allPosts, type Post } from '@/contentlayer/generated';
 
 interface Category {
   name: string;
@@ -9,6 +10,16 @@ interface Category {
 export function getAllPost() {
   return allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+}
+
+export function getSelectedPagePost(
+  postList: Array<[number, Post]>,
+  pageNum: number
+) {
+  return postList.slice(
+    POST_SETTING.contentsPerPage * (pageNum - 1),
+    POST_SETTING.contentsPerPage * pageNum
   );
 }
 
@@ -31,8 +42,19 @@ export function getAllCategory() {
   return categories;
 }
 
-export function getRecentPost() {
-  return getAllPost().slice(0, MAIN_SETTING.recentlyPostDataAmount + 1);
+export function getRecentPost(): {
+  posts: Array<[number, Post]>;
+  allPostLen: number;
+} {
+  const sortedPostData = getAllPost();
+
+  return {
+    posts: Array.from(
+      sortedPostData.slice(0, MAIN_SETTING.recentlyPostDataAmount),
+      (post, idx) => [idx, post]
+    ),
+    allPostLen: sortedPostData.length,
+  };
 }
 
 export function getPostContent(id: number) {

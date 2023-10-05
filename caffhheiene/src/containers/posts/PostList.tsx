@@ -7,8 +7,6 @@ interface PostListProps {
 }
 
 export default function PostList({ posts, postLen }: PostListProps) {
-  // const scope = useStaggerAnimation(isLoaded, setLoaded);
-
   return (
     <div className="grid gap-10">
       <ul className="grid gap-8">

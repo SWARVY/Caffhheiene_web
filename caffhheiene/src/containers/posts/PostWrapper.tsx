@@ -20,15 +20,20 @@ export default function PostWrapper() {
 
   return (
     <div className="grid gap-10">
-      <PostList
-        posts={posts as Array<[number, Post]>}
-        postLen={allPosts.length}
-      />
-      <PostPagination
-        postLen={allPosts.length}
-        currPage={page}
-        setPage={setPage}
-      />
+      {posts !== undefined ? (
+        <PostList posts={posts} postLen={allPosts.length} />
+      ) : (
+        <></>
+      )}
+      {allPosts !== undefined ? (
+        <PostPagination
+          postLen={allPosts.length}
+          currPage={page}
+          setPage={setPage}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

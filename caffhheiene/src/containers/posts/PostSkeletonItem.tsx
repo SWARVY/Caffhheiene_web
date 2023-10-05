@@ -26,5 +26,5 @@ export default function PostSkeletonItem() {
         </div>
       </div>
     </li>
-  );
+  )
 }

@@ -1,13 +1,13 @@
-import { USER } from '@/constants/user';
-import MdxRenderer from '@/containers/posts/MdxRenderer';
-import PostWriterInfo from '@/containers/posts/PostWriterInfo';
-import PrevNextButton from '@/containers/posts/PrevNextButton';
-import Tag from '@/containers/posts/Tag';
-import { getPostContent } from '@/utils/getPost';
-import Image from 'next/image';
+import { USER } from '@/constants/user'
+import MdxRenderer from '@/containers/posts/MdxRenderer'
+import PostWriterInfo from '@/containers/posts/PostWriterInfo'
+import PrevNextButton from '@/containers/posts/PrevNextButton'
+import Tag from '@/containers/posts/Tag'
+import { getPostContent } from '@/utils/getPost'
+import Image from 'next/image'
 
 export default async function PostDetail({ id }: { id: string }) {
-  const { prev, curr, next } = getPostContent(Number(id));
+  const { prev, curr, next } = getPostContent(Number(id))
 
   return (
     <div className="grid gap-10">
@@ -36,5 +36,5 @@ export default async function PostDetail({ id }: { id: string }) {
       <PostWriterInfo />
       <PrevNextButton id={Number(id)} prev={prev} next={next} />
     </div>
-  );
+  )
 }

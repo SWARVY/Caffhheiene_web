@@ -1,12 +1,12 @@
-import { stagger, useAnimate } from 'framer-motion';
-import { useEffect } from 'react';
+import { stagger, useAnimate } from 'framer-motion'
+import { useEffect } from 'react'
 
 export default function useStaggerAnimation(
   isLoaded: boolean,
   setLoaded: () => void
 ) {
-  const [scope, animate] = useAnimate();
-  const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
+  const [scope, animate] = useAnimate()
+  const staggerMenuItems = stagger(0.1, { startDelay: 0.15 })
 
   useEffect(() => {
     void animate(
@@ -18,9 +18,9 @@ export default function useStaggerAnimation(
         duration: 0.2,
         delay: isLoaded ? staggerMenuItems : 0,
       }
-    );
-    setLoaded();
-  }, [isLoaded]);
+    )
+    setLoaded()
+  }, [isLoaded])
 
-  return scope;
+  return scope
 }

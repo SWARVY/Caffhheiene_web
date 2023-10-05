@@ -1,10 +1,10 @@
-import { POST_SETTING } from '@/constants/postSetting';
-import { type Dispatch, type SetStateAction } from 'react';
+import { POST_SETTING } from '@/constants/postSetting'
+import { type Dispatch, type SetStateAction } from 'react'
 
 interface PostPaginationProps {
-  postLen: number;
-  currPage: number;
-  setPage: Dispatch<SetStateAction<number>>;
+  postLen: number
+  currPage: number
+  setPage: Dispatch<SetStateAction<number>>
 }
 
 export default function PostPagination({
@@ -15,8 +15,8 @@ export default function PostPagination({
   const calculated = {
     div: postLen / POST_SETTING.contentsPerPage,
     mod: postLen % POST_SETTING.contentsPerPage,
-  };
-  const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div;
+  }
+  const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
 
   return (
     <ul className="flex justify-center gap-x-3">
@@ -29,12 +29,12 @@ export default function PostPagination({
           <button
             className="h-full w-full"
             onClick={() => {
-              setPage(idx + 1);
+              setPage(idx + 1)
             }}>
             {idx + 1}
           </button>
         </li>
       ))}
     </ul>
-  );
+  )
 }

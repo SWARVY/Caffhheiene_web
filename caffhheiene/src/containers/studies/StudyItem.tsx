@@ -1,6 +1,6 @@
 interface StudyItemProps {
-  title: string;
-  link: string;
+  title: string
+  link: string
 }
 
 export default function StudyItem({ title, link }: StudyItemProps) {
@@ -14,5 +14,5 @@ export default function StudyItem({ title, link }: StudyItemProps) {
         {title}
       </a>
     </li>
-  );
+  )
 }

@@ -1,10 +1,10 @@
-import { type Post } from '@/contentlayer/generated';
-import Link from 'next/link';
+import { type Post } from '@/contentlayer/generated'
+import Link from 'next/link'
 
 interface PrevNextButtonProps {
-  id: number;
-  prev: Post | null;
-  next: Post | null;
+  id: number
+  prev: Post | null
+  next: Post | null
 }
 
 export default function PrevNextButton({
@@ -45,5 +45,5 @@ export default function PrevNextButton({
         )}
       </div>
     </div>
-  );
+  )
 }

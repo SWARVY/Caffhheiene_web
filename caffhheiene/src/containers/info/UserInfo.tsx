@@ -1,10 +1,10 @@
-import SubTitle from '@/components/SubTitle';
-import Title from '@/components/Title';
-import { MAIN_TITLE, SUB_TITLE } from '@/constants/title';
-import { USER } from '@/constants/user';
-import Badges from '@/containers/info/Badges';
-import UserCareer from '@/containers/info/UserCareer';
-import { UserSmileSVG } from '../../../public/svgs';
+import SubTitle from '@/components/SubTitle'
+import Title from '@/components/Title'
+import { MAIN_TITLE, SUB_TITLE } from '@/constants/title'
+import { USER } from '@/constants/user'
+import Badges from '@/containers/info/Badges'
+import UserCareer from '@/containers/info/UserCareer'
+import { UserSmileSVG } from '../../../public/svgs'
 
 export default function UserInfo() {
   return (
@@ -33,5 +33,5 @@ export default function UserInfo() {
         </div>
       </div>
     </div>
-  );
+  )
 }

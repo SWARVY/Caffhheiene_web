@@ -1,11 +1,11 @@
-import { type Post } from '@/contentlayer/generated';
-import { type MDXComponents } from 'mdx/types';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import Link from 'next/link';
-import './style/reset.css';
+import { type Post } from '@/contentlayer/generated'
+import { type MDXComponents } from 'mdx/types'
+import { useMDXComponent } from 'next-contentlayer/hooks'
+import Link from 'next/link'
+import './style/reset.css'
 
 interface MdxRendererProps {
-  post: Post;
+  post: Post
 }
 
 const mdxComponents: MDXComponents = {
@@ -19,14 +19,14 @@ const mdxComponents: MDXComponents = {
   h1: ({ children }) => (
     <h1 className="hover:underline-offset-3 hover:underline">{children}</h1>
   ),
-};
+}
 
 export default function MdxRenderer({ post }: MdxRendererProps) {
-  const MDXContent = useMDXComponent(post.body.code);
+  const MDXContent = useMDXComponent(post.body.code)
 
   return (
     <div className="prose prose-neutral">
       <MDXContent components={mdxComponents} />
     </div>
-  );
+  )
 }

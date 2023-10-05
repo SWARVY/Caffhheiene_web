@@ -1,4 +1,4 @@
-import { USER } from '@/constants/user';
+import { USER } from '@/constants/user'
 
 const PREVIOUS_STUDIES_INDIVIDUAL = [
   {
@@ -21,7 +21,7 @@ const PREVIOUS_STUDIES_INDIVIDUAL = [
     title: '[우테코 프리코스 2022] Javascript-Bridge 문제풀이',
     link: 'https://github.com/woowacourse-precourse/javascript-bridge/pull/29',
   },
-];
+]
 
 const PREVIOUS_STUDIES_GAMANGJUM = [
   {
@@ -52,7 +52,7 @@ const PREVIOUS_STUDIES_GAMANGJUM = [
     title: '[JavaScript] Javascript-Racingcar 리팩터링',
     link: 'https://github.com/Gamangjum-lihou/javascript-racingcar-precourse',
   },
-];
+]
 
 export const PREVIOUS_STUDIES = [
   {
@@ -67,4 +67,4 @@ export const PREVIOUS_STUDIES = [
     content: PREVIOUS_STUDIES_GAMANGJUM,
     link: 'https://github.com/Gamangjum-lihou',
   },
-];
+]

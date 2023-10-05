@@ -1,13 +1,13 @@
-import StudyItem from '@/containers/studies/StudyItem';
+import StudyItem from '@/containers/studies/StudyItem'
 
 interface StudyGroupProps {
-  group: string;
-  imgSrc: string;
+  group: string
+  imgSrc: string
   content: Array<{
-    title: string;
-    link: string;
-  }>;
-  link: string;
+    title: string
+    link: string
+  }>
+  link: string
 }
 
 export default function StudyGroup({
@@ -30,5 +30,5 @@ export default function StudyGroup({
         ))}
       </ul>
     </li>
-  );
+  )
 }

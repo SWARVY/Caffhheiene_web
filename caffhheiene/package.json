@@ -44,6 +44,7 @@
     "next-contentlayer": "^0.3.4",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
+    "prettier-eslint": "^15.0.1",
     "prettier-plugin-tailwindcss": "^0.5.5",
     "rehype-autolink-headings": "^7.0.0",
     "rehype-external-links": "^3.0.0",

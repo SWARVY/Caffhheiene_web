@@ -1,12 +1,12 @@
-import { USER } from '@/constants/user';
-import Tag from '@/containers/posts/Tag';
-import { type Post } from '@/contentlayer/generated';
-import Image from 'next/image';
-import Link from 'next/link';
+import { USER } from '@/constants/user'
+import Tag from '@/containers/posts/Tag'
+import { type Post } from '@/contentlayer/generated'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface PostItemProps {
-  id: number;
-  post: Post;
+  id: number
+  post: Post
 }
 
 export default function PostItem({ id, post }: PostItemProps) {
@@ -41,5 +41,5 @@ export default function PostItem({ id, post }: PostItemProps) {
         </div>
       </li>
     </Link>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { BADGES } from '@/constants/badge';
+import { BADGES } from '@/constants/badge'
 
 export const PREVIOUS_PROJECTS = [
   {
@@ -46,4 +46,4 @@ export const PREVIOUS_PROJECTS = [
       BADGES.framer,
     ],
   },
-];
+]

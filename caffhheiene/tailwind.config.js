@@ -18,17 +18,27 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       gradientColorStops: {
-        purple_to_green: ['#845ec2', '#eb4d9f', '#ff695a', '#feac00', '#a8eb12'],
+        purple_to_green: [
+          '#845ec2',
+          '#eb4d9f',
+          '#ff695a',
+          '#feac00',
+          '#a8eb12',
+        ],
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwind-highlightjs')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-highlightjs'),
+  ],
   safelist: [
     {
       pattern: /hljs+/,
-    }
+    },
   ],
-};
+}

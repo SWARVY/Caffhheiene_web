@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import Giscus from '@giscus/react';
+import Giscus from '@giscus/react'
 
 export default function PostComments() {
   return (
@@ -18,5 +18,5 @@ export default function PostComments() {
       lang="en"
       loading="lazy"
     />
-  );
+  )
 }

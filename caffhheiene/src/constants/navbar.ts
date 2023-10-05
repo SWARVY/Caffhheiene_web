@@ -5,8 +5,8 @@ export const TOP_NAVBAR = Object.freeze({
     { tag: 'Projects', link: '/projects' },
     { tag: 'Studies', link: '/studies' },
   ],
-});
+})
 
 export const BOTTOM_NAVBAR = Object.freeze({
   copyright: '© 2023. Caffhheiene all rights reserved.',
-});
+})

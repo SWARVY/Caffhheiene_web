@@ -1,8 +1,8 @@
-import Title from '@/components/Title';
-import { PREVIOUS_STUDIES } from '@/constants/previousStudies';
-import { MAIN_TITLE, SUB_TITLE } from '@/constants/title';
-import StudyGroup from '@/containers/studies/StudyGroup';
-import { BookReadSVG } from '../../../public/svgs';
+import Title from '@/components/Title'
+import { PREVIOUS_STUDIES } from '@/constants/previousStudies'
+import { MAIN_TITLE, SUB_TITLE } from '@/constants/title'
+import StudyGroup from '@/containers/studies/StudyGroup'
+import { BookReadSVG } from '../../../public/svgs'
 
 export default function PreviousStudies() {
   return (
@@ -26,5 +26,5 @@ export default function PreviousStudies() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

@@ -1,6 +1,6 @@
 interface FilterProps {
-  name: string;
-  amount?: number;
+  name: string
+  amount?: number
 }
 
 export default function Filter({ name, amount }: FilterProps) {
@@ -9,5 +9,5 @@ export default function Filter({ name, amount }: FilterProps) {
       <h3 className="mr-1">{name}</h3>
       <p className="text-xs">{amount}</p>
     </div>
-  );
+  )
 }

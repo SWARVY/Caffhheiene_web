@@ -1,5 +1,5 @@
-import PostFilters from '@/containers/posts/PostFilters';
-import PostWrapper from '@/containers/posts/PostWrapper';
+import PostFilters from '@/containers/posts/PostFilters'
+import PostWrapper from '@/containers/posts/PostWrapper'
 
 export default function posts() {
   return (
@@ -7,5 +7,5 @@ export default function posts() {
       <PostFilters />
       <PostWrapper />
     </div>
-  );
+  )
 }

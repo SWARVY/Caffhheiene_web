@@ -1,11 +1,11 @@
-import Title from '@/components/Title';
-import { MAIN_TITLE } from '@/constants/title';
-import Filter from '@/containers/posts/Filter';
-import { getAllCategory } from '@/utils/getPost';
-import { MarkdownSVG } from '../../../public/svgs';
+import Title from '@/components/Title'
+import { MAIN_TITLE } from '@/constants/title'
+import Filter from '@/containers/posts/Filter'
+import { getAllCategory } from '@/utils/getPost'
+import { MarkdownSVG } from '../../../public/svgs'
 
 export default function PostFilters() {
-  const filters = getAllCategory();
+  const filters = getAllCategory()
 
   return (
     <div className="w-full flex-col items-center justify-center space-y-3">
@@ -19,5 +19,5 @@ export default function PostFilters() {
         ))}
       </div>
     </div>
-  );
+  )
 }

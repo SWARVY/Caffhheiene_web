@@ -1,7 +1,7 @@
 interface SlideImageProps {
-  src: string;
-  title: string;
-  subtitle: string;
+  src: string
+  title: string
+  subtitle: string
 }
 
 export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
@@ -18,5 +18,5 @@ export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
         <h2 className="text-lg text-gray-200 md:text-xl">{subtitle}</h2>
       </div>
     </div>
-  );
+  )
 }

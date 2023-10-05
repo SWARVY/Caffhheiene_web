@@ -1,8 +1,8 @@
-import ProgressBar from '@/components/ProgressBar';
-import { TOP_NAVBAR } from '@/constants/navbar';
-import { SunIcon } from '@heroicons/react/20/solid';
-import Link from 'next/link';
-import { BearSmileSVG } from '../../public/svgs';
+import ProgressBar from '@/components/ProgressBar'
+import { TOP_NAVBAR } from '@/constants/navbar'
+import { SunIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
+import { BearSmileSVG } from '../../public/svgs'
 
 export default function TopNavigator() {
   return (
@@ -29,5 +29,5 @@ export default function TopNavigator() {
       </div>
       <ProgressBar />
     </nav>
-  );
+  )
 }

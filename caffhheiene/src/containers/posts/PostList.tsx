@@ -1,9 +1,9 @@
-import PostItem from '@/containers/posts/PostItem';
-import { type Post } from '@/contentlayer/generated';
+import PostItem from '@/containers/posts/PostItem'
+import { type Post } from '@/contentlayer/generated'
 
 interface PostListProps {
-  posts: Array<[number, Post]>;
-  postLen: number;
+  posts: Array<[number, Post]>
+  postLen: number
 }
 
 export default function PostList({ posts, postLen }: PostListProps) {
@@ -15,5 +15,5 @@ export default function PostList({ posts, postLen }: PostListProps) {
         ))}
       </ul>
     </div>
-  );
+  )
 }

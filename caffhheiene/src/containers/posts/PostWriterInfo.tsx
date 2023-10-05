@@ -1,5 +1,5 @@
-import { USER } from '@/constants/user';
-import Image from 'next/image';
+import { USER } from '@/constants/user'
+import Image from 'next/image'
 
 export default function PostWriterInfo() {
   return (
@@ -16,5 +16,5 @@ export default function PostWriterInfo() {
         <h2 className="text-gray-500">{USER.description}</h2>
       </div>
     </div>
-  );
+  )
 }

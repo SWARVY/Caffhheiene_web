@@ -5,14 +5,14 @@ import React from 'react';
 import Card from '@/components/Card';
 
 export default function RecentlyPost() {
-  const posts = getRecentPost();
+  const { posts, allPostLen } = getRecentPost();
 
   return (
     <div className="mt-3 w-full flex-col">
       <SubTitle subTitle={SUB_TITLE.recentlyPosts} />
       <div className="mt-8 grid grid-cols-2 gap-4">
-        {posts.map((post, idx) => (
-          <Card key={idx} id={posts.length - idx - 1} post={post} />
+        {posts.map(([id, post]) => (
+          <Card key={id} id={allPostLen - id - 1} post={post} />
         ))}
       </div>
     </div>

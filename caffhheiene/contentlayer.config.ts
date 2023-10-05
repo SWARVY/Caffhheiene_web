@@ -54,7 +54,12 @@ export default makeSource({
       rehypeHighlight as Pluggable<any>,
       [
         rehypeAutolinkHeadings,
-        { properties: { className: ['anchor'], ariaLabel: 'anchor' } },
+        {
+          properties: {
+            className: ['anchor'],
+            ariaLabel: 'anchor',
+          },
+        },
       ],
       [rehypeExternalLinks, { target: '_blank', rel: ['noopener noreffer'] }],
     ],

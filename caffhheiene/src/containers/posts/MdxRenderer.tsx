@@ -12,14 +12,12 @@ const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
     <Link
       href={href as string}
-      style={{
-        color: 'black',
-        textDecoration: 'none',
-        fontSize: '1.125rem',
-        lineHeight: '1.75rem',
-      }}>
+      className="text-lg text-gray-500 no-underline transition duration-150 ease-in hover:text-black">
       {children}
     </Link>
+  ),
+  h1: ({ children }) => (
+    <h1 className="hover:underline-offset-3 hover:underline">{children}</h1>
   ),
 };
 

@@ -1,14 +1,21 @@
 import PostItem from '@/containers/posts/PostItem';
-import { getAllPost } from '@/utils/getPost';
+import { type Post } from '@/contentlayer/generated';
 
-export default function PostList() {
-  const posts = getAllPost();
+interface PostListProps {
+  posts: Array<[number, Post]>;
+  postLen: number;
+}
+
+export default function PostList({ posts, postLen }: PostListProps) {
+  // const scope = useStaggerAnimation(isLoaded, setLoaded);
 
   return (
-    <ul className="grid gap-8">
-      {posts.map((post, idx) => (
-        <PostItem key={idx} id={posts.length - idx - 1} post={post} />
-      ))}
-    </ul>
+    <div className="grid gap-10">
+      <ul className="grid gap-8">
+        {posts?.map(([id, post]) => (
+          <PostItem key={id} id={postLen - id - 1} post={post} />
+        ))}
+      </ul>
+    </div>
   );
 }

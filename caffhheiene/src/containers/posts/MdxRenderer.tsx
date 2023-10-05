@@ -11,13 +11,15 @@ interface MdxRendererProps {
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
     <Link
-      className="text-lg text-gray-500 no-underline transition duration-150 ease-in hover:text-black"
-      href={href as string}>
+      href={href as string}
+      style={{
+        color: 'black',
+        textDecoration: 'none',
+        fontSize: '1.125rem',
+        lineHeight: '1.75rem',
+      }}>
       {children}
     </Link>
-  ),
-  h1: ({ children }) => (
-    <h1 className="hover:underline-offset-3 hover:underline">{children}</h1>
   ),
 };
 

@@ -1,6 +1,5 @@
 import { type Post } from '@/contentlayer/generated';
 import { CalendarIcon } from '@heroicons/react/20/solid';
-import { ChatBubbleOvalLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 interface CardComponentProps {
@@ -23,13 +22,6 @@ export default function Card({ id, post }: CardComponentProps) {
           <div className="grid gap-1 p-2">
             <h1 className="text-xl font-bold">{post.title}</h1>
             <p className="text-md text-gray-500">{post.description}</p>
-          </div>
-          <hr />
-          <div className="mt-2 grid grid-cols-1 items-center p-2">
-            <div className="flex h-full justify-items-end">
-              <ChatBubbleOvalLeftIcon className="mr-2 h-3 w-3 items-center" />
-              <span className="text-xs">0</span>
-            </div>
           </div>
         </div>
       </div>

@@ -32,9 +32,11 @@ export default async function PostDetail({ id }: { id: string }) {
           height={1024}
         />
       </div>
-      <MdxRenderer post={curr} />
-      <PostWriterInfo />
-      <PrevNextButton id={Number(id)} prev={prev} next={next} />
+      <div className="grid w-full gap-y-10">
+        <MdxRenderer post={curr} />
+        <PostWriterInfo />
+        <PrevNextButton id={Number(id)} prev={prev} next={next} />
+      </div>
     </div>
   )
 }

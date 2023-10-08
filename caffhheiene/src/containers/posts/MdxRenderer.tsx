@@ -25,7 +25,7 @@ export default function MdxRenderer({ post }: MdxRendererProps) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div className="prose prose-neutral">
+    <div className="prose prose-neutral w-full">
       {post.body.code && <MDXContent components={mdxComponents} />}
     </div>
   )

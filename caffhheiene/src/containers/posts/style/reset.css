@@ -1,3 +1,7 @@
 .hljs {
   background-color: inherit;
 }
+
+.prose {
+  max-width: 100%;
+}

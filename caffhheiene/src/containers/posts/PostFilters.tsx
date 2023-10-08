@@ -14,9 +14,13 @@ export default function PostFilters() {
         title={MAIN_TITLE.posts}
       />
       <div className="flex w-full flex-wrap justify-center gap-3 md:justify-start md:justify-items-center">
-        {filters.map((filter, idx) => (
-          <Filter key={idx} name={filter.name} amount={filter.amount} />
-        ))}
+        {filters !== undefined ?? (
+          <>
+            {filters.map((filter, idx) => (
+              <Filter key={idx} name={filter.name} amount={filter.amount} />
+            ))}
+          </>
+        )}
       </div>
     </div>
   )

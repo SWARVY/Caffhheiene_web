@@ -24,15 +24,17 @@ export default async function PostDetail({ id }: { id: string }) {
             ))}
           </div>
         </div>
-        <Image
-          className="w-full rounded-md"
-          src={curr.thumbnail}
-          alt="thumnail"
-          width={1024}
-          height={1024}
-        />
+        <div className="w-fit">
+          <Image
+            className="w-full rounded-md"
+            src={curr.thumbnail}
+            alt="thumnail"
+            width={1024}
+            height={1024}
+          />
+        </div>
       </div>
-      <div className="grid w-full gap-y-10">
+      <div className="grid gap-y-10">
         <MdxRenderer post={curr} />
         <PostWriterInfo />
         <PrevNextButton id={Number(id)} prev={prev} next={next} />

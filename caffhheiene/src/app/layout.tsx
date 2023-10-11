@@ -13,11 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
-      <body className="w-full flex-col font-MABINOGI_Classic">
+      <body className="grid w-full font-MABINOGI_Classic">
         <TopNavigator />
         <Client>
-          <div className="p-[3%] pt-40 sm:pl-[5%] sm:pr-[5%] md:pl-[10%] md:pr-[10%] lg:pl-[20%] lg:pr-[20%] xl:pl-[30%] xl:pr-[30%] ">
-            {children}
+          <div className="mt-[9rem] grid justify-items-center">
+            <div className="w-full max-w-xl p-2">{children}</div>
           </div>
         </Client>
         <BottomNavigator />

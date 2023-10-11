@@ -8,7 +8,7 @@ export default function PostFilters() {
   const filters = getAllCategory()
 
   return (
-    <div className="w-full flex-col items-center justify-center space-y-3">
+    <div className="w-full flex-col items-center justify-center space-y-3 font-MABINOGI_Classic">
       <Title
         svg={<MarkdownSVG className="h-14 w-14" />}
         title={MAIN_TITLE.posts}

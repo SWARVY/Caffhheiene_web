@@ -4,7 +4,7 @@ interface SubTitleProps {
 
 export default function SubTitle({ subTitle }: SubTitleProps) {
   return (
-    <h1 className="text-4xl font-bold italic drop-shadow-md hover:underline hover:underline-offset-1">
+    <h1 className="font-MABINOGI_Classic text-4xl font-bold italic drop-shadow-md hover:underline hover:underline-offset-1">
       {subTitle}
     </h1>
   )

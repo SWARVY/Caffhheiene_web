@@ -33,7 +33,7 @@ export default function PostItem({ id, post }: PostItemProps) {
               <h1 className="text-sm text-gray-400">{post.date}</h1>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 font-MABINOGI_Classic">
             {post.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

@@ -17,3 +17,8 @@
   font-family: 'AppleSDGothic_Rg';
   src: url('AppleSDGothicNeoR.ttf');
 }
+
+@font-face {
+  font-family: 'NanumBarunpen_Rg';
+  src: url('NanumBarunpenR.ttf');
+}

@@ -24,15 +24,13 @@ export default async function PostDetail({ id }: { id: string }) {
             ))}
           </div>
         </div>
-        <div className="w-fit">
-          <Image
-            className="w-full rounded-md"
-            src={curr.thumbnail}
-            alt="thumnail"
-            width={1024}
-            height={1024}
-          />
-        </div>
+        <Image
+          className="w-full rounded-md"
+          src={curr.thumbnail}
+          alt="thumnail"
+          width={1024}
+          height={1024}
+        />
       </div>
       <div className="grid gap-y-10">
         <MdxRenderer post={curr} />

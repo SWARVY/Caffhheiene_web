@@ -16,13 +16,13 @@ export default function TopNavigator() {
             {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
               <Link
                 key={idx}
-                className="flex h-full items-center rounded-lg p-2 text-lg drop-shadow-md transition ease-in hover:bg-white_hover"
+                className="flex h-full items-center rounded-lg p-2 text-lg drop-shadow-md transition ease-in hover:bg-white_hover hover:bg-opacity-60"
                 href={link}>
                 {tag}
               </Link>
             ))}
           </div>
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg transition ease-in hover:bg-white_hover">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg transition ease-in hover:bg-white_hover hover:bg-opacity-60">
             <SunIcon className="h-6 w-6 text-yellow-400 drop-shadow-md" />
           </div>
         </div>

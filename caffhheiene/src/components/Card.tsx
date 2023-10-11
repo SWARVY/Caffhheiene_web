@@ -10,10 +10,16 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/${id + 1}`}>
-      <div className="grid overflow-hidden rounded-md bg-white_hover shadow-lg transition ease-in hover:-translate-y-2">
-        <img className="border-b" src={post.thumbnail} alt="sample" />
+      <div className="max-h-sm grid max-w-md overflow-hidden rounded-md bg-white_hover shadow-lg transition ease-in hover:-translate-y-2">
+        <div className="grid">
+          <img
+            className="border-b object-cover"
+            src={post.thumbnail}
+            alt="sample"
+          />
+        </div>
         <div className="flex flex-col bg-white p-3">
-          <div className="grid grid-cols-1 items-center p-2">
+          <div className="grid items-center p-2">
             <div className="flex h-full justify-items-end">
               <CalendarIcon className="mr-2 h-3 w-3 items-center" />
               <span className="text-xs">{post.date}</span>

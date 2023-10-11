@@ -6,19 +6,19 @@ import { BearSmileSVG } from '../../public/svgs'
 
 export default function TopNavigator() {
   return (
-    <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center">
-      <div className="flex w-full bg-white bg-opacity-60 px-5 py-8 md:px-14">
-        <div className="flex w-full justify-between font-bold">
-          <div className="flex h-full items-center gap-x-3 md:gap-x-6">
+    <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center bg-white bg-opacity-60">
+      <div className="flex w-full items-center justify-center p-2">
+        <div className="flex w-full max-w-xl items-center justify-between py-5 font-bold">
+          <div className="flex h-full w-full items-center gap-x-3">
             <Link href="/">
-              <BearSmileSVG className="h-8 w-8 drop-shadow-md" />
+              <BearSmileSVG className="h-9 w-9 drop-shadow-md" />
             </Link>
             {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
               <Link
                 key={idx}
                 className="flex h-full items-center rounded-lg p-2 text-lg drop-shadow-md transition ease-in hover:bg-white_hover"
                 href={link}>
-                <h1>{tag}</h1>
+                {tag}
               </Link>
             ))}
           </div>

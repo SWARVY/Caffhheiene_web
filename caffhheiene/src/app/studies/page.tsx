@@ -2,7 +2,7 @@ import PreviousStudies from '@/containers/studies/PreviousStudies'
 
 export default function studies() {
   return (
-    <div>
+    <div className="w-full">
       <PreviousStudies />
     </div>
   )

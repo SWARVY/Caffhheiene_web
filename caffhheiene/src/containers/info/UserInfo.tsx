@@ -18,6 +18,7 @@ export default function UserInfo() {
           <div className="space-y-3">
             <SubTitle subTitle={SUB_TITLE.introduce} />
             <div className="p-2">
+              <h1 className="text-2xl font-bold">{USER.name}</h1>
               <p className="text-lg text-slate-500">{USER.description}</p>
               <UserCareer />
             </div>

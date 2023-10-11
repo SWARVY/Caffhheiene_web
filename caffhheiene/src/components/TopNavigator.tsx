@@ -11,7 +11,7 @@ export default function TopNavigator() {
         <div className="flex w-full justify-between font-bold">
           <div className="flex h-full items-center gap-x-3 md:gap-x-6">
             <Link href="/">
-              <BearSmileSVG className="h-8 w-8 drop-shadow-md transition duration-150 ease-in hover:animate-pulse" />
+              <BearSmileSVG className="h-8 w-8 drop-shadow-md" />
             </Link>
             {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
               <Link

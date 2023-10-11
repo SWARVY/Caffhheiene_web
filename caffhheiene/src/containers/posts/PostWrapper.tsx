@@ -9,7 +9,7 @@ export default function PostWrapper() {
   )
 
   return (
-    <div className="font-NanumBarunpen_Rg grid gap-10">
+    <div className="grid gap-10">
       <PostList posts={allPosts} postLen={allPosts.length} />
     </div>
   )

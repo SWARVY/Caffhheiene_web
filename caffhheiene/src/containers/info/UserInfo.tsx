@@ -13,7 +13,7 @@ export default function UserInfo() {
         svg={<UserSmileSVG className="h-14 w-14" />}
         title={MAIN_TITLE.info}
       />
-      <div className="font-NanumBarunpen_Rg grid w-full">
+      <div className="grid w-full">
         <div className="grid gap-10">
           <div className="space-y-3">
             <SubTitle subTitle={SUB_TITLE.introduce} />

@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           content="Cezz6dsFAjTiCwlqVouHHVYzFJ1rZnvdj8qmCvHm9MQ"
         />
       </head>
-      <body className="grid w-full font-MABINOGI_Classic">
+      <body className="grid w-full">
         <TopNavigator />
         <Client>
           <div className="mt-[9rem] grid justify-items-center">

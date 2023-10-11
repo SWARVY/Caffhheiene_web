@@ -6,7 +6,7 @@ import { GamepadSVG } from '../../../public/svgs'
 
 export default function PreviousProjects() {
   return (
-    <div className="font-NanumBarunpen_Rg grid gap-10">
+    <div className="grid gap-10">
       <Title
         svg={<GamepadSVG className="h-14 w-14" />}
         title={MAIN_TITLE.projects}

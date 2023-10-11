@@ -10,7 +10,7 @@ export default async function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (
-    <div className="font-NanumBarunpen_Rg grid gap-10">
+    <div className="grid gap-10">
       <div className="grid gap-6">
         <h1 className="text-5xl font-bold">{curr.title}</h1>
         <div className="grid gap-4 p-1">

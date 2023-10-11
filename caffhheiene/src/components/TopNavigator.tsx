@@ -6,7 +6,7 @@ import { BearSmileSVG } from '../../public/svgs'
 
 export default function TopNavigator() {
   return (
-    <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center bg-white bg-opacity-60">
+    <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center bg-white bg-opacity-60 font-MABINOGI_Classic">
       <div className="flex w-full items-center justify-center p-2">
         <div className="flex w-full max-w-xl items-center justify-between py-5 font-bold">
           <div className="flex h-full w-full items-center gap-x-3">

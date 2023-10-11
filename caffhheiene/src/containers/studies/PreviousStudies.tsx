@@ -6,7 +6,7 @@ import { BookReadSVG } from '../../../public/svgs'
 
 export default function PreviousStudies() {
   return (
-    <div className="grid gap-10">
+    <div className="font-NanumBarunpen_Rg grid gap-10">
       <Title
         svg={<BookReadSVG className="h-14 w-14" />}
         title={MAIN_TITLE.studies}

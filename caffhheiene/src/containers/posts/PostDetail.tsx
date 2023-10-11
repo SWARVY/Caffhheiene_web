@@ -10,7 +10,7 @@ export default async function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (
-    <div className="grid gap-10">
+    <div className="font-NanumBarunpen_Rg grid gap-10">
       <div className="grid gap-6">
         <h1 className="text-5xl font-bold">{curr.title}</h1>
         <div className="grid gap-4 p-1">
@@ -18,7 +18,7 @@ export default async function PostDetail({ id }: { id: string }) {
             <h1 className="text-lg">{USER.name}</h1>
             <h1 className="text-md text-gray-400">{curr.date}</h1>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 font-MABINOGI_Classic">
             {curr.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

@@ -13,6 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="Cezz6dsFAjTiCwlqVouHHVYzFJ1rZnvdj8qmCvHm9MQ"
+        />
+      </head>
       <body className="grid w-full font-MABINOGI_Classic">
         <TopNavigator />
         <Client>

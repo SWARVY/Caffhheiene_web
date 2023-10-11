@@ -7,6 +7,7 @@ module.exports = {
     },
     fontFamily: {
       MABINOGI_Classic: ['MABINOGI_Classic', 'sans-serif'],
+      NanumBarunpen_Rg: ['NanumBarunpen_Rg', 'sans-serif'],
       AppleGothic_Lg: ['AppleGothic_Lg', 'sans-serif'],
       AppleGothic_Rg: ['AppleGothic_Rg', 'sans-serif'],
       AppleGothic_Md: ['AppleGothic_Md', 'sans-serif'],

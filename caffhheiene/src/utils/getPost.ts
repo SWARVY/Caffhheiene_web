@@ -7,24 +7,50 @@ interface Category {
   amount: number
 }
 
-export function getAllPost() {
-  return allPosts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  )
+export function getAllPostLength() {
+  return allPosts.length
 }
 
-export function getSelectedPagePost(
-  postList: Array<[number, Post]>,
-  pageNum: number
-) {
-  return postList.slice(
-    POST_SETTING.contentsPerPage * (pageNum - 1),
-    POST_SETTING.contentsPerPage * pageNum
-  )
+export function getAllPost(): Array<[number, Post]> {
+  return allPosts
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .map((post, idx) => [idx, post])
+}
+
+export function getSelectedPost(targetCategory: string, targetPageNum: number) {
+  const sortedPostData = getAllPost()
+
+  if (targetCategory === 'all') {
+    return {
+      posts: sortedPostData.slice(
+        (targetPageNum - 1) * POST_SETTING.contentsPerPage,
+        targetPageNum * POST_SETTING.contentsPerPage
+      ),
+      selectedPostsLength: sortedPostData.length,
+    }
+  }
+
+  const selectedAllPostData = sortedPostData.filter(([_, { category }]) => {
+    const lowerCategory = category.map((item) => item.toLowerCase())
+    const anotherTargetCategory = targetCategory + '\r'
+
+    return (
+      lowerCategory.includes(targetCategory) ||
+      lowerCategory.includes(anotherTargetCategory)
+    )
+  })
+
+  return {
+    posts: selectedAllPostData.slice(
+      targetPageNum - 1 * POST_SETTING.contentsPerPage,
+      targetPageNum * POST_SETTING.contentsPerPage
+    ),
+    selectedPostsLength: selectedAllPostData.length,
+  }
 }
 
 export function getAllCategory() {
-  const categories: Category[] = [{ name: 'All Posts', amount: 0 }]
+  const categories: Category[] = [{ name: 'All', amount: 0 }]
 
   allPosts.forEach(({ category }) => {
     category.forEach((categoryItem) => {
@@ -49,20 +75,19 @@ export function getRecentPost(): {
   const sortedPostData = getAllPost()
 
   return {
-    posts: Array.from(
-      sortedPostData.slice(0, MAIN_SETTING.recentlyPostDataAmount),
-      (post, idx) => [idx, post]
-    ),
+    posts: sortedPostData.slice(0, MAIN_SETTING.recentlyPostDataAmount),
     allPostLen: sortedPostData.length,
   }
 }
 
 export function getPostContent(id: number) {
-  const sortedPostData = getAllPost()
+  const purePostData = allPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
 
   return {
-    prev: sortedPostData[sortedPostData.length - id + 1] ?? null,
-    curr: sortedPostData[sortedPostData.length - id],
-    next: sortedPostData[sortedPostData.length - id - 1] ?? null,
+    prev: purePostData[purePostData.length - id + 1] ?? null,
+    curr: purePostData[purePostData.length - id],
+    next: purePostData[purePostData.length - id - 1] ?? null,
   }
 }

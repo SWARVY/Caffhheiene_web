@@ -9,28 +9,16 @@ const PREVIOUS_STUDIES_INDIVIDUAL = [
     title: '[Gaechu.org] 코딩 테스트 스터디',
     link: 'https://github.com/Gaechu-org/Algorithms',
   },
-  {
-    title: '[우테코 프리코스 2022] Javascript-Baseball 문제풀이',
-    link: 'https://github.com/woowacourse-precourse/javascript-baseball/pull/58',
-  },
-  {
-    title: '[우테코 프리코스 2022] Javascript-Lotto 문제풀이',
-    link: 'https://github.com/woowacourse-precourse/javascript-lotto/pull/143',
-  },
-  {
-    title: '[우테코 프리코스 2022] Javascript-Bridge 문제풀이',
-    link: 'https://github.com/woowacourse-precourse/javascript-bridge/pull/29',
-  },
 ]
 
 const PREVIOUS_STUDIES_GAMANGJUM = [
   {
-    title: '[TypeScript] Effective Typescript 스터디',
-    link: 'https://github.com/Gamangjum-lihou/effective-typescript-study',
+    title: '[Blog] Study Log Archive 스터디',
+    link: 'https://github.com/Gamangjum-lihou/study-log-archive',
   },
   {
-    title: '[Blog] Study Log Archive',
-    link: 'https://github.com/Gamangjum-lihou/study-log-archive',
+    title: '[TypeScript] Effective Typescript 스터디',
+    link: 'https://github.com/Gamangjum-lihou/effective-typescript-study',
   },
   {
     title: '[JavaScript] 프로그래머스 문제 풀이',

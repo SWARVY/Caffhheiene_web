@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 export default function ProgressBar() {
   const pathName = usePathname()
-  const regExp = /^\/posts\//
+  const regExp = /^\/posts\/detail/
   const { scrollYProgress } = useScroll()
 
   return (

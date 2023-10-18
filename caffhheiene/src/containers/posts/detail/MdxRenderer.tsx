@@ -2,7 +2,7 @@ import { type Post } from '@/contentlayer/generated'
 import { type MDXComponents } from 'mdx/types'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
-import './style/reset.css'
+import '../style/reset.css'
 
 interface MdxRendererProps {
   post: Post
@@ -25,7 +25,7 @@ export default function MdxRenderer({ post }: MdxRendererProps) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div className="prose prose-neutral">
+    <div className="prose prose-neutral max-w-[75ch]">
       {post.body.code !== undefined && (
         <MDXContent components={mdxComponents} />
       )}

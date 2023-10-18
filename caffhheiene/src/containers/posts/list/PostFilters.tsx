@@ -1,8 +1,8 @@
 import Title from '@/components/Title'
 import { MAIN_TITLE } from '@/constants/title'
-import Filter from '@/containers/posts/Filter'
+import Filter from '@/containers/posts/list/Filter'
 import { getAllCategory } from '@/utils/getPost'
-import { MarkdownSVG } from '../../../public/svgs'
+import { MarkdownSVG } from '../../../../public/svgs'
 
 export default function PostFilters() {
   const filters = getAllCategory()

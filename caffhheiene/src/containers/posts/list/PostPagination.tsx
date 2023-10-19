@@ -1,22 +1,22 @@
-'use client'
-
 import { POST_SETTING } from '@/constants/postSetting'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 interface PostPaginationProps {
   allPostLen: number
+  category: string
+  pageNum: number
 }
 
-export default function PostPagination({ allPostLen }: PostPaginationProps) {
+export default function PostPagination({
+  allPostLen,
+  category,
+  pageNum,
+}: PostPaginationProps) {
   const calculated = {
     div: allPostLen / POST_SETTING.contentsPerPage,
     mod: allPostLen % POST_SETTING.contentsPerPage,
   }
   const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
-  const path = usePathname().split('/')
-  const category = path[2].toLowerCase()
-  const pageNum = Number(path[3])
 
   return (
     <ul className="flex justify-center gap-x-3 font-MABINOGI_Classic">

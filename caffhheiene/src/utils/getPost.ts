@@ -1,5 +1,4 @@
 import { MAIN_SETTING } from '@/constants/mainSetting'
-import { POST_SETTING } from '@/constants/postSetting'
 import { allPosts, type Post } from '@/contentlayer/generated'
 
 interface Category {
@@ -15,38 +14,6 @@ export function getAllPost(): Array<[number, Post]> {
   return allPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((post, idx) => [idx, post])
-}
-
-export function getSelectedPost(targetCategory: string, targetPageNum: number) {
-  const sortedPostData = getAllPost()
-
-  if (targetCategory === 'all') {
-    return {
-      posts: sortedPostData.slice(
-        (targetPageNum - 1) * POST_SETTING.contentsPerPage,
-        targetPageNum * POST_SETTING.contentsPerPage
-      ),
-      selectedPostsLength: sortedPostData.length,
-    }
-  }
-
-  const selectedAllPostData = sortedPostData.filter(([_, { category }]) => {
-    const lowerCategory = category.map((item) => item.toLowerCase())
-    const anotherTargetCategory = targetCategory + '\r'
-
-    return (
-      lowerCategory.includes(targetCategory) ||
-      lowerCategory.includes(anotherTargetCategory)
-    )
-  })
-
-  return {
-    posts: selectedAllPostData.slice(
-      targetPageNum - 1 * POST_SETTING.contentsPerPage,
-      targetPageNum * POST_SETTING.contentsPerPage
-    ),
-    selectedPostsLength: selectedAllPostData.length,
-  }
 }
 
 export function getAllCategory() {

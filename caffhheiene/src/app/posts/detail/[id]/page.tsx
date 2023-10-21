@@ -1,5 +1,5 @@
-import PostComments from '@/containers/posts/PostComments'
-import PostDetail from '@/containers/posts/PostDetail'
+import PostComments from '@/containers/posts/detail/PostComments'
+import PostDetail from '@/containers/posts/detail/PostDetail'
 
 export default function postDetail({ params }: { params: { id: string } }) {
   return (

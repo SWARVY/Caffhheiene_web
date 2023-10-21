@@ -11,7 +11,7 @@ interface PostItemProps {
 
 export default function PostItem({ id, post }: PostItemProps) {
   return (
-    <Link href={`/posts/${id + 1}`}>
+    <Link href={`/posts/detail/${id + 1}`}>
       <li
         key={id}
         className="grid rounded-md p-10 shadow-md transition duration-75 ease-in hover:-translate-y-2">

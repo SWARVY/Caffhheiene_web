@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://caffhheiene.vercel.app/</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/all/1</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/info</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/projects</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/studies</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/detail/3</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/detail/2</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/detail/1</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/typescript/1</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/next.js/1</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://caffhheiene.vercel.app/posts/blog/1</loc>
+  <lastmod>2023-10-24T10:12:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

@@ -18,8 +18,10 @@ export default function PostItem({ id, post }: PostItemProps) {
         <div className="grid gap-4">
           <div className="grid gap-3">
             <div className="grid gap-1">
-              <h1 className="text-2xl font-bold">{post.title}</h1>
-              <p className="text-lg text-gray-400">{post.description}</p>
+              <h1 className="text-ellipsis text-2xl font-bold">{post.title}</h1>
+              <p className="text-ellipsis text-lg text-gray-400">
+                {post.description}
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <Image

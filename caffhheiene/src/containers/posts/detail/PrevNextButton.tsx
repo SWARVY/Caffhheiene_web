@@ -20,11 +20,7 @@ export default function PrevNextButton({
             className="grid w-5/6 rounded-md p-3 shadow-md transition ease-in hover:-translate-y-1"
             href={`${id - 1}`}>
             <h1 className="text-xs font-bold">이전 포스트</h1>
-            <h1>
-              {prev.title.length > 20
-                ? prev.title.slice(0, 15) + '...'
-                : prev.title}
-            </h1>
+            <h1 className="text-ellipsis">{prev.title}</h1>
           </Link>
         ) : (
           <div className="grid w-5/6 rounded-md p-3 shadow-md transition ease-in hover:-translate-y-1">
@@ -39,11 +35,7 @@ export default function PrevNextButton({
             className="grid w-5/6 rounded-md p-3 text-right shadow-md transition ease-in hover:-translate-y-1"
             href={`${id + 1}`}>
             <h1 className="text-xs font-bold">다음 포스트</h1>
-            <h1>
-              {next.title.length > 10
-                ? next.title.slice(0, 15) + '...'
-                : next.title}
-            </h1>
+            <h1 className="text-ellipsis">{next.title}</h1>
           </Link>
         ) : (
           <div className="grid w-5/6 rounded-md p-3 text-right shadow-md transition ease-in hover:-translate-y-1">

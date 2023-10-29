@@ -26,8 +26,10 @@ export default function Card({ id, post }: CardComponentProps) {
             </div>
           </div>
           <div className="grid gap-1 p-2">
-            <h1 className="text-xl font-bold">{post.title}</h1>
-            <p className="text-md text-gray-500">{post.description}</p>
+            <h1 className="text-ellipsis text-xl font-bold">{post.title}</h1>
+            <p className="text-md text-ellipsis text-gray-500">
+              {post.description}
+            </p>
           </div>
         </div>
       </div>

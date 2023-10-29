@@ -6,17 +6,14 @@ interface Category {
   amount: number
 }
 
-export function getAllPostLength() {
-  return allPosts.length
-}
+export const getAllPostLength = () => allPosts.length
 
-export function getAllPost(): Array<[number, Post]> {
-  return allPosts
+export const getAllPost = (): Array<[number, Post]> =>
+  allPosts
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((post, idx) => [idx, post])
-}
 
-export function getAllCategory() {
+export const getAllCategory = () => {
   const categories: Category[] = [{ name: 'All', amount: 0 }]
 
   allPosts.forEach(({ category }) => {
@@ -35,10 +32,10 @@ export function getAllCategory() {
   return categories
 }
 
-export function getRecentPost(): {
+export const getRecentPost = (): {
   posts: Array<[number, Post]>
   allPostLen: number
-} {
+} => {
   const sortedPostData = getAllPost()
 
   return {
@@ -47,7 +44,7 @@ export function getRecentPost(): {
   }
 }
 
-export function getPostContent(id: number) {
+export const getPostContent = (id: number) => {
   const purePostData = allPosts.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
@@ -57,4 +54,22 @@ export function getPostContent(id: number) {
     curr: purePostData[purePostData.length - id],
     next: purePostData[purePostData.length - id - 1] ?? null,
   }
+}
+
+export const getSelectedCategoryPost = (category: string) => {
+  const allPosts = getAllPost()
+  const lastCategory = category + '\r'
+
+  if (category === 'all') {
+    return allPosts
+  }
+
+  return allPosts.filter(([_, post]) => {
+    const lowerCategory = post.category.map((category) =>
+      category.toLowerCase()
+    )
+    return (
+      lowerCategory.includes(category) || lowerCategory.includes(lastCategory)
+    )
+  })
 }

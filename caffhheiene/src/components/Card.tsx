@@ -11,9 +11,9 @@ export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
       <div className="max-h-sm grid max-w-md overflow-hidden rounded-md bg-white_hover shadow-lg transition  ease-in hover:-translate-y-2">
-        <div className="grid">
+        <div className="grid h-[15rem]">
           <img
-            className="border-b object-cover"
+            className="h-full border-b object-cover"
             src={post.thumbnail}
             alt="sample"
           />

@@ -1,10 +1,18 @@
+import Link from 'next/link'
+
 interface SlideImageProps {
   src: string
   title: string
   subtitle: string
+  link: string
 }
 
-export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
+export default function SlideImage({
+  src,
+  title,
+  subtitle,
+  link,
+}: SlideImageProps) {
   return (
     <div className="md:[25rem] relative h-[32rem] w-full">
       <img
@@ -13,10 +21,12 @@ export default function SlideImage({ src, title, subtitle }: SlideImageProps) {
         alt="slideImage"
         loading="lazy"
       />
-      <div className="absolute bottom-24 right-0 z-20 p-10 text-right text-white opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 md:bottom-0">
-        <h1 className="text-2xl font-bold md:text-4xl">{title}</h1>
-        <h2 className="text-lg text-gray-200 md:text-xl">{subtitle}</h2>
-      </div>
+      <Link href={link}>
+        <div className="absolute bottom-24 right-0 z-20 p-10 text-right text-white opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 md:bottom-0">
+          <h1 className="text-2xl font-bold md:text-4xl">{title}</h1>
+          <h2 className="text-lg text-gray-200 md:text-xl">{subtitle}</h2>
+        </div>
+      </Link>
     </div>
   )
 }

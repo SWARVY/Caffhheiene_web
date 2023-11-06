@@ -11,6 +11,7 @@ export default function Carousel() {
           src={data.src}
           title={data.title}
           subtitle={data.subtitle}
+          link={data.link}
         />
       ))}
     </ImageSlider>

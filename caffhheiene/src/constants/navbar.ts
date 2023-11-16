@@ -1,9 +1,9 @@
 export const TOP_NAVBAR = Object.freeze({
   tags: [
-    { tag: 'Posts', link: '/posts/all/1' },
-    { tag: 'Info', link: '/info' },
-    { tag: 'Projects', link: '/projects' },
-    { tag: 'Studies', link: '/studies' },
+    { tag: '기록', link: '/posts/all/1' },
+    { tag: '공방', link: '/projects' },
+    { tag: '배움', link: '/studies' },
+    { tag: '소개', link: '/info' },
   ],
 })
 

@@ -1,7 +1,5 @@
-import { USER } from '@/constants/user'
 import Tag from '@/containers/posts/Tag'
 import { type Post } from '@/contentlayer/generated'
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface PostItemProps {
@@ -14,28 +12,24 @@ export default function PostItem({ id, post }: PostItemProps) {
     <Link href={`/posts/detail/${id + 1}`}>
       <li
         key={id}
-        className="grid rounded-md p-10 shadow-md transition duration-75 ease-in hover:-translate-y-2">
+        className="grid border-b pb-10 pt-10 transition duration-75 ease-in">
         <div className="grid gap-4">
           <div className="grid gap-3">
             <div className="grid gap-1">
-              <h1 className="text-ellipsis text-2xl font-bold">{post.title}</h1>
-              <p className="text-ellipsis text-lg text-gray-400">
+              <div className="flex items-center justify-between">
+                <h3 className="truncate text-left text-2xl font-bold dark:text-white">
+                  {post.title}
+                </h3>
+                <h3 className="justify-end text-sm text-gray-400 dark:text-gray-300">
+                  {post.date}
+                </h3>
+              </div>
+              <p className="text-ellipsis text-lg text-gray-400 dark:text-gray-300">
                 {post.description}
               </p>
             </div>
-            <div className="flex items-center gap-3">
-              <Image
-                className="h-7 w-7 rounded-full"
-                src={USER.profileImg}
-                alt="profile"
-                width={32}
-                height={32}
-              />
-              <h1 className="text-md">{USER.name}</h1>
-              <h1 className="text-sm text-gray-400">{post.date}</h1>
-            </div>
           </div>
-          <div className="flex flex-wrap gap-2 font-MABINOGI_Classic">
+          <div className="flex flex-wrap gap-2 font-SeoulHangangLong_Lg font-bold">
             {post.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

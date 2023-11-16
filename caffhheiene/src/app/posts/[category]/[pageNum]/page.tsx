@@ -10,7 +10,7 @@ export default function posts({
   const data = getSelectedCategoryPost(params.category, Number(params.pageNum))
 
   return (
-    <div className="grid gap-10">
+    <div className="grid w-full gap-10">
       <PostFilters />
       <PostWrapper
         category={params.category}

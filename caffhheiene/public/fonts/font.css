@@ -1,24 +1,9 @@
 @font-face {
-  font-family: 'MABINOGI_Classic';
-  src: url('Mabinogi_Classic_TTF.ttf');
+  font-family: 'SeoulHangangLong_Lg';
+  src: url('SeoulHangangLong_Lg.ttf');
 }
 
 @font-face {
-  font-family: 'AppleSDGothic_Lg';
-  src: url('AppleSDGothicNeoL.ttf');
-}
-
-@font-face {
-  font-family: 'AppleSDGothic_Md';
-  src: url('AppleSDGothicNeoM.ttf');
-}
-
-@font-face {
-  font-family: 'AppleSDGothic_Rg';
-  src: url('AppleSDGothicNeoR.ttf');
-}
-
-@font-face {
-  font-family: 'NanumBarunpen_Rg';
-  src: url('NanumBarunpenR.ttf');
+  font-family: 'ChungbukJikji';
+  src: url('ChungbukJikji.ttf');
 }

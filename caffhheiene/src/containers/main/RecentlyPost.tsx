@@ -9,7 +9,7 @@ export default function RecentlyPost() {
 
   return (
     <div className="mt-3 w-full flex-col">
-      <SubTitle subTitle={SUB_TITLE.recentlyPosts} />
+      <SubTitle title={SUB_TITLE.recentlyPosts} />
       <div className="mt-8 grid grid-cols-2 gap-4">
         {posts.map(([id, post]) => (
           <Card key={id} id={allPostLen - id - 1} post={post} />

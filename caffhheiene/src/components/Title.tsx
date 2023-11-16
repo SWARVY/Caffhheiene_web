@@ -1,15 +1,11 @@
-import { type ReactNode } from 'react'
-
 interface TitleProps {
-  svg: ReactNode
   title: string
 }
 
-export default function Title({ svg, title }: TitleProps) {
+export default function Title({ title }: TitleProps) {
   return (
-    <div className="flex w-full items-center justify-center gap-2 font-MABINOGI_Classic drop-shadow-lg md:justify-start">
-      {svg}
-      <h1 className="mt-2 text-6xl font-bold drop-shadow-xl md:text-5xl">
+    <div className="flex w-full items-center justify-start gap-2 font-ChungbukJikji drop-shadow-lg">
+      <h1 className="mt-2 text-6xl font-bold drop-shadow-xl dark:text-white">
         {title}
       </h1>
     </div>

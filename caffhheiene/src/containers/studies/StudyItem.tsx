@@ -5,7 +5,7 @@ interface StudyItemProps {
 
 export default function StudyItem({ title, link }: StudyItemProps) {
   return (
-    <li>
+    <li className="dark:text-white">
       <a
         href={link}
         target="_blank"

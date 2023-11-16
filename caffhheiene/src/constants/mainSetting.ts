@@ -10,7 +10,7 @@ export const MAIN_CAROUSEL_SETTING = [
     link: '/posts/blog/1',
   },
   {
-    src: '/blogImages/image_10_27_(1).jpeg',
+    src: '/blogImages/2023_10_27/image_10_27_(1).jpeg',
     title: '우테코 프리코스 6기 회고록',
     subtitle: '우테코 프리코스 6기를 진행하며 배운점을 다룹니다.',
     link: '/posts/woowaprecourse/1',

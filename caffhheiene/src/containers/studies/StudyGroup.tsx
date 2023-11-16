@@ -17,11 +17,11 @@ export default function StudyGroup({
   link,
 }: StudyGroupProps) {
   return (
-    <li className="grid gap-4 rounded-lg p-5 shadow-md">
+    <li className="grid gap-4 rounded-lg p-5 shadow-md dark:bg-neutral-600">
       <div className="flex items-center gap-3">
         <img className="h-8 w-8 rounded-full" src={imgSrc} alt="profileImg" />
         <a href={link} target="_blank" rel="noreferrer">
-          <h1 className="text-2xl font-bold">{group}</h1>
+          <h3 className="text-2xl font-bold dark:text-white">{group}</h3>
         </a>
       </div>
       <ul className="space-y-3">

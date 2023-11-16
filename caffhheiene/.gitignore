@@ -1,0 +1,7 @@
+node_modules
+*.contentlayer
+*.git
+*.next
+*.webpack
+
+next-env.d.ts

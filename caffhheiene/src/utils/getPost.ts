@@ -19,7 +19,10 @@ export const getAllCategory = () => {
 
   allPosts.forEach(({ category }) => {
     category.forEach((categoryItem) => {
-      const target = categories.findIndex((item) => item.name === categoryItem)
+      const target = categories.findIndex(
+        (item) =>
+          item.name === categoryItem || item.name === categoryItem + '\r'
+      )
 
       if (target === -1) {
         categories.push({ name: categoryItem, amount: 1 })

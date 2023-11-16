@@ -10,7 +10,7 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="max-h-sm grid max-w-md overflow-hidden rounded-md bg-white_hover shadow-lg transition  ease-in hover:-translate-y-2">
+      <div className="max-h-sm grid max-w-md overflow-hidden rounded-md bg-white_hover shadow-lg transition ease-in hover:-translate-y-2">
         <div className="grid h-[15rem]">
           <img
             className="h-full border-b object-cover"
@@ -18,16 +18,18 @@ export default function Card({ id, post }: CardComponentProps) {
             alt="sample"
           />
         </div>
-        <div className="flex flex-col bg-white p-3">
+        <div className="flex flex-col bg-white p-3 transition duration-100 ease-in dark:bg-neutral-600">
           <div className="grid items-center p-2">
             <div className="flex h-full justify-items-end">
-              <CalendarIcon className="mr-2 h-3 w-3 items-center" />
-              <span className="text-xs">{post.date}</span>
+              <CalendarIcon className="mr-2 h-3 w-3 items-center dark:fill-white" />
+              <span className="text-xs dark:text-white">{post.date}</span>
             </div>
           </div>
-          <div className="grid gap-1 p-2">
-            <h1 className="text-ellipsis text-xl font-bold">{post.title}</h1>
-            <p className="text-md text-ellipsis text-gray-500">
+          <div className="grid w-full gap-1 p-2">
+            <h3 className="truncate text-xl font-bold dark:text-white">
+              {post.title}
+            </h3>
+            <p className="text-md truncate text-gray-400 dark:text-gray-300">
               {post.description}
             </p>
           </div>

@@ -12,8 +12,8 @@ export default function PostWriterInfo() {
         height={1024}
       />
       <div className="grid items-center">
-        <h1 className="text-2xl font-bold">{USER.name}</h1>
-        <h2 className="text-gray-500">{USER.description}</h2>
+        <h3 className="text-2xl font-bold dark:text-white">{USER.name}</h3>
+        <p className="text-gray-400 dark:text-gray-300">{USER.description}</p>
       </div>
     </div>
   )

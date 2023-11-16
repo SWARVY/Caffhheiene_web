@@ -10,7 +10,7 @@ export default function SNSList() {
           target="_blank"
           rel="norefferer noreferrer">
           <div className="rounded-full p-2 transition ease-in hover:bg-white_hover hover:bg-opacity-70">
-            <div className="fill-black">{sns.svg}</div>
+            <div className="fill-black dark:fill-white">{sns.svg}</div>
           </div>
         </a>
       ))}

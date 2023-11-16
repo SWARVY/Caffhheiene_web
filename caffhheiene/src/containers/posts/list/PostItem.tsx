@@ -24,12 +24,12 @@ export default function PostItem({ id, post }: PostItemProps) {
                   {post.date}
                 </h3>
               </div>
-              <p className="text-ellipsis text-lg text-gray-400 dark:text-gray-300">
+              <p className="truncate text-lg text-gray-400 dark:text-gray-300">
                 {post.description}
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-2 font-SeoulHangangLong_Lg font-bold">
+          <div className="flex flex-wrap gap-2 font-BlogContent font-bold">
             {post.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

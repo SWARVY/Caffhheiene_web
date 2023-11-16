@@ -6,8 +6,8 @@ module.exports = {
       theme: 'tokyo-night-dark',
     },
     fontFamily: {
-      Title: ['Title', 'sans-serif'],
-      Content: ['Content', 'sans-serif'],
+      BlogTitle: ['Title', 'sans-serif'],
+      BlogContent: ['Content', 'sans-serif'],
     },
     extend: {
       colors: {

@@ -22,7 +22,7 @@ export default async function PostDetail({ id }: { id: string }) {
               {curr.date}
             </h3>
           </div>
-          <div className="font-Content flex gap-2">
+          <div className="flex gap-2 font-BlogContent">
             {curr.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

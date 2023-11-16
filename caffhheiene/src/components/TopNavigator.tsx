@@ -50,7 +50,7 @@ export default function TopNavigator() {
   }, [])
 
   return (
-    <nav className="font-Title fixed left-0 top-0 z-10 w-full flex-col items-center bg-opacity-60 text-slate-500 backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
+    <nav className="fixed left-0 top-0 z-10 w-full flex-col items-center bg-opacity-60 font-BlogTitle text-slate-500 backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
       {visible ? (
         <div className="flex w-full items-center justify-center p-2">
           <div className="flex w-full max-w-3xl items-center justify-between py-5 font-bold">

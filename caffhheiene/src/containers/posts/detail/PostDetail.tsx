@@ -12,13 +12,17 @@ export default async function PostDetail({ id }: { id: string }) {
   return (
     <div className="grid w-full gap-10">
       <div className="grid w-full gap-6">
-        <h1 className="text-5xl font-bold">{curr.title}</h1>
+        <h2 className="break-words break-keep text-5xl font-bold dark:text-white">
+          {curr.title}
+        </h2>
         <div className="grid gap-4 p-1">
           <div className="flex items-center gap-3">
-            <h1 className="text-lg">{USER.name}</h1>
-            <h1 className="text-md text-gray-400">{curr.date}</h1>
+            <h3 className="text-lg dark:text-white">{USER.name}</h3>
+            <h3 className="text-md text-gray-400 dark:text-gray-300">
+              {curr.date}
+            </h3>
           </div>
-          <div className="flex gap-2 font-MABINOGI_Classic">
+          <div className="font-MABINOGI_Classic flex gap-2">
             {curr.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

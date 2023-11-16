@@ -15,11 +15,7 @@ import ReduxSVG from './redux.svg'
 import FramerSVG from './framer.svg'
 import GitSVG from './git.svg'
 import AxiosSVG from './axios.svg'
-import BearSmileSVG from './bearsmile.svg'
-import GamepadSVG from './gamepad.svg'
-import MarkdownSVG from './markdown.svg'
-import BookReadSVG from './bookread.svg'
-import UserSmileSVG from './usersmile.svg'
+import BookSVG from './book.svg'
 
 export {
   JavaScriptSVG,
@@ -39,9 +35,5 @@ export {
   FramerSVG,
   AxiosSVG,
   GitSVG,
-  BearSmileSVG,
-  GamepadSVG,
-  MarkdownSVG,
-  BookReadSVG,
-  UserSmileSVG,
+  BookSVG,
 }

@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Content';
-  src: url('Eulyoo1945-Regular.ttf');
+  font-family: 'BlogContent';
+  src: url('Eulyoo1945.ttf');
 }
 
 @font-face {
-  font-family: 'Title';
+  font-family: 'BlogTitle';
   src: url('ChungbukJikji.ttf');
 }

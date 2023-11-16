@@ -7,3 +7,8 @@
   font-family: 'BlogTitle';
   src: url('ChungbukJikji.ttf');
 }
+
+@font-face {
+  font-family: 'BlogPost';
+  src: url('AppleSDGothicNeoL.ttf');
+}

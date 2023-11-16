@@ -1,11 +1,13 @@
-interface SubTitleProps {
-  subTitle: string
+interface TitleProps {
+  title: string
 }
 
-export default function SubTitle({ subTitle }: SubTitleProps) {
+export default function SubTitle({ title }: TitleProps) {
   return (
-    <h1 className="font-MABINOGI_Classic text-4xl font-bold italic drop-shadow-md hover:underline hover:underline-offset-1">
-      {subTitle}
-    </h1>
+    <div className="grid w-full items-center justify-start gap-2 border-b border-gray-500 pb-4 pl-2 font-ChungbukJikji drop-shadow-lg md:pl-0">
+      <h2 className="mt-2 text-4xl font-bold drop-shadow-xl dark:text-white">
+        {title}
+      </h2>
+    </div>
   )
 }

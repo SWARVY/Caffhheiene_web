@@ -5,8 +5,8 @@ export default function UserCareer() {
     <div className="w-full flex-col space-y-1 p-2">
       {USER_CAREER.map((data, idx) => (
         <div key={idx} className="grid grid-cols-2 gap-x-3">
-          <h1 className="text-gray-500">{data.date}</h1>
-          <h1>{data.name}</h1>
+          <p className="text-gray-500 dark:text-gray-400">{data.date}</p>
+          <p className="dark:text-white">{data.name}</p>
         </div>
       ))}
     </div>

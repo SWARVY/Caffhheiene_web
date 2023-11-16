@@ -19,7 +19,7 @@ export default function PostPagination({
   const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
 
   return (
-    <ul className="flex justify-center gap-x-3 font-ChungbukJikji">
+    <ul className="font-Title flex justify-center gap-x-3">
       {Array.from({ length: pageLen }, (_, idx) => idx).map((_, idx) => (
         <Link key={idx} href={`/posts/${category}/${idx + 1}`}>
           <li

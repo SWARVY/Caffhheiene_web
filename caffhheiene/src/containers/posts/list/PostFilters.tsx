@@ -7,7 +7,7 @@ export default function PostFilters() {
   const filters = getAllCategory()
 
   return (
-    <div className="grid items-center justify-items-center gap-10 font-SeoulHangangLong_Lg font-bold">
+    <div className="font-Content grid items-center justify-items-center gap-10 font-bold">
       <SubTitle title={MAIN_TITLE.posts} />
       <div className="flex w-full flex-wrap justify-start justify-items-center gap-3">
         {filters?.map((filter, idx) => (

@@ -6,8 +6,8 @@ module.exports = {
       theme: 'tokyo-night-dark',
     },
     fontFamily: {
-      ChungbukJikji: ['ChungbukJikji', 'sans-serif'],
-      SeoulHangangLong_Lg: ['SeoulHangangLong_Lg', 'sans-serif'],
+      Title: ['Title', 'sans-serif'],
+      Content: ['Content', 'sans-serif'],
     },
     extend: {
       colors: {

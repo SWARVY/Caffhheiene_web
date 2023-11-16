@@ -31,7 +31,7 @@ export default function Client({ children }: TransitionDivProps) {
   return (
     <AnimatePresence initial mode="wait">
       <motion.div
-        className="font-SeoulHangangLong_Lg"
+        className="font-Content"
         key={pathName}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

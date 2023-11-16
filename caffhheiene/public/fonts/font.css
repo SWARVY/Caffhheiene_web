@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'SeoulHangangLong_Lg';
-  src: url('SeoulHangangLong_Lg.ttf');
+  font-family: 'Content';
+  src: url('Eulyoo1945-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'ChungbukJikji';
+  font-family: 'Title';
   src: url('ChungbukJikji.ttf');
 }

@@ -22,7 +22,7 @@ export default async function PostDetail({ id }: { id: string }) {
               {curr.date}
             </h3>
           </div>
-          <div className="font-MABINOGI_Classic flex gap-2">
+          <div className="font-Content flex gap-2">
             {curr.category.map((tag: string, idx: number) => (
               <Tag key={idx} tag={tag} />
             ))}

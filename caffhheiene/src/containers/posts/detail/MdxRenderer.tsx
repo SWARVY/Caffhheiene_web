@@ -19,6 +19,10 @@ const mdxComponents: MDXComponents = {
   strong: ({ children }) => (
     <strong className="dark:text-white">{children}</strong>
   ),
+  blockquote: ({ children }) => (
+    <blockquote className="dark:text-white">{children}</blockquote>
+  ),
+  pre: ({ children }) => <pre className="p-0">{children}</pre>,
   h1: ({ children }) => (
     <h1 className="hover:underline-offset-3 hover:underline dark:text-white">
       {children}
@@ -26,6 +30,7 @@ const mdxComponents: MDXComponents = {
   ),
   h2: ({ children }) => <h2 className="dark:text-white">{children}</h2>,
   h3: ({ children }) => <h3 className="dark:text-white">{children}</h3>,
+  h4: ({ children }) => <h3 className="dark:text-white">{children}</h3>,
 }
 
 export default function MdxRenderer({ post }: MdxRendererProps) {

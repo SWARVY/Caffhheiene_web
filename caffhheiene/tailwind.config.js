@@ -3,7 +3,7 @@ module.exports = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     hljs: {
-      theme: 'monokai-sublime',
+      theme: 'tokyo-night-dark',
     },
     fontFamily: {
       ChungbukJikji: ['ChungbukJikji', 'sans-serif'],

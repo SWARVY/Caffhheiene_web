@@ -17,7 +17,7 @@ function PrevArrow(props: any) {
 
   return (
     <div
-      className="absolute left-3 top-1/2 z-20 rounded-xl bg-white bg-opacity-60 transition duration-300 ease-in hover:bg-opacity-80"
+      className="absolute left-3 top-1/2 z-30 rounded-xl bg-white bg-opacity-60 transition duration-300 ease-in hover:bg-opacity-80"
       style={style}
       onClick={onClick}>
       <ChevronLeftIcon className="h-10 w-10" />

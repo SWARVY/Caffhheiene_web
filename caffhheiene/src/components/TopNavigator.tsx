@@ -6,9 +6,9 @@ import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { throttle } from 'lodash'
-import { BookSVG } from '../../public/svgs'
 import { useRecoilState } from 'recoil'
 import darkModeState from '@/atom/darkMode'
+import { LogoSVG } from '../../public/svgs'
 
 export default function TopNavigator() {
   const [visible, setVisible] = useState(true)
@@ -58,14 +58,14 @@ export default function TopNavigator() {
               <Link
                 href="/"
                 className="fill-slate-500 transition duration-200 ease-in hover:brightness-50 dark:fill-white">
-                <BookSVG className="h-7 w-7 drop-shadow-md" />
+                <LogoSVG className="h-12 w-24 drop-shadow-md" />
               </Link>
               {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
                 <Link
                   key={idx}
-                  className="flex h-full items-center rounded-lg p-2 text-lg drop-shadow-md"
+                  className="flex h-full items-center rounded-lg p-2 drop-shadow-md"
                   href={link}>
-                  <h3 className="transition ease-in hover:brightness-50">
+                  <h3 className="text-lg transition ease-in hover:brightness-50">
                     {tag}
                   </h3>
                 </Link>

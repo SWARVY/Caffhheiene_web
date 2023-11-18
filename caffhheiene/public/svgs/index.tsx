@@ -15,7 +15,7 @@ import ReduxSVG from './redux.svg'
 import FramerSVG from './framer.svg'
 import GitSVG from './git.svg'
 import AxiosSVG from './axios.svg'
-import BookSVG from './book.svg'
+import LogoSVG from './logo.svg'
 
 export {
   JavaScriptSVG,
@@ -35,5 +35,5 @@ export {
   FramerSVG,
   AxiosSVG,
   GitSVG,
-  BookSVG,
+  LogoSVG,
 }

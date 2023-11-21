@@ -1,6 +1,7 @@
 import {
   AxiosSVG,
   CSS3SVG,
+  DiscordSVG,
   FramerSVG,
   GithubSVG,
   GitSVG,
@@ -100,6 +101,11 @@ export const BADGES = Object.freeze({
     svg: <AxiosSVG width="20px" height="20px" />,
     color: '#5A29E4',
     name: 'Axios',
+  },
+  discord: {
+    svg: <DiscordSVG width="20px" height="20px" />,
+    color: '#5865F2',
+    name: 'Discord',
   },
 })
 

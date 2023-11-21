@@ -18,7 +18,7 @@ export default function Card({ id, post }: CardComponentProps) {
             alt="sample"
           />
         </div>
-        <div className="flex flex-col bg-white p-3 transition duration-100 ease-in dark:bg-neutral-600">
+        <div className="flex-col bg-white p-3 transition duration-100 ease-in dark:bg-neutral-600">
           <div className="grid items-center p-2">
             <div className="flex h-full justify-items-end">
               <CalendarIcon className="mr-2 h-3 w-3 items-center dark:fill-white" />

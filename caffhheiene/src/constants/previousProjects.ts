@@ -24,7 +24,7 @@ export const PREVIOUS_PROJECTS = [
   {
     link: 'https://github.com/TeamCommerce',
     name: '팀커머스',
-    description: '이 커머스 웹 플랫폼(피팅노트)을 클론 코딩하였습니다',
+    description: '웹 플랫폼(피팅노트)을 클론 코딩하였습니다',
     stack: [
       BADGES.react,
       BADGES.typescript,
@@ -35,15 +35,22 @@ export const PREVIOUS_PROJECTS = [
   },
   {
     link: 'https://github.com/SWARVY/Caffhheiene_web',
-    name: 'Caffhheiene (개인 기술블로그)',
-    description: '지금 보고계시는 이 블로그를 직접 만들었습니다',
+    name: '개인 기술블로그',
+    description:
+      'Next.js로 템플릿을 사용하지 않고 개인 기술 블로그를 만들었습니다',
     stack: [
       BADGES.nextjs,
       BADGES.typescript,
       BADGES.recoil,
-      BADGES.reactQuery,
       BADGES.tailwindcss,
       BADGES.framer,
     ],
+  },
+  {
+    link: 'https://github.com/woowacourse-bot',
+    name: '프리코스 커뮤니티 채널 관리 봇',
+    description:
+      '우아한 테크코스 프리코스 커뮤니티에서 사용되는 디스코드 봇을 만들었습니다',
+    stack: [BADGES.javascript, BADGES.discord],
   },
 ]

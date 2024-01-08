@@ -9,6 +9,7 @@ import { throttle } from 'lodash'
 import { useRecoilState } from 'recoil'
 import darkModeState from '@/atom/darkMode'
 import { LogoSVG } from '../../public/svgs'
+import NavigatorButton from './NavigatorButton'
 
 export default function TopNavigator() {
   const [visible, setVisible] = useState(true)
@@ -61,14 +62,7 @@ export default function TopNavigator() {
                 <LogoSVG className="h-12 w-24 drop-shadow-md" />
               </Link>
               {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
-                <Link
-                  key={idx}
-                  className="flex h-full items-center rounded-lg p-2 drop-shadow-md"
-                  href={link}>
-                  <h3 className="text-lg transition ease-in hover:brightness-50">
-                    {tag}
-                  </h3>
-                </Link>
+                <NavigatorButton key={idx} tag={tag} link={link} />
               ))}
             </div>
             <div

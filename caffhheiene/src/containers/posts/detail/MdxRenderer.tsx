@@ -11,7 +11,7 @@ export default function MdxRenderer({ post }: MdxRendererProps) {
   const MDXContent = useMDXComponent(post.body.code)
 
   return (
-    <div className="prose prose-neutral max-w-3xl font-BlogPost dark:text-white">
+    <div className="prose prose-neutral max-w-full overflow-hidden font-BlogPost dark:text-white">
       {post.body.code !== undefined && (
         <MDXContent components={mdxComponents} />
       )}

@@ -8,8 +8,8 @@ interface PostListProps {
 
 export default function PostList({ posts, allPostLen }: PostListProps) {
   return (
-    <div className="grid gap-10">
-      <ul className="grid gap-8">
+    <div className="grid w-full gap-10">
+      <ul className="grid w-full gap-8">
         {posts?.map(([id, post]) => (
           <PostItem key={id} id={allPostLen - id - 1} post={post} />
         ))}

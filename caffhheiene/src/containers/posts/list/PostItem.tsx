@@ -17,8 +17,8 @@ export default function PostItem({ id, post }: PostItemProps) {
         <div className="grid gap-4">
           <div className="grid gap-3">
             <div className="grid gap-1">
-              <div className="flex items-center justify-between">
-                <h3 className="w-3/4 truncate text-left text-2xl font-bold transition duration-200 ease-in group-hover:text-gray-600 dark:text-white dark:group-hover:text-white dark:group-hover:brightness-75">
+              <div className="flex items-center justify-between overflow-hidden">
+                <h3 className="w-3/5 truncate text-left text-2xl font-bold transition duration-200 ease-in group-hover:text-gray-600 dark:text-white dark:group-hover:text-white dark:group-hover:brightness-75">
                   {post.title}
                 </h3>
                 <div className="flex gap-x-1">

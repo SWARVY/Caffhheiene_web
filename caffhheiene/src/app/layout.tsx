@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <TopNavigator />
           <Client>
             <div className="mt-[9rem] grid justify-items-center">
-              <div className="w-full max-w-3xl p-2">{children}</div>
+              <div className="flex w-full max-w-3xl p-2">{children}</div>
             </div>
           </Client>
           <BottomNavigator />

@@ -35,7 +35,7 @@ export default async function PostDetail({ id }: { id: string }) {
         <Image
           className="w-full rounded-md"
           src={curr.thumbnail}
-          alt="thumbnail"
+          alt="Post Thumbnail"
           width={1024}
           height={1024}
         />

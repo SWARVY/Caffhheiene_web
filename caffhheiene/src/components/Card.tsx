@@ -15,7 +15,7 @@ export default function Card({ id, post }: CardComponentProps) {
           <img
             className="h-full object-cover"
             src={post.thumbnail}
-            alt="postThumbnail"
+            alt="Post Thumbnail"
           />
         </div>
         <div className="flex-col p-3 transition duration-100 ease-in ">

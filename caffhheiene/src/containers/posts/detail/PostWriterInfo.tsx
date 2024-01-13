@@ -7,7 +7,7 @@ export default function PostWriterInfo() {
       <Image
         className="h-24 w-24 rounded-full"
         src={USER.profileImg}
-        alt="profileImg"
+        alt="Profile Image"
         width={1024}
         height={1024}
       />

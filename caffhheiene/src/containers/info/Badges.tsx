@@ -17,7 +17,11 @@ export default function Badges({ type }: BadgesProps) {
       ) : (
         <>
           {SNS_BADGES.map((data) => (
-            <a href={data.link} target="_blank" rel="noreferrer">
+            <a
+              href={data.link}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={data.name}>
               <Badge svgImage={data.svg} name={data.name} color={data.color} />
             </a>
           ))}

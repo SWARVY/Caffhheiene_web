@@ -6,6 +6,8 @@ node_modules
 
 next-env.d.ts
 
+.vscode
+
 .yarn/*
 !.yarn/cache
 !.yarn/patches

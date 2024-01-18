@@ -1,6 +1,6 @@
 import { BADGES } from '@/constants/badge'
 
-export const PREVIOUS_PROJECTS = [
+const PREVIOUS_PROJECTS = [
   {
     link: 'https://github.com/SWARVY/KUBS',
     name: 'KUBS (경기대학교 종합 예약 시스템)',
@@ -48,3 +48,5 @@ export const PREVIOUS_PROJECTS = [
     stack: [BADGES.nextjs, BADGES.typescript, BADGES.css3],
   },
 ]
+
+export default PREVIOUS_PROJECTS

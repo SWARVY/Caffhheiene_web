@@ -1,5 +1,5 @@
 import { MAIN_SETTING } from '@/constants/mainSetting'
-import { POST_SETTING } from '@/constants/postSetting'
+import POST_SETTING from '@/constants/postSetting'
 import { allPosts, type Post } from '@/contentlayer/generated'
 
 interface Category {
@@ -21,7 +21,7 @@ export const getAllCategory = () => {
     category.forEach((categoryItem) => {
       const target = categories.findIndex(
         (item) =>
-          item.name === categoryItem || item.name === categoryItem + '\r'
+          item.name === categoryItem || item.name === `${categoryItem}\r`
       )
 
       if (target === -1) {
@@ -61,11 +61,11 @@ export const getPostContent = (id: number) => {
 }
 
 export const getSelectedCategoryPost = (category: string, pageNum: number) => {
-  const allPosts = getAllPost()
-  const lastCategory = category + '\r'
+  const posts = getAllPost()
+  const lastCategory = `${category}\r`
 
   if (category === 'all') {
-    const selectedPostData = allPosts
+    const selectedPostData = posts
 
     return {
       selectedPost: selectedPostData.slice(
@@ -74,22 +74,22 @@ export const getSelectedCategoryPost = (category: string, pageNum: number) => {
       ),
       selectedAllPostLen: selectedPostData.length,
     }
-  } else {
-    const selectedPostData = allPosts.filter(([_, post]) => {
-      const lowerCategory = post.category.map((category) =>
-        category.toLowerCase()
-      )
-      return (
-        lowerCategory.includes(category) || lowerCategory.includes(lastCategory)
-      )
-    })
+  }
 
-    return {
-      selectedPost: selectedPostData.slice(
-        (pageNum - 1) * POST_SETTING.contentsPerPage,
-        pageNum * POST_SETTING.contentsPerPage
-      ),
-      selectedAllPostLen: selectedPostData.length,
-    }
+  const selectedPostData = posts.filter(([, post]) => {
+    const lowerCategory = post.category.map((currCategory) =>
+      currCategory.toLowerCase()
+    )
+    return (
+      lowerCategory.includes(category) || lowerCategory.includes(lastCategory)
+    )
+  })
+
+  return {
+    selectedPost: selectedPostData.slice(
+      (pageNum - 1) * POST_SETTING.contentsPerPage,
+      pageNum * POST_SETTING.contentsPerPage
+    ),
+    selectedAllPostLen: selectedPostData.length,
   }
 }

@@ -1,4 +1,4 @@
-import { POST_SETTING } from '@/constants/postSetting'
+import POST_SETTING from '@/constants/postSetting'
 import Link from 'next/link'
 
 interface PostPaginationProps {
@@ -21,14 +21,16 @@ export default function PostPagination({
   return (
     <ul className="flex justify-center gap-x-3 font-BlogTitle">
       {Array.from({ length: pageLen }, (_, idx) => idx).map((_, idx) => (
-        <Link key={idx} href={`/posts/${category}/${idx + 1}`}>
-          <li
-            className={`${
-              pageNum === idx + 1 ? 'bg-white_hover dark:bg-neutral-600' : ''
-            } flex h-8 w-8 items-center justify-center rounded-md p-1 text-xl transition duration-200 ease-in hover:bg-white_hover dark:text-white dark:hover:bg-neutral-500`}>
-            <button className="h-full w-full">{idx + 1}</button>
-          </li>
-        </Link>
+        <li
+          className={`${
+            pageNum === idx + 1 ? 'bg-white_hover dark:bg-neutral-600' : ''
+          } flex h-8 w-8 items-center justify-center rounded-md p-1 text-xl transition duration-200 ease-in hover:bg-white_hover dark:text-white dark:hover:bg-neutral-500`}>
+          <Link href={`/posts/${category}/${idx + 1}`}>
+            <button type="button" className="h-full w-full">
+              {idx + 1}
+            </button>
+          </Link>
+        </li>
       ))}
     </ul>
   )

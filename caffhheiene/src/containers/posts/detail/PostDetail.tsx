@@ -27,8 +27,8 @@ export default async function PostDetail({ id }: { id: string }) {
             </div>
           </div>
           <div className="flex gap-2 font-BlogContent">
-            {curr.category.map((tag: string, idx: number) => (
-              <Tag key={idx} tag={tag} />
+            {curr.category.map((tag: string) => (
+              <Tag tag={tag} />
             ))}
           </div>
         </div>

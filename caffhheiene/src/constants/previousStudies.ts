@@ -33,7 +33,7 @@ const PREVIOUS_STUDIES_CHAEUM = [
   },
 ]
 
-export const PREVIOUS_STUDIES = [
+const PREVIOUS_STUDIES = [
   {
     group: 'Caffhheiene',
     imgSrc: USER.profileImg,
@@ -53,3 +53,5 @@ export const PREVIOUS_STUDIES = [
     link: 'https://github.com/chae-um',
   },
 ]
+
+export default PREVIOUS_STUDIES

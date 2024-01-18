@@ -1,5 +1,5 @@
 import SubTitle from '@/components/SubTitle'
-import { PREVIOUS_STUDIES } from '@/constants/previousStudies'
+import PREVIOUS_STUDIES from '@/constants/previousStudies'
 import { MAIN_TITLE, SUB_TITLE } from '@/constants/title'
 import StudyGroup from '@/containers/studies/StudyGroup'
 
@@ -11,9 +11,8 @@ export default function PreviousStudies() {
         {SUB_TITLE.notice}
       </h3>
       <ul className="grid gap-10">
-        {PREVIOUS_STUDIES.map((data, idx) => (
+        {PREVIOUS_STUDIES.map((data) => (
           <StudyGroup
-            key={idx}
             group={data.group}
             imgSrc={data.imgSrc}
             content={data.content}

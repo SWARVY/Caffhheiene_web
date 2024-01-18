@@ -20,7 +20,7 @@ export default function ProjectItem({
   stack,
 }: ProjectItemProps) {
   return (
-    <div className="grid gap-3">
+    <li className="grid gap-3">
       <a href={link} target="_blank" rel="noreferrer">
         <h3 className="text-2xl font-bold text-black dark:text-white">
           {name}
@@ -37,16 +37,11 @@ export default function ProjectItem({
           </div>
         </div>
         <div className="grid grid-cols-2 gap-2 p-3 dark:bg-neutral-700 md:grid-cols-3">
-          {stack.map((tech, idx) => (
-            <Badge
-              key={idx}
-              svgImage={tech.svg}
-              name={tech.name}
-              color={tech.color}
-            />
+          {stack.map((tech) => (
+            <Badge svgImage={tech.svg} name={tech.name} color={tech.color} />
           ))}
         </div>
       </div>
-    </div>
+    </li>
   )
 }

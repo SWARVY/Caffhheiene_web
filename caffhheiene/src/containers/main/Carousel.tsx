@@ -5,9 +5,8 @@ import SlideImage from '@/containers/main/SlideImage'
 export default function Carousel() {
   return (
     <ImageSlider>
-      {MAIN_CAROUSEL_SETTING.map((data, idx) => (
+      {MAIN_CAROUSEL_SETTING.map((data) => (
         <SlideImage
-          key={idx}
           src={data.src}
           title={data.title}
           subtitle={data.subtitle}

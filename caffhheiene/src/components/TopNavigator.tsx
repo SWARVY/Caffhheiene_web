@@ -48,7 +48,7 @@ export default function TopNavigator() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [handleScroll])
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full flex-col items-center bg-opacity-60 font-BlogTitle text-slate-500 backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
@@ -61,24 +61,26 @@ export default function TopNavigator() {
                 className="fill-slate-500 transition duration-200 ease-in hover:brightness-50 dark:fill-white">
                 <LogoSVG className="h-12 w-24 drop-shadow-md" />
               </Link>
-              {TOP_NAVBAR.tags.map(({ tag, link }, idx) => (
-                <NavigatorButton key={idx} tag={tag} link={link} />
+              {TOP_NAVBAR.tags.map(({ tag, link }) => (
+                <NavigatorButton tag={tag} link={link} />
               ))}
             </div>
-            <div
-              className="flex h-10 w-10 items-center justify-center rounded-lg bg-opacity-50 transition ease-in hover:bg-white_hover dark:hover:bg-neutral-600"
-              onClick={handleDarkMode}>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-opacity-50 transition ease-in hover:bg-white_hover dark:hover:bg-neutral-600">
               {darkMode ? (
-                <MoonIcon className="h-6 w-6 text-yellow-400 drop-shadow-md" />
+                <MoonIcon
+                  className="h-6 w-6 text-yellow-400 drop-shadow-md"
+                  onClick={handleDarkMode}
+                />
               ) : (
-                <SunIcon className="h-6 w-6 text-yellow-400 drop-shadow-md" />
+                <SunIcon
+                  className="h-6 w-6 text-yellow-400 drop-shadow-md"
+                  onClick={handleDarkMode}
+                />
               )}
             </div>
           </div>
         </div>
-      ) : (
-        <></>
-      )}
+      ) : null}
       <ProgressBar />
     </nav>
   )

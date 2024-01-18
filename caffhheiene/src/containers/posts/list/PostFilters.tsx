@@ -10,8 +10,8 @@ export default function PostFilters() {
     <div className="grid items-center justify-items-center gap-10 font-BlogContent font-bold">
       <SubTitle title={MAIN_TITLE.posts} />
       <div className="flex w-full flex-wrap justify-start justify-items-center gap-3">
-        {filters?.map((filter, idx) => (
-          <Filter key={idx} name={filter.name} amount={filter.amount} />
+        {filters?.map((filter) => (
+          <Filter name={filter.name} amount={filter.amount} />
         ))}
       </div>
     </div>

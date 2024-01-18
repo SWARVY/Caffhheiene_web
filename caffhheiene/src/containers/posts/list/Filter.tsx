@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 interface FilterProps {
   name: string
-  amount?: number
+  amount: number
 }
 
 export default function Filter({ name, amount }: FilterProps) {

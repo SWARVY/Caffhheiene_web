@@ -2,13 +2,12 @@
 
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import { type ReactNode } from 'react'
-import Slider, { type Settings } from 'react-slick'
+import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import '@/containers/style/Slick.css'
 
 interface SlideProps {
-  settings?: Settings
   children: ReactNode
 }
 
@@ -18,9 +17,8 @@ function PrevArrow(props: any) {
   return (
     <div
       className="absolute left-3 top-1/2 z-30 rounded-xl bg-white bg-opacity-60 transition duration-300 ease-in hover:bg-opacity-80"
-      style={style}
-      onClick={onClick}>
-      <ChevronLeftIcon className="h-10 w-10" />
+      style={style}>
+      <ChevronLeftIcon className="h-10 w-10" onClick={onClick} />
     </div>
   )
 }
@@ -31,9 +29,8 @@ function NextArrow(props: any) {
   return (
     <div
       className="absolute right-3 top-1/2 z-30 rounded-xl bg-white bg-opacity-60 transition duration-300 ease-in hover:bg-opacity-80"
-      style={style}
-      onClick={onClick}>
-      <ChevronRightIcon className="h-10 w-10" />
+      style={style}>
+      <ChevronRightIcon className="h-10 w-10" onClick={onClick} />
     </div>
   )
 }
@@ -57,7 +54,18 @@ export default function ImageSlider({ children }: SlideProps) {
   return (
     <Slider
       className="group max-h-[25rem] max-w-full overflow-hidden rounded-md md:max-h-[32rem]"
-      {...settings}>
+      fade={settings.fade}
+      arrows={settings.arrow}
+      initialSlide={settings.initialSlide}
+      slidesToShow={settings.slidesToShow}
+      slidesToScroll={settings.slidesToScroll}
+      infinite={settings.infinite}
+      draggable={settings.draggable}
+      speed={settings.speed}
+      autoplay={settings.autoplay}
+      autoplaySpeed={settings.autoplaySpeed}
+      prevArrow={settings.prevArrow}
+      nextArrow={settings.nextArrow}>
       {children}
     </Slider>
   )

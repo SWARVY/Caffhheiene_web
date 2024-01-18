@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface SlideImageProps {
@@ -15,7 +16,9 @@ export default function SlideImage({
 }: SlideImageProps) {
   return (
     <div className="md:[25rem] relative h-[32rem] w-full">
-      <img
+      <Image
+        width={1024}
+        height={1024}
         className="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-75"
         src={src}
         alt="Carousel Slide Image"

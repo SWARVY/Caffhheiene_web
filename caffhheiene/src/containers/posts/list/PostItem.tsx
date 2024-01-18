@@ -10,10 +10,10 @@ interface PostItemProps {
 
 export default function PostItem({ id, post }: PostItemProps) {
   return (
-    <Link href={`/posts/detail/${id + 1}`}>
-      <li
-        key={id}
-        className="group grid border-b pb-10 pt-10 transition duration-75 ease-in">
+    <li
+      key={id}
+      className="group grid border-b pb-10 pt-10 transition duration-75 ease-in">
+      <Link href={`/posts/detail/${id + 1}`}>
         <div className="grid gap-4">
           <div className="grid gap-3">
             <div className="grid gap-1">
@@ -34,12 +34,12 @@ export default function PostItem({ id, post }: PostItemProps) {
             </div>
           </div>
           <div className="flex flex-wrap gap-2 font-BlogContent font-bold">
-            {post.category.map((tag: string, idx: number) => (
-              <Tag key={idx} tag={tag} />
+            {post.category.map((tag: string) => (
+              <Tag tag={tag} />
             ))}
           </div>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }

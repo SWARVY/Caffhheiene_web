@@ -1,7 +1,7 @@
 import { type Post } from '@/contentlayer/generated'
+import { getAllPostLength } from '@/utils/getPost'
 import PostList from './PostList'
 import PostPagination from './PostPagination'
-import { getAllPostLength } from '@/utils/getPost'
 
 interface PostWrapperProps {
   category: string

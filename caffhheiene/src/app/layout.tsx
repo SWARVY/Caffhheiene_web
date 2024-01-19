@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           content="47cf760f4112b1ce516d64a87fd5f31bd3f74fc9"
         />
       </head>
-      <body className="grid w-full bg-white transition duration-100 ease-in dark:bg-neutral-800">
+      <body className="grid w-full bg-white transition duration-100 ease-in dark:bg-background_dark ">
         <RecoilRootWrapper>
           <TopNavigator />
           <Client>

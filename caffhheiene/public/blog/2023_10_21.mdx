@@ -88,7 +88,7 @@ module.exports = withContentlayer(nextConfig)
 여기서부터 중요해지는데, **contentlayer.config.ts**는 읽어올 파일의 형식을 정의하는 공간입니다.
 루트폴더에 **contentlayer.config.ts**파일을 생성하고 다음 내용을 작성해주세요
 
-```ts
+```ts showLineNumbers
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `**/*.mdx`,
@@ -147,7 +147,7 @@ category:
 
 그 다음으로는 **contentlayer** 관련 파일들을 생성해주는 로직이 필요합니다.
 
-```ts
+```ts showLineNumbers
 export default makeSource({
   contentDirPath: 'public/blog',
   documentTypes: [Post],

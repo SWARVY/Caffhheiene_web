@@ -76,7 +76,7 @@ const obj = new Something();
 
 하여, 싱글톤 패턴을 적용하여 다음과 같이 코드를 작성했습니다.
 
-```js
+```js showLineNumbers
 import MonthlyEvent from '../domain/MonthlyEvent.js'
 import deepFreeze from '../utils/deepFreeze.js'
 
@@ -150,7 +150,7 @@ obj.a.key = 2
 
 이번 미션의 경우 객체의 형태가 이전 미션보다 복잡하게 구성되기에 (설계의 문제일 수 있습니다) 객체의 불변성을 유지시켜주기 위해서 deepfreeze를 직접 구현하여 사용했습니다.
 
-```js
+```js showLineNumbers
 /**
  * @param {object} target - 동결시킬 객체
  * @returns {object} 깊은 동결된 객체

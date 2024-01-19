@@ -1,5 +1,5 @@
 ---
-title: 자바스크립트와 This 바인딩 
+title: 자바스크립트와 This 바인딩
 description: 자바스크립트의 this에 대해서 알아봐요
 date: 2023-12-10
 thumbnail: /blogImages/2023_12_10/2023_12_10_(1).jpeg
@@ -29,7 +29,7 @@ category:
 
 ## 문제
 
-```js
+```js showLineNumbers
 calculateResults() {
   return this.#coaches.selectRandomMenus(
     this.#recommandationMachine.selectCategory,
@@ -45,7 +45,7 @@ calculateResults() {
 
 문제는 바로 메서드를 전달하는 과정에 있습니다.
 
-```js
+```js showLineNumbers
 calculateResults() {
   return this.#coaches.selectRandomMenus(
     this.#recommandationMachine.selectCategory, // 문제가 되는 부분 [1]
@@ -88,9 +88,9 @@ selectRandomMenus(selectCategory, randomMenuSelect) {
 ```
 
 **calculateResults** 에서 **selectRandomMenus** 를 호출하며 인자로 넣어놓은 함수를 **selectRandomMenus** 에서 사용하려 하는 순간,
-전달된 **selectCategory** 와 **randomMenuSelect** 는 **this** 컨택스트를 잃어버리게 됩니다. 
+전달된 **selectCategory** 와 **randomMenuSelect** 는 **this** 컨택스트를 잃어버리게 됩니다.
 
-컨택스트를 잃었기 때문에 **this** 로 지목된 객체는 참조하고자 했던 클래스 인스턴스의 필드를 참조할 수 없게 된 것이죠. 
+컨택스트를 잃었기 때문에 **this** 로 지목된 객체는 참조하고자 했던 클래스 인스턴스의 필드를 참조할 수 없게 된 것이죠.
 
 ### this가 컨택스트를 잃은 이유
 
@@ -99,36 +99,36 @@ selectRandomMenus(selectCategory, randomMenuSelect) {
 
 1. 클래식한 함수 호출
 
-```js
+```js showLineNumbers
 const bar = function () {
-  console.log(this);
+  console.log(this)
 }
 
-bar(); // window
+bar() // window
 ```
 
 2. 메소드 호출
 
-```js
+```js showLineNumbers
 const bar = {
   a() {
-    console.log(this);
-  }
+    console.log(this)
+  },
 }
 
-bar.a(); // bar
+bar.a() // bar
 ```
 
 3. 생성자 함수 호출
 
-```js
+```js showLineNumbers
 class bar {
   constructor() {
-    console.log(this);
+    console.log(this)
   }
 }
 
-const instance = new bar(); // instance
+const instance = new bar() // instance
 ```
 
 4. apply / call / bind 호출
@@ -137,7 +137,7 @@ const instance = new bar(); // instance
 
 ## 해결
 
-```js
+```js showLineNumbers
 calculateResults() {
   return this.#coaches.selectRandomMenus(
     (dislikeMenus) => this.#recommandationMachine.selectCategory(dislikeMenus),

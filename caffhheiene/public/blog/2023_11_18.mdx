@@ -46,7 +46,7 @@ category:
 
 ### 객체를 더 객체스럽게 사용하기
 
-```js
+```js showLineNumbers
 getBonusLottoNumber() {
   return this.#bonusNumber;
 }
@@ -65,7 +65,7 @@ getBonusLottoNumber() {
 따라서 단순히 객체에 저런 getter만 생성하기보단 메세지를 던져서 객체가 로직을 수행하도록 해야합니다.
 아래는 제 코드에서 메세지를 던져 로직을 수행하게 한 예시입니다 :)
 
-```js
+```js showLineNumbers
 compare(winningNumbers, winningBonusNumber) {
   const compareResult = {
     mainNumber: 0,

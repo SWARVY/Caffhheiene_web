@@ -20,7 +20,7 @@ const mdxComponents: MDXComponents = {
     <blockquote className="dark:text-white">{children}</blockquote>
   ),
 
-  pre: ({ children }) => <pre className="p-0 leading-4">{children}</pre>,
+  pre: ({ children }) => <pre className="p-4 leading-4">{children}</pre>,
 
   h1: ({ id, children }) => (
     <h1

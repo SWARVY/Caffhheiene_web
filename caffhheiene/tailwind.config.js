@@ -1,10 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    hljs: {
-      theme: 'tokyo-night-dark',
-    },
     fontFamily: {
       BlogTitle: ['BlogTitle', 'sans-serif'],
       BlogContent: ['BlogContent', 'sans-serif'],
@@ -14,17 +12,10 @@ module.exports = {
       colors: {
         white_hover: '#EEE',
         white_hover_weight: '#DDD',
+        background_dark: '#1E1E1E',
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwind-highlightjs'),
-  ],
-  safelist: [
-    {
-      pattern: /hljs+/,
-    },
-  ],
+  plugins: [require('@tailwindcss/typography')],
   darkMode: 'class',
 }

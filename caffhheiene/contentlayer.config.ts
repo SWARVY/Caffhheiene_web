@@ -1,11 +1,11 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypeCodeTitles from 'rehype-code-titles'
 import rehypeExternalLinks from 'rehype-external-links'
-import rehypeHighlight from 'rehype-highlight'
+import rehypePrismPlus from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
-import { type Pluggable } from 'unified'
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -39,6 +39,7 @@ export const Post = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: 'string',
+      // eslint-disable-next-line no-underscore-dangle
       resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
   },
@@ -51,7 +52,8 @@ export default makeSource({
     remarkPlugins: [remarkGfm, remarkBreaks],
     rehypePlugins: [
       rehypeSlug,
-      rehypeHighlight as Pluggable<any>,
+      rehypeCodeTitles,
+      [rehypePrismPlus, { ignoreMissing: 'true' }],
       [
         rehypeAutolinkHeadings,
         {

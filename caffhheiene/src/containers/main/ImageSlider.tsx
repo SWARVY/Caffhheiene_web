@@ -55,7 +55,6 @@ export default function ImageSlider({ children }: SlideProps) {
     <Slider
       className="group max-h-[25rem] max-w-full overflow-hidden rounded-md md:max-h-[32rem]"
       fade={settings.fade}
-      arrows={settings.arrow}
       initialSlide={settings.initialSlide}
       slidesToShow={settings.slidesToShow}
       slidesToScroll={settings.slidesToScroll}

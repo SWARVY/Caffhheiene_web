@@ -1,7 +1,7 @@
+import '../style/Intellij-prism.css'
 import { type Post } from '@/contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import mdxComponents from './MdxComponents'
-import '../style/reset.css'
 
 interface MdxRendererProps {
   post: Post

@@ -17,8 +17,8 @@ export default function SlideImage({
   return (
     <div className="md:[25rem] relative h-[32rem] w-full">
       <Image
-        width={1024}
-        height={1024}
+        width={500}
+        height={500}
         className="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-75"
         src={src}
         alt="Carousel Slide Image"

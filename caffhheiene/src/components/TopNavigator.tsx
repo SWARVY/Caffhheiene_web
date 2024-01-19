@@ -61,9 +61,11 @@ export default function TopNavigator() {
                 className="fill-slate-500 transition duration-200 ease-in hover:brightness-50 dark:fill-white">
                 <LogoSVG className="h-12 w-24 drop-shadow-md" />
               </Link>
-              {TOP_NAVBAR.tags.map(({ tag, link }) => (
-                <NavigatorButton tag={tag} link={link} />
-              ))}
+              <ul className="flex gap-2">
+                {TOP_NAVBAR.tags.map(({ tag, link }) => (
+                  <NavigatorButton tag={tag} link={link} />
+                ))}
+              </ul>
             </div>
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-opacity-50 transition ease-in hover:bg-white_hover dark:hover:bg-neutral-600">
               {darkMode ? (

@@ -7,6 +7,7 @@ export default function Carousel() {
     <ImageSlider>
       {MAIN_CAROUSEL_SETTING.map((data) => (
         <SlideImage
+          key={data.title}
           src={data.src}
           title={data.title}
           subtitle={data.subtitle}

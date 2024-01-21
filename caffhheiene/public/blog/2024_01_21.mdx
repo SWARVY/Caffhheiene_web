@@ -90,6 +90,8 @@ export default makeSource({
 
 1. next/core-web-vitals
 2. airbnb
+3. airbnb-typescript
+4. prettier
 
 ```json
 {
@@ -117,7 +119,7 @@ export default makeSource({
 }
 ```
 
-이중에서 airbnb 관련 설정을 해주기 위해서는 **@typescript-eslint/eslint-plugin** , 그리고 **@typescript-eslint/parser** 를 설치해주셔야합니다.
+이중에서 airbnb-typescript 관련 설정을 해주기 위해서는 **@typescript-eslint/eslint-plugin** , 그리고 **@typescript-eslint/parser** 를 설치해주셔야합니다.
 
 해당 스타일을 적용하며 배열의 index를 컴포넌트의 key로 사용하는 부분들도 수정해주었고, img 태그 대신 next에서 제공하는 Image 태그를 사용하는 등의 리팩토링을 거쳤습니다.
 또, Image 태그에서는 alt 속성을 더욱 의미있게 사용하는 등의 리팩토링 과정도 수행했습니다!

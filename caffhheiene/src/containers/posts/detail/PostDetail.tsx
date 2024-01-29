@@ -6,12 +6,15 @@ import Tag from '@/containers/posts/Tag'
 import { getPostContent } from '@/utils/getPost'
 import { CalendarIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import InternalToc from './InternalToc'
+import SidebarToc from './SidebarToc'
 
 export default async function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (
     <div className="grid w-full gap-10">
+      <SidebarToc />
       <div className="grid w-full gap-6">
         <h2 className="break-words break-keep text-5xl font-bold dark:text-white">
           {curr.title}
@@ -41,6 +44,7 @@ export default async function PostDetail({ id }: { id: string }) {
         />
       </div>
       <div className="grid w-full gap-y-10">
+        <InternalToc />
         <MdxRenderer post={curr} />
         <PostWriterInfo />
         <PrevNextButton id={Number(id)} prev={prev} next={next} />

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 export default function SidebarToc() {
   const [currentId, setCurrentId] = useState<string>('')
   const [headingElements, setHeadingElements] = useState<
-    { index: string; size: number }[]
+    { index: string; convertedIndex: string; size: number }[]
   >([])
 
   useEffect(() => {
@@ -24,6 +24,7 @@ export default function SidebarToc() {
       setHeadingElements(
         headingElementList.map((header) => ({
           index: header.textContent as string,
+          convertedIndex: getConvertedTextContent(header.textContent as string),
           size: (+header.nodeName[1] - 1) * 20,
         }))
       )
@@ -34,17 +35,17 @@ export default function SidebarToc() {
   return (
     <aside className="invisible fixed right-10 font-BlogPost text-black dark:text-white xl:visible">
       <ul className="space-y-3">
-        {headingElements.map(({ index, size }) => (
+        {headingElements.map(({ index, convertedIndex, size }) => (
           <li
-            className={`flex items-center gap-x-2 transition duration-200 ease-in ${currentId === getConvertedTextContent(index) ? 'scale-105' : 'text-slate-300'}`}
+            className={`flex items-center gap-x-2 transition duration-200 ease-in ${currentId === convertedIndex ? 'scale-105' : 'text-slate-300'}`}
             style={{
               paddingLeft: `${size}px`,
               fontSize: `${17 - size / 12}px`,
             }}>
             <ArrowRightIcon
-              className={`${currentId === getConvertedTextContent(index) ? 'xl:visible' : 'invisible'} h-3 w-3 transition duration-200 ease-in`}
+              className={`${currentId === convertedIndex ? 'xl:visible' : 'invisible'} h-3 w-3 transition duration-200 ease-in`}
             />
-            <Link href={`#${getConvertedTextContent(index)}`}>{index}</Link>
+            <Link href={`#${convertedIndex}`}>{index}</Link>
           </li>
         ))}
       </ul>

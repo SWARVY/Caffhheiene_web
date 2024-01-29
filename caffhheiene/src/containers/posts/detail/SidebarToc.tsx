@@ -41,7 +41,7 @@ export default function SidebarToc() {
               fontSize: `${17 - size / 12}px`,
             }}>
             <ArrowRightIcon
-              className={`${currentId === getConvertedTextContent(index) ? 'visible' : 'invisible'} h-3 w-3 transition duration-200 ease-in`}
+              className={`${currentId === getConvertedTextContent(index) ? 'xl:visible' : 'invisible'} h-3 w-3 transition duration-200 ease-in`}
             />
             <a href={`#${getConvertedTextContent(index)}`}>{index}</a>
           </li>

@@ -9,3 +9,8 @@ html {
 body {
   background: #ffffff;
 }
+
+body,
+html {
+  scroll-padding-top: 140px;
+}

@@ -5,6 +5,7 @@ import Client from '@/app/client'
 import TopNavigator from '@/components/TopNavigator'
 import { type ReactNode } from 'react'
 import RecoilRootWrapper from '@/app/RecoilRootWrapper'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: '신현호의 기술서재',
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </Client>
           <BottomNavigator />
         </RecoilRootWrapper>
+        <Analytics />
       </body>
     </html>
   )

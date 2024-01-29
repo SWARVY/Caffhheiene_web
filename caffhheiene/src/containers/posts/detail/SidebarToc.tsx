@@ -3,6 +3,7 @@
 import getConvertedTextContent from '@/utils/getConvertedTextContent'
 import getIntersectionObserver from '@/utils/getIntersectionObserver'
 import { ArrowRightIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function SidebarToc() {
@@ -43,7 +44,7 @@ export default function SidebarToc() {
             <ArrowRightIcon
               className={`${currentId === getConvertedTextContent(index) ? 'xl:visible' : 'invisible'} h-3 w-3 transition duration-200 ease-in`}
             />
-            <a href={`#${getConvertedTextContent(index)}`}>{index}</a>
+            <Link href={`#${getConvertedTextContent(index)}`}>{index}</Link>
           </li>
         ))}
       </ul>

@@ -2,6 +2,7 @@
 
 import getConvertedTextContent from '@/utils/getConvertedTextContent'
 import { ArrowRightIcon, BookmarkIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function InternalToc() {
@@ -41,7 +42,7 @@ export default function InternalToc() {
               fontSize: `${17 - size / 20}px`,
             }}>
             <ArrowRightIcon className="h-3 w-3" />
-            <a href={`#${getConvertedTextContent(index)}`}>{index}</a>
+            <Link href={`#${getConvertedTextContent(index)}`}>{index}</Link>
           </li>
         ))}
       </ul>

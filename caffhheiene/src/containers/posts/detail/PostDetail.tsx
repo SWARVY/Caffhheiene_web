@@ -9,7 +9,7 @@ import Image from 'next/image'
 import InternalToc from './InternalToc'
 import SidebarToc from './SidebarToc'
 
-export default async function PostDetail({ id }: { id: string }) {
+export default function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (

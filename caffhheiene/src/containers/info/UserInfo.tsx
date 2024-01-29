@@ -12,8 +12,10 @@ export default function UserInfo() {
         <div className="grid gap-10">
           <div className="space-y-3">
             <div className="p-2">
-              <p className="text-2xl font-bold dark:text-white">{USER.name}</p>
-              <p className="text-lg text-gray-400 dark:text-gray-300">
+              <p className="text-xl font-bold dark:text-white sm:text-2xl">
+                {USER.name}
+              </p>
+              <p className="text-md text-gray-400 dark:text-gray-300 sm:text-lg">
                 {USER.description}
               </p>
               <UserCareer />

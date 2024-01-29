@@ -1,4 +1,7 @@
 const getConvertedTextContent = (textContent: string) =>
-  textContent.replace(/\s/g, '-')
+  textContent
+    .toLowerCase()
+    .replace(/[`!@#$%^&*()_+\=[\]{};':"\\|,.<>/?~]/g, '')
+    .replace(/\s/g, '-')
 
 export default getConvertedTextContent

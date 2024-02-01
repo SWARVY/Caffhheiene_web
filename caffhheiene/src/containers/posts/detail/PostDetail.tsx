@@ -16,7 +16,7 @@ export default function PostDetail({ id }: { id: string }) {
     <div className="grid w-full gap-10">
       <SidebarToc />
       <div className="grid w-full gap-6">
-        <h2 className="break-words break-keep text-5xl font-bold dark:text-white">
+        <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
           {curr.title}
         </h2>
         <div className="grid gap-4 p-1">

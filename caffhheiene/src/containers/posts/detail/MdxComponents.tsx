@@ -31,15 +31,29 @@ const mdxComponents: MDXComponents = {
   ),
 
   h2: ({ id, children }) => (
-    <h2 id={id} className="dark:text-white">
-      {children}
-    </h2>
+    <div className="group flex items-center space-x-2 border-b">
+      <h2 id={id} className="mb-2 mt-2 dark:text-white">
+        {children}
+      </h2>
+      <Link
+        href={`#${id}`}
+        className="invisible text-xl font-bold text-white no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        #
+      </Link>
+    </div>
   ),
 
   h3: ({ id, children }) => (
-    <h3 id={id} className="dark:text-white">
-      {children}
-    </h3>
+    <div className="group flex items-center space-x-2 border-b">
+      <h3 id={id} className="mb-2 mt-2 dark:text-white">
+        {children}
+      </h3>
+      <Link
+        href={`#${id}`}
+        className="invisible text-base font-bold text-white no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        #
+      </Link>
+    </div>
   ),
 
   h4: ({ id, children }) => (

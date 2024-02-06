@@ -4,18 +4,25 @@ import ProgressBar from '@/components/ProgressBar'
 import { TOP_NAVBAR } from '@/constants/navbar'
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import darkModeState from '@/atom/darkMode'
+import { usePathname } from 'next/navigation'
 import { LogoSVG } from '../../public/svgs'
 import NavigatorButton from './NavigatorButton'
 
 export default function TopNavigator() {
   const [darkMode, setDarkMode] = useRecoilState(darkModeState)
+  const [postMode, setPostMode] = useState(false)
+  const pathName = usePathname()
 
   const handleDarkMode = () => {
     setDarkMode((state) => !state)
   }
+
+  useEffect(() => {
+    setPostMode(pathName.includes('/posts/detail'))
+  }, [pathName])
 
   useEffect(() => {
     if (darkMode) {
@@ -28,7 +35,8 @@ export default function TopNavigator() {
   return (
     <nav className="fixed left-0 top-0 z-50 w-full flex-col items-center bg-opacity-60 font-BlogTitle text-slate-500 backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
       <div className="flex w-full items-center justify-center p-2">
-        <div className="flex w-full max-w-3xl items-center justify-between py-5 font-bold">
+        <div
+          className={`flex w-full ${postMode ? 'max-w-5xl' : 'max-w-3xl'} items-center justify-between py-5 font-bold`}>
           <div className="flex h-full w-full items-center gap-x-3">
             <Link
               href="/"

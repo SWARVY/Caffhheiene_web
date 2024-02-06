@@ -14,6 +14,8 @@ module.exports = {
         white_hover_weight: '#DDD',
         background_dark: '#1E1E1E',
         background_component: '#2B2B2B',
+        ochre: '#CC7832',
+        ochre_light: '#D69749',
       },
     },
   },

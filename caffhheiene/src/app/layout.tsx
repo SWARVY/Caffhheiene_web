@@ -25,12 +25,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           content="47cf760f4112b1ce516d64a87fd5f31bd3f74fc9"
         />
       </head>
-      <body className="grid w-full bg-white transition duration-100 ease-in dark:bg-background_dark ">
+      <body className="grid w-full bg-white transition duration-100 ease-in dark:bg-background_dark">
         <RecoilRootWrapper>
           <TopNavigator />
           <Client>
             <div className="mt-[9rem] grid justify-items-center">
-              <div className="flex w-full max-w-3xl p-2">{children}</div>
+              <div className="grid w-full justify-items-center p-2">
+                {children}
+              </div>
             </div>
           </Client>
           <BottomNavigator />

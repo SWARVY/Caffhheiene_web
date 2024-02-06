@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { type MDXComponents } from 'mdx/types'
+import PreComponent from './PreComponent'
 
 const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
@@ -20,7 +21,7 @@ const mdxComponents: MDXComponents = {
     <blockquote className="dark:text-white">{children}</blockquote>
   ),
 
-  pre: ({ children }) => <pre className="p-4 leading-4">{children}</pre>,
+  pre: ({ children }) => <PreComponent>{children}</PreComponent>,
 
   h1: ({ id, children }) => (
     <h1
@@ -31,26 +32,26 @@ const mdxComponents: MDXComponents = {
   ),
 
   h2: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b">
+    <div className="group flex items-center space-x-2 border-b text-xl">
       <h2 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h2>
       <Link
         href={`#${id}`}
-        className="invisible text-xl font-bold text-white no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-xl font-bold text-ochre no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
         #
       </Link>
     </div>
   ),
 
   h3: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b">
+    <div className="group flex items-center space-x-2 border-b text-lg">
       <h3 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h3>
       <Link
         href={`#${id}`}
-        className="invisible text-base font-bold text-white no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-lg font-bold text-ochre no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
         #
       </Link>
     </div>

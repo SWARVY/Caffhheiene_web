@@ -13,42 +13,44 @@ export default function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (
-    <div className="grid w-full gap-10">
-      <SidebarToc />
-      <div className="grid w-full gap-6">
-        <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
-          {curr.title}
-        </h2>
-        <div className="grid gap-4 p-1">
-          <div className="flex items-center gap-3">
-            <h3 className="text-lg dark:text-white">{USER.name}</h3>
-            <div className="flex items-center gap-x-1">
-              <CalendarIcon className="h-4 w-4 dark:fill-white" />
-              <h3 className="text-md text-gray-400 dark:text-gray-300">
-                {curr.date}
-              </h3>
+    <div className="flex w-full gap-x-12">
+      <div className="grid w-full shrink gap-10">
+        <div className="grid w-full gap-6">
+          <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
+            {curr.title}
+          </h2>
+          <div className="grid gap-4 p-1">
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg dark:text-white">{USER.name}</h3>
+              <div className="flex items-center gap-x-1">
+                <CalendarIcon className="h-4 w-4 dark:fill-white" />
+                <h3 className="text-md text-gray-400 dark:text-gray-300">
+                  {curr.date}
+                </h3>
+              </div>
+            </div>
+            <div className="flex gap-2 font-BlogContent">
+              {curr.category.map((tag: string) => (
+                <Tag tag={tag} />
+              ))}
             </div>
           </div>
-          <div className="flex gap-2 font-BlogContent">
-            {curr.category.map((tag: string) => (
-              <Tag tag={tag} />
-            ))}
-          </div>
+          <Image
+            className="w-full rounded-md"
+            src={curr.thumbnail}
+            alt="Post Thumbnail"
+            width={1024}
+            height={1024}
+          />
         </div>
-        <Image
-          className="w-full rounded-md"
-          src={curr.thumbnail}
-          alt="Post Thumbnail"
-          width={1024}
-          height={1024}
-        />
+        <div className="grid w-full gap-y-10">
+          <InternalToc />
+          <MdxRenderer post={curr} />
+          <PostWriterInfo />
+          <PrevNextButton id={Number(id)} prev={prev} next={next} />
+        </div>
       </div>
-      <div className="grid w-full gap-y-10">
-        <InternalToc />
-        <MdxRenderer post={curr} />
-        <PostWriterInfo />
-        <PrevNextButton id={Number(id)} prev={prev} next={next} />
-      </div>
+      <SidebarToc />
     </div>
   )
 }

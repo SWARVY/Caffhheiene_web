@@ -4,7 +4,7 @@ import RecentlyPost from '@/containers/main/RecentlyPost'
 
 export default function Page() {
   return (
-    <div className="grid w-full space-y-20">
+    <div className="grid w-full max-w-3xl gap-y-20">
       <Introduce />
       <Carousel />
       <RecentlyPost />

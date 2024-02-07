@@ -12,7 +12,7 @@ const mdxComponents: MDXComponents = {
   ),
 
   strong: ({ children }) => (
-    <strong className="rounded-md bg-neutral-600 pb-0.5 pl-1 pr-1 pt-0.5 text-white">
+    <strong className="font-semibold text-black underline decoration-ochre_light decoration-wavy decoration-2 underline-offset-4 dark:text-white dark:decoration-ochre">
       {children}
     </strong>
   ),
@@ -32,7 +32,7 @@ const mdxComponents: MDXComponents = {
   ),
 
   h2: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b text-xl">
+    <div className="group flex items-center space-x-2 border-b-2 border-ochre_light text-xl dark:border-ochre">
       <h2 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h2>
@@ -45,7 +45,7 @@ const mdxComponents: MDXComponents = {
   ),
 
   h3: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b text-lg">
+    <div className="group flex items-center space-x-2 border-b-2 border-ochre_light text-lg dark:border-ochre">
       <h3 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h3>

@@ -33,14 +33,14 @@ export default function TopNavigator() {
   }, [darkMode])
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full flex-col items-center bg-opacity-60 font-BlogTitle text-slate-500 backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
+    <nav className="fixed left-0 top-0 z-50 w-full flex-col items-center bg-opacity-60 font-BlogTitle backdrop-blur-sm dark:bg-opacity-60 dark:text-white">
       <div className="flex w-full items-center justify-center p-2">
         <div
           className={`flex w-full ${postMode ? 'max-w-5xl' : 'max-w-3xl'} items-center justify-between py-5 font-bold`}>
           <div className="flex h-full w-full items-center gap-x-3">
             <Link
               href="/"
-              className="fill-slate-500 transition duration-200 ease-in hover:brightness-50 dark:fill-white">
+              className="fill-ochre transition duration-200 ease-in hover:brightness-125 dark:fill-ochre_light dark:hover:brightness-75">
               <LogoSVG className="h-12 w-24 drop-shadow-md" />
             </Link>
             <ul className="flex gap-2">

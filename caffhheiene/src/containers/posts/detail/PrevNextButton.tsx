@@ -40,7 +40,7 @@ export default function PrevNextButton({
         ) : (
           <div className="grid w-5/6 rounded-md p-3 text-right shadow-md ring-ochre_light transition ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre">
             <h3 className="text-xs font-bold">다음 포스트</h3>
-            <p className="truncatefont-semibold">다음 포스트가 없습니다</p>
+            <p className="truncate font-semibold">다음 포스트가 없습니다</p>
           </div>
         )}
       </div>

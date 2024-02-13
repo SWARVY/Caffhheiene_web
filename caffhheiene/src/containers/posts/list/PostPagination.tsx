@@ -24,7 +24,7 @@ export default function PostPagination({
         <li
           className={`${
             pageNum === idx + 1 ? 'bg-white_hover dark:bg-neutral-600' : ''
-          } flex h-8 w-8 items-center justify-center rounded-md p-1 text-xl transition duration-200 ease-in hover:bg-white_hover dark:text-white dark:hover:bg-neutral-500`}>
+          } flex h-8 w-8 items-center justify-center rounded-md p-1 text-xl ring-ochre_light transition duration-200 ease-in hover:ring-2 dark:text-white dark:ring-ochre`}>
           <Link href={`/posts/${category}/${idx + 1}`}>
             <button type="button" className="h-full w-full">
               {idx + 1}

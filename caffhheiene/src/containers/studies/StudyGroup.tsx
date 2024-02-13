@@ -19,7 +19,7 @@ export default function StudyGroup({
 }: StudyGroupProps) {
   return (
     <li className="grid overflow-hidden rounded-lg shadow-md">
-      <div className="flex items-center gap-3 bg-white_hover p-3 transition ease-in hover:bg-white_hover_weight dark:bg-neutral-600 dark:text-white dark:hover:bg-neutral-500">
+      <div className="flex items-center gap-3 bg-ochre pb-2 pl-3 pr-3 pt-2 text-white">
         <Image
           width={200}
           height={200}

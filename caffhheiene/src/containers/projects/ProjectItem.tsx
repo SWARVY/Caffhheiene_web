@@ -28,7 +28,7 @@ export default function ProjectItem({
       </a>
       <p className="text-black dark:text-gray-300">{description}</p>
       <div className="overflow-hidden rounded-md shadow-md">
-        <div className="grid grid-cols-2 bg-white_hover transition ease-in hover:bg-white_hover_weight dark:bg-neutral-600 dark:text-white dark:hover:bg-neutral-500">
+        <div className="grid grid-cols-2 bg-ochre text-white">
           <h1 className="p-3 font-bold">{SUB_TITLE.techStacks}</h1>
           <div className="flex items-center justify-end gap-x-2 p-3">
             <div className="h-3 w-3 rounded-full bg-red-600" />

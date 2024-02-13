@@ -11,8 +11,8 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="max-h-sm flex-col overflow-hidden rounded-lg bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
-        <div className="grid h-[15rem] overflow-hidden rounded-lg">
+      <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
+        <div className="grid h-[15rem] overflow-hidden rounded-xl">
           <Image
             width={1024}
             height={1024}
@@ -24,7 +24,7 @@ export default function Card({ id, post }: CardComponentProps) {
         <div className="flex-col">
           <div className="grid items-center pb-1.5 pl-2 pt-1.5">
             <div className="flex h-full items-center gap-x-2">
-              <CalendarIcon className="h-3 w-3 dark:fill-white" />
+              <CalendarIcon className="h-3 w-3 text-ochre" />
               <span className="text-xs dark:text-white">{post.date}</span>
             </div>
           </div>
@@ -32,7 +32,7 @@ export default function Card({ id, post }: CardComponentProps) {
             <h3 className="truncate text-xl font-bold dark:text-white">
               {post.title}
             </h3>
-            <p className="text-md truncate text-gray-400 dark:text-gray-300">
+            <p className="truncate text-base font-semibold text-gray-400 dark:text-gray-300">
               {post.description}
             </p>
           </div>

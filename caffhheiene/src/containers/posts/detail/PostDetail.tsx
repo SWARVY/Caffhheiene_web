@@ -21,7 +21,9 @@ export default function PostDetail({ id }: { id: string }) {
           </h2>
           <div className="grid gap-4 p-1">
             <div className="flex items-center gap-3">
-              <h3 className="text-lg dark:text-white">{USER.name}</h3>
+              <h3 className="text-lg font-semibold dark:text-white">
+                {USER.name}
+              </h3>
               <div className="flex items-center gap-x-1">
                 <CalendarIcon className="h-4 w-4 dark:fill-white" />
                 <h3 className="text-md text-gray-400 dark:text-gray-300">

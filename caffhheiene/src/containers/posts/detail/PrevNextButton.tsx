@@ -20,12 +20,12 @@ export default function PrevNextButton({
             className="grid w-5/6 rounded-md p-3 shadow-md ring-ochre_light transition ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre"
             href={`${id - 1}`}>
             <h3 className="text-xs font-bold">이전 포스트</h3>
-            <p className="truncate">{prev.title}</p>
+            <p className="truncate font-semibold">{prev.title}</p>
           </Link>
         ) : (
           <div className="grid w-5/6 rounded-md p-3 shadow-md ring-ochre_light transition ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre">
             <h3 className="text-xs font-bold">이전 포스트</h3>
-            <p className="w-full truncate">이전 포스트가 없습니다</p>
+            <p className="truncate font-semibold">이전 포스트가 없습니다</p>
           </div>
         )}
       </div>
@@ -35,12 +35,12 @@ export default function PrevNextButton({
             className="grid w-5/6 rounded-md p-3 text-right shadow-md ring-ochre_light transition ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre"
             href={`${id + 1}`}>
             <h3 className="text-xs font-bold">다음 포스트</h3>
-            <p className="truncate">{next.title}</p>
+            <p className="truncate font-semibold">{next.title}</p>
           </Link>
         ) : (
           <div className="grid w-5/6 rounded-md p-3 text-right shadow-md ring-ochre_light transition ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre">
             <h3 className="text-xs font-bold">다음 포스트</h3>
-            <p className="truncate">다음 포스트가 없습니다</p>
+            <p className="truncatefont-semibold">다음 포스트가 없습니다</p>
           </div>
         )}
       </div>

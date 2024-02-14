@@ -26,7 +26,7 @@ export default function PreComponent({ children }: PreComponentProps) {
   }
 
   return (
-    <div ref={preDiv} className="group flex-col" onMouseLeave={handleExit}>
+    <div ref={preDiv} className="group mt-7 flex-col" onMouseLeave={handleExit}>
       <div className="flex items-center justify-between rounded-t-lg bg-ochre pb-3 pl-4 pr-4 pt-3">
         <CodeBracketIcon className="h-5 w-5 text-white" />
         <div className="flex items-center justify-end gap-x-2">

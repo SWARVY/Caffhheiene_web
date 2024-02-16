@@ -22,6 +22,7 @@ export default function SlideImage({
         className="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-75"
         src={src}
         alt="Carousel Slide Image"
+        loading="eager"
       />
       <Link href={link}>
         <div className="absolute bottom-24 right-0 z-20 p-10 text-right text-white opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 md:bottom-0">

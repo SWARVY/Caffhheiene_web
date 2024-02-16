@@ -2,7 +2,7 @@
 title: 브라우저의 렌더링 과정
 description: html의 렌더링은 어떤식으로 일어날까요
 date: 2024-01-07
-thumbnail: /blogImages/2023_12_10/2023_12_10_(1).jpeg
+thumbnail: /blogImages/2023_12_10/2023_12_10_(1).webp
 category:
   - Web
 ---
@@ -32,7 +32,7 @@ IP 주소를 알고난 이후에 브라우저는 서버와 **TCP Handshake** 를
 
 ### DOM 트리
 
-![DomTree](</blogImages/2024_01_07/2024_01_07_(1).png>)
+![DomTree](</blogImages/2024_01_07/2024_01_07_(1).webp>)
 
 해당 DOM 트리를 만들기 위해서 4가지의 과정이 필요합니다.
 
@@ -45,17 +45,17 @@ IP 주소를 알고난 이후에 브라우저는 서버와 **TCP Handshake** 를
 
 ### CSSOM 트리
 
-![CSSOMTree](</blogImages/2024_01_07/2024_01_07_(2).png>)
+![CSSOMTree](</blogImages/2024_01_07/2024_01_07_(2).webp>)
 
 DOM과 동일한 과정으로 트리를 생성합니다. HTML과 마찬가지로 CSS도 브라우저가 이해하고 처리할 수 있는 형식으로 변환해야 합니다.
 
-![CSSOMTree](</blogImages/2024_01_07/2024_01_07_(3).png>)
+![CSSOMTree](</blogImages/2024_01_07/2024_01_07_(3).webp>)
 
 해당 과정을 거치면 CSSOM 트리 구조가 생성됩니다.
 
 ### 렌더링 트리
 
-![RenderingTree](</blogImages/2024_01_07/2024_01_07_(4).png>)
+![RenderingTree](</blogImages/2024_01_07/2024_01_07_(4).webp>)
 
 DOM 트리와 CSSOM 트리를 결합한 트리를 렌더링 트리라고 합니다. 이 렌더링 트리에는 페이지 렌더링을 위해 필요한 노드만 포함됩니다.
 

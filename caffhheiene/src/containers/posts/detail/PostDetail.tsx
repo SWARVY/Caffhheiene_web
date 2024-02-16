@@ -38,11 +38,11 @@ export default function PostDetail({ id }: { id: string }) {
             </div>
           </div>
           <Image
-            className="w-full rounded-md"
+            className="w-full rounded-xl"
             src={curr.thumbnail}
             alt="Post Thumbnail"
-            width={1024}
-            height={1024}
+            width={800}
+            height={600}
           />
         </div>
         <div className="grid w-full gap-y-10">

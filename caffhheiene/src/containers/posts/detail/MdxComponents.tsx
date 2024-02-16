@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { type MDXComponents } from 'mdx/types'
+import Image from 'next/image'
 import PreComponent from './PreComponent'
 
 const mdxComponents: MDXComponents = {
@@ -61,6 +62,18 @@ const mdxComponents: MDXComponents = {
     <h3 id={id} className="dark:text-white">
       {children}
     </h3>
+  ),
+
+  img: ({ src, alt }) => (
+    <div className="flex justify-center">
+      <Image
+        className="rounded-xl"
+        width={800}
+        height={600}
+        src={src as string}
+        alt={alt as string}
+      />
+    </div>
   ),
 }
 

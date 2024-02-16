@@ -14,8 +14,8 @@ export default function Card({ id, post }: CardComponentProps) {
       <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
         <div className="grid h-[15rem] overflow-hidden rounded-xl">
           <Image
-            width={1024}
-            height={1024}
+            width={800}
+            height={600}
             className="h-56 w-full rounded-md object-cover"
             src={post.thumbnail}
             alt="Post Thumbnail"

@@ -1,5 +1,6 @@
 import Badge from '@/components/Badge'
 import { SUB_TITLE } from '@/constants/title'
+import { LinkIcon } from '@heroicons/react/20/solid'
 import { type ReactNode } from 'react'
 
 interface ProjectItemProps {
@@ -21,8 +22,13 @@ export default function ProjectItem({
 }: ProjectItemProps) {
   return (
     <li className="grid gap-3">
-      <a href={link} target="_blank" rel="noreferrer">
-        <h3 className="text-2xl font-bold text-black dark:text-white">
+      <a
+        className="flex items-center gap-x-2"
+        href={link}
+        target="_blank"
+        rel="noreferrer">
+        <LinkIcon className="h-5 w-5 text-gray-700 dark:text-white" />
+        <h3 className="rounded-lg bg-gradient-to-r from-transparent from-50% to-transparent to-50% bg-[length:200%_100%] bg-right-bottom p-1 text-2xl font-bold text-black transition-all duration-200 ease-in-out hover:from-ochre_light hover:to-white hover:bg-left-bottom hover:font-semibold hover:text-white dark:text-white dark:hover:from-ochre dark:hover:to-background_dark">
           {name}
         </h3>
       </a>
@@ -36,7 +42,7 @@ export default function ProjectItem({
             <div className="h-3 w-3 rounded-full bg-green-600" />
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-2 p-3 dark:bg-neutral-700 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 p-3 dark:bg-background_component md:grid-cols-3">
           {stack.map((tech) => (
             <Badge svgImage={tech.svg} name={tech.name} color={tech.color} />
           ))}

@@ -23,7 +23,7 @@ export default function StudyGroup({
         <Image
           width={200}
           height={200}
-          className="h-8 w-8 rounded-full"
+          className="h-7 w-7 rounded-full"
           src={imgSrc}
           alt="Profile Image"
         />
@@ -31,7 +31,7 @@ export default function StudyGroup({
           <h3 className="text-xl font-bold dark:text-white">{group}</h3>
         </a>
       </div>
-      <ul className="space-y-3 p-3 dark:bg-neutral-700">
+      <ul className="space-y-3 p-3 dark:bg-background_component">
         {content.map((study) => (
           <StudyItem title={study.title} link={study.link} />
         ))}

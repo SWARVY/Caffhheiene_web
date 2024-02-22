@@ -6,10 +6,26 @@ import TopNavigator from '@/components/TopNavigator'
 import { type ReactNode } from 'react'
 import RecoilRootWrapper from '@/app/RecoilRootWrapper'
 import { Analytics } from '@vercel/analytics/react'
+import { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: '신현호의 기술서재',
   description: '학습한 내용들을 기록합니다.',
+  openGraph: {
+    title: '신현호의 기술서재',
+    description: '학습한 내용들을 기록합니다.',
+    url: 'https://caffhheiene.vercel.app',
+    siteName: '신현호의 기술서재',
+    images: [
+      {
+        url: 'https://caffhheiene.vercel.app/profile/Profile_sunglassed_icon.jpg',
+        width: 850,
+        height: 600,
+        alt: '신현호의 기술서재',
+      },
+    ],
+    type: 'website',
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

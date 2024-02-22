@@ -60,6 +60,18 @@ export const getPostContent = (id: number) => {
   }
 }
 
+export const getSelectedPostDetail = (id: number) => {
+  const selectedPost = getAllPost().find(
+    ([idx]) => idx === getAllPostLength() - id
+  ) ?? [0, { title: '', description: '', thumbnail: '' }]
+
+  return {
+    title: selectedPost[1].title,
+    description: selectedPost[1].description,
+    thumbnail: selectedPost[1].thumbnail,
+  }
+}
+
 export const getSelectedCategoryPost = (category: string, pageNum: number) => {
   const posts = getAllPost()
   const lastCategory = `${category}\r`

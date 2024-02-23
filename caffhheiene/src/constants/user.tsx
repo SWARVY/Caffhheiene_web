@@ -4,7 +4,7 @@ export const USER = Object.freeze({
   id: 'Caffhheiene',
   name: '신현호',
   description: 'Frontend Developer',
-  profileImg: '/profile/Profile_glassed_icon.jpg',
+  profileImg: '/profile/Profile_orange_icon',
 })
 
 export const USER_CAREER = Object.freeze([

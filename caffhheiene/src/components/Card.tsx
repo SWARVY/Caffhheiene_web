@@ -1,7 +1,7 @@
 import { type Post } from '@/contentlayer/generated'
 import { CalendarIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
 import Link from 'next/link'
+import ImgWithPlacehlder from './ImgWithPlaceholder'
 
 interface CardComponentProps {
   id: number
@@ -13,12 +13,9 @@ export default function Card({ id, post }: CardComponentProps) {
     <Link href={`/posts/detail/${id + 1}`}>
       <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
         <div className="grid h-[15rem] overflow-hidden rounded-xl">
-          <Image
-            width={800}
-            height={600}
-            className="h-56 w-full rounded-md object-cover"
+          <ImgWithPlacehlder
             src={post.thumbnail}
-            alt="Post Thumbnail"
+            tailwindClassNames="h-56 w-full rounded-md object-cover"
           />
         </div>
         <div className="flex-col">

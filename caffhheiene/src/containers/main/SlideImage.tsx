@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ImgWithPlacehlder from '@/components/ImgWithPlaceholder'
 import Link from 'next/link'
 
 interface SlideImageProps {
@@ -16,13 +16,9 @@ export default function SlideImage({
 }: SlideImageProps) {
   return (
     <div className="md:[25rem] relative h-[32rem] w-full">
-      <Image
-        width={500}
-        height={500}
-        className="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-75"
+      <ImgWithPlacehlder
         src={src}
-        alt="Carousel Slide Image"
-        loading="eager"
+        tailwindClassNames="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-75"
       />
       <Link href={link}>
         <div className="absolute bottom-24 right-0 z-20 p-10 text-right text-white opacity-0 transition duration-300 ease-in-out group-hover:opacity-100 md:bottom-0">

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { type MDXComponents } from 'mdx/types'
-import Image from 'next/image'
+import ImgWithPlacehlder from '@/components/ImgWithPlaceholder'
 import PreComponent from './PreComponent'
 
 const mdxComponents: MDXComponents = {
@@ -64,15 +64,9 @@ const mdxComponents: MDXComponents = {
     </h3>
   ),
 
-  img: ({ src, alt }) => (
+  img: ({ src }) => (
     <div className="flex justify-center">
-      <Image
-        className="rounded-xl"
-        width={800}
-        height={600}
-        src={src as string}
-        alt={alt as string}
-      />
+      <ImgWithPlacehlder src={src as string} tailwindClassNames="rounded-xl" />
     </div>
   ),
 }

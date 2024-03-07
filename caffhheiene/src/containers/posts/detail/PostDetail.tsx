@@ -25,7 +25,7 @@ export default function PostDetail({ id }: { id: string }) {
                 {USER.name}
               </h3>
               <div className="flex items-center gap-x-1">
-                <CalendarIcon className="h-4 w-4 dark:fill-white" />
+                <CalendarIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
                 <h3 className="text-md text-gray-400 dark:text-gray-300">
                   {curr.date}
                 </h3>

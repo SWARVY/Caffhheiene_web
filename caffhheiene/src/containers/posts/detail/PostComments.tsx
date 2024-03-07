@@ -18,7 +18,7 @@ export default function PostComments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme={darkMode ? 'noborder_dark' : 'light_high_contrast'}
+      theme={darkMode ? 'noborder_gray' : 'noborder_light'}
       lang="ko"
       loading="lazy"
     />

@@ -43,7 +43,7 @@ export default async function postDetail({
   params: { id: string }
 }) {
   return (
-    <div className="grid max-w-5xl justify-items-center gap-10">
+    <div className="grid max-w-5xl justify-items-center gap-10 p-5 xl:p-0">
       <PostDetail id={params.id} />
       <PostComments />
     </div>

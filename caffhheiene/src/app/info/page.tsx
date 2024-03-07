@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function info() {
   return (
-    <div className="grid w-full max-w-3xl">
+    <div className="grid w-full max-w-3xl p-5 xl:p-0">
       <UserInfo />
     </div>
   )

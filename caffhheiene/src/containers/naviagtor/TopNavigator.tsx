@@ -1,6 +1,6 @@
 'use client'
 
-import ProgressBar from '@/components/ProgressBar'
+import ProgressBar from '@/containers/naviagtor/ProgressBar'
 import { TOP_NAVBAR } from '@/constants/navbar'
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import darkModeState from '@/atom/darkMode'
 import { usePathname } from 'next/navigation'
-import { LogoSVG } from '../../public/svgs'
+import { LogoSVG } from '../../../public/svgs'
 import NavigatorButton from './NavigatorButton'
 
 export default function TopNavigator() {

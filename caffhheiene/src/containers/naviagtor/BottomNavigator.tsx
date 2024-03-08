@@ -1,5 +1,5 @@
 import { BOTTOM_NAVBAR } from '@/constants/navbar'
-import SNSList from './SNSList'
+import SNSList from '../../components/SNSList'
 
 export default function BottomNavigator() {
   return (

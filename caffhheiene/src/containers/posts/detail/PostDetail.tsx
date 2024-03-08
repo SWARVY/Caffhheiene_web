@@ -13,7 +13,7 @@ export default function PostDetail({ id }: { id: string }) {
   const { prev, curr, next } = getPostContent(Number(id))
 
   return (
-    <div className="flex w-full gap-x-12">
+    <article className="flex w-full gap-x-12">
       <div className="grid w-full shrink gap-10">
         <div className="grid w-full gap-6">
           <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
@@ -53,6 +53,6 @@ export default function PostDetail({ id }: { id: string }) {
         </div>
       </div>
       <SidebarToc />
-    </div>
+    </article>
   )
 }

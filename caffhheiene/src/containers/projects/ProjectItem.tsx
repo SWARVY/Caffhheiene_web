@@ -21,7 +21,7 @@ export default function ProjectItem({
   stack,
 }: ProjectItemProps) {
   return (
-    <li className="grid gap-3">
+    <li className="grid gap-3 opacity-0">
       <a
         className="flex items-center gap-x-2"
         href={link}

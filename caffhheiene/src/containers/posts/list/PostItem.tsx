@@ -13,7 +13,7 @@ export default function PostItem({ id, post }: PostItemProps) {
   return (
     <li
       key={id}
-      className="group grid rounded-xl bg-white p-5 ring-ochre_light drop-shadow-lg transition duration-75 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre">
+      className="group grid rounded-xl bg-white p-5 opacity-0 ring-ochre_light drop-shadow-lg transition duration-75 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre">
       <Link href={`/posts/detail/${id + 1}`}>
         <div className="grid gap-4">
           <div className="grid gap-3">

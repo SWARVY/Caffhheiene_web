@@ -18,7 +18,7 @@ export default function StudyGroup({
   link,
 }: StudyGroupProps) {
   return (
-    <li className="grid overflow-hidden rounded-lg shadow-md">
+    <li className="grid overflow-hidden rounded-lg opacity-0 shadow-md">
       <div className="flex items-center gap-3 bg-ochre pb-2 pl-3 pr-3 pt-2 text-white">
         <Image
           width={200}

@@ -3,7 +3,6 @@ export const TOP_NAVBAR = Object.freeze({
     { tag: '기록', link: '/posts/all/1' },
     { tag: '공방', link: '/projects' },
     { tag: '배움', link: '/studies' },
-    { tag: '소개', link: '/info' },
   ],
 })
 

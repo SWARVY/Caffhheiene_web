@@ -1,4 +1,4 @@
-import UserInfo from '@/containers/info/UserInfo'
+import UserInfo from '@/deprecated/info/UserInfo'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

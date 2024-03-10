@@ -1,4 +1,4 @@
-import Badge from '@/components/Badge'
+import Badge from '@/containers/main/Badge'
 import { SUB_TITLE } from '@/constants/title'
 import { LinkIcon } from '@heroicons/react/20/solid'
 import { type ReactNode } from 'react'

@@ -1,8 +1,8 @@
 import SubTitle from '@/components/SubTitle'
 import { MAIN_TITLE } from '@/constants/title'
 import { USER } from '@/constants/user'
-import Badges from '@/containers/info/Badges'
-import UserCareer from '@/containers/info/UserCareer'
+import Badges from '@/containers/main/Badges'
+import UserCareer from '@/deprecated/info/UserCareer'
 
 export default function UserInfo() {
   return (

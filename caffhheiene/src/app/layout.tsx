@@ -8,6 +8,7 @@ import RecoilRootWrapper from '@/app/RecoilRootWrapper'
 import { Analytics } from '@vercel/analytics/react'
 import { Metadata } from 'next'
 import { USER } from '@/constants/user'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   title: '신현호의 기술서재',
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <BottomNavigator />
         </RecoilRootWrapper>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

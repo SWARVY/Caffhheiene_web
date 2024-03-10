@@ -19,7 +19,7 @@ export default function Client({ children }: TransitionDivProps) {
       window.matchMedia &&
         window.matchMedia('(prefers-color-scheme: dark)').matches
     )
-  })
+  }, [setDarkMode])
 
   return (
     <AnimatePresence initial mode="wait">

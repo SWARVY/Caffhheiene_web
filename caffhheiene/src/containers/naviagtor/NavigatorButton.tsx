@@ -11,7 +11,7 @@ export default function NavigatorButton({ tag, link }: NavigatorbuttonProps) {
       <Link
         className="text-md text-gray-600 transition-all duration-100 ease-in hover:brightness-150 dark:text-white dark:hover:brightness-75 md:text-lg"
         href={link}>
-        <h3 className="">{tag}</h3>
+        <h3>{tag}</h3>
       </Link>
     </li>
   )

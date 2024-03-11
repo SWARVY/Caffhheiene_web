@@ -15,25 +15,25 @@ export default function PostDetail({ id }: { id: string }) {
   return (
     <article className="flex w-full gap-x-12">
       <div className="grid w-full shrink gap-10">
-        <div className="grid w-full gap-6">
+        <header className="grid w-full gap-y-3">
           <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
             {curr.title}
           </h2>
           <div className="grid gap-4 p-1">
             <div className="flex items-center gap-3">
-              <h3 className="text-lg font-semibold dark:text-white">
+              <p className="text-lg font-semibold dark:text-white">
                 {USER.name}
-              </h3>
-              <div className="flex items-center gap-x-1">
+              </p>
+              <time className="flex items-center gap-x-1">
                 <CalendarIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
-                <h3 className="text-md text-gray-400 dark:text-gray-300">
+                <span className="text-md text-gray-400 dark:text-gray-300">
                   {curr.date}
-                </h3>
-              </div>
+                </span>
+              </time>
             </div>
             <div className="flex gap-2 font-BlogContent">
               {curr.category.map((tag: string) => (
-                <Tag tag={tag} />
+                <Tag key={tag} tag={tag} />
               ))}
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function PostDetail({ id }: { id: string }) {
             width={800}
             height={600}
           />
-        </div>
+        </header>
         <div className="grid w-full gap-y-10">
           <InternalToc />
           <MdxRenderer post={curr} />

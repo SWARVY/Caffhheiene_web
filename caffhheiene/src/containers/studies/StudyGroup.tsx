@@ -19,7 +19,7 @@ export default function StudyGroup({
 }: StudyGroupProps) {
   return (
     <li className="grid overflow-hidden rounded-lg opacity-0 shadow-md">
-      <div className="flex items-center gap-3 bg-ochre pb-2 pl-3 pr-3 pt-2 text-white">
+      <figure className="flex items-center gap-3 bg-ochre pb-2 pl-3 pr-3 pt-2 text-white">
         <Image
           width={200}
           height={200}
@@ -27,10 +27,12 @@ export default function StudyGroup({
           src={imgSrc}
           alt="Profile Image"
         />
-        <a href={link} target="_blank" rel="noreferrer">
-          <h3 className="text-xl font-bold dark:text-white">{group}</h3>
-        </a>
-      </div>
+        <figcaption>
+          <a href={link} target="_blank" rel="noreferrer">
+            <h3 className="text-xl font-bold dark:text-white">{group}</h3>
+          </a>
+        </figcaption>
+      </figure>
       <ul className="space-y-3 p-3 dark:bg-background_component">
         {content.map((study) => (
           <StudyItem title={study.title} link={study.link} />

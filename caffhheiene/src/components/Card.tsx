@@ -11,7 +11,7 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
+      <article className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
         <div className="grid h-[15rem] overflow-hidden rounded-xl">
           <ImgWithPlacehlder
             src={post.thumbnail}
@@ -34,7 +34,7 @@ export default function Card({ id, post }: CardComponentProps) {
             </p>
           </div>
         </div>
-      </div>
+      </article>
     </Link>
   )
 }

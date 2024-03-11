@@ -36,17 +36,17 @@ export default function PreComponent({ children }: PreComponentProps) {
         </div>
       </div>
       <div className="relative">
-        <div
-          className={`absolute right-2 top-2 rounded-md ${!copied ? 'bg-ochre_light hover:bg-ochre' : 'bg-green-400 hover:bg-green-500'} p-2 opacity-0 transition-all duration-100 ease-in  group-hover:opacity-100`}>
+        <button
+          type="button"
+          aria-label={!copied ? 'Copy code' : 'Code copied'}
+          className={`absolute right-2 top-2 rounded-md ${!copied ? 'bg-ochre_light hover:bg-ochre' : 'bg-green-400 hover:bg-green-500'} p-2 opacity-0 transition-all duration-100 ease-in  group-hover:opacity-100`}
+          onClick={handleCopy}>
           {!copied ? (
-            <DocumentDuplicateIcon
-              className="h-5 w-5 text-white"
-              onClick={handleCopy}
-            />
+            <DocumentDuplicateIcon className="h-5 w-5 text-white" />
           ) : (
             <CheckIcon className="h-5 w-5 text-white" />
           )}
-        </div>
+        </button>
         <pre className="rounded-b-lg p-4 leading-4">{children}</pre>
       </div>
     </div>

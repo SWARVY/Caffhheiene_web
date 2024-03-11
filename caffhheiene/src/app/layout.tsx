@@ -47,11 +47,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <RecoilRootWrapper>
           <TopNavigator />
           <Client>
-            <div className="mt-[9rem] grid justify-items-center">
+            <main className="mt-[9rem] grid justify-items-center">
               <div className="grid w-full justify-items-center p-2">
                 {children}
               </div>
-            </div>
+            </main>
           </Client>
           <BottomNavigator />
         </RecoilRootWrapper>

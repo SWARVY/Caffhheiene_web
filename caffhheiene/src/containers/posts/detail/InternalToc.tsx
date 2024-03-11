@@ -28,7 +28,7 @@ export default function InternalToc() {
   }, [])
 
   return (
-    <div className="font-BlogPost text-black drop-shadow-lg dark:text-white">
+    <section className="font-BlogPost text-black drop-shadow-lg dark:text-white">
       <div className="flex items-center justify-between gap-x-2 rounded-t-lg bg-ochre pb-3 pl-5 pr-5 pt-3 text-white">
         <h2 className="text-2xl font-bold">목차</h2>
         <BookmarkIcon className="h-5 w-5 text-yellow-400" />
@@ -48,6 +48,6 @@ export default function InternalToc() {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   )
 }

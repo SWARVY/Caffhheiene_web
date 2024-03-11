@@ -2,7 +2,7 @@ import { LogoSVG } from '../../../public/svgs'
 
 export default function TitleLogo() {
   return (
-    <div
+    <header
       className="grid justify-items-center fill-ochre_light dark:fill-ochre"
       style={{
         background:
@@ -10,6 +10,6 @@ export default function TitleLogo() {
         backgroundPosition: '50% 50%',
       }}>
       <LogoSVG className="w-4/5" />
-    </div>
+    </header>
   )
 }

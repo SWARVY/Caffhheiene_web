@@ -1,6 +1,6 @@
 'use client'
 
-import ProgressBar from '@/containers/naviagtor/ProgressBar'
+import ProgressBar from '@/containers/navigator/ProgressBar'
 import { TOP_NAVBAR } from '@/constants/navbar'
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'

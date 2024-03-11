@@ -7,6 +7,7 @@ module.exports = {
       BlogTitle: ['BlogTitle', 'sans-serif'],
       BlogContent: ['BlogContent', 'sans-serif'],
       BlogPost: ['BlogPost', 'sans-serif'],
+      BlogDeco: ['BlogDeco', 'sans-serif'],
     },
     extend: {
       colors: {

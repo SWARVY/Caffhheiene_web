@@ -12,3 +12,8 @@
   font-family: 'BlogPost';
   src: url('Pretendard-Medium.ttf');
 }
+
+@font-face {
+  font-family: 'BlogDeco';
+  src: url('Mabinogi_Classic_TTF.ttf');
+}

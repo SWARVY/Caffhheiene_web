@@ -80,7 +80,7 @@ export const BADGES = Object.freeze({
   tailwindcss: {
     svg: <TailwindcssSVG className="h-4 w-4" />,
     color: '#06B6D4',
-    name: 'TailwindCSS',
+    name: 'Tailwind',
   },
   typescript: {
     svg: <TypeScriptSVG className="h-4 w-4" />,

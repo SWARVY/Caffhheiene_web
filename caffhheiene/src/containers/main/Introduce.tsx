@@ -9,7 +9,7 @@ export default function Introduce() {
     <section className="grid w-full gap-y-4">
       <TitleLogo />
       <div className="grid justify-items-center gap-x-10 gap-y-10 pt-10 lg:grid-cols-3">
-        <figure className="grid w-72 justify-center gap-y-4 lg:w-full">
+        <figure className="grid w-72 justify-items-center gap-y-4 lg:w-full">
           <ImgWithPlaceholder
             src={USER.profileImg}
             tailwindClassNames="h-52 w-52 rounded-full"

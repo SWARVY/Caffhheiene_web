@@ -15,6 +15,7 @@ export default function PreviousStudies() {
       <ul ref={scope} className="grid gap-10">
         {PREVIOUS_STUDIES.map((data) => (
           <StudyGroup
+            key={data.group}
             group={data.group}
             imgSrc={data.imgSrc}
             content={data.content}

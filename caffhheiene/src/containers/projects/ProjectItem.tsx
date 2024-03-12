@@ -58,7 +58,12 @@ export default function ProjectItem({
         </div>
         <div className="grid grid-cols-2 gap-2 p-3 dark:bg-background_component md:grid-cols-3">
           {stack.map((tech) => (
-            <Badge svgImage={tech.svg} name={tech.name} color={tech.color} />
+            <Badge
+              key={tech.name}
+              svgImage={tech.svg}
+              name={tech.name}
+              color={tech.color}
+            />
           ))}
         </div>
       </section>

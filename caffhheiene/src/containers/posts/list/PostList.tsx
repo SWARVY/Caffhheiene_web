@@ -16,7 +16,7 @@ export default function PostList({ posts, allPostLen }: PostListProps) {
     <div className="grid w-full gap-10">
       <ul ref={scope} className="grid w-full gap-8">
         {posts?.map(([id, post]) => (
-          <PostItem id={allPostLen - id - 1} post={post} />
+          <PostItem key={post.url} id={allPostLen - id - 1} post={post} />
         ))}
       </ul>
     </div>

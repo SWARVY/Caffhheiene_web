@@ -35,7 +35,7 @@ export default function StudyGroup({
       </figure>
       <ul className="space-y-3 p-3 dark:bg-background_component">
         {content.map((study) => (
-          <StudyItem title={study.title} link={study.link} />
+          <StudyItem key={study.title} title={study.title} link={study.link} />
         ))}
       </ul>
     </li>

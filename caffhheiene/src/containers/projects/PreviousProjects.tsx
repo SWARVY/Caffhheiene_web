@@ -15,6 +15,7 @@ export default function PreviousProjects() {
       <ul ref={scope} className="grid gap-10">
         {PREVIOUS_PROJECTS.map((data) => (
           <ProjectItem
+            key={data.name}
             link={data.link}
             name={data.name}
             description={data.description}

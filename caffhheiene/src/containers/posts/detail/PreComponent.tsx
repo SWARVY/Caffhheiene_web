@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useRef, useState } from 'react'
+import { ReactNode, useCallback, useRef, useState } from 'react'
 import {
   CheckIcon,
   CodeBracketIcon,
@@ -15,15 +15,15 @@ export default function PreComponent({ children }: PreComponentProps) {
   const preDiv = useRef<HTMLDivElement>(null)
   const [copied, setCopied] = useState(false)
 
-  const handleExit = () => {
+  const handleExit = useCallback(() => {
     setCopied(false)
-  }
+  }, [setCopied])
 
-  const handleCopy = () => {
+  const handleCopy = useCallback(() => {
     setCopied(true)
     navigator.clipboard.writeText(preDiv.current?.textContent as string)
     setTimeout(() => setCopied(false), 2000)
-  }
+  }, [setCopied])
 
   return (
     <div ref={preDiv} className="group mt-7 flex-col" onMouseLeave={handleExit}>

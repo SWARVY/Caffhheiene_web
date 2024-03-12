@@ -7,7 +7,7 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function SidebarToc() {
   const [currentId, setCurrentId] = useState<string>('')
@@ -15,13 +15,13 @@ export default function SidebarToc() {
     { index: string; convertedIndex: string; size: number }[]
   >([])
 
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo(0, 0)
-  }
+  }, [])
 
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     window.scrollTo(0, document.body.scrollHeight)
-  }
+  }, [])
 
   useEffect(() => {
     const observer = getIntersectionObserver(setCurrentId)

@@ -4,7 +4,7 @@ import ProgressBar from '@/containers/navigator/ProgressBar'
 import { TOP_NAVBAR } from '@/constants/navbar'
 import { MoonIcon, SunIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useRecoilState } from 'recoil'
 import darkModeState from '@/atom/darkMode'
 import { usePathname } from 'next/navigation'
@@ -16,9 +16,9 @@ export default function TopNavigator() {
   const [postMode, setPostMode] = useState(false)
   const pathName = usePathname()
 
-  const handleDarkMode = () => {
+  const handleDarkMode = useCallback(() => {
     setDarkMode((state) => !state)
-  }
+  }, [setDarkMode])
 
   useEffect(() => {
     setPostMode(pathName.includes('/posts/detail'))
@@ -45,7 +45,7 @@ export default function TopNavigator() {
             </Link>
             <ul className="flex gap-2">
               {TOP_NAVBAR.tags.map(({ tag, link }) => (
-                <NavigatorButton tag={tag} link={link} />
+                <NavigatorButton key={tag} tag={tag} link={link} />
               ))}
             </ul>
           </div>

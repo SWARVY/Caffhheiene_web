@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function projects() {
   return (
-    <section className="grid w-full max-w-3xl p-5 xl:p-0">
+    <section className="grid w-full max-w-3xl p-5 md:p-2 xl:p-0">
       <PreviousProjects />
     </section>
   )

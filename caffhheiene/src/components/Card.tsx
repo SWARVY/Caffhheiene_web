@@ -5,7 +5,7 @@ import {
   FolderIcon,
 } from '@heroicons/react/20/solid'
 import Link from 'next/link'
-import Tag from '@/containers/posts/Tag'
+import Tag from '@/components/Tag'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import ImgWithPlacehlder from './ImgWithPlaceholder'
 

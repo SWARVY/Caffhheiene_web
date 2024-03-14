@@ -1,4 +1,4 @@
-import Tag from '@/containers/posts/Tag'
+import Tag from '@/components/Tag'
 import { type Post } from '@/contentlayer/generated'
 import {
   CalendarIcon,

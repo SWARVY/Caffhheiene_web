@@ -2,7 +2,7 @@ import { MAIN_SETTING } from '@/constants/mainSetting'
 import POST_SETTING from '@/constants/postSetting'
 import { allPosts, type Post } from '@/contentlayer/generated'
 
-interface Category {
+interface Tag {
   name: string
   amount: number
 }
@@ -15,25 +15,38 @@ export const getAllPost = (): Array<[number, Post]> =>
     .map((post, idx) => [idx, post])
 
 export const getAllCategory = () => {
-  const categories: Category[] = [{ name: 'All', amount: 0 }]
+  const categories: Tag[] = [{ name: 'All', amount: 0 }]
+  const seriesList: Tag[] = []
 
-  allPosts.forEach(({ category }) => {
+  allPosts.forEach(({ category, series }) => {
     category.forEach((categoryItem) => {
+      const parsedCategory = categoryItem.replace(/ /g, '_')
       const target = categories.findIndex(
         (item) =>
-          item.name === categoryItem || item.name === `${categoryItem}\r`
+          item.name === parsedCategory || item.name === `${parsedCategory}\r`
       )
 
       if (target === -1) {
-        categories.push({ name: categoryItem, amount: 1 })
+        categories.push({ name: parsedCategory, amount: 1 })
       } else {
         categories[target].amount += 1
       }
     })
+
+    if (series) {
+      const parsedSeries = `series-${series.replace(/ /g, '_')}`
+      const target = seriesList.findIndex((item) => item.name === parsedSeries)
+
+      if (target === -1) {
+        seriesList.push({ name: parsedSeries, amount: 1 })
+      } else {
+        seriesList[target].amount += 1
+      }
+    }
     categories[0].amount += 1
   })
 
-  return categories
+  return { categories, series: seriesList }
 }
 
 export const getRecentPost = (): {
@@ -72,12 +85,25 @@ export const getSelectedPostDetail = (id: number) => {
   }
 }
 
+export const getSelectedSeriesPost = (series: string) => {
+  const purePostData: [number, Post][] = allPosts
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .map((post, idx) => [idx, post])
+  const parsedSeries = series.replaceAll(/_/g, ' ')
+
+  return purePostData.filter(([, post]) => post.series === parsedSeries)
+}
+
 export const getSelectedCategoryPost = (category: string, pageNum: number) => {
   const posts = getAllPost()
-  const lastCategory = `${category}\r`
+  const decodedCategory = decodeURI(category)
+  const lastCategory = `${decodeURI(category)}\r`
 
-  if (category === 'all') {
-    const selectedPostData = posts
+  if (category.includes('series-')) {
+    const decodedSeries = decodedCategory.replaceAll(/_/g, ' ')
+    const selectedPostData = posts.filter(
+      ([, post]) => `series-${post.series}` === decodedSeries
+    )
 
     return {
       selectedPost: selectedPostData.slice(
@@ -85,6 +111,16 @@ export const getSelectedCategoryPost = (category: string, pageNum: number) => {
         pageNum * POST_SETTING.contentsPerPage
       ),
       selectedAllPostLen: selectedPostData.length,
+    }
+  }
+
+  if (category === 'all') {
+    return {
+      selectedPost: posts.slice(
+        (pageNum - 1) * POST_SETTING.contentsPerPage,
+        pageNum * POST_SETTING.contentsPerPage
+      ),
+      selectedAllPostLen: posts.length,
     }
   }
 

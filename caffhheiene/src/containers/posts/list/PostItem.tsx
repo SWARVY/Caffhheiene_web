@@ -1,6 +1,10 @@
 import Tag from '@/containers/posts/Tag'
 import { type Post } from '@/contentlayer/generated'
-import { CalendarIcon } from '@heroicons/react/20/solid'
+import {
+  CalendarIcon,
+  FolderOpenIcon,
+  FolderIcon,
+} from '@heroicons/react/20/solid'
 import { LinkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
@@ -32,11 +36,23 @@ export default function PostItem({ id, post }: PostItemProps) {
               {post.description}
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-2 font-BlogContent font-bold">
-            <LinkIcon className="h-4 w-4 text-ochre" />
-            {post.category.map((tag: string) => (
-              <Tag key={tag} tag={tag} />
-            ))}
+          <div className="grid gap-2 sm:grid-cols-2">
+            <section className="flex flex-wrap items-center gap-2 font-BlogContent font-bold">
+              <LinkIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              {post.category.map((tag: string) => (
+                <Tag key={tag} tag={tag} />
+              ))}
+            </section>
+            <section className="flex flex-wrap items-center gap-2">
+              {post.series ? (
+                <FolderOpenIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              ) : (
+                <FolderIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              )}
+              <div className="text-sm font-bold text-black dark:text-white">
+                {post.series ? post.series : '-'}
+              </div>
+            </section>
           </div>
         </div>
       </Link>

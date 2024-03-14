@@ -1,6 +1,12 @@
 import { type Post } from '@/contentlayer/generated'
-import { CalendarIcon } from '@heroicons/react/20/solid'
+import {
+  CalendarIcon,
+  FolderOpenIcon,
+  FolderIcon,
+} from '@heroicons/react/20/solid'
 import Link from 'next/link'
+import Tag from '@/containers/posts/Tag'
+import { LinkIcon } from '@heroicons/react/24/outline'
 import ImgWithPlacehlder from './ImgWithPlaceholder'
 
 interface CardComponentProps {
@@ -18,20 +24,35 @@ export default function Card({ id, post }: CardComponentProps) {
             tailwindClassNames="h-56 w-full rounded-md object-cover"
           />
         </div>
-        <div className="flex-col">
-          <div className="grid items-center pb-1.5 pl-2 pt-1.5">
+        <div className="grid gap-y-3 p-2.5">
+          <div className="grid items-center ">
             <div className="flex h-full items-center gap-x-2">
               <CalendarIcon className="h-3 w-3 text-ochre" />
               <span className="text-xs dark:text-white">{post.date}</span>
             </div>
           </div>
-          <div className="grid w-full gap-1 p-2.5">
+          <div className="grid w-full gap-1">
             <h3 className="truncate text-xl font-bold dark:text-white">
               {post.title}
             </h3>
             <p className="truncate text-base font-semibold text-gray-400 dark:text-gray-300">
               {post.description}
             </p>
+          </div>
+          <div className="flex items-center justify-between gap-x-2">
+            <ul className="flex items-center gap-x-2">
+              <LinkIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              {post.category.map((category) => (
+                <Tag key={category} tag={category} />
+              ))}
+            </ul>
+            <div className="flex">
+              {post.series ? (
+                <FolderOpenIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              ) : (
+                <FolderIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              )}
+            </div>
           </div>
         </div>
       </article>

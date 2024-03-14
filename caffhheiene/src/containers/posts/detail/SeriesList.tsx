@@ -24,7 +24,9 @@ export default function SeriesList({ seriesName, series }: SeriesListProps) {
       <ul className="grid max-h-60 items-center gap-y-3 overflow-y-scroll rounded-b-xl bg-white p-3 dark:bg-background_component">
         {series.map((seriesItem, idx) => (
           <li key={seriesItem[1].title}>
-            <Link href={`${seriesItem[0] + 1}`} className="flex gap-x-4 pl-4">
+            <Link
+              href={`${seriesItem[0] + 1}`}
+              className="flex gap-x-4 pl-4 text-gray-400 transition-all duration-100 ease-in-out hover:text-black dark:text-gray-300 dark:hover:text-white">
               <p className="w-6 ">{idx + 1}.</p>
               <p className="">{seriesItem[1].title}</p>
             </Link>

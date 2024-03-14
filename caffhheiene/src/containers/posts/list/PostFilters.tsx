@@ -14,7 +14,7 @@ export default function PostFilters() {
       <div className="grid w-full gap-y-2">
         <div className="flex items-center gap-x-2 text-black dark:text-white">
           <TagIcon className="h-4 w-4 fill-ochre_light  dark:fill-ochre" />
-          <p>태그</p>
+          <p className="font-BlogTitle">태그</p>
         </div>
         <div className="flex flex-wrap justify-start justify-items-center gap-3">
           {categories?.map((category) => (
@@ -25,7 +25,7 @@ export default function PostFilters() {
       <div className="grid w-full gap-y-2">
         <div className="flex items-center gap-x-2 text-black dark:text-white">
           <SwatchIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
-          <p>시리즈</p>
+          <p className="font-BlogTitle">시리즈</p>
         </div>
         <div className="flex flex-wrap justify-start justify-items-center gap-3">
           {series?.map((seriesInfo) => (

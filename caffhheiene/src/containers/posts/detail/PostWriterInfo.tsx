@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function PostWriterInfo() {
   return (
-    <section className="mt-20 flex gap-x-4 border-b-2 border-ochre p-4">
+    <section className="mt-10 flex gap-x-4 border-b-2 border-ochre p-4">
       <Image
         className="h-24 w-24 rounded-full"
         src={USER.profileImg}

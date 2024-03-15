@@ -96,13 +96,12 @@ export const getSelectedSeriesPost = (series: string) => {
 
 export const getSelectedCategoryPost = (category: string, pageNum: number) => {
   const posts = getAllPost()
-  const decodedCategory = decodeURI(category)
+  const decodedCategory = decodeURI(category).replaceAll(/_/g, ' ')
   const lastCategory = `${decodeURI(category)}\r`
 
   if (category.includes('series-')) {
-    const decodedSeries = decodedCategory.replaceAll(/_/g, ' ')
     const selectedPostData = posts.filter(
-      ([, post]) => `series-${post.series}` === decodedSeries
+      ([, post]) => `series-${post.series}` === decodedCategory
     )
 
     return {
@@ -129,7 +128,8 @@ export const getSelectedCategoryPost = (category: string, pageNum: number) => {
       currCategory.toLowerCase()
     )
     return (
-      lowerCategory.includes(category) || lowerCategory.includes(lastCategory)
+      lowerCategory.includes(decodedCategory) ||
+      lowerCategory.includes(lastCategory)
     )
   })
 

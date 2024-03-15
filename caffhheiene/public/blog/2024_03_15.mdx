@@ -1,0 +1,323 @@
+---
+title: Next.js 블로그 제작기 (10)
+description: 잡다구리 기능들 추가
+date: 2024-03-15
+thumbnail: /blogImages/image00.webp
+category:
+  - TypeScript
+  - Next.js
+series: 블로그 제작기
+---
+
+## 서론
+
+블로그를 운영한지 어언 5개월정도 된 것 같고, 꾸준히 기능 개발을 하면서 수정해나가지만 여전히 제눈에는 부족함 투성이네요
+특히 디자이너 없이 혼자서 디자인부터 개발까지 하다보니 너무 머리가 아픕니다 ㅠㅠ
+
+그래도 공부하는 내용을 바로바로 블로그에 써먹을 수 있다는 점이 너무너무 좋고, 앞으로도 블로그에 이런 적용(장난질)을 더 할 수 있다는게 만족스럽습니다 :)
+이번에도 여러가지 기능을 추가했는데 아래 변경점 항목에서 하나하나 설명하도록 하겠습니다.
+
+## 변경점
+
+### 시리즈 항목 추가
+
+기존에 유사한 기능인 태그가 존재했지만... 사실 태그와 시리즈는 느낌이 조금 다르다고 생각합니다.
+또, 똑같은 주제의 포스트를 카테고링하고 싶었습니다. 다른 블로그들 보면 글 하단에 같은 시리즈의 글들을 모아주잖아요.
+
+그 기능을 구현해보고자 contentlayer 설정을 뒤적뒤적거리며 수정했습니다.
+
+```ts showLineNumbers
+export const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      required: true,
+    },
+    description: {
+      type: 'string',
+      required: true,
+    },
+    date: {
+      type: 'string',
+      required: true,
+    },
+    thumbnail: {
+      type: 'string',
+      required: true,
+    },
+    category: {
+      type: 'list',
+      of: {
+        type: 'string',
+      },
+      required: true,
+    },
+    series: {
+      type: 'string',
+      required: false,
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      // eslint-disable-next-line no-underscore-dangle
+      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+    },
+  },
+
+...
+```
+
+series를 별도로 표시해줄 수 있도록 했고 **required**를 **false**로 설정하여 series는 필수 입력이 아니도록 했습니다.
+이렇게 하면 아래와 같이 front-matter를 작성해 줄 수 있을겁니다.
+
+```mdx
+---
+title: Next.js 블로그 제작기 (10)
+description: 잡다구리 기능들 추가
+date: 2024-03-15
+thumbnail: /blogImages/image00.webp
+category:
+  - TypeScript
+  - Next.js
+series: 블로그 제작기
+---
+```
+
+이렇게 되면 contentlayer 세팅 자체는 마쳤고, 저는 util함수를 통해 contentlayer로 생성된 파일을 가져오기때문에 해당하는 util함수를 수정했습니다.
+
+```ts showLineNumbers
+export const getAllCategory = () => {
+  const categories: Tag[] = [{ name: 'All', amount: 0 }]
+  const seriesList: Tag[] = []
+
+  allPosts.forEach(({ category, series }) => {
+    category.forEach((categoryItem) => {
+      const parsedCategory = categoryItem.replace(/ /g, '_')
+      const target = categories.findIndex(
+        (item) =>
+          item.name === parsedCategory || item.name === `${parsedCategory}\r`
+      )
+
+      if (target === -1) {
+        categories.push({ name: parsedCategory, amount: 1 })
+      } else {
+        categories[target].amount += 1
+      }
+    })
+
+    if (series) {
+      const parsedSeries = `series-${series.replace(/ /g, '_')}`
+      const target = seriesList.findIndex((item) => item.name === parsedSeries)
+
+      if (target === -1) {
+        seriesList.push({ name: parsedSeries, amount: 1 })
+      } else {
+        seriesList[target].amount += 1
+      }
+    }
+    categories[0].amount += 1
+  })
+
+  return { categories, series: seriesList }
+}
+```
+
+시리즈를 카운팅할 때는 파라미터로 들어오는걸 고려해서 series- 문자열을 추가하여 계산했습니다.
+기존 설계도 있어서 이런 방법밖에는 생각나지 않더라구요. 아예 페이지를 분리하는 방법도 생각했는데, 시리즈는 글 목록에 있는게 좋을 것 같아 한 페이지로 구성했습니다.
+
+```ts showLineNumbers
+export const getSelectedCategoryPost = (category: string, pageNum: number) => {
+  const posts = getAllPost()
+  const decodedCategory = decodeURI(category).replaceAll(/_/g, ' ')
+  const lastCategory = `${decodeURI(category)}\r`
+
+  if (category.includes('series-')) {
+    const selectedPostData = posts.filter(
+      ([, post]) => `series-${post.series}` === decodedCategory
+    )
+
+    return {
+      selectedPost: selectedPostData.slice(
+        (pageNum - 1) * POST_SETTING.contentsPerPage,
+        pageNum * POST_SETTING.contentsPerPage
+      ),
+      selectedAllPostLen: selectedPostData.length,
+    }
+  }
+
+  if (category === 'all') {
+    return {
+      selectedPost: posts.slice(
+        (pageNum - 1) * POST_SETTING.contentsPerPage,
+        pageNum * POST_SETTING.contentsPerPage
+      ),
+      selectedAllPostLen: posts.length,
+    }
+  }
+
+  const selectedPostData = posts.filter(([, post]) => {
+    const lowerCategory = post.category.map((currCategory) =>
+      currCategory.toLowerCase()
+    )
+    return (
+      lowerCategory.includes(decodedCategory) ||
+      lowerCategory.includes(lastCategory)
+    )
+  })
+
+  return {
+    selectedPost: selectedPostData.slice(
+      (pageNum - 1) * POST_SETTING.contentsPerPage,
+      pageNum * POST_SETTING.contentsPerPage
+    ),
+    selectedAllPostLen: selectedPostData.length,
+  }
+}
+```
+
+해당 카테고리에 속하는 포스트의 데이터만 반환하는 로직입니다. (반복되는 부분은 추후 리팩토링 할 예정입니다 ㅠㅠ)
+이 부분에서 문제가 있었는데, 태그의 이름이 한글일 때 정체불명의 문자열이 파라미터에 들어왔습니다.
+
+![파라미터](</blogImages/2024_03_15/2024_03_15_(1).webp>)
+
+```tsx showLineNumbers
+export default function SeriesItem({ name, amount }: SeriesItemProps) {
+  const seriesName = name.replaceAll(/series-|_/g, ' ')
+
+  return (
+    <Link href={`/posts/${name}/1`}>
+      <div className="relative flex w-44 overflow-hidden shadow-md">
+        <div
+          className="bg-ochre_light dark:bg-ochre w-3
+        "
+        />
+        <div className="hover:from-ochre_light dark:bg-background_component dark:hover:from-ochre dark:hover:to-background_component flex w-full justify-between bg-white bg-gradient-to-r from-transparent from-50% to-transparent to-50% bg-[length:200%_100%] bg-right-bottom p-3 transition-all duration-200 ease-in-out hover:to-white hover:bg-left-bottom hover:text-white dark:text-white">
+          <p className="text-sm">{seriesName}</p>
+          <p className="text-xs">{amount}</p>
+        </div>
+      </div>
+    </Link>
+  )
+}
+```
+
+(filter 컴포넌트도 유사한 구조입니다)
+이 부분에 대해서 알아보니 한글은 파라미터로 들어갈 때 인코딩되어서 들어간다는 사실을 알 수 있었습니다.
+
+- [Dynamic Routes params 한글 깨짐 문제 해결](https://velog.io/@thumbzzero/Fittering-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D-Dynamic-Routes-params-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0)
+
+그래서 위의 **getSelectedCategoryPost**를 잘 보시면 해당 처리를 위한 로직이 존재하는 걸 확인할 수 있습니다.
+
+```tsx showLineNumbers {3}
+export const getSelectedCategoryPost = (category: string, pageNum: number) => {
+  const posts = getAllPost()
+  const decodedCategory = decodeURI(category).replaceAll(/_/g, ' ')
+  const lastCategory = `${decodeURI(category)}\r`
+  ...
+```
+
+한글이 인코딩되는 해당 문제는 **decodeURI**를 사용하시면 해결하실 수 있습니다.
+인코딩이 되어있다는 사실을 알았으니 디코딩해주면 되는 것입니다.
+
+이렇게 필요한 데이터를 받아와서 시리즈 항목을 신설했습니다. 시리즈의 주요 기능은 동일한 주제의 포스트를 묶어주는 것입니다 :)
+특정 시리즈에 속하는 글 하단에는 해당 시리즈의 글 목록이 노출됩니다.
+
+또, 글 목록 / 메인페이지 카드 컴포넌트에는 폴더 아이콘을 통해 해당 포스트가 시리즈에 속해있는지의 유무를 확인할 수 있도록 했습니다!
+
+### 글 목록 페이지에 애니메이션 추가
+
+글 목록이 너무 심심하게 출력되는 것 같아 Framer를 통해 애니메이션을 추가 적용시켜주었습니다.
+저는 글 목록에 stagger 애니메이션을 적용시켜주었습니다. 아래는 stagger 애니메이션의 예시입니다 :)
+
+(Menu버튼을 클릭하면 item 목록들이 하나씩 출력되는 모습을 볼 수 있습니다)
+
+<iframe
+  src="https://codesandbox.io/embed/z7pk2m?view=preview&module=%2Fsrc%2FApp.tsx&hidenavigation=1"
+  style={{
+    width: '100%',
+    height: '500px',
+    border: '0',
+    bordeRadius: '4px',
+    overflow: 'hidden',
+  }}
+  title="Framer Motion: stagger()"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+/>
+
+해당 공식 예제를 참고하면 간단하게 구현할 수 있습니다. 저는 **useStaggerAnimation** 이라는 이름의 custom-hook으로 기능을 분리해줬습니다!
+
+```ts showLineNumbers
+import { stagger, useAnimate } from 'framer-motion'
+import { useEffect } from 'react'
+
+const staggerItems = stagger(0.15, { startDelay: 0.15 })
+
+const useStaggerAnimation = () => {
+  const [scope, animate] = useAnimate()
+
+  useEffect(() => {
+    animate(
+      'li',
+      { opacity: 1, scale: 1 },
+      { duration: 0.5, delay: staggerItems }
+    )
+  }, [animate])
+
+  return scope
+}
+
+export default useStaggerAnimation
+```
+
+staggerItems의 값을 조정하여 애니메이션을 조정할 수 있는데요, 공식문서에 따르면 다음과 같습니다
+
+```ts showLineNumbers
+stagger(0.1, { from: 'center' })
+```
+
+첫 번째 인자는 **애니메이션의 간격**, 두 번째 인자는 **옵션**입니다. 옵션은 3개인데 각각 from, ease, startDelay입니다.
+
+**from**은 first, last, center 혹은 number값이 들어올 수 있는데 이는 애니메이션의 시작 인덱스를 지정하는 옵션입니다.
+**ease**는 css의 ease-in / ease-out 그 기능입니다. 애니메이션의 진행 속도를 지정할 수 있습니다.
+**startDelay**는 stagger를 시작하기 전의 딜레이를 지정할 수 있습니다.
+
+**useAnimate**는 animate 함수와 scope라는 ref를 반환합니다. 또, **useAnimate**는 **useRef**를 사용합니다.
+따라서 Next의 서버 컴포넌트에서는 **사용할 수 없습니다.** 반드시 클라이언트 컴포넌트에서 사용하시길 바랍니다.
+
+사용은 다음과 같이 하시면 되겠습니다 :)
+
+```tsx showLineNumbers
+'use client'
+
+import PostItem from '@/containers/posts/list/PostItem'
+import { type Post } from '@/contentlayer/generated'
+import useStaggerAnimation from '@/hooks/useStaggerAnimation'
+
+interface PostListProps {
+  posts: Array<[number, Post]>
+  allPostLen: number
+}
+
+export default function PostList({ posts, allPostLen }: PostListProps) {
+  const scope = useStaggerAnimation()
+
+  return (
+    <div className="grid w-full gap-10">
+      <ul ref={scope} className="grid w-full gap-8">
+        {posts?.map(([id, post]) => (
+          <PostItem key={post.url} id={allPostLen - id - 1} post={post} />
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+## 참고
+
+- [[Framer] Stagger](https://www.framer.com/motion/stagger/)

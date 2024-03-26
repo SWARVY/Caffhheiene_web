@@ -6,6 +6,7 @@ import Tag from '@/components/Tag'
 import { getPostContent, getSelectedSeriesPost } from '@/utils/getPost'
 import { CalendarIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
+import { SwatchIcon, TagIcon, UserIcon } from '@heroicons/react/16/solid'
 import InternalToc from './InternalToc'
 import SidebarToc from './SidebarToc'
 import SeriesList from './SeriesList'
@@ -18,28 +19,48 @@ export default function PostDetail({ id }: { id: string }) {
     <article className="grid gap-y-12">
       <div className="flex gap-x-12">
         <div className="grid w-full shrink gap-10">
-          <header className="grid w-full gap-y-3">
+          <header className="grid w-full gap-y-6">
             <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
               {curr.title}
             </h2>
-            <div className="grid gap-4 p-1">
-              <div className="flex items-center gap-3">
-                <p className="text-lg font-semibold dark:text-white">
-                  {USER.name}
-                </p>
-                <time className="flex items-center gap-x-1">
-                  <CalendarIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
-                  <span className="text-md text-gray-400 dark:text-gray-300">
-                    {curr.date}
-                  </span>
-                </time>
+            <section className="flex items-center gap-x-2">
+              <Image
+                className="rounded-full ring-2 ring-ochre"
+                src={USER.profileImg}
+                width={60}
+                height={60}
+                alt="user profile img"
+              />
+              <div className="grid gap-2 p-1">
+                <section className="flex items-center gap-2">
+                  <div className="flex items-center gap-x-2">
+                    <UserIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
+                    <p className="text-sm font-semibold dark:text-white">
+                      {USER.name}
+                    </p>
+                  </div>
+                  <time className="flex items-center gap-x-1">
+                    <CalendarIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
+                    <span className="mt-1.5 font-BlogDeco text-sm font-bold">
+                      {curr.date}
+                    </span>
+                  </time>
+                </section>
+                <section className="flex items-center gap-x-2">
+                  <div className="flex items-center gap-2 font-BlogContent">
+                    <TagIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+                    {curr.category.map((tag: string) => (
+                      <Tag key={tag} tag={tag} />
+                    ))}
+                  </div>
+                  <div
+                    className={`${curr.series ? 'flex items-center gap-2' : 'hidden'}`}>
+                    <SwatchIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
+                    <p className="text-sm font-bold">{curr.series}</p>
+                  </div>
+                </section>
               </div>
-              <div className="flex gap-2 font-BlogContent">
-                {curr.category.map((tag: string) => (
-                  <Tag key={tag} tag={tag} />
-                ))}
-              </div>
-            </div>
+            </section>
             <Image
               className="w-full rounded-xl"
               src={curr.thumbnail}

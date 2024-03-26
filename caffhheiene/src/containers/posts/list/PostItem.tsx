@@ -27,7 +27,7 @@ export default function PostItem({ id, post }: PostItemProps) {
               </h3>
               <div className="flex gap-x-1">
                 <CalendarIcon className="h-4 w-4 items-center text-ochre" />
-                <h3 className="justify-end text-sm text-gray-400 dark:text-gray-300">
+                <h3 className="justify-end font-BlogDeco text-sm text-gray-400 dark:text-gray-300">
                   {post.date}
                 </h3>
               </div>

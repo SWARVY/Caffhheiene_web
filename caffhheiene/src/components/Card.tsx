@@ -25,10 +25,12 @@ export default function Card({ id, post }: CardComponentProps) {
           />
         </div>
         <div className="grid gap-y-3 p-2.5">
-          <div className="grid items-center ">
-            <div className="flex h-full items-center gap-x-2">
+          <div className="grid items-center">
+            <div className="flex items-center gap-x-2">
               <CalendarIcon className="h-3 w-3 text-ochre" />
-              <span className="text-xs dark:text-white">{post.date}</span>
+              <p className="mt-1.5 font-BlogDeco text-xs dark:text-white">
+                {post.date}
+              </p>
             </div>
           </div>
           <div className="grid w-full gap-1">

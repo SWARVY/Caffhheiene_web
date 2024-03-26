@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
+import { DocumentTextIcon } from '@heroicons/react/24/outline'
 import PreComponent from './PreComponent'
 
 const mdxComponents: MDXComponents = {
@@ -19,8 +20,13 @@ const mdxComponents: MDXComponents = {
   ),
 
   blockquote: ({ children }) => (
-    <blockquote className="dark:text-white">{children}</blockquote>
+    <blockquote className="flex items-center gap-x-3 overflow-hidden rounded-xl bg-gray-100 p-3 not-italic dark:bg-background_component dark:text-white sm:gap-x-6 sm:pl-6">
+      <DocumentTextIcon className="max-h-6 min-h-6 min-w-6 max-w-6 text-gray-700 dark:text-gray-200" />
+      <div className="grid text-sm leading-7">{children}</div>
+    </blockquote>
   ),
+
+  p: ({ children }) => <p className="break-keep">{children}</p>,
 
   pre: ({ children }) => <PreComponent>{children}</PreComponent>,
 
@@ -59,9 +65,9 @@ const mdxComponents: MDXComponents = {
   ),
 
   h4: ({ id, children }) => (
-    <h3 id={id} className="dark:text-white">
+    <h4 id={id} className="mt-4 text-lg dark:text-white">
       {children}
-    </h3>
+    </h4>
   ),
 
   img: ({ src, alt }) => (

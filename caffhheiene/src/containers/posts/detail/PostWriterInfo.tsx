@@ -16,7 +16,7 @@ export default function PostWriterInfo() {
           <h3 className="text-xl font-bold dark:text-white">{USER.name}</h3>
           <p className="text-gray-400 dark:text-gray-300">{USER.description}</p>
         </div>
-        <p>{USER.introduce}</p>
+        <p className="dark:text-white">{USER.introduce}</p>
       </section>
     </section>
   )

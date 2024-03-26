@@ -41,7 +41,7 @@ export default function PostDetail({ id }: { id: string }) {
                   </div>
                   <time className="flex items-center gap-x-1">
                     <CalendarIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
-                    <span className="mt-1.5 font-BlogDeco text-sm font-bold">
+                    <span className="mt-1.5 font-BlogDeco text-sm font-bold dark:text-white">
                       {curr.date}
                     </span>
                   </time>
@@ -56,7 +56,9 @@ export default function PostDetail({ id }: { id: string }) {
                   <div
                     className={`${curr.series ? 'flex items-center gap-2' : 'hidden'}`}>
                     <SwatchIcon className="h-4 w-4 fill-ochre_light dark:fill-ochre" />
-                    <p className="text-sm font-bold">{curr.series}</p>
+                    <p className="text-sm font-bold dark:text-white">
+                      {curr.series}
+                    </p>
                   </div>
                 </section>
               </div>

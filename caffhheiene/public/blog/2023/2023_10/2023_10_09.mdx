@@ -1,0 +1,168 @@
+---
+title: Next.js 블로그 제작기 (2)
+description: MD 파일 파싱하여 렌더링하기
+date: 2023-10-09
+thumbnail: /blogImages/image00.webp
+category:
+  - TypeScript
+  - Next.js
+series: 블로그 제작기
+---
+
+## 블로그의 핵심 기능
+
+제가 만들고자 하는건 마크다운 블로그였습니다. 마크다운 블로그에서 가장 중요한건 뭘까요?
+당연히 마크다운으로 작성한 글을 파싱하는 과정입니다.
+
+현재 마크다운에는 두 가지 버전이 존재합니다.
+
+### Markdown(.md)
+
+![MarkdownThumbnail](</blogImages/2023/2023_10/2023_10_09/2023_10_09_(1).webp>)
+기존에 알고있던 마크다운입니다. 텍스트 기반의 마크업 언어입니다.
+
+### Markdown + JSX(.mdx)
+
+![MdxThumbnail](</blogImages/2023/2023_10/2023_10_09/2023_10_09_(2).webp>)
+기존에 존재하던 마크다운에 + JSX 컴포넌트를 사용할 수 있게 만든 마크업 언어입니다.
+React / Next를 공부하고 있는 저로써는 JSX를 마다할 필요가 없었습니다.. 만
+
+제가 블로그를 만들기 시작해서 파일 파싱 기능을 완성했을때는 전자인 그냥 마크다운 파싱으로 만들었습니다.
+지금 현재는 Mdx 파싱으로 구조를 변경하였지만, 포스팅은 둘 모두 할 생각입니다.
+
+## Markdown을 파싱해보자
+
+**.md**을 파싱하기위해서는 먼저 도구가 필요합니다. 바로 **gray-matter**라는 도구입니다.
+
+### STEP 1. gray-matter
+
+```bash
+yarn add gray-matter --dev
+```
+
+이 **gray-matter**를 사용하면 마크다운의 **front-matter** 정보와 **content** 정보를 나누어 가져올 수 있습니다.
+
+```Markdown
+---
+title: 타이틀
+description: 설명
+---
+<h1>컨텐츠</h1>
+```
+
+이러한 마크다운 파일이 있다면, **gray-matter**를 사용해서 나누어줄 수 있습니다.
+
+```ts showLineNumbers
+// readdirSync로 지정 경로에 있는 파일을 읽어온다
+const files = fs.readdirSync(path.join("posts"));
+
+const posts = files.map((filename) => {
+    // 'posts' 디렉토리 내 파일에서 frontmatter 값 가져오기
+  	const markdownWithFrontMatter = fs.readFileSync(
+	  path.join('posts', filename), 'utf-8'
+    );
+
+    return matter(markdownWithFrontMatter);
+}
+```
+
+이런식으로 로직을 작성하면, **gray-matter**를 통해 아래와 같은 결과를 얻을 수 있습니다.
+
+```ts showLineNumbers
+{
+  content: '<h1>컨텐츠</h1>',
+  data: {
+    title: '타이틀',
+    description: '설명'
+  }
+}
+```
+
+**gray-matter**를 통해 content를 뽑아낸 건 좋았는데, 이제 어떻게 하면 되냐구요?
+
+### STEP 2. react-markdown
+
+```bash
+yarn add react-markdown --dev
+```
+
+string 상태인 html태그를 그대로 사용할 수는 없으니, 다시 라이브러리의 힘을 빌려봅니다
+react-markdown의 공식문서를 참고하면 됩니다.
+
+이 부분에서 저도 구글링을 많이 해봤는데, 타 자료들에서는 **ReactMarkdown** 태그를 사용하시던데
+업데이트되었는지 **Markdown**태그로 되어있더라구요, 저는 최신버전인 후자를 사용했었습니다.
+
+```html
+<Markdown>{markdown}</Markdown>
+```
+
+그냥 이런식으로 사용하면 됩니다.
+아 근데 뭔가 많이 빠진 것 같다구요..? 깃허브 마크다운 문법도 안된다구요?
+
+### STEP 3. plugin
+
+우리가 블로그를 쓰면서 당연시 여기는 기능들이 있습니다.
+
+- 코드 하이라이팅 기능
+- 최신 마크다운 문법 (깃허브 마크다운 문법으로 대표되는)
+- 스타일링 기능
+
+직접 만드는거니 당연히 이런 기능들도 제공되지 않습니다.. 만
+세상은 넓고 능력자분들은 많기에 해당 기능들을 구현한 라이브러리가 있습니다.
+
+위에 있는 코드 하이라이팅 기능부터 보자면,
+**rehype-highlight**, **rehype-prism**, **rehype-prism-plus** 과 같은 **rehype** 라이브러리 계열 코드 하이라이터 들도 있구요,
+**react-syntax-highlighter**, **highlight.js** 이런 종류의 라이브러리도 있습니다.
+
+뭘 쓰시던 개인의 자유지만, **react-markdown**에서는 **react-syntax-highlighter** 추천하더라구요
+
+```bash
+yarn add react-syntax-highlighter --dev
+```
+
+그리고 그 다음에 있는 깃허브 마크다운 문법들이 있는데, 이건 **remark-gfm**이라는 라이브러리에서 지원해줍니다.
+
+```bash
+yarn add remark-gfm --dev
+```
+
+이건 **react-markdown**라이브러리의 **Markdown**컴포넌트 속성에 낑겨주면 됩니다. 겸사겸사 위에서 설명한 **react-syntax-highlighter** 까지 예시를 작성해보면
+
+```ts showLineNumbers
+<div className="prose prose-blue">
+  <Markdown
+    remarkPlugins={[remarkGfm]}
+    components={{
+      code({ node, className, children, ...props }) {
+        const match = /language-(\w+)/.exec(className ?? '');
+        return match != null ? (
+          <SyntaxHighlighter style={customAtomDark as any} PreTag="div" language={match[1]}>
+            {String(children).replace(/\n$/, '')}
+          </SyntaxHighlighter>
+        ) : (
+          <code className={className ?? ''} {...props}>
+            {children}
+          </code>
+          );
+        },
+    }}
+  >
+    {content}
+  </Markdown>
+</div>
+```
+
+이렇게 작성해주면 syntax-highlighting 기능과 깃허브 마크다운 기능이 들어간 마크다운 렌더러가 완성되었습니다.
+아 근데 스타일링이 안됐다구요..?
+
+스타일링은 간단합니다. 저는 **tailwindcss**를 사용하였기때문에 **@tailwindcss/typography**를 사용해줬습니다.
+
+```bash
+yarn add @tailwindcss/typography --dev
+```
+
+해당 라이브러리를 설치한 후 **tailwind.config.js** or **tailwind.config.ts**의 plugin 속성에 해당 라이브러리를 추가해주시면, className에 prose 하나만 넣어줘도 멀쩡해보이는 마크다운 렌더러가 완성됩니다.
+
+---
+
+분량 조절 이슈로 **mdx**파싱 파트는 다음 편에서 다루도록 하겠습니다.

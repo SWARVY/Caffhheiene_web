@@ -21,8 +21,8 @@ const mdxComponents: MDXComponents = {
 
   blockquote: ({ children }) => (
     <blockquote className="flex items-center gap-x-3 overflow-hidden rounded-xl bg-gray-100 p-3 not-italic dark:bg-background_component dark:text-white sm:gap-x-6 sm:pl-6">
-      <DocumentTextIcon className="max-h-6 min-h-6 min-w-6 max-w-6 text-gray-700 dark:text-gray-200" />
-      <div className="grid text-sm leading-7">{children}</div>
+      <DocumentTextIcon className="h-6 w-6 text-gray-700 dark:text-gray-200" />
+      <div className="w-full flex-col text-sm leading-7">{children}</div>
     </blockquote>
   ),
 
@@ -65,7 +65,7 @@ const mdxComponents: MDXComponents = {
   ),
 
   h4: ({ id, children }) => (
-    <h4 id={id} className="mt-4 text-lg dark:text-white">
+    <h4 id={id} className="mt-4 break-keep text-lg dark:text-white">
       {children}
     </h4>
   ),

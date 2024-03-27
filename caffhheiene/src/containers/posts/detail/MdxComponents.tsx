@@ -28,7 +28,9 @@ const mdxComponents: MDXComponents = {
 
   p: ({ children }) => <p className="break-keep">{children}</p>,
 
-  pre: ({ children }) => <PreComponent>{children}</PreComponent>,
+  pre: ({ className, children }) => (
+    <PreComponent styleNames={className}>{children}</PreComponent>
+  ),
 
   h1: ({ id, children }) => (
     <h1

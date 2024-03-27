@@ -8,10 +8,14 @@ import {
 } from '@heroicons/react/24/outline'
 
 interface PreComponentProps {
+  styleNames: string | undefined
   children: ReactNode
 }
 
-export default function PreComponent({ children }: PreComponentProps) {
+export default function PreComponent({
+  styleNames,
+  children,
+}: PreComponentProps) {
   const preDiv = useRef<HTMLDivElement>(null)
   const [copied, setCopied] = useState(false)
 
@@ -28,7 +32,12 @@ export default function PreComponent({ children }: PreComponentProps) {
   return (
     <div ref={preDiv} className="group mt-7 flex-col" onMouseLeave={handleExit}>
       <div className="flex items-center justify-between rounded-t-lg bg-ochre pb-3 pl-4 pr-4 pt-3">
-        <CodeBracketIcon className="h-5 w-5 text-white" />
+        <div className="flex items-center gap-x-4">
+          <CodeBracketIcon className="h-5 w-5 text-white" />
+          <p className="m-0 mt-1 font-BlogDeco text-white">
+            {styleNames?.replace(/language-/g, '')}
+          </p>
+        </div>
         <div className="flex items-center justify-end gap-x-2">
           <div className="h-3 w-3 rounded-full bg-red-600" />
           <div className="h-3 w-3 rounded-full bg-yellow-500" />

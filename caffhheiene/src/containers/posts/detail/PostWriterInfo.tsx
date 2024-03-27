@@ -11,12 +11,16 @@ export default function PostWriterInfo() {
         width={1024}
         height={1024}
       />
-      <section className="grid w-[23.5rem] items-center break-keep">
+      <section className="max-w-[23.5rem] flex-col items-center break-keep">
         <div className="flex items-center gap-x-2">
-          <h3 className="text-xl font-bold dark:text-white">{USER.name}</h3>
-          <p className="text-gray-400 dark:text-gray-300">{USER.description}</p>
+          <h3 className="text-lg font-bold dark:text-white sm:text-xl">
+            {USER.name}
+          </h3>
+          <p className="text-sm text-gray-400 dark:text-gray-300 sm:text-base">
+            {USER.description}
+          </p>
         </div>
-        <p className="dark:text-white">{USER.introduce}</p>
+        <p className="text-sm dark:text-white sm:text-base">{USER.introduce}</p>
       </section>
     </section>
   )

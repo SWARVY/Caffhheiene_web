@@ -99,7 +99,7 @@ return <h1>{user.name}</h1>
 ```
 
 JSX 속성에서 **JS로 이스케이프** 할 수도 있지만 이 경우에는 대신 **중괄호**를 사용해야 합니다.
-예를 들어, **className="avatar"**는 **"avatar"**을 CSS 클래스로 전달하지만 **src=\{user.imageURL}** 는 JS **user.imageUrl** 변수 값을 읽은 다음 해당 값을 전달합니다.
+예를 들어, **className="avatar"** 는 **"avatar"** 을 CSS 클래스로 전달하지만 **src=\{user.imageURL}** 는 JS **user.imageUrl** 변수 값을 읽은 다음 해당 값을 전달합니다.
 
 ```jsx showLineNumbers {1}
 return <img className="avatar" src={user.imageUrl} />

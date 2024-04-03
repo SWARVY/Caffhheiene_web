@@ -18,6 +18,7 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.364.0",
     "next": "^14.0.4",
     "next-contentlayer": "^0.3.4",
     "plaiceholder": "^3.0.0",
@@ -31,7 +32,7 @@
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^6.0.0",
     "remark-breaks": "^4.0.0",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "3.0.1",
     "sharp": "0.32.6",
     "slick-carousel": "^1.8.1"
   },

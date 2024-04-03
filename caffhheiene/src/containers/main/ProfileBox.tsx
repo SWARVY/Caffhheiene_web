@@ -1,11 +1,14 @@
-import { SparklesIcon } from '@heroicons/react/16/solid'
+import { Crown } from 'lucide-react'
 import Badges from './Badges'
 
 export default function ProfileBox() {
   return (
     <article className="w-full flex-col rounded-xl bg-white font-BlogTitle text-black shadow-lg dark:bg-background_component dark:text-white lg:col-span-2">
       <div className="flex items-center justify-between rounded-t-xl bg-ochre pl-3">
-        <SparklesIcon className="h-5 w-5 fill-yellow-300" aria-hidden="true" />
+        <Crown
+          className="h-5 w-5 fill-yellow-300 text-yellow-300"
+          aria-hidden="true"
+        />
         <div className="flex items-center justify-end gap-x-2 p-3">
           <div className="h-3 w-3 rounded-full bg-red-600" aria-hidden="true" />
           <div

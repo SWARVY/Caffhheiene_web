@@ -2,7 +2,7 @@ import { MAIN_SETTING } from '@/constants/mainSetting'
 import POST_SETTING from '@/constants/postSetting'
 import { allPosts, type Post } from '@/contentlayer/generated'
 
-interface Tag {
+export interface Tag {
   name: string
   amount: number
 }

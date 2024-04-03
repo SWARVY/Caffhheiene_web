@@ -6,7 +6,7 @@ import {
 } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import Tag from '@/components/Tag'
-import { LinkIcon } from '@heroicons/react/24/outline'
+import { TagIcon } from 'lucide-react'
 import ImgWithPlacehlder from './ImgWithPlaceholder'
 
 interface CardComponentProps {
@@ -43,7 +43,7 @@ export default function Card({ id, post }: CardComponentProps) {
           </div>
           <div className="flex items-center justify-between gap-x-2">
             <ul className="flex items-center gap-x-2">
-              <LinkIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+              <TagIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
               {post.category.map((category) => (
                 <Tag key={category} tag={category} />
               ))}

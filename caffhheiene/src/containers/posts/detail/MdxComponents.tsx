@@ -32,6 +32,10 @@ const mdxComponents: MDXComponents = {
     <PreComponent styleNames={className}>{children}</PreComponent>
   ),
 
+  code: ({ className, children }) => (
+    <code className={`${className} dark:text-white`}>{children}</code>
+  ),
+
   h1: ({ id, children }) => (
     <h1
       id={id}

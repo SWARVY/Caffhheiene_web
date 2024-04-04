@@ -23,7 +23,7 @@ export default function PostItem({ id, post }: PostItemProps) {
       <Link
         href={`/posts/detail/${id + 1}`}
         className="grid sm:flex sm:gap-x-4">
-        <div className="hidden justify-items-center gap-x-1 p-1 sm:visible sm:grid sm:p-2">
+        <div className="hidden justify-items-center gap-x-1 p-1 dark:text-white sm:visible sm:grid sm:p-2">
           <div className="flex items-center justify-center font-BlogTitle text-3xl font-bold">
             <p>{year}</p>
           </div>

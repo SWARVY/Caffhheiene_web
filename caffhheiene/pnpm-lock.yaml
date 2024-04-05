@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   '@giscus/react':
-    specifier: ^2.3.0
+    specifier: ^2.4.0
     version: 2.4.0(react-dom@18.2.0)(react@18.2.0)
   '@heroicons/react':
-    specifier: ^2.0.18
+    specifier: ^2.1.1
     version: 2.1.1(react@18.2.0)
   '@plaiceholder/next':
     specifier: ^3.0.0
@@ -27,7 +27,7 @@ dependencies:
     specifier: ^2.30.0
     version: 2.30.0
   framer-motion:
-    specifier: ^10.16.4
+    specifier: ^10.18.0
     version: 10.18.0(react-dom@18.2.0)(react@18.2.0)
   lodash:
     specifier: ^4.17.21
@@ -92,37 +92,40 @@ devDependencies:
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.4.1)
   '@types/lodash':
-    specifier: ^4.14.199
+    specifier: ^4.14.202
     version: 4.14.202
+  '@types/mdx':
+    specifier: ^2.0.12
+    version: 2.0.12
   '@types/node':
-    specifier: ^20.6.5
+    specifier: ^20.11.5
     version: 20.11.5
   '@types/react':
-    specifier: ^18.2.22
+    specifier: ^18.2.48
     version: 18.2.48
   '@types/react-dom':
-    specifier: ^18.2.7
+    specifier: ^18.2.18
     version: 18.2.18
   '@types/react-slick':
-    specifier: ^0.23.10
+    specifier: ^0.23.13
     version: 0.23.13
   '@types/react-syntax-highlighter':
-    specifier: ^15.5.7
+    specifier: ^15.5.11
     version: 15.5.11
   '@types/webpack-env':
-    specifier: ^1.18.2
+    specifier: ^1.18.4
     version: 1.18.4
   '@typescript-eslint/eslint-plugin':
-    specifier: ^6.4.0
+    specifier: ^6.19.0
     version: 6.19.0(@typescript-eslint/parser@6.19.0)(eslint@8.56.0)(typescript@5.3.3)
   '@typescript-eslint/parser':
     specifier: ^6.19.0
     version: 6.19.0(eslint@8.56.0)(typescript@5.3.3)
   autoprefixer:
-    specifier: ^10.4.16
+    specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.33)
   eslint:
-    specifier: ^8.0.1
+    specifier: ^8.56.0
     version: 8.56.0
   eslint-config-airbnb:
     specifier: ^19.0.4
@@ -134,37 +137,37 @@ devDependencies:
     specifier: ^14.0.4
     version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
   eslint-config-prettier:
-    specifier: ^9.0.0
+    specifier: ^9.1.0
     version: 9.1.0(eslint@8.56.0)
   eslint-plugin-prettier:
-    specifier: ^5.0.0
+    specifier: ^5.1.3
     version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.56.0)(prettier@3.2.4)
   eslint-plugin-react:
     specifier: ^7.33.2
     version: 7.33.2(eslint@8.56.0)
   eslint-plugin-tailwindcss:
-    specifier: ^3.13.0
+    specifier: ^3.14.0
     version: 3.14.0(tailwindcss@3.4.1)
   postcss:
-    specifier: ^8.4.31
+    specifier: ^8.4.33
     version: 8.4.33
   prettier:
-    specifier: ^3.0.3
+    specifier: ^3.2.4
     version: 3.2.4
   prettier-eslint:
     specifier: ^15.0.1
     version: 15.0.1
   prettier-plugin-tailwindcss:
-    specifier: ^0.5.5
+    specifier: ^0.5.11
     version: 0.5.11(prettier@3.2.4)
   tailwind-highlightjs:
     specifier: ^2.0.1
     version: 2.0.1(highlight.js@10.7.3)(tailwindcss@3.4.1)
   tailwindcss:
-    specifier: ^3.3.3
+    specifier: ^3.4.1
     version: 3.4.1
   typescript:
-    specifier: '*'
+    specifier: 5.3.3
     version: 5.3.3
 
 packages:
@@ -2033,7 +2036,7 @@ packages:
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
     dependencies:
       '@types/estree-jsx': 1.0.3
-      '@types/mdx': 2.0.10
+      '@types/mdx': 2.0.12
       estree-util-build-jsx: 2.2.2
       estree-util-is-identifier-name: 2.1.0
       estree-util-to-js: 1.2.0
@@ -2687,9 +2690,8 @@ packages:
       '@types/unist': 3.0.2
     dev: false
 
-  /@types/mdx@2.0.10:
-    resolution: {integrity: sha512-Rllzc5KHk0Al5/WANwgSPl1/CwjqCy+AZrGd78zuK+jO9aDM6ffblZ+zIjgPNAaEBmlO0RYDvLNh7wD0zKVgEg==}
-    dev: false
+  /@types/mdx@2.0.12:
+    resolution: {integrity: sha512-H9VZ9YqE+H28FQVchC83RCs5xQ2J7mAAv6qdDEaWmXEVl3OpdH+xfrSUzQ1lp7U7oSTRZ0RvW08ASPJsYBi7Cw==}
 
   /@types/ms@0.7.34:
     resolution: {integrity: sha512-nG96G3Wp6acyAgJqGasjODb+acrI7KltPiRxzHPXnP3NgI28bpQDRv53olbqGXbfcgF5aiiHmO3xpwEpS5Ld9g==}

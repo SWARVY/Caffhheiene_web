@@ -2,7 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeCodeTitles from 'rehype-code-titles'
 import rehypeExternalLinks from 'rehype-external-links'
-import rehypePrismPlus from 'rehype-prism-plus'
+import rehypePrism from 'rehype-prism-plus'
 import rehypeSlug from 'rehype-slug'
 import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
@@ -57,7 +57,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      [rehypePrismPlus, { ignoreMissing: 'true' }],
+      [rehypePrism as any, { ignoreMissing: true }],
       [
         rehypeAutolinkHeadings,
         {

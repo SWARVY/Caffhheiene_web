@@ -1,4 +1,4 @@
-import { MAIN_SETTING } from '@/constants/mainSetting'
+import MAIN_SETTING from '@/constants/mainSetting'
 import POST_SETTING from '@/constants/postSetting'
 import { allPosts, type Post } from '@/contentlayer/generated'
 

@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 신현호 개인 기술 블로그
 
-## Getting Started
+## 소개
 
-First, run the development server:
+안녕하세요, 신현호입니다. 이 프로젝트는 제가 직접 만든 기술 블로그입니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+해당 기술 블로그는 `Vercel`을 통해 운영중이며, 개발 과정을 지속적으로 기록하고있습니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [신현호의 기술서재](https://caffhheiene.vercel.app)
+- [블로그 제작기](https://caffhheiene.vercel.app/posts/series-%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%A0%9C%EC%9E%91%EA%B8%B0/1)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 기술 스택
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+해당 블로그는 다음과 같은 기술스택으로 만들어졌습니다. 자세한 내용은 `package.json` 파일을 참고해주세요
 
-## Learn More
+- `NextJS 14 App router`
+- `TypeScript`
+- `TailwindCSS`
+- `Contentlayer`
+- `... etc`
 
-To learn more about Next.js, take a look at the following resources:
+## 참고 자료
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+블로그를 만들 때 참고했던 기술 블로그들입니다. 하나하나 모두 저보다 뛰어난 분들의 작품이니 보시면 좋을 것 같습니다 :)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [김평안님의 기술 블로그(1)](https://bepyan.github.io/)
+- [김평안님의 기술 블로그(2)](https://bepyan.me/)
+- [정현수님의 기술 블로그](https://junghyeonsu.com/)
+- [한진탁님의 기술 블로그](https://www.timegambit.com/about)
 
-## Deploy on Vercel
+디렉토리 구조는 다음 글을 참고했습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [[Miriya.net] Next.js 폴더/파일 구조 잡기](https://miriya.net/blog/cliz752zc000lwb86y5gtxstu)

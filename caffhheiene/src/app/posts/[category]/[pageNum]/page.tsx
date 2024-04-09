@@ -10,11 +10,19 @@ interface Props {
   }
 }
 
+const parseSeries = (name: string) => {
+  if (name.includes('series-')) {
+    return decodeURI(name).split('-')[1].replaceAll(/_/g, ' ')
+  }
+
+  return name
+}
+
 export const generateMetadata = async (
   props: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> => ({
-  title: `기록 | ${props.params.pageNum}페이지 [${props.params.category}]`,
+  title: `기록 | ${props.params.pageNum}페이지 [${parseSeries(props.params.category)}]`,
   description: `신현호 기술서재 / ${props.params.pageNum}페이지[${props.params.category}]`,
   openGraph: {
     ...(await parent).openGraph,

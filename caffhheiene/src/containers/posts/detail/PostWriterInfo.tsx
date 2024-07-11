@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function PostWriterInfo() {
   return (
-    <section className="mt-10 flex items-center gap-x-4 border-b-2 border-ochre p-4 pb-8">
+    <div className="mt-10 flex items-center gap-x-4 border-b-2 border-ochre p-4 pb-8">
       <Image
         className="h-24 w-24 rounded-full ring-2 ring-ochre"
         src={USER.profileImg}
@@ -11,7 +11,7 @@ export default function PostWriterInfo() {
         width={1024}
         height={1024}
       />
-      <section className="max-w-[23.5rem] flex-col items-center break-keep">
+      <div className="max-w-[23.5rem] flex-col items-center break-keep">
         <div className="flex items-center gap-x-2">
           <h3 className="text-lg font-bold dark:text-white sm:text-xl">
             {USER.name}
@@ -21,7 +21,7 @@ export default function PostWriterInfo() {
           </p>
         </div>
         <p className="text-sm dark:text-white sm:text-base">{USER.introduce}</p>
-      </section>
-    </section>
+      </div>
+    </div>
   )
 }

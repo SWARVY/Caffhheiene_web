@@ -35,23 +35,23 @@ export default function PostItem({ id, post }: PostItemProps) {
         </div>
         <div className="grid w-full gap-2">
           <div className="grid gap-1">
-            <section className="flex items-center overflow-hidden">
+            <div className="flex items-center overflow-hidden">
               <h3 className="w-full truncate text-xl font-bold dark:text-white md:text-2xl">
                 {post.title}
               </h3>
-            </section>
+            </div>
             <p className="truncate text-base font-semibold text-gray-400 dark:text-gray-300">
               {post.description}
             </p>
           </div>
           <div className="grid gap-2 sm:grid-cols-2">
-            <section className="flex flex-wrap items-center gap-2 font-BlogContent font-bold">
+            <div className="flex flex-wrap items-center gap-2 font-BlogContent font-bold">
               <TagIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
               {post.category.map((tag: string) => (
                 <Tag key={tag} tag={tag} />
               ))}
-            </section>
-            <section className="flex flex-wrap items-center justify-between gap-2">
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex flex-wrap items-center gap-2">
                 {post.series ? (
                   <FolderOpenIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
@@ -68,7 +68,7 @@ export default function PostItem({ id, post }: PostItemProps) {
                   {post.date}
                 </p>
               </div>
-            </section>
+            </div>
           </div>
         </div>
       </Link>

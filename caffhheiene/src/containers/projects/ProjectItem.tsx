@@ -22,7 +22,7 @@ export default function ProjectItem({
 }: ProjectItemProps) {
   return (
     <li className="grid gap-3 opacity-0">
-      <article>
+      <div>
         <a
           className="flex items-center gap-x-2"
           href={link}
@@ -37,8 +37,8 @@ export default function ProjectItem({
           </h3>
         </a>
         <p className="text-black dark:text-gray-300">{description}</p>
-      </article>
-      <section className="overflow-hidden rounded-md shadow-md">
+      </div>
+      <div className="overflow-hidden rounded-md shadow-md">
         <div className="grid grid-cols-2 bg-ochre text-white">
           <h2 className="p-3 font-bold">{SUB_TITLE.techStacks}</h2>
           <div className="flex items-center justify-end gap-x-2 p-3">
@@ -66,7 +66,7 @@ export default function ProjectItem({
             />
           ))}
         </div>
-      </section>
+      </div>
     </li>
   )
 }

@@ -7,7 +7,7 @@ import {
 import Link from 'next/link'
 import Tag from '@/components/Tag'
 import { TagIcon } from 'lucide-react'
-import ImgWithPlacehlder from './ImgWithPlaceholder'
+import ImgWithPlaceholder from './ImgWithPlaceholder'
 
 interface CardComponentProps {
   id: number
@@ -17,9 +17,9 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <article className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
+      <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
         <div className="grid h-[15rem] overflow-hidden rounded-xl">
-          <ImgWithPlacehlder
+          <ImgWithPlaceholder
             src={post.thumbnail}
             tailwindClassNames="h-56 w-full rounded-md object-cover"
           />
@@ -57,7 +57,7 @@ export default function Card({ id, post }: CardComponentProps) {
             </div>
           </div>
         </div>
-      </article>
+      </div>
     </Link>
   )
 }

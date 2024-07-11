@@ -9,7 +9,7 @@ interface SeriesListProps {
 
 export default function SeriesList({ seriesName, series }: SeriesListProps) {
   return (
-    <section className="grid overflow-hidden rounded-xl text-black shadow-md dark:text-white">
+    <div className="grid overflow-hidden rounded-xl text-black shadow-md dark:text-white">
       <div className="grid gap-y-2 rounded-t-xl bg-ochre_light p-4 text-white dark:bg-ochre">
         <p className="text-lg font-bold">{seriesName}</p>
         <div className="flex items-center gap-x-2">
@@ -33,6 +33,6 @@ export default function SeriesList({ seriesName, series }: SeriesListProps) {
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   )
 }

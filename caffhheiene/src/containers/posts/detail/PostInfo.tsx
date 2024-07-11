@@ -11,7 +11,7 @@ interface PostInfoProps {
 
 export default function PostInfo({ curr }: PostInfoProps) {
   return (
-    <section className="flex items-center gap-x-2">
+    <div className="flex items-center gap-x-2">
       <Image
         className="rounded-full ring-2 ring-ochre"
         src={USER.profileImg}
@@ -20,7 +20,7 @@ export default function PostInfo({ curr }: PostInfoProps) {
         alt="user profile img"
       />
       <div className="grid w-full gap-2 p-1">
-        <section className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
           <div className="flex items-center gap-x-2">
             <CircleUser className="h-4 w-4 text-ochre_light dark:text-ochre" />
             <p className="text-sm font-semibold dark:text-white">{USER.name}</p>
@@ -31,8 +31,8 @@ export default function PostInfo({ curr }: PostInfoProps) {
               {curr.date}
             </span>
           </time>
-        </section>
-        <section className="flex items-center gap-x-2">
+        </div>
+        <div className="flex items-center gap-x-2">
           <div className="flex items-center gap-2 font-BlogContent">
             <TagIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
             {curr.category.map((tag: string) => (
@@ -44,8 +44,8 @@ export default function PostInfo({ curr }: PostInfoProps) {
             <LibraryBig className="h-4 w-4 text-ochre_light dark:text-ochre" />
             <p className="text-sm font-bold dark:text-white">{curr.series}</p>
           </div>
-        </section>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }

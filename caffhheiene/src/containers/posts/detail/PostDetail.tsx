@@ -13,7 +13,7 @@ export default function PostDetail({ id }: { id: string }) {
   const seriesList = curr.series ? getSelectedSeriesPost(curr.series) : []
 
   return (
-    <article className="grid gap-y-12">
+    <div className="grid gap-y-12">
       <div className="flex gap-x-12">
         <div className="grid w-full shrink gap-10">
           <header className="grid w-full gap-y-6">
@@ -43,6 +43,6 @@ export default function PostDetail({ id }: { id: string }) {
       {curr.series ? (
         <SeriesList seriesName={curr.series} series={seriesList} />
       ) : null}
-    </article>
+    </div>
   )
 }

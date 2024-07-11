@@ -1,24 +1,29 @@
-# 신현호 기술블로그
+# 신현호 기술블로그 &middot; ![Static Badge](https://img.shields.io/badge/vercel-caffhheiene-orange?style=plastic&logo=vercel&logoColor=black&label=vercel&color=orange&link=https%3A%2F%2Fcaffhheiene.vercel.app)
 
-나의 블로그 만들기 프로젝트 (`23. 06. 21. ~ )
+## 프로젝트 개요
 
-## 컨벤션
+이 프로젝트는 제가 직접 구현한 개인 블로그입니다. 기존의 블로그 플랫폼을 사용하는 대신, `Next.js`와 `TypeScript`를 주요 기술 스택으로 선택하여 개발하였습니다. 블로그의 핵심 기능은 `Contentlayer`를 활용한 콘텐츠 관리입니다. 사용자 경험을 향상시키기 위해 `Framer Motion`을 활용하여 부드러운 애니메이션 효과를 적용했습니다.
 
-### 포스팅
+블로그는 단순한 글 목록과 상세 페이지를 넘어서, 사용자가 쉽게 탐색하고 찾고자 하는 정보를 효과적으로 제공할 수 있도록 설계되었습니다. 또한, 최신 웹 개발 기술을 적용하여 성능 최적화와 모바일 반응성을 강조하였습니다. 개발 과정은 `GitHub`의 `Issue`와 `Project`를 통해 체계적으로 관리되었으며, 블로그에는 개발 일지를 통해 과정과 결정들을 문서화하였습니다.
 
-- `post` : 새로운 포스팅 추가
-- `edit` : 포스팅 내용 수정
+이 프로젝트는 저의 개인적인 관심과 기술 스택을 탐구하며, 동시에 나만의 디지털 공간을 창조하는 데 중점을 두었습니다. 블로그를 통해 제공되는 콘텐츠와 기능들은 지속적으로 업데이트되며, 사용자들에게 가치 있는 정보와 직관적인 경험을 제공하는 것을 목표로 하고 있습니다.
 
-### 업데이트
+## 미리보기
 
-- `update` : 개인 프로필 업데이트
+![image](https://github.com/SWARVY/Caffhheiene_web/assets/53262430/1c5fe071-3978-4e02-97b6-e5cbb0931880)
 
-### 로직
+## 프로젝트 개발 과정
 
-- `feat` : 새로운 기능 추가
-- `fix` : 버그 수정
-- `refactor` : 코드 리팩터링
-- `docs` : 문서 수정, 생성
-- `style` : 코드 포맷팅, 코드 변경이 없을 때
-- `test` : 테스트 로직 추가
-- `chore` : 빌드 수정, 패키지 매니저 수정
+- [[신현호의 기술서재] 블로그 제작기](https://caffhheiene.vercel.app/posts/series-%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%A0%9C%EC%9E%91%EA%B8%B0/1)
+
+## 기술 스택
+
+- Next14 (app router)
+- TypeScript
+- Contentlayer
+- Recoil (jotai로 마이그레이션 예정)
+- framer-motion
+
+## 프로젝트 상태
+
+[레거시 로직 리팩토링](https://github.com/SWARVY/Caffhheiene_web/issues/47) 이슈 마무리 이후 더이상의 업데이트는 진행하지 않을 에정이며, 추후 블로그는 `npm` 패키지화 하여 배포할 예정입니다.

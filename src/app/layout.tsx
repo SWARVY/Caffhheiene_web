@@ -7,7 +7,8 @@ import { Metadata } from 'next'
 import { USER } from '@/constants/user'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import TopNavigator from '@/containers/navigator/TopNavigator'
-import Provider from './Provider'
+import NextThemeProvider from '@/utils/NextThemeProvider'
+import FramerTransitionProvider from '@/utils/FramerTransitionProvider'
 
 export const metadata: Metadata = {
   title: '신현호의 기술서재',
@@ -43,11 +44,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
       <body className="flex w-full flex-col items-center justify-center bg-blue-950/5 font-Pretendard transition duration-100 ease-in dark:bg-background_dark">
-        <Provider>
+        <NextThemeProvider>
           <TopNavigator />
-          {children}
+          <FramerTransitionProvider>{children}</FramerTransitionProvider>
           <BottomNavigator />
-        </Provider>
+        </NextThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

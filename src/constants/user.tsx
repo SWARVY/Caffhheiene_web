@@ -11,7 +11,7 @@ export const USER = Object.freeze({
   description: 'Frontend Developer',
   introduce:
     '프론트엔드 개발자를 꿈꾸고 있는 대학생입니다. 끊임없이 배우고 성장하는 개발자가 되기 위해 노력하고 있습니다.',
-  profileImg: '/profile/Profile_notion_icon.webp',
+  profileImg: '/profile/Profile_notion_icon_v2.png',
   URL: 'https://caffhheiene.vercel.app',
 })
 

@@ -13,30 +13,30 @@ export default function PostDetail({ id }: { id: string }) {
   const seriesList = curr.series ? getSelectedSeriesPost(curr.series) : []
 
   return (
-    <div className="grid gap-y-12">
+    <div className="space-y-12">
       <div className="flex gap-x-12">
-        <div className="grid w-full shrink gap-10">
-          <header className="grid w-full gap-y-6">
+        <div className="grid w-full shrink gap-y-10">
+          <div className="w-full space-y-6">
             <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
               {curr.title}
             </h2>
             <PostInfo curr={curr} />
             <Image
-              className="w-full rounded-xl"
+              className="w-full border border-black"
               src={curr.thumbnail}
               alt="Post Thumbnail"
               width={800}
               height={600}
             />
-          </header>
-          <div className="grid w-full gap-y-10">
+          </div>
+          <div className="grid w-full grid-cols-1 gap-y-10">
             <InternalToc />
             <MdxRenderer post={curr} />
           </div>
         </div>
         <SidebarToc />
       </div>
-      <div className="grid">
+      <div>
         <PrevNextButton id={Number(id)} prev={prev} next={next} />
         <PostWriterInfo />
       </div>

@@ -1,20 +1,30 @@
-import SubTitle from '@/components/SubTitle'
-import { SUB_TITLE } from '@/constants/title'
 import { getRecentPost } from '@/utils/getPost'
 import React from 'react'
 import Card from '@/components/Card'
+import MainPost from './MainPost'
+import SubTitle from '@/components/SubTitle'
 
 export default function RecentlyPost() {
-  const { posts, allPostLen } = getRecentPost()
+  const { mainPost, subPosts, postAmount } = getRecentPost()
 
   return (
-    <div className="mt-3 w-full flex-col">
-      <SubTitle title={SUB_TITLE.recentlyPosts} />
-      <section className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-        {posts.map(([id, post]) => (
-          <Card key={id} id={allPostLen - id - 1} post={post} />
-        ))}
-      </section>
+    <div className="flex w-full flex-col items-center gap-y-20">
+      <div className="size-full space-y-6">
+        <SubTitle title="Featured" />
+        <MainPost
+          key={mainPost[0]}
+          id={postAmount - mainPost[0] - 1}
+          post={mainPost[1]}
+        />
+      </div>
+      <div className="size-full space-y-6">
+        <SubTitle title="Latest" />
+        <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2">
+          {subPosts.map(([id, post]) => (
+            <Card key={id} id={postAmount - id - 1} post={post} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

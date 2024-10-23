@@ -17,6 +17,7 @@ import GitSVG from './git.svg'
 import AxiosSVG from './axios.svg'
 import LogoSVG from './logo.svg'
 import DiscordSVG from './discord.svg'
+import NotionSVG from './notion.svg'
 
 export {
   JavaScriptSVG,
@@ -38,4 +39,5 @@ export {
   GitSVG,
   LogoSVG,
   DiscordSVG,
+  NotionSVG,
 }

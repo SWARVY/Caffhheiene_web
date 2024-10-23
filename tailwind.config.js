@@ -1,13 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-
-module.exports = {
+export default {
+  darkMode: ['selector', '[data-mode="dark"]'],
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontFamily: {
-      BlogTitle: ['BlogTitle', 'sans-serif'],
-      BlogContent: ['BlogContent', 'sans-serif'],
-      BlogPost: ['BlogPost', 'sans-serif'],
-      BlogDeco: ['BlogDeco', 'sans-serif'],
+      Pretendard: ['Pretendard', 'sans-serif'],
+      Consolas: ['Consolas', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -15,9 +13,6 @@ module.exports = {
         white_hover_weight: '#DDD',
         background_dark: '#1E1E1E',
         background_component: '#2B2B2B',
-        ochre_dark: '#8F5C23',
-        ochre: '#CC7832',
-        ochre_light: '#D69749',
       },
       typography: {
         DEFAULT: {
@@ -30,5 +25,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/typography')],
-  darkMode: 'class',
 }

@@ -44,13 +44,14 @@ export default function SidebarToc() {
   }, [])
 
   return (
-    <aside className="sticky top-32 hidden w-72 self-start font-BlogPost text-black drop-shadow-lg dark:text-white xl:grid">
-      <div className="grid gap-y-4 rounded-t-lg bg-white text-black drop-shadow-xl dark:bg-background_component dark:text-white">
+    <aside className="sticky top-[12rem] hidden w-72 self-start text-black drop-shadow-lg dark:text-white xl:grid">
+      <div className="flex flex-col gap-y-4 border border-black bg-white text-black drop-shadow-xl dark:bg-background_component dark:text-white">
         <span className="pl-5 pt-4 font-bold">목차</span>
-        <ul className="space-y-3 pb-5 pl-7 pr-7">
+        <ul className="space-y-3 px-7 pb-5">
           {headingElements.map(({ index, convertedIndex, size }) => (
             <li
-              className={`flex items-center justify-between gap-x-2 transition duration-200 ease-in ${currentId === convertedIndex ? 'scale-105 text-black dark:text-white' : 'text-gray-600 dark:text-slate-300'}`}
+              key={`sidebar-toc-content-${index}`}
+              className={`flex items-center justify-between gap-x-2 transition-all ${currentId === convertedIndex ? 'scale-105 text-black dark:text-white' : 'text-gray-600 dark:text-slate-300'}`}
               style={{
                 paddingLeft: `${size - 15}px`,
                 fontSize: `${17 - size / 8}px`,
@@ -64,20 +65,20 @@ export default function SidebarToc() {
           ))}
         </ul>
       </div>
-      <div className="flex justify-end gap-x-2 rounded-b-lg bg-ochre p-2">
+      <div className="flex justify-end gap-x-2 bg-blue-950/60 p-2 dark:bg-blue-600/60">
         <button
-          className="items-center rounded-md p-2 transition-all duration-100 ease-in hover:backdrop-brightness-50"
+          className="items-center p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToBottom}
           type="button"
           aria-label="scroll to bottom">
-          <ChatBubbleOvalLeftEllipsisIcon className="h-4 w-4 text-white" />
+          <ChatBubbleOvalLeftEllipsisIcon className="size-4 text-white" />
         </button>
         <button
-          className="items-center rounded-md p-2 transition-all duration-100 ease-in hover:backdrop-brightness-50"
+          className="items-center p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToTop}
           type="button"
           aria-label="scroll to top">
-          <ArrowUpIcon className="h-4 w-4 text-white" />
+          <ArrowUpIcon className="size-4 text-white" />
         </button>
       </div>
     </aside>

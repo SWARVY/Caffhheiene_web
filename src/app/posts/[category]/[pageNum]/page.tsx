@@ -40,7 +40,7 @@ export default async function posts({
   const data = getSelectedCategoryPost(params.category, Number(params.pageNum))
 
   return (
-    <section className="grid w-full max-w-3xl gap-y-10 p-5 md:p-2 xl:p-0">
+    <section className="space-y-10 p-5 md:p-2 xl:p-0">
       <PostFilters />
       <PostWrapper
         category={params.category}

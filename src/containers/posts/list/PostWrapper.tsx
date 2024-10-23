@@ -19,7 +19,7 @@ export default function PostWrapper({
   const allPostLen = getAllPostLength()
 
   return (
-    <div className="grid w-full gap-10">
+    <div className="grid w-full gap-y-20">
       <PostList posts={selectedPost} allPostLen={allPostLen} />
       <PostPagination
         category={category}

@@ -15,25 +15,26 @@ export default function SeriesFilters({ series }: SeriesFiltersProps) {
   return (
     <div className="grid w-full gap-y-2">
       <div className="flex justify-between text-black dark:text-white">
-        <div className="flex items-center gap-x-2">
-          <LibraryBig className="h-4 w-4 text-ochre_light dark:text-ochre" />
-          <p className="font-BlogTitle">시리즈</p>
-        </div>
         <button
           type="button"
           onClick={() => setShow((prev) => !prev)}
-          className="visible sm:hidden">
+          className="visible flex items-center gap-x-2 sm:hidden">
           {show ? (
-            <CircleChevronDown className="h-4 w-4 text-ochre_light dark:text-ochre" />
+            <CircleChevronDown className="size-4" />
           ) : (
-            <CircleChevronUp className="h-4 w-4 text-ochre_light dark:text-ochre" />
+            <CircleChevronUp className="size-4" />
           )}
+          <p className="font-Consolas">{show ? 'Close' : 'Open'} Series</p>
         </button>
       </div>
       <div
         className={`${show ? 'visible' : 'hidden'} grid justify-items-center gap-3 sm:flex sm:flex-wrap sm:justify-start`}>
         {series?.map((seriesInfo) => (
-          <SeriesItem name={seriesInfo.name} amount={seriesInfo.amount} />
+          <SeriesItem
+            key={`series-${seriesInfo.name}`}
+            name={seriesInfo.name}
+            amount={seriesInfo.amount}
+          />
         ))}
       </div>
     </div>

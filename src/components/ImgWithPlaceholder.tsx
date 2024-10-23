@@ -1,7 +1,7 @@
 import getBlurredData from '@/utils/getBlurredData'
 import Image from 'next/image'
 
-export default async function ImgWithPlacehlder({
+export default async function ImgWithPlaceholder({
   src,
   tailwindClassNames,
 }: {

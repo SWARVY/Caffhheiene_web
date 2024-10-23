@@ -8,25 +8,29 @@ const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
     <Link
       href={href as string}
-      className="text-base text-gray-400 underline underline-offset-4 transition duration-150 ease-in hover:text-black dark:text-gray-300 dark:hover:text-white">
+      className="text-base text-gray-400 underline underline-offset-4 transition-all hover:text-black dark:text-gray-300 dark:hover:text-white">
       {children}
     </Link>
   ),
 
   strong: ({ children }) => (
-    <strong className="font-semibold text-black underline decoration-ochre_light decoration-wavy decoration-2 underline-offset-4 dark:text-white dark:decoration-ochre">
+    <strong className="font-semibold text-black underline decoration-blue-700 decoration-wavy decoration-2 underline-offset-4 dark:text-white">
       {children}
     </strong>
   ),
 
   blockquote: ({ children }) => (
-    <blockquote className="flex items-center gap-x-3 overflow-hidden rounded-xl bg-gray-100 p-3 not-italic dark:bg-background_component dark:text-white sm:gap-x-6 sm:pl-6">
-      <DocumentTextIcon className="h-6 w-6 text-gray-700 dark:text-gray-200" />
+    <blockquote className="flex items-center gap-x-3 overflow-hidden bg-gray-100 p-3 not-italic dark:bg-background_component dark:text-white sm:gap-x-6 sm:pl-6">
+      <DocumentTextIcon className="size-6 text-gray-700 dark:text-gray-200" />
       <div className="w-full flex-col text-sm leading-7">{children}</div>
     </blockquote>
   ),
 
   p: ({ children }) => <p className="break-keep">{children}</p>,
+
+  span: ({ className, children }) => (
+    <span className={`${className} break-keep`}>{children}</span>
+  ),
 
   pre: ({ className, children }) => (
     <PreComponent styleNames={className}>{children}</PreComponent>
@@ -45,26 +49,26 @@ const mdxComponents: MDXComponents = {
   ),
 
   h2: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b-2 border-ochre_light text-xl dark:border-ochre">
+    <div className="group flex items-center space-x-2 border-b-2 border-blue-950/60 text-xl">
       <h2 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h2>
       <Link
         href={`#${id}`}
-        className="invisible text-xl font-bold text-ochre no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-xl font-bold text-blue-950/60 no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100">
         #
       </Link>
     </div>
   ),
 
   h3: ({ id, children }) => (
-    <div className="group flex items-center space-x-2 border-b-2 border-ochre_light text-lg dark:border-ochre">
+    <div className="group flex items-center space-x-2 border-b-2 border-blue-950/60 text-lg">
       <h3 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h3>
       <Link
         href={`#${id}`}
-        className="invisible text-lg font-bold text-ochre no-underline opacity-0 transition duration-150 ease-in hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-lg font-bold text-blue-950/60 no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100">
         #
       </Link>
     </div>
@@ -77,14 +81,8 @@ const mdxComponents: MDXComponents = {
   ),
 
   img: ({ src, alt }) => (
-    <div className="flex justify-center">
-      <Image
-        className="rounded-xl"
-        width={800}
-        height={600}
-        src={src as string}
-        alt={alt as string}
-      />
+    <div className="flex w-full justify-center">
+      <Image width={800} height={600} src={src as string} alt={alt as string} />
     </div>
   ),
 }

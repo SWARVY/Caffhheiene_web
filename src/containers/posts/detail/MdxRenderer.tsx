@@ -13,7 +13,7 @@ export default function MdxRenderer({ post }: MdxRendererProps) {
   return (
     <div
       id="content"
-      className="prose prose-neutral max-w-full overflow-hidden font-BlogPost dark:text-white">
+      className="prose prose-neutral max-w-full overflow-hidden dark:text-white">
       {post.body.code !== undefined && (
         <MDXContent components={mdxComponents} />
       )}

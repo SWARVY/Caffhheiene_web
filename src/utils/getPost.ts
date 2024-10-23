@@ -50,14 +50,16 @@ export const getAllCategory = () => {
 }
 
 export const getRecentPost = (): {
-  posts: Array<[number, Post]>
-  allPostLen: number
+  mainPost: [number, Post]
+  subPosts: Array<[number, Post]>
+  postAmount: number
 } => {
-  const sortedPostData = getAllPost()
+  const [mainPost, ...remainingPosts] = getAllPost()
 
   return {
-    posts: sortedPostData.slice(0, MAIN_SETTING.recentlyPostDataAmount),
-    allPostLen: sortedPostData.length,
+    mainPost,
+    subPosts: remainingPosts.slice(0, MAIN_SETTING.recentlyPostDataAmount - 1),
+    postAmount: remainingPosts.length + 1,
   }
 }
 

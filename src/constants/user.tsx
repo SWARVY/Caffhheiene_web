@@ -1,4 +1,9 @@
-import { GithubSVG, InstagramSVG, TistorySVG } from '../../public/svgs'
+import {
+  GithubSVG,
+  InstagramSVG,
+  NotionSVG,
+  TistorySVG,
+} from '../../public/svgs'
 
 export const USER = Object.freeze({
   id: 'Caffhheiene',
@@ -32,19 +37,25 @@ export const USER_CAREER = Object.freeze([
 export const USER_SNS = Object.freeze([
   {
     name: 'github',
-    svg: <GithubSVG width="24px" height="24px" />,
+    svg: <GithubSVG className="size-full" />,
     isManaged: true,
     link: 'https://github.com/SWARVY',
   },
   {
+    name: 'notion',
+    svg: <NotionSVG className="size-full" />,
+    isManaged: true,
+    link: 'https://crystalline-chickadee-79a.notion.site/70d52e6cfeab486fb28dbba84c1ca054?pvs=4',
+  },
+  {
     name: 'instagram',
-    svg: <InstagramSVG width="24px" height="24px" />,
+    svg: <InstagramSVG className="size-full" />,
     isManaged: true,
     link: 'https://www.instagram.com/caffhheine/',
   },
   {
     name: 'tistory',
-    svg: <TistorySVG width="24px" height="24px" />,
+    svg: <TistorySVG className="size-full" />,
     isManaged: false,
     link: 'https://swarvy.tistory.com/',
   },

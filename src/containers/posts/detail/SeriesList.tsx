@@ -9,8 +9,8 @@ interface SeriesListProps {
 
 export default function SeriesList({ seriesName, series }: SeriesListProps) {
   return (
-    <div className="grid overflow-hidden rounded-xl text-black shadow-md dark:text-white">
-      <div className="grid gap-y-2 rounded-t-xl bg-ochre_light p-4 text-white dark:bg-ochre">
+    <div className="flex flex-col overflow-hidden border border-black text-black shadow-md dark:text-white">
+      <div className="flex flex-col gap-y-2 bg-blue-950/60 p-4 text-white dark:bg-blue-600/60">
         <p className="text-lg font-bold">{seriesName}</p>
         <div className="flex items-center gap-x-2">
           <ListBulletIcon className="h-4 w-4 fill-white" />
@@ -21,18 +21,16 @@ export default function SeriesList({ seriesName, series }: SeriesListProps) {
           </p>
         </div>
       </div>
-      <ul className="grid max-h-60 items-center gap-y-3 overflow-y-scroll rounded-b-xl bg-white p-3 dark:bg-background_component">
+      <div className="flex size-full max-h-60 flex-col justify-start gap-y-3 overflow-y-scroll bg-white px-4 py-6 dark:bg-background_component">
         {series.map((seriesItem, idx) => (
-          <li key={seriesItem[1].title}>
-            <Link
-              href={`${seriesItem[0] + 1}`}
-              className="flex gap-x-4 pl-4 text-gray-400 transition-all duration-100 ease-in-out hover:text-black dark:text-gray-300 dark:hover:text-white">
-              <p className="w-6 ">{idx + 1}.</p>
-              <p className="">{seriesItem[1].title}</p>
-            </Link>
-          </li>
+          <Link
+            href={`${seriesItem[0] + 1}`}
+            className="flex gap-x-4 pl-4 text-gray-400 transition-all hover:text-black dark:text-gray-300 dark:hover:text-white">
+            <p className="w-6">{idx + 1}.</p>
+            <p>{seriesItem[1].title}</p>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

@@ -11,9 +11,9 @@ export default function Filter({ name, amount = 0 }: FilterProps) {
 
   return (
     <Link href={`/posts/${category}/1`}>
-      <div className="flex gap-x-1 rounded-lg bg-white_hover pb-1 pl-3 pr-3 pt-1 shadow-md ring-ochre_light transition duration-100 ease-in hover:ring-2 dark:bg-background_component dark:text-white dark:ring-ochre">
+      <div className="flex gap-x-1 border border-black bg-white_hover pb-1 pl-3 pr-3 pt-1 shadow-md ring-blue-950/60 transition duration-100 ease-in hover:ring-2 dark:bg-background_component dark:text-white">
         <p>{parsedName}</p>
-        <p className="font-BlogDeco text-xs">{amount}</p>
+        <p className="text-xs">{amount}</p>
       </div>
     </Link>
   )

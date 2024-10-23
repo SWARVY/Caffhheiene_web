@@ -19,18 +19,17 @@ export default function PostPagination({
   const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
 
   return (
-    <ul className="flex justify-center gap-x-3 font-BlogTitle">
+    <ul className="flex justify-center gap-x-3">
       {Array.from({ length: pageLen }, (_, idx) => idx).map((_, idx) => (
-        <li
+        <Link
+          href={`/posts/${category}/${idx + 1}`}
           className={`${
-            pageNum === idx + 1 ? 'bg-white_hover dark:bg-neutral-600' : ''
-          } flex h-8 w-8 items-center justify-center rounded-md p-1 text-xl ring-ochre_light transition duration-200 ease-in hover:ring-2 dark:text-white dark:ring-ochre`}>
-          <Link href={`/posts/${category}/${idx + 1}`}>
-            <button type="button" className="h-full w-full">
-              {idx + 1}
-            </button>
-          </Link>
-        </li>
+            pageNum === idx + 1
+              ? 'bg-white_hover dark:bg-blue-600/60'
+              : 'bg-white dark:bg-neutral-600'
+          } flex size-8 items-center justify-center border border-black p-1 text-sm ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:text-white dark:ring-blue-100`}>
+          <li>{idx + 1}</li>
+        </Link>
       ))}
     </ul>
   )

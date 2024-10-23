@@ -13,12 +13,10 @@ export default function PostList({ posts, allPostLen }: PostListProps) {
   const scope = useStaggerAnimation()
 
   return (
-    <div className="grid w-full gap-10">
-      <ul ref={scope} className="grid w-full gap-8">
-        {posts?.map(([id, post]) => (
-          <PostItem key={post.url} id={allPostLen - id - 1} post={post} />
-        ))}
-      </ul>
-    </div>
+    <ul ref={scope} className="w-full space-y-8">
+      {posts?.map(([id, post]) => (
+        <PostItem key={post.url} id={allPostLen - id - 1} post={post} />
+      ))}
+    </ul>
   )
 }

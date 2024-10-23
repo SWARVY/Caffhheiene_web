@@ -1,5 +1,5 @@
 const MAIN_SETTING = {
-  recentlyPostDataAmount: 4,
+  recentlyPostDataAmount: 5,
 }
 
 export default MAIN_SETTING

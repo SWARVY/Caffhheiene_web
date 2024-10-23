@@ -21,10 +21,10 @@
     "lucide-react": "^0.364.0",
     "next": "^14.0.4",
     "next-contentlayer": "^0.3.4",
+    "next-themes": "^0.3.0",
     "plaiceholder": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "recoil": "^0.7.7",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-code-titles": "^1.2.0",
     "rehype-external-links": "^3.0.0",
@@ -63,7 +63,7 @@
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwind-highlightjs": "^2.0.1",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.14",
     "typescript": "5.3.3"
   }
 }

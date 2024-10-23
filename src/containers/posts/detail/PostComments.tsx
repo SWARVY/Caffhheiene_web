@@ -1,11 +1,11 @@
 'use client'
 
 import Giscus from '@giscus/react'
+import { useTheme } from 'next-themes'
 import { useRecoilValue } from 'recoil'
-import darkModeState from '@/atom/darkMode'
 
 export default function PostComments() {
-  const darkMode = useRecoilValue(darkModeState)
+  const { theme } = useTheme()
 
   return (
     <Giscus
@@ -18,7 +18,7 @@ export default function PostComments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme={darkMode ? 'noborder_gray' : 'noborder_light'}
+      theme={theme ? 'noborder_gray' : 'noborder_light'}
       lang="ko"
       loading="lazy"
     />

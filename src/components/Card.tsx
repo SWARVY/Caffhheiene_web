@@ -17,42 +17,33 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="max-h-sm flex-col overflow-hidden rounded-xl bg-white p-2 shadow-lg ring-ochre_light transition-all duration-100 ease-in hover:ring-2 dark:bg-background_component dark:ring-ochre md:max-w-md">
-        <div className="grid h-[15rem] overflow-hidden rounded-xl">
-          <ImgWithPlaceholder
-            src={post.thumbnail}
-            tailwindClassNames="h-56 w-full rounded-md object-cover"
-          />
-        </div>
-        <div className="grid gap-y-3 p-2.5">
-          <div className="grid items-center">
-            <div className="flex items-center gap-x-2">
-              <CalendarIcon className="h-3 w-3 text-ochre" />
-              <p className="mt-1.5 font-BlogDeco text-xs dark:text-white">
-                {post.date}
-              </p>
-            </div>
+      <div className="flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
+        <ImgWithPlaceholder
+          src={post.thumbnail}
+          tailwindClassNames="size-full max-h-[18rem] object-cover border-b border-black"
+        />
+        <div className="w-full space-y-3 p-6">
+          <div className="flex items-center gap-x-2">
+            <CalendarIcon className="h-3 w-3" />
+            <p className="text-xs dark:text-white">{post.date}</p>
           </div>
-          <div className="grid w-full gap-1">
-            <h3 className="truncate text-xl font-bold dark:text-white">
-              {post.title}
-            </h3>
-            <p className="truncate text-base font-semibold text-gray-400 dark:text-gray-300">
+          <div className="w-full">
+            <h3 className="truncate text-xl dark:text-white">{post.title}</h3>
+            <p className="truncate text-base text-gray-400 dark:text-gray-300">
               {post.description}
             </p>
           </div>
           <div className="flex items-center justify-between gap-x-2">
             <ul className="flex items-center gap-x-2">
-              <TagIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
               {post.category.map((category) => (
                 <Tag key={category} tag={category} />
               ))}
             </ul>
             <div className="flex">
               {post.series ? (
-                <FolderOpenIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+                <FolderOpenIcon className="size-4" />
               ) : (
-                <FolderIcon className="h-4 w-4 text-ochre_light dark:text-ochre" />
+                <FolderIcon className="size-4" />
               )}
             </div>
           </div>

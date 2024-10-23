@@ -6,7 +6,7 @@ export default function SNSList() {
       {USER_SNS.map((sns) => (
         <a href={sns.link} target="_blank" rel="noreferrer">
           <div className="group rounded-full p-2 transition ease-in">
-            <div className="fill-black transition-all duration-100 ease-in group-hover:fill-ochre dark:fill-white dark:group-hover:fill-ochre_light">
+            <div className="group-hover:fill-ochre dark:group-hover:fill-ochre_light fill-black transition-all duration-100 ease-in dark:fill-white">
               {sns.svg}
             </div>
           </div>

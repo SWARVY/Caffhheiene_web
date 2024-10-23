@@ -17,7 +17,7 @@ export default function MainPost({ id, post }: MainPostProps) {
   return (
     <Link
       href={`/posts/detail/${id + 1}`}
-      className="relative flex flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all duration-100 ease-in hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100 md:flex-row">
+      className="relative flex flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all duration-100 ease-in hover:ring-2 md:flex-row dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
       <ImgWithPlaceholder
         src={post.thumbnail}
         tailwindClassNames="size-full object-cover"
@@ -29,10 +29,10 @@ export default function MainPost({ id, post }: MainPostProps) {
             <p className="text-xs dark:text-white">{post.date}</p>
           </div>
           <div className="size-full">
-            <h3 className="text-xl dark:text-white md:text-3xl">
+            <h3 className="text-xl md:text-3xl dark:text-white">
               {post.title}
             </h3>
-            <p className="text-base text-gray-400 dark:text-gray-300 md:text-lg">
+            <p className="text-base text-gray-400 md:text-lg dark:text-gray-300">
               {post.description}
             </p>
           </div>

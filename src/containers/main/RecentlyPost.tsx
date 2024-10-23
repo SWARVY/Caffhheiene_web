@@ -1,8 +1,8 @@
 import { getRecentPost } from '@/utils/getPost'
 import React from 'react'
 import Card from '@/components/Card'
-import MainPost from './MainPost'
 import SubTitle from '@/components/SubTitle'
+import MainPost from './MainPost'
 
 export default function RecentlyPost() {
   const { mainPost, subPosts, postAmount } = getRecentPost()

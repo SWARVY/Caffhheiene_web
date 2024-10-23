@@ -44,7 +44,7 @@ export default function SidebarToc() {
   }, [])
 
   return (
-    <aside className="sticky top-[12rem] hidden w-72 self-start text-black drop-shadow-lg dark:text-white xl:grid">
+    <aside className="sticky top-[12rem] hidden w-72 self-start text-black drop-shadow-lg xl:grid dark:text-white">
       <div className="flex flex-col gap-y-4 border border-black bg-white text-black drop-shadow-xl dark:bg-background_component dark:text-white">
         <span className="pl-5 pt-4 font-bold">목차</span>
         <ul className="space-y-3 px-7 pb-5">

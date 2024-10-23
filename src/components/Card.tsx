@@ -6,7 +6,6 @@ import {
 } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import Tag from '@/components/Tag'
-import { TagIcon } from 'lucide-react'
 import ImgWithPlaceholder from './ImgWithPlaceholder'
 
 interface CardComponentProps {

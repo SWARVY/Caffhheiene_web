@@ -1,7 +1,7 @@
 'use client'
 
 import { Tag } from '@/utils/getPost'
-import { CircleChevronDown, CircleChevronUp, LibraryBig } from 'lucide-react'
+import { CircleChevronDown, CircleChevronUp } from 'lucide-react'
 import { useState } from 'react'
 import SeriesItem from './SeriesItem'
 

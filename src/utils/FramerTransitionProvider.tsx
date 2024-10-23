@@ -4,13 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { type ReactNode } from 'react'
 
-interface FramerTransitionProvider {
+interface FramerTransitionProviderProps {
   children: ReactNode
 }
 
 export default function FramerTransitionProvider({
   children,
-}: FramerTransitionProvider) {
+}: FramerTransitionProviderProps) {
   const pathName = usePathname()
 
   return (

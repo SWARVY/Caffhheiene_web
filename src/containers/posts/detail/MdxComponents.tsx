@@ -20,7 +20,7 @@ const mdxComponents: MDXComponents = {
   ),
 
   blockquote: ({ children }) => (
-    <blockquote className="flex items-center gap-x-3 overflow-hidden bg-gray-100 p-3 not-italic dark:bg-background_component dark:text-white sm:gap-x-6 sm:pl-6">
+    <blockquote className="flex items-center gap-x-3 overflow-hidden bg-gray-100 p-3 not-italic sm:gap-x-6 sm:pl-6 dark:bg-background_component dark:text-white">
       <DocumentTextIcon className="size-6 text-gray-700 dark:text-gray-200" />
       <div className="w-full flex-col text-sm leading-7">{children}</div>
     </blockquote>

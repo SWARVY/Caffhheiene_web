@@ -23,6 +23,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^1.0.10
         version: 1.0.10(next@14.0.4(@babel/core@7.23.7)(@opentelemetry/api@1.4.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       contentlayer:
         specifier: ^0.3.4
         version: 0.3.4(esbuild@0.18.20)
@@ -80,6 +83,9 @@ importers:
       slick-carousel:
         specifier: ^1.8.1
         version: 1.8.1(jquery@3.7.1)
+      tailwind-merge:
+        specifier: ^2.5.4
+        version: 2.5.4
     devDependencies:
       '@svgr/webpack':
         specifier: ^8.1.0
@@ -117,9 +123,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.17
         version: 10.4.17(postcss@8.4.33)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       eslint:
         specifier: ^8.56.0
         version: 8.56.0
@@ -159,9 +162,6 @@ importers:
       tailwind-highlightjs:
         specifier: ^2.0.1
         version: 2.0.1(highlight.js@10.7.3)(tailwindcss@3.4.14)
-      tailwind-merge:
-        specifier: ^2.4.0
-        version: 2.4.0
       tailwindcss:
         specifier: ^3.4.14
         version: 3.4.14
@@ -3974,8 +3974,8 @@ packages:
       highlight.js: ^10.7.2
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwind-merge@2.4.0:
-    resolution: {integrity: sha512-49AwoOQNKdqKPd9CViyH5wJoSKsCDjUlzL8DxuGp3P1FsGY36NJDAa18jLZcaHAUUuTj+JB8IAo8zWgBNvBF7A==}
+  tailwind-merge@2.5.4:
+    resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
 
   tailwindcss@3.4.14:
     resolution: {integrity: sha512-IcSvOcTRcUtQQ7ILQL5quRDg7Xs93PdJEk1ZLbhhvJc7uj/OAhYOnruEiwnGgBvUtaUAJ8/mhSw1o8L2jCiENA==}
@@ -8873,7 +8873,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  tailwind-merge@2.4.0: {}
+  tailwind-merge@2.5.4: {}
 
   tailwindcss@3.4.14:
     dependencies:

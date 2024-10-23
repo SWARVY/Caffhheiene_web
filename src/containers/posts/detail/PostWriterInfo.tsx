@@ -13,14 +13,14 @@ export default function PostWriterInfo() {
       />
       <div className="max-w-[23.5rem] flex-col items-center break-keep">
         <div className="flex items-center gap-x-2">
-          <h3 className="text-lg font-bold dark:text-white sm:text-xl">
+          <h3 className="text-lg font-bold sm:text-xl dark:text-white">
             {USER.name}
           </h3>
-          <p className="text-sm text-gray-400 dark:text-gray-300 sm:text-base">
+          <p className="text-sm text-gray-400 sm:text-base dark:text-gray-300">
             {USER.description}
           </p>
         </div>
-        <p className="text-sm dark:text-white sm:text-base">{USER.introduce}</p>
+        <p className="text-sm sm:text-base dark:text-white">{USER.introduce}</p>
       </div>
     </div>
   )

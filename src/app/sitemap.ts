@@ -13,16 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
 
-    {
-      url: `${USER.URL}/projects`,
-      lastModified: new Date(),
-    },
-
-    {
-      url: `${USER.URL}/studies`,
-      lastModified: new Date(),
-    },
-
     ...Array.from({ length: postLength }, (_, idx) => idx + 1).map(
       (postIdx) => ({
         url: `${USER.URL}/posts/detail/${postIdx}`,

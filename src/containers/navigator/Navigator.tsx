@@ -124,7 +124,7 @@ function NavigatorSection({ children }: PropsWithChildren) {
 
 export default function Navigator({ children }: PropsWithChildren) {
   return (
-    <nav className="fixed left-0 top-0 z-50 flex w-full items-center border-b border-blue-50 bg-blue-950 bg-opacity-60 font-BlogTitle backdrop-blur-lg dark:bg-opacity-60 dark:text-white">
+    <nav className="fixed left-0 top-0 z-50 flex w-full items-center border-b border-blue-50 bg-blue-950 bg-opacity-60 backdrop-blur-lg dark:bg-opacity-60 dark:text-white">
       {children}
     </nav>
   )

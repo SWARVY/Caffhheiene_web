@@ -2,10 +2,10 @@
 
 import Giscus from '@giscus/react'
 import { useTheme } from 'next-themes'
-import { useRecoilValue } from 'recoil'
 
 export default function PostComments() {
-  const { theme } = useTheme()
+  const { systemTheme, theme } = useTheme()
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   return (
     <Giscus
@@ -18,7 +18,7 @@ export default function PostComments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme={theme ? 'noborder_gray' : 'noborder_light'}
+      theme={currentTheme === 'dark' ? 'noborder_gray' : 'noborder_light'}
       lang="ko"
       loading="lazy"
     />

@@ -17,7 +17,7 @@ export default function PostDetail({ id }: { id: string }) {
       <div className="flex gap-x-12">
         <div className="grid w-full shrink gap-y-10">
           <div className="w-full space-y-6">
-            <h2 className="break-words break-keep text-4xl font-bold dark:text-white sm:text-5xl">
+            <h2 className="break-words break-keep text-4xl font-bold sm:text-5xl dark:text-white">
               {curr.title}
             </h2>
             <PostInfo curr={curr} />

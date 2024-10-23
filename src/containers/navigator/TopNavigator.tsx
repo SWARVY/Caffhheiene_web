@@ -4,6 +4,7 @@ import Navigator from '@/containers/navigator/Navigator'
 import { TOP_NAVBAR } from '@/constants/navbar'
 import DarkmodeButton from '@/containers/navigator/DarkmodeButton'
 import { LogoSVG } from '../../../public/svgs'
+import ProgressBar from './ProgressBar'
 
 export default function TopNavigator() {
   return (
@@ -21,6 +22,7 @@ export default function TopNavigator() {
             <DarkmodeButton />
           </Navigator.Section>
         </Navigator.Wrapper>
+        <ProgressBar />
       </div>
     </Navigator>
   )

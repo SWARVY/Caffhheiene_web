@@ -20,7 +20,7 @@ export default function MainPost({ id, post }: MainPostProps) {
       className="relative flex flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all duration-100 ease-in hover:ring-2 md:flex-row dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
       <ImgWithPlaceholder
         src={post.thumbnail}
-        tailwindClassNames="size-full object-cover"
+        tailwindClassNames="max-h-[30rem] size-full object-cover"
       />
       <div className="h-auto w-full border-black md:ml-3 md:max-w-[24rem] md:border-l-2 md:border-dashed">
         <div className="flex size-full flex-col gap-y-4 p-6">

@@ -1,4 +1,4 @@
-# 신현호 기술블로그 &middot; ![Static Badge](https://img.shields.io/badge/vercel-caffhheiene-orange?style=plastic&logo=vercel&logoColor=black&label=vercel&color=orange&link=https%3A%2F%2Fcaffhheiene.vercel.app)
+# 신현호 기술블로그 &middot; ![Static Badge](https://img.shields.io/badge/vercel-caffhheiene-orange?style=plastic&logo=vercel&logoColor=black&label=vercel&color=blue&link=https%3A%2F%2Fcaffhheiene.vercel.app)
 
 ## 프로젝트 개요
 
@@ -10,7 +10,13 @@
 
 ## 미리보기
 
-![image](https://github.com/SWARVY/Caffhheiene_web/assets/53262430/1c5fe071-3978-4e02-97b6-e5cbb0931880)
+### 메인 페이지
+
+![image](https://github.com/user-attachments/assets/c95e4e78-b087-4c3b-856b-b3ff62db89f9)
+
+### 글 목록 페이지
+
+![image](https://github.com/user-attachments/assets/37397036-7089-4042-9733-149c4f9a09d5)
 
 ## 프로젝트 개발 과정
 
@@ -21,9 +27,4 @@
 - Next14 (app router)
 - TypeScript
 - Contentlayer
-- Recoil (jotai로 마이그레이션 예정)
 - framer-motion
-
-## 프로젝트 상태
-
-[레거시 로직 리팩토링](https://github.com/SWARVY/Caffhheiene_web/issues/47) 이슈 마무리 이후 더이상의 업데이트는 진행하지 않을 에정이며, 추후 블로그는 `npm` 패키지화 하여 배포할 예정입니다.

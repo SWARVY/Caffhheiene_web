@@ -16,7 +16,7 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
+      <div className="flex size-full flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
         <ImgWithPlaceholder
           src={post.thumbnail}
           tailwindClassNames="size-full max-h-[18rem] object-cover border-b border-black"

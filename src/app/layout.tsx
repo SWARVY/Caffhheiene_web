@@ -44,6 +44,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           name="naver-site-verification"
           content={process.env.NAVER_SEARCH_ADVISER_ID}
         />
+        <GoogleAnalytics />
       </head>
       <body className="flex flex-col items-center justify-center w-full transition duration-100 ease-in bg-blue-950/5 font-Pretendard dark:bg-background_dark">
         <NextThemeProvider>
@@ -53,7 +54,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
         </NextThemeProvider>
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics />
       </body>
     </html>
   )

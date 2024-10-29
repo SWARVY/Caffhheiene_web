@@ -21,11 +21,10 @@ const parseSeries = (name: string) => {
 }
 
 export const generateMetadata = async (
-  props: Promise<PageProps>,
+  props: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
-  const receivedProps = await props
-  const { pageNum, category } = await receivedProps.params
+  const { pageNum, category } = await props.params
 
   return {
     title: `기록 | ${pageNum}페이지 [${parseSeries(category)}]`,

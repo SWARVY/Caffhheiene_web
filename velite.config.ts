@@ -6,7 +6,7 @@ import rehypeSlug from 'rehype-slug'
 import remarkBreaks from 'remark-breaks'
 import { defineCollection, defineConfig, s } from 'velite'
 
-const blogPost = defineCollection({
+export const blogPost = defineCollection({
   name: 'Post',
   pattern: 'posts/**/*.mdx',
   schema: s.object({

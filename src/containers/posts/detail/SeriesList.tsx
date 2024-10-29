@@ -24,6 +24,7 @@ export default function SeriesList({ seriesName, series }: SeriesListProps) {
       <div className="flex flex-col justify-start px-4 py-6 overflow-y-scroll bg-white size-full max-h-60 gap-y-3 dark:bg-background_component">
         {series.map((seriesItem, idx) => (
           <Link
+            key={seriesItem[1].title}
             href={`${seriesItem[0] + 1}`}
             className="flex pl-4 text-gray-400 transition-all gap-x-4 hover:text-black dark:text-gray-300 dark:hover:text-white">
             <p className="w-6">{idx + 1}.</p>

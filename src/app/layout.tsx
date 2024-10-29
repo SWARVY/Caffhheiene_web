@@ -2,6 +2,7 @@ import { USER } from '@/constants/user'
 import BottomNavigator from '@/containers/navigator/BottomNavigator'
 import TopNavigator from '@/containers/navigator/TopNavigator'
 import FramerTransitionProvider from '@/utils/FramerTransitionProvider'
+import GoogleAnalytics from '@/utils/GoogleAnalytics'
 import NextThemeProvider from '@/utils/NextThemeProvider'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -37,11 +38,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <head>
         <meta
           name="google-site-verification"
-          content="oiYSaLSyk-bomuW9S4FjnJk3cvGtrJPYNmm4QrYOG0s"
+          content={process.env.GOOGLE_SEARCH_CONSOLE_ID}
         />
         <meta
           name="naver-site-verification"
-          content="47cf760f4112b1ce516d64a87fd5f31bd3f74fc9"
+          content={process.env.NAVER_SEARCH_ADVISER_ID}
         />
       </head>
       <body className="flex flex-col items-center justify-center w-full transition duration-100 ease-in bg-blue-950/5 font-Pretendard dark:bg-background_dark">
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         </NextThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <GoogleAnalytics />
       </body>
     </html>
   )

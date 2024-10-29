@@ -20,3 +20,5 @@ next-env.d.ts
 !.yarn/sdks
 !.yarn/versions
 node_modules
+
+.env.*

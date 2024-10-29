@@ -2,8 +2,8 @@ import { USER } from '@/constants/user'
 import BottomNavigator from '@/containers/navigator/BottomNavigator'
 import TopNavigator from '@/containers/navigator/TopNavigator'
 import FramerTransitionProvider from '@/utils/FramerTransitionProvider'
-import GoogleAnalytics from '@/utils/GoogleAnalytics'
 import NextThemeProvider from '@/utils/NextThemeProvider'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Metadata } from 'next'
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           name="naver-site-verification"
           content={process.env.NAVER_SEARCH_ADVISER_ID}
         />
-        <GoogleAnalytics />
+        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ''} />
       </head>
       <body className="flex flex-col items-center justify-center w-full transition duration-100 ease-in bg-blue-950/5 font-Pretendard dark:bg-background_dark">
         <NextThemeProvider>

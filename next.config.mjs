@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} **/
-import { withContentlayer } from 'next-contentlayer'
 import withPlaiceholder from '@plaiceholder/next'
+
+const isDev = process.argv.indexOf('dev') !== -1
+const isBuild = process.argv.indexOf('build') !== -1
+
+if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
+  process.env.VELITE_STARTED = '1'
+  const { build } = await import('velite')
+  await build({ watch: isDev, clean: !isDev })
+}
 
 const nextConfig = {
   webpack(config) {
@@ -21,4 +29,4 @@ const nextConfig = {
   },
 }
 
-export default withPlaiceholder(withContentlayer(nextConfig))
+export default withPlaiceholder(nextConfig)

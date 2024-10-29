@@ -1,11 +1,12 @@
-import { type Post } from '@/contentlayer/generated'
+import Tag from '@/components/Tag'
+import { Post } from '@/velite'
 import {
   CalendarIcon,
-  FolderOpenIcon,
   FolderIcon,
+  FolderOpenIcon,
 } from '@heroicons/react/20/solid'
 import Link from 'next/link'
-import Tag from '@/components/Tag'
+
 import ImgWithPlaceholder from './ImgWithPlaceholder'
 
 interface CardComponentProps {
@@ -16,19 +17,19 @@ interface CardComponentProps {
 export default function Card({ id, post }: CardComponentProps) {
   return (
     <Link href={`/posts/detail/${id + 1}`}>
-      <div className="flex size-full flex-col border border-black bg-white shadow-lg ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
+      <div className="flex flex-col transition-all bg-white border border-black shadow-lg size-full ring-blue-950/60 hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
         <ImgWithPlaceholder
           src={post.thumbnail}
           tailwindClassNames="size-full max-h-[18rem] object-cover border-b border-black"
         />
-        <div className="w-full space-y-3 p-6">
+        <div className="w-full p-6 space-y-3">
           <div className="flex items-center gap-x-2">
-            <CalendarIcon className="h-3 w-3" />
+            <CalendarIcon className="w-3 h-3" />
             <p className="text-xs dark:text-white">{post.date}</p>
           </div>
           <div className="w-full">
-            <h3 className="truncate text-xl dark:text-white">{post.title}</h3>
-            <p className="truncate text-base text-gray-400 dark:text-gray-300">
+            <h3 className="text-xl truncate dark:text-white">{post.title}</h3>
+            <p className="text-base text-gray-400 truncate dark:text-gray-300">
               {post.description}
             </p>
           </div>

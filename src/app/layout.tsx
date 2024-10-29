@@ -1,14 +1,15 @@
-import './globals.css'
-import '../../public/fonts/font.css'
-import BottomNavigator from '@/containers/navigator/BottomNavigator'
-import { PropsWithChildren } from 'react'
-import { Analytics } from '@vercel/analytics/react'
-import { Metadata } from 'next'
 import { USER } from '@/constants/user'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import BottomNavigator from '@/containers/navigator/BottomNavigator'
 import TopNavigator from '@/containers/navigator/TopNavigator'
-import NextThemeProvider from '@/utils/NextThemeProvider'
 import FramerTransitionProvider from '@/utils/FramerTransitionProvider'
+import NextThemeProvider from '@/utils/NextThemeProvider'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Metadata } from 'next'
+import { PropsWithChildren } from 'react'
+
+import '../../public/fonts/font.css'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: '신현호의 기술서재',
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           content="47cf760f4112b1ce516d64a87fd5f31bd3f74fc9"
         />
       </head>
-      <body className="flex w-full flex-col items-center justify-center bg-blue-950/5 font-Pretendard transition duration-100 ease-in dark:bg-background_dark">
+      <body className="flex flex-col items-center justify-center w-full transition duration-100 ease-in bg-blue-950/5 font-Pretendard dark:bg-background_dark">
         <NextThemeProvider>
           <TopNavigator />
           <FramerTransitionProvider>{children}</FramerTransitionProvider>

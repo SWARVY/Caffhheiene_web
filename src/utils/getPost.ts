@@ -1,16 +1,16 @@
 import MAIN_SETTING from '@/constants/mainSetting'
 import POST_SETTING from '@/constants/postSetting'
-import { allPosts, type Post } from '@/contentlayer/generated'
+import { Post, blogPost } from '@/velite'
 
 export interface Tag {
   name: string
   amount: number
 }
 
-export const getAllPostLength = () => allPosts.length
+export const getAllPostLength = () => blogPost.length
 
 export const getAllPost = (): Array<[number, Post]> =>
-  allPosts
+  blogPost
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .map((post, idx) => [idx, post])
 
@@ -18,7 +18,7 @@ export const getAllCategory = () => {
   const categories: Tag[] = [{ name: 'All', amount: 0 }]
   const seriesList: Tag[] = []
 
-  allPosts.forEach(({ category, series }) => {
+  blogPost.forEach(({ category, series }) => {
     category.forEach((categoryItem) => {
       const parsedCategory = categoryItem.replace(/ /g, '_')
       const target = categories.findIndex(
@@ -64,7 +64,7 @@ export const getRecentPost = (): {
 }
 
 export const getPostContent = (id: number) => {
-  const purePostData = allPosts.sort(
+  const purePostData = blogPost.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 
@@ -88,7 +88,7 @@ export const getSelectedPostDetail = (id: number) => {
 }
 
 export const getSelectedSeriesPost = (series: string) => {
-  const purePostData: [number, Post][] = allPosts
+  const purePostData: [number, Post][] = blogPost
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
     .map((post, idx) => [idx, post])
   const parsedSeries = series.replaceAll(/_/g, ' ')

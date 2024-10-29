@@ -1,0 +1,118 @@
+---
+title: 전역변수로 DOM을 참조하기
+description: 전역변수로 DOM을 참조할수있다..?
+date: 2024-02-15
+thumbnail: /images/2023/2023_12/2023_12_10/2023_12_10_(1).webp
+category:
+  - Web
+  - JavaScript
+---
+
+## 서론
+
+오늘도 열심?히 공부를 하고있던 와중, 스터디를 같이하시는 분께서 질문 하나를 주셨습니다.
+html 내부에서 script 태그를 사용하여 내부에 JS 로직을 작성하고있었는데, 선언하지 않은 변수인데도 이벤트리스너가 할당된다는 것이었습니다.
+전역 객체 문제인가? 하고 혼자서 생각해봐도 명쾌한 해답이 안나오더라구요, 그래서 제가 해당 내용에 대해서 학습한 내용을 작성해보고자 합니다.
+
+## 문제
+
+```html showLineNumbers
+<button type="button" id="buttons">Click</button>
+
+<script type="text/javascript">
+  ...
+</script>
+```
+
+이런 HTML 문서가 있다고 했을 때, button에다가 eventListener를 달아주기 위해서 우리는 보통 **getElementById** 등을 사용합니다.
+이후에 해당 요소를 통해 이벤트 리스너를 추가하죠, 다음에 나오는 예시처럼요
+
+```html showLineNumbers
+<button type="button" id="buttons">Click</button>
+
+<script type="text/javascript">
+  const buttonList = document.querySelector('#buttons')
+  buttonList.onClick = () => alert('Clicked')
+</script>
+```
+
+그래요, 이러면 우리가 알고 있는 것과 똑같습니다. 근데 문제는 다음과 같습니다.
+
+```html showLineNumbers
+<button type="button" id="buttons">Click</button>
+
+<script type="text/javascript">
+  buttons.onClick = () => alert('Clicked')
+</script>
+```
+
+이렇게 작성해도 똑같이 동작한다는 것 입니다. 저는 **buttons**를 별도로 선언한 적이 없음에도 불구하구요.
+하지만, 이게 모든 경우에서 일어나진 않을 것 같다는 합리적인 의심을 해볼 수 있습니다.
+
+그냥 막 작성해서 이벤트를 부여할 수 있다면 웹은 개판이었을테니까요.
+
+곰곰히 생각해보면, **buttons**는 제가 button에 지정한 **id** 입니다. 어떤 이유로 이게 정상적으로 동작하게 되는걸까요?
+
+## 이유
+
+그야.. 웹 표준에 있기 때문입니다. 물론 원래 표준은 아니었고 Explorer 에서만 적용되었었으며 + 다른 웹 브라우저들도 호환성을 위해서 도입을 했습니다.
+취지는 웹 개발자들에게서 편의를 제공하기 위해서 였다고 합니다. 매번 **getElementById**나 **querySelector** 를 쓰는게 귀찮았나 봅니다.
+
+그렇지만 저는 해당 기능을 사용하는 것을 **지양**하는게 좋다고 생각합니다. 왜냐구요?
+
+- [[TJ VanToll] DOM Element References as Global Variables](https://www.tjvantoll.com/2012/07/19/dom-element-references-as-global-variables/)
+
+해당 포스트의 내용으로 제 의견을 대신하겠습니다.. 만 정리를 해보자면
+
+### 지양해야하는 이유
+
+1. 버그가 발생할 가능성이 높습니다
+
+```html showLineNumbers
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="choice"></button>
+        <script>
+            var choice = 'foo';
+            //Lots more JavaScript
+            doSomethingVeryComplicated(choice);
+        </script>
+    </body>
+</html>
+```
+
+이런 JS 로직이 있다고 가정해 봅시다. 이 순간까지는 script 태그 내부에서는 선언되어있는 choice를 **doSomethingVeryComplicated**가 사용하고 있을 것 입니다.
+하지만 만약에 choice가 사라져본다고 생각해봅시다. 그렇다고 해도 **doSomethingVeryComplicated**라는 함수는 **input 태그의 id인 choice** 를 가져와서 사용할 것이고, 예상치 못한 오류를 발생시킬 수 있습니다.
+
+2. 브라우저가 구현하는데 드는 코스트가 적지 않습니다.
+
+이러한 요소를 사용하기 위해서는 브라우저가 모든 명명된 요소의 목록을 만들고 + 페이지가 변경되어도 이를 유지해야하는데, 명명된 요소들이 많다면 페이지에서 많은 코스트가 발생할 것 입니다.
+
+3. 전역 프로퍼티와 충돌할 수 있습니다
+
+```html showLineNumbers
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="history">Click me</button>
+        <script>
+            window.addEventListener("load", function() {
+                history.onclick = () => alert("Clicked");
+            });
+        </script>
+    </body>
+</html>
+```
+
+window 객체에서 기본적으로 제공하는 **event**, **history**, **location**과 같은 요소들과 충돌할 수도 있습니다.
+위와 같이 작성한다면 **history**가 가지는 의미 대신 단순 DOM의 식별 전역 변수로 보일 수 있습니다.
+
+## 결론
+
+해당 기능을 알더라도 위와 같은 문제를 방지하기 위해서 기존에 사용하던 **getElementById**나 **querySelector**를 사용하는것이 안정성적인 측면에서 더 좋습니다.
+
+## 참고
+
+- [[TJ VanToll] DOM Element References as Global Variables](https://www.tjvantoll.com/2012/07/19/dom-element-references-as-global-variables/)
+- [[DevDic] 전역변수로서의 DOM 참조](http://www.devdic.com/javascript/reference/grammar/document:2488/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98%EB%A1%9C%EC%84%9C%EC%9D%98-DOM-%EC%B0%B8%EC%A1%B0)

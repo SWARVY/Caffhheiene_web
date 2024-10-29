@@ -1,11 +1,11 @@
 'use client'
 
-import { ReactNode, useCallback, useRef, useState } from 'react'
 import {
   CheckIcon,
   CodeBracketIcon,
   DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline'
+import { ReactNode, useCallback, useRef, useState } from 'react'
 
 interface PreComponentProps {
   styleNames: string | undefined
@@ -32,19 +32,19 @@ export default function PreComponent({
   return (
     <div
       ref={preDiv}
-      className="group mt-7 flex flex-col border border-black"
+      className="flex flex-col border border-black group mt-7"
       onMouseLeave={handleExit}>
       <div className="flex items-center justify-between bg-blue-950/60 px-4 py-1.5 dark:bg-blue-600/60">
         <div className="flex items-center gap-x-4">
-          <CodeBracketIcon className="size-5 text-white" />
+          <CodeBracketIcon className="text-white size-5" />
           <p className="m-0 mt-1 text-white">
             {styleNames?.replace(/language-/g, '')}
           </p>
         </div>
         <div className="flex items-center justify-end gap-x-2">
-          <div className="size-3 rounded-full bg-red-600" />
-          <div className="size-3 rounded-full bg-yellow-500" />
-          <div className="size-3 rounded-full bg-green-600" />
+          <div className="bg-red-600 rounded-full size-3" />
+          <div className="bg-yellow-500 rounded-full size-3" />
+          <div className="bg-green-600 rounded-full size-3" />
         </div>
       </div>
       <div className="relative size-full bg-[#2b2b2b]">
@@ -59,7 +59,7 @@ export default function PreComponent({
             <CheckIcon className="size-5" />
           )}
         </button>
-        <pre className="m-0 px-2 py-4 leading-4">{children}</pre>
+        <pre className="px-2 py-6 m-0 leading-4">{children}</pre>
       </div>
     </div>
   )

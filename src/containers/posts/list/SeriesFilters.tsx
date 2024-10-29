@@ -3,6 +3,7 @@
 import { Tag } from '@/utils/getPost'
 import { CircleChevronDown, CircleChevronUp } from 'lucide-react'
 import { useState } from 'react'
+
 import SeriesItem from './SeriesItem'
 
 interface SeriesFiltersProps {
@@ -18,7 +19,7 @@ export default function SeriesFilters({ series }: SeriesFiltersProps) {
         <button
           type="button"
           onClick={() => setShow((prev) => !prev)}
-          className="visible flex items-center gap-x-2 sm:hidden">
+          className="flex items-center visible gap-x-2 sm:hidden">
           {show ? (
             <CircleChevronDown className="size-4" />
           ) : (

@@ -28,17 +28,17 @@ export default function InternalToc() {
   }, [])
 
   return (
-    <div className="border border-black text-black drop-shadow-lg dark:text-white">
-      <div className="flex items-center justify-between gap-x-2 bg-blue-950/60 px-5 py-3 text-white dark:bg-blue-600/60">
+    <div className="text-black border border-black drop-shadow-lg dark:text-white">
+      <div className="flex items-center justify-between px-5 py-3 text-white gap-x-2 bg-blue-950/60 dark:bg-blue-600/60">
         <h2 className="text-2xl">목차</h2>
-        <BookmarkIcon className="size-5 text-yellow-400" />
+        <BookmarkIcon className="text-yellow-400 size-5" />
       </div>
-      <div className="flex bg-white px-3 py-6 dark:bg-background_component">
+      <div className="flex px-3 py-6 bg-white dark:bg-background_component">
         <ul className="space-y-3">
           {headingElements.map(({ index, size }) => (
             <li
               key={`internal-toc-content-${index}`}
-              className="group flex items-center gap-x-2 text-gray-600 transition-all hover:text-black dark:text-white dark:hover:text-white_hover_weight"
+              className="flex items-center text-gray-600 transition-all group gap-x-2 hover:text-black dark:text-white dark:hover:text-white_hover_weight"
               style={{
                 paddingLeft: `${size}px`,
                 fontSize: `${17 - size / 20}px`,

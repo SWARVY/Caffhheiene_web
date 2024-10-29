@@ -4,9 +4,9 @@ import { getSelectedPostDetail } from '@/utils/getPost'
 import { Metadata, ResolvingMetadata } from 'next'
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export const generateMetadata = async (
@@ -14,7 +14,7 @@ export const generateMetadata = async (
   parent: ResolvingMetadata
 ): Promise<Metadata> => {
   const { title, description, thumbnail } = getSelectedPostDetail(
-    Number(props.params.id)
+    Number((await props.params).id)
   )
 
   return {
@@ -24,7 +24,7 @@ export const generateMetadata = async (
       ...(await parent).openGraph,
       title,
       description,
-      url: `https://caffhheiene.vercel.app/posts/detail/${props.params.id}`,
+      url: `https://caffhheiene.vercel.app/posts/detail/${(await props.params).id}`,
       images: [
         {
           url: `https://caffhheiene.vercel.app${thumbnail}`,
@@ -37,13 +37,12 @@ export const generateMetadata = async (
   }
 }
 
-export default async function postDetail({
-  params,
-}: {
-  params: { id: string }
+export default async function postDetail(props: {
+  params: Promise<{ id: string }>
 }) {
+  const params = await props.params
   return (
-    <div className="flex flex-col gap-y-10 p-5 md:p-2 xl:p-0">
+    <div className="flex flex-col p-5 gap-y-10 md:p-3 xl:p-0">
       <PostDetail id={params.id} />
       <PostComments />
     </div>

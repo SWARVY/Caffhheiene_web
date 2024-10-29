@@ -1,7 +1,8 @@
 import SubTitle from '@/components/SubTitle'
 import { getAllCategory } from '@/utils/getPost'
-import TagFilters from './TagFilters'
+
 import SeriesFilters from './SeriesFilters'
+import TagFilters from './TagFilters'
 
 export default function PostFilters() {
   const { categories, series } = getAllCategory()

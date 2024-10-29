@@ -1,0 +1,188 @@
+---
+title: Next.js 블로그 제작기 (7)
+description: 디자인 뜯어고치기
+date: 2024-02-07
+thumbnail: /images/image00.webp
+category:
+  - TypeScript
+  - Next.js
+series: 블로그 제작기
+---
+
+## 서론
+
+지금 듣고잇는 구름톤 트레이닝에서 학습중인게 생각보다 유용해서 그런지, 블로그 개발에 시간을 그리 많이 쓰는건 아닌데도 개발의 진척이 상당히 많이 된 것 같습니다.
+
+아무래도 기본부터 하나씩 하다보니 몰랐던 것에 대해서 익히고 이미 알고있엇던 개념들에 대한 점검, 그리고 오개념 교정까지 할 수 있는 것 같아 이틀차인데도 만족하고 있습니다.
+
+해당 구름톤 트레이닝에 대해서는 한 주가 끝날때마다 회고를 해볼 생각이며, 학습한 내용에 대해서도 정리할 예정입니다.
+뭐 여튼 이건 블로그 포스팅이니까.. 이번에 업데이트 된 내용에 대해서 설명해보도록 하겠습니다.
+
+## 변경점
+
+### 포스팅 페이지 TOC 고치기
+
+이전에 추가했던 **사이드바 TOC**는 기능 자체에는 만족했지만 뭔가 어설프다고 느꼈습니다.
+근데 고치려다 든 생각이, 애초에 **RootLayout**에서 지정해놓은 **max-width**가 발목을 잡는 것 같았습니다.
+
+이전 사이드바 TOC에서는 다음과 같은 문제가 있었습니다.
+
+1. **absolute** 로 요소를 배치했기때문에 사이즈를 줄이다보면 포스트와 내용이 겹치게 됩니다.
+
+   - 물론 이러한 항목은 **tailwindcss**의 반응형 디자인으로 조정을 좀 해주면 되나, 저는 **tailwindcss**에서 지정해준 사이즈 이외에는 잘 사용하지 않습니다. (다른 요소들과 맞춰놔서 통일감이 깨지는 느낌)
+
+2. 전반적으로 시인성이 별로라고 느껴졌습니다.
+
+   - 사실 이건 비단 TOC만의 문제는 아니었는데, 아무래도 전반적인 색상이 모두 무채색이다보니 시인성이 나쁜 것 같더라구요.
+
+3. 크기를 지정하지 않아서 들쭉날쭉한 사이즈.
+
+1번은 그렇다치고 3번은 그냥 사이즈만 지정해 주면 되는 문제였지만. 2번때문에라도 전반적인 레이아웃 변경의 고려가 필요했습니다.
+그렇다고 레이아웃 변경이 어려운 것도 아니구요, 구상하는게 귀찮은거지..
+
+근데 이 경우엔 뭐 구상하는게 어려운 문제는 아니었습니다. **flex** 와 **grid**를 적절하게 써서 배치를 해줬습니다.
+그리고 여기에 이번에 CSS를 다시 공부하면서 아리까리 했던 **sticky** 속성을 써주면 되겠다는 생각이 들었습니다.
+
+- **position: sticky**는 **relative** 속성처럼 동작하다, 스크롤 시 지정 지점에서 요소를 **fixed** 속성처럼 동작하게 합니다.
+
+근데 **sticky** 속성을 지정했는데도 작동이 되지않는 문제에 맞닥뜨리게 되었습니다. 해당 내용에 대해서 추가적인 학습을 진행해본 결과 다음과 같은 사실을 알 수 있었습니다.
+
+1. **positin: sticky**는 부모 요소의 **overflow** 속성과 잘 호환되지 않습니다.
+
+   - 부모 요소의 **overflow** 속성을 제거해보세요
+
+2. **top, bottom , left, right**와 같은 속성을 지정해주세요
+
+   - 이 경우 **sticky**의 기준이 설정되지 않아 동작하지 않습니다.
+
+3. 특정 브라우저는 지원하지 않습니다.
+
+   - IE 같은거 요즘 안쓰니까 이건 패스
+
+저의 경우는 2번의 경우였고, 요소에 **top** 속성을 추가하여 해결했습니다. 그리고 **RootLayout**에 적용되어있던 **max-width**를 각 페이지별로 따로 지정을 해주었습니다.
+사실 **layout.tsx**를 따로 작성하여 해당 페이지에 적용해도 되는데, 해당 항목은 간단하기도 하고 양도 얼마 안되기때문에 그냥 **page.tsx**를 수정하였습니다.
+
+### 페이지의 전반적인 디자인 변경
+
+사이트가 전반적으로 무채색으로 너무 쳐지는 것 같고 시인성도 나빠지는 것 같아 포인트 색을 추가하여 디자인을 변경하였습니다.
+확실히 이전보다 더 깔끔하고 이뻐진 것 같다고 느낍니다 (매우 주관적)
+
+특히 포스트 내부 **코드 블럭**을 가장 많이 수정했습니다. 겸사겸사 DOM을 공부하며 배운 **navigator**객체를 사용한 코드를 복사하는 기능도 추가하였습니다.
+
+```tsx showLineNumbers
+'use client'
+
+import { ReactNode, useRef, useState } from 'react'
+import {
+  CheckIcon,
+  CodeBracketIcon,
+  DocumentDuplicateIcon,
+} from '@heroicons/react/24/outline'
+
+interface PreComponentProps {
+  children: ReactNode
+}
+
+export default function PreComponent({ children }: PreComponentProps) {
+  const preDiv = useRef<HTMLDivElement>(null)
+  const [copied, setCopied] = useState(false)
+
+  const handleExit = () => {
+    setCopied(false)
+  }
+
+  const handleCopy = () => {
+    setCopied(true)
+    navigator.clipboard.writeText(preDiv.current?.textContent as string)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <div ref={preDiv} className="group flex-col" onMouseLeave={handleExit}>
+      <div className="bg-ochre flex items-center justify-between rounded-t-lg pb-3 pl-4 pr-4 pt-3">
+        <CodeBracketIcon className="h-5 w-5 text-white" />
+        <div className="flex items-center justify-end gap-x-2">
+          <div className="h-3 w-3 rounded-full bg-red-600" />
+          <div className="h-3 w-3 rounded-full bg-yellow-500" />
+          <div className="h-3 w-3 rounded-full bg-green-600" />
+        </div>
+      </div>
+      <div className="relative">
+        <div
+          className={`absolute right-2 top-2 rounded-md ${!copied ? 'bg-ochre_light hover:bg-ochre' : 'bg-green-400 hover:bg-green-500'} p-2 opacity-0 transition-all duration-100 ease-in  group-hover:opacity-100`}>
+          {!copied ? (
+            <DocumentDuplicateIcon
+              className="h-5 w-5 text-white"
+              onClick={handleCopy}
+            />
+          ) : (
+            <CheckIcon className="h-5 w-5 text-white" />
+          )}
+        </div>
+        <pre className="rounded-b-lg p-4 leading-4">{children}</pre>
+      </div>
+    </div>
+  )
+}
+```
+
+**useRef**를 통해 DOM 요소를 선택하고 **element**의 프로퍼티인 **.textContent**를 사용하면 태그 사이에 존재하는 모든 텍스트를 가져올 수 있습니다.
+**.textContent**말고 **.innerText**를 사용해야하는거 아니냐구요?
+
+1. **.textContent**는 해당 노드가 가지고 있는 텍스트 값을 그대로 읽습니다. 이 때 태그와 상관없이 가져옵니다.
+
+```tsx
+<div>
+  안녕하세요 : <span className="hidden">안보임</span>
+</div>
+```
+
+```text
+안녕하세요 : 안보임 // .textContent의 결과
+```
+
+span 태그가 **hidden**임에도 불구하고 **.textContent**는 해당 텍스트를 가져옵니다.
+
+2. **.innterText**는 해당 element 안에서 사용자에게 **보여지는 값**만 가져옵니다.
+
+```tsx
+<div>
+  안녕하세요 : <span className="hidden">안보임</span>
+</div>
+```
+
+```text
+안녕하세요 : // .innerText의 결과
+```
+
+span 태그가 **hidden**이라서 가져오지 않습니다.
+
+## 트러블 슈팅
+
+### [Eslint] jsx-a11y/control-has-associated-label
+
+1. button 요소에 **텍스트 컨텐츠**를 넣으면 됩니다.
+
+```tsx showLineNumbers
+<button type="button">button</button>
+```
+
+2. icon이 존재하여 텍스트 컨텐츠가 필요없다면 **aria-label을 통해 요소에 특성을 지정**하면 됩니다.
+
+```tsx showLineNumbers
+<button type="button" aria-label="save" class="icon-save" />
+```
+
+### [Eslint] jsx-a11y/click-events-have-key-events
+
+div 태그는 대표적인 비대화형(Non-interactive) 요소라 키보드 이동이나 포커스가 되지 않으니, **button** 혹은 **input** 처럼 대화형 요소를 사용하라는 의미입니다.
+
+1. div와 같은 요소들을 **button / input** 과 같은 **대화형 요소**로 변경합니다.
+2. div에 **role 속성을 추가**합니다.
+
+## 참고
+
+- [Solution to why CSS ‘position: sticky’ is not working](https://robertmarshall.dev/blog/solution-to-why-css-position-sticky-is-not-working/)
+- [[hi.anna] innerHTML, innerText, textContent 차이점](https://hianna.tistory.com/483)
+- [div에 on:click 이벤트 붙일 때 on:key와 관련된 이벤트를 같이 사용해야하나요?](https://www.inflearn.com/questions/936566/div%EC%97%90-on-click-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B6%99%EC%9D%BC-%EB%95%8C-on-key%EC%99%80-%EA%B4%80%EB%A0%A8%EB%90%9C-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%EA%B0%99%EC%9D%B4-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%82%98%EC%9A%94)
+- [HTML role 속성 – 장애를 가진 사용자들을 위한 향상된 웹 콘텐츠의 접근성 제공](https://codingeverybody.kr/html-role-%EC%86%8D%EC%84%B1%EC%9D%98-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EB%B2%95/)

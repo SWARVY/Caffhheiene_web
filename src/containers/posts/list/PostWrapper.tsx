@@ -1,5 +1,6 @@
-import { type Post } from '@/contentlayer/generated'
 import { getAllPostLength } from '@/utils/getPost'
+import { Post } from '@/velite'
+
 import PostList from './PostList'
 import PostPagination from './PostPagination'
 

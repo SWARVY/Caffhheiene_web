@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import Tag from '@/components/Tag'
 import { USER } from '@/constants/user'
+import { Post } from '@/velite'
 import { CalendarIcon } from '@heroicons/react/24/outline'
-import { Post } from '@/contentlayer/generated'
 import { CircleUser, LibraryBig, TagIcon } from 'lucide-react'
+import Image from 'next/image'
 
 interface PostInfoProps {
   curr: Post
@@ -19,7 +19,7 @@ export default function PostInfo({ curr }: PostInfoProps) {
         height={60}
         alt="user profile img"
       />
-      <div className="flex w-full flex-col gap-2 p-1">
+      <div className="flex flex-col w-full gap-2 p-1">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-x-2">
             <CircleUser className="size-4" />

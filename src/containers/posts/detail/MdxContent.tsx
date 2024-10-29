@@ -21,7 +21,7 @@ export default function MDXContent({ content, components }: MDXProps) {
     <div
       id="content"
       className="max-w-full overflow-hidden prose prose-neutral dark:text-white">
-      {content && <Component components={{ ...components }} />}
+      {content && <Component components={components} />}
     </div>
   )
 }

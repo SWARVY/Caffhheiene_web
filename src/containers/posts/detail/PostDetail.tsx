@@ -4,7 +4,7 @@ import { getPostContent, getSelectedSeriesPost } from '@/utils/getPost'
 import Image from 'next/image'
 
 import InternalToc from './InternalToc'
-import mdxComponents from './MdxComponents'
+import MDX from './MdxComponents'
 import MDXContent from './MdxContent'
 import PostInfo from './PostInfo'
 import SeriesList from './SeriesList'
@@ -33,7 +33,7 @@ export default function PostDetail({ id }: { id: string }) {
           </div>
           <div className="grid w-full grid-cols-1 gap-y-10">
             <InternalToc />
-            <MDXContent content={curr.content} components={mdxComponents} />
+            <MDXContent content={curr.content} components={MDX} />
           </div>
         </div>
         <SidebarToc />

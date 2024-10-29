@@ -1,5 +1,3 @@
-'use client'
-
 import { DocumentTextIcon } from '@heroicons/react/24/outline'
 import { type MDXComponents } from 'mdx/types'
 import Image from 'next/image'
@@ -7,7 +5,7 @@ import Link from 'next/link'
 
 import PreComponent from './PreComponent'
 
-const mdxComponents: MDXComponents = {
+const MDX: MDXComponents = {
   a: ({ href, children }) => (
     <Link
       href={href as string}
@@ -90,4 +88,4 @@ const mdxComponents: MDXComponents = {
   ),
 }
 
-export default mdxComponents
+export default MDX

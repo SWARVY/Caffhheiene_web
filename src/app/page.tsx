@@ -3,7 +3,7 @@ import RecentlyPost from '@/containers/main/RecentlyPost'
 
 export default function Page() {
   return (
-    <div className="w-full p-5 space-y-10 md:p-2 xl:p-0">
+    <div className="flex flex-col w-full p-5 gap-y-10 md:p-3 xl:p-0">
       <Introduce />
       <RecentlyPost />
     </div>

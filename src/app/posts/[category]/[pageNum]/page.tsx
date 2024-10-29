@@ -3,11 +3,13 @@ import PostWrapper from '@/containers/posts/list/PostWrapper'
 import { getSelectedCategoryPost } from '@/utils/getPost'
 import { Metadata, ResolvingMetadata } from 'next'
 
-interface Props {
-  params: {
-    category: string
-    pageNum: string
-  }
+interface PageParams {
+  category: string
+  pageNum: string
+}
+
+interface PageProps {
+  params: Promise<PageParams>
 }
 
 const parseSeries = (name: string) => {
@@ -19,34 +21,43 @@ const parseSeries = (name: string) => {
 }
 
 export const generateMetadata = async (
-  props: Props,
+  props: Promise<PageProps>,
   parent: ResolvingMetadata
-): Promise<Metadata> => ({
-  title: `기록 | ${props.params.pageNum}페이지 [${parseSeries(props.params.category)}]`,
-  description: `신현호 기술서재 / ${props.params.pageNum}페이지[${props.params.category}]`,
-  openGraph: {
-    ...(await parent).openGraph,
-    title: `기록 | ${props.params.pageNum}페이지 [${props.params.category}]`,
-    description: `신현호 기술서재 / ${props.params.pageNum}페이지[${props.params.category}]`,
-    url: `https://caffhheiene.vercel.app/posts/${props.params.category}/${props.params.pageNum}`,
-  },
-})
+): Promise<Metadata> => {
+  const receivedProps = await props
+  const { pageNum, category } = await receivedProps.params
+
+  return {
+    title: `기록 | ${pageNum}페이지 [${parseSeries(category)}]`,
+    description: `신현호 기술서재 / ${pageNum}페이지[${category}]`,
+    openGraph: {
+      ...(await parent).openGraph,
+      title: `기록 | ${pageNum}페이지 [${category}]`,
+      description: `신현호 기술서재 / ${pageNum}페이지[${category}]`,
+      url: `https://caffhheiene.vercel.app/posts/${category}/${pageNum}`,
+    },
+  }
+}
 
 export default async function posts({
   params,
 }: {
-  params: { category: string; pageNum: string }
+  params: Promise<PageParams>
 }) {
-  const data = getSelectedCategoryPost(params.category, Number(params.pageNum))
+  const { category, pageNum } = await params
+  const { selectedPost, selectedAllPostLen } = getSelectedCategoryPost(
+    category,
+    Number(pageNum)
+  )
 
   return (
-    <div className="p-5 space-y-10 md:p-2 xl:p-0">
+    <div className="p-5 space-y-10 md:p-3 xl:p-0">
       <PostFilters />
       <PostWrapper
-        category={params.category}
-        pageNum={Number(params.pageNum)}
-        selectedPost={data.selectedPost}
-        selectedAllPostLen={data.selectedAllPostLen}
+        category={category}
+        pageNum={Number(pageNum)}
+        selectedPost={selectedPost}
+        selectedAllPostLen={selectedAllPostLen}
       />
     </div>
   )

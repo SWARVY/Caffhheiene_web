@@ -45,9 +45,9 @@ export default function SidebarToc() {
 
   return (
     <aside className="sticky top-[12rem] hidden w-72 self-start text-black drop-shadow-lg xl:grid dark:text-white">
-      <div className="flex flex-col gap-y-4 border border-black bg-white text-black drop-shadow-xl dark:bg-background_component dark:text-white">
-        <span className="pl-5 pt-4 font-bold">목차</span>
-        <ul className="space-y-3 px-7 pb-5">
+      <div className="flex flex-col text-black bg-white border border-black gap-y-4 drop-shadow-xl dark:bg-background_component dark:text-white">
+        <span className="pt-4 pl-5 font-bold">목차</span>
+        <ul className="pb-5 space-y-3 px-7">
           {headingElements.map(({ index, convertedIndex, size }) => (
             <li
               key={`sidebar-toc-content-${index}`}
@@ -65,20 +65,20 @@ export default function SidebarToc() {
           ))}
         </ul>
       </div>
-      <div className="flex justify-end gap-x-2 bg-blue-950/60 p-2 dark:bg-blue-600/60">
+      <div className="flex justify-end p-2 gap-x-2 bg-blue-950/60 dark:bg-blue-600/60">
         <button
           className="items-center p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToBottom}
           type="button"
           aria-label="scroll to bottom">
-          <ChatBubbleOvalLeftEllipsisIcon className="size-4 text-white" />
+          <ChatBubbleOvalLeftEllipsisIcon className="text-white size-4" />
         </button>
         <button
           className="items-center p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToTop}
           type="button"
           aria-label="scroll to top">
-          <ArrowUpIcon className="size-4 text-white" />
+          <ArrowUpIcon className="text-white size-4" />
         </button>
       </div>
     </aside>

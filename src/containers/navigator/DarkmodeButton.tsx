@@ -10,7 +10,7 @@ export default function DarkmodeButton() {
   return (
     <button
       type="button"
-      className="size-5 text-white transition-colors hover:text-gray-200"
+      className="text-white transition-colors size-5 hover:text-gray-200"
       onClick={() => setTheme(currentTheme === 'light' ? 'dark' : 'light')}>
       {currentTheme === 'light' ? (
         <SunIcon className="size-full" />

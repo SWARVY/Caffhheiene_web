@@ -1,7 +1,7 @@
 'use client'
 
-import { PropsWithChildren, useEffect, useState } from 'react'
 import { ThemeProvider } from 'next-themes'
+import { PropsWithChildren, useEffect, useState } from 'react'
 
 export default function NextThemeProvider({ children }: PropsWithChildren) {
   const [isMount, setMount] = useState(false)

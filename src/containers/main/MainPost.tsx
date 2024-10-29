@@ -1,12 +1,13 @@
-import { type Post } from '@/contentlayer/generated'
+import Link from 'next/link'
+
+import ImgWithPlaceholder from '@/components/ImgWithPlaceholder'
+import Tag from '@/components/Tag'
+import { Post } from '@/velite'
 import {
   CalendarIcon,
-  FolderOpenIcon,
   FolderIcon,
+  FolderOpenIcon,
 } from '@heroicons/react/20/solid'
-import Link from 'next/link'
-import Tag from '@/components/Tag'
-import ImgWithPlaceholder from '@/components/ImgWithPlaceholder'
 
 interface MainPostProps {
   id: number

@@ -43,7 +43,7 @@ export default async function postDetail({
   params: { id: string }
 }) {
   return (
-    <div className="flex flex-col gap-y-10 p-5 md:p-2 xl:p-0">
+    <div className="flex flex-col p-5 gap-y-10 md:p-2 xl:p-0">
       <PostDetail id={params.id} />
       <PostComments />
     </div>

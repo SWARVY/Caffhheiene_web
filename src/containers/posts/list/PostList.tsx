@@ -1,8 +1,8 @@
 'use client'
 
 import PostItem from '@/containers/posts/list/PostItem'
-import { type Post } from '@/contentlayer/generated'
 import useStaggerAnimation from '@/hooks/useStaggerAnimation'
+import { Post } from '@/velite'
 
 interface PostListProps {
   posts: Array<[number, Post]>
@@ -15,7 +15,7 @@ export default function PostList({ posts, allPostLen }: PostListProps) {
   return (
     <ul ref={scope} className="w-full space-y-8">
       {posts?.map(([id, post]) => (
-        <PostItem key={post.url} id={allPostLen - id - 1} post={post} />
+        <PostItem key={post.title} id={allPostLen - id - 1} post={post} />
       ))}
     </ul>
   )

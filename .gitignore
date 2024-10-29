@@ -1,5 +1,6 @@
 node_modules
 *.contentlayer
+*.velite
 *.git
 *.next
 *.webpack
@@ -18,3 +19,4 @@ next-env.d.ts
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+node_modules

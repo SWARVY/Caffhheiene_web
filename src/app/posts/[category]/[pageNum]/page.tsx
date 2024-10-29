@@ -40,7 +40,7 @@ export default async function posts({
   const data = getSelectedCategoryPost(params.category, Number(params.pageNum))
 
   return (
-    <section className="space-y-10 p-5 md:p-2 xl:p-0">
+    <div className="p-5 space-y-10 md:p-2 xl:p-0">
       <PostFilters />
       <PostWrapper
         category={params.category}
@@ -48,6 +48,6 @@ export default async function posts({
         selectedPost={data.selectedPost}
         selectedAllPostLen={data.selectedAllPostLen}
       />
-    </section>
+    </div>
   )
 }

@@ -1,7 +1,10 @@
 'use client'
 
 import { USER_SNS } from '@/constants/user'
+import { Bars3Icon } from '@heroicons/react/24/solid'
+import { XIcon } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   Children,
   PropsWithChildren,
@@ -9,9 +12,6 @@ import {
   useEffect,
   useState,
 } from 'react'
-import { Bars3Icon } from '@heroicons/react/24/solid'
-import { XIcon } from 'lucide-react'
-import { usePathname } from 'next/navigation'
 
 interface NavigatorBrandProps {
   icon?: ReactNode
@@ -27,7 +27,7 @@ interface NavigatorButtonProps {
 function NavigatorBrand({ icon, link, name }: NavigatorBrandProps) {
   return (
     <Link
-      className="flex flex-col items-center justify-center gap-y-1 border-b border-gray-300 fill-white py-3"
+      className="flex flex-col items-center justify-center py-3 border-b border-gray-300 gap-y-1 fill-white"
       href={link ?? '/'}>
       <div className="h-20">{icon}</div>
       <p>{name}</p>
@@ -37,7 +37,7 @@ function NavigatorBrand({ icon, link, name }: NavigatorBrandProps) {
 
 function NavigatorButton({ tag, link }: NavigatorButtonProps) {
   return (
-    <li className="flex h-full items-center px-4 py-2 text-sm text-blue-50 transition-all hover:bg-blue-50 hover:text-blue-950">
+    <li className="flex items-center h-full px-4 py-2 text-sm transition-all text-blue-50 hover:bg-blue-50 hover:text-blue-950">
       <Link href={link}>
         <h3>{tag}</h3>
       </Link>
@@ -52,10 +52,10 @@ function NavigatorWrapper({ children }: PropsWithChildren) {
 
   return (
     <>
-      <div className="hidden h-16 flex-grow items-center justify-around md:flex">
+      <div className="items-center justify-around flex-grow hidden h-16 md:flex">
         {children}
       </div>
-      <div className="flex h-16 flex-grow items-center justify-between px-8 md:hidden">
+      <div className="flex items-center justify-between flex-grow h-16 px-8 md:hidden">
         <div>{firstChild}</div>
         <div className="flex items-center gap-x-4">{restChild}</div>
       </div>
@@ -73,15 +73,15 @@ function NavigatorCollapse({ children }: PropsWithChildren) {
 
   return (
     <>
-      <div className="hidden size-full items-center justify-center gap-x-4 border-x border-gray-300 py-3 md:flex md:w-1/2">
+      <div className="items-center justify-center hidden py-3 border-gray-300 size-full gap-x-4 border-x md:flex md:w-1/2">
         {children}
       </div>
-      <div className="relative flex w-full items-center justify-center md:hidden">
+      <div className="relative flex items-center justify-center w-full md:hidden">
         <button type="button" onClick={() => setOpen((prev) => !prev)}>
           {open ? (
-            <XIcon className="size-6 text-white" />
+            <XIcon className="text-white size-6" />
           ) : (
-            <Bars3Icon className="size-6 text-white" />
+            <Bars3Icon className="text-white size-6" />
           )}
         </button>
         {open && (
@@ -100,7 +100,7 @@ function NavigatorShortcuts() {
       {USER_SNS.map((sns) => (
         <li key={`shortcut-${sns.name}`} className="group">
           <Link href={sns.link} target="_blank">
-            <div className="size-4 fill-white transition-colors hover:fill-gray-200">
+            <div className="transition-colors size-4 fill-white hover:fill-gray-200">
               {sns.svg}
             </div>
           </Link>
@@ -124,7 +124,7 @@ function NavigatorSection({ children }: PropsWithChildren) {
 
 export default function Navigator({ children }: PropsWithChildren) {
   return (
-    <nav className="fixed left-0 top-0 z-50 flex w-full items-center border-b border-blue-50 bg-blue-950 bg-opacity-60 backdrop-blur-lg dark:bg-opacity-60 dark:text-white">
+    <nav className="fixed top-0 left-0 z-50 flex items-center w-full border-b border-blue-50 bg-blue-950 bg-opacity-60 backdrop-blur-lg dark:bg-opacity-60 dark:text-white">
       {children}
     </nav>
   )

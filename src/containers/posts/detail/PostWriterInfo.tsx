@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function PostWriterInfo() {
   return (
-    <div className="mt-10 flex items-center gap-x-4 border-b-2 border-blue-950/60 p-4 pb-8">
+    <div className="flex items-center p-4 pb-8 mt-10 border-b-2 gap-x-4 border-blue-950/60">
       <Image
-        className="size-24 rounded-full ring-2 ring-blue-950/60"
+        className="rounded-full size-24 ring-2 ring-blue-950/60"
         src={USER.profileImg}
         alt="Profile Image"
         width={1024}

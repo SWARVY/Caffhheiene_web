@@ -239,7 +239,7 @@ const deferredValue = useDeferredValue(value)
 `useDeferredValue`는 설정한 값의 지연된 버전을 가져옵니다.
 
 ```jsx showLineNumbers
-import { useState, useDeferredValue } from 'react'
+import { useDeferredValue, useState } from 'react'
 
 function SearchPage() {
   const [query, setQuery] = useState('')
@@ -299,6 +299,7 @@ useEffect(setup, dependencies)
 
 ```jsx showLineNumbers
 import { useEffect } from 'react'
+
 import { createConnection } from './chat.js'
 
 function ChatRoom({ roomId }) {
@@ -378,7 +379,8 @@ function useChatRoom({ serverUrl, roomId }) {
 하지만 직접 Effect를 작성하여 데이터를 패칭하고 싶다면, 코드는 다음과 같을 수 있습니다.
 
 ```jsx showLineNumbers
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import { fetchBio } from './api.js'
 
 export default function Page() {
@@ -405,7 +407,8 @@ export default function Page() {
 `async` / `await`을 사용한다면 아래와 같이 작성할 수 있습니다.
 
 ```jsx showLineNumbers
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import { fetchBio } from './api.js'
 
 export default function Page() {
@@ -535,7 +538,8 @@ function ChatRoom({ roomId }) {
 ```
 
 ```jsx showLineNumbers
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import { createConnection } from './chat.js'
 
 const serverUrl = 'https://localhost:1234'
@@ -596,7 +600,7 @@ const MyInput = forwardRef(function MyInput(props, ref) {
 위에서 `MyInput`에 대한 ref는 `<input>` DOM 노드를 받게 됩니다. 하지만 `useImperativeHandle`을 사용하면 사용자 지정 값을 노출할 수 있습니다.
 
 ```jsx showLineNumbers
-import { forwardRef, useRef, useImperativeHandle } from 'react'
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 
 const MyInput = forwardRef(function MyInput(props, ref) {
   const inputRef = useRef(null)
@@ -1125,6 +1129,7 @@ const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
 
 ```jsx showLineNumbers
 import { useSyncExternalStore } from 'react'
+
 import { todosStore } from './todoStore.js'
 
 function TodosApp() {

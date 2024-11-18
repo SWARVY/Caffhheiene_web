@@ -22,12 +22,13 @@ export default function PostPagination({
     <ul className="flex justify-center gap-x-3">
       {Array.from({ length: pageLen }, (_, idx) => idx).map((_, idx) => (
         <Link
+          key={`pagination-${idx + 1}`}
           href={`/posts/${category}/${idx + 1}`}
           className={`${
             pageNum === idx + 1
-              ? 'bg-white_hover dark:bg-blue-600/60'
-              : 'bg-white dark:bg-neutral-600'
-          } flex size-8 items-center justify-center border border-black p-1 text-sm ring-blue-950/60 transition-all hover:ring-2 dark:border-blue-50 dark:text-white dark:ring-blue-100`}>
+              ? 'bg-light_component_hover dark:bg-dark_component_hover'
+              : 'bg-light_component dark:bg-dark_component'
+          } flex size-8 items-center justify-center rounded-md p-1 text-sm ring-light_main transition-all hover:ring-2 dark:text-white dark:ring-white`}>
           <li>{idx + 1}</li>
         </Link>
       ))}

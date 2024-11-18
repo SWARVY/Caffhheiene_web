@@ -19,7 +19,7 @@ export default function PostInfo({ curr }: PostInfoProps) {
         height={60}
         alt="user profile img"
       />
-      <div className="flex flex-col w-full gap-2 p-1">
+      <div className="flex w-full flex-col gap-2 p-1">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-x-2">
             <CircleUser className="size-4" />

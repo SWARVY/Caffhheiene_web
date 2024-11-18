@@ -9,11 +9,9 @@ export default function FramerTransitionProvider({
   children,
 }: PropsWithChildren) {
   const pathName = usePathname()
-
   return (
     <AnimatePresence initial mode="wait">
       <MotionDiv
-        className="mt-[14rem] flex w-full max-w-6xl flex-col justify-center"
         key={pathName}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

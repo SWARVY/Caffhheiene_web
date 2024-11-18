@@ -1,3 +1,5 @@
+import { EnvelopeIcon } from '@heroicons/react/24/solid'
+
 import {
   GithubSVG,
   InstagramSVG,
@@ -15,48 +17,32 @@ export const USER = Object.freeze({
   URL: 'https://caffhheiene.vercel.app',
 })
 
-export const USER_CAREER = Object.freeze([
-  {
-    date: '2019. 03. ~',
-    name: '경기대학교 컴퓨터공학부',
-  },
-  {
-    date: '2022. 10. ~',
-    name: '경기대학교 InQ FE Developer & Tutor',
-  },
-  {
-    date: '2023. 01. ~ 2023. 02.',
-    name: '42SEOUL PISCINER',
-  },
-  {
-    date: '2023. 03. ~ 2023. 10. 03.',
-    name: '42SEOUL CADET',
-  },
-])
-
 export const USER_SNS = Object.freeze([
   {
     name: 'github',
     svg: <GithubSVG className="size-full" />,
-    isManaged: true,
     link: 'https://github.com/SWARVY',
   },
   {
     name: 'notion',
     svg: <NotionSVG className="size-full" />,
-    isManaged: true,
     link: 'https://crystalline-chickadee-79a.notion.site/70d52e6cfeab486fb28dbba84c1ca054?pvs=4',
   },
   {
     name: 'instagram',
     svg: <InstagramSVG className="size-full" />,
-    isManaged: true,
     link: 'https://www.instagram.com/caffhheine/',
   },
   {
     name: 'tistory',
     svg: <TistorySVG className="size-full" />,
-    isManaged: false,
     link: 'https://swarvy.tistory.com/',
+  },
+  {
+    name: 'email',
+    svg: (
+      <EnvelopeIcon className="size-full fill-light_main/60 transition-colors hover:fill-light_main dark:fill-white dark:hover:fill-gray-400" />
+    ),
+    link: 'mailto:swarvy0826@naver.com',
   },
 ])

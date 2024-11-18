@@ -8,11 +8,18 @@ export default {
       Consolas: ['Consolas', 'sans-serif'],
     },
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: {
-        white_hover: '#EEE',
-        white_hover_weight: '#DDD',
-        background_dark: '#1E1E1E',
-        background_component: '#2B2B2B',
+        light_main: '#212B42',
+        light_background: '#FFFFFF',
+        light_component: '#F2F4F8',
+        light_component_hover: '#E4E8F0',
+        dark_main: '#3B4A5C',
+        dark_background: '#141923',
+        dark_component: '#232B3A',
+        dark_component_hover: '#2E3A4D',
       },
       typography: {
         DEFAULT: {

@@ -45,7 +45,7 @@ export default function SidebarToc() {
 
   return (
     <aside className="sticky top-[12rem] hidden w-72 self-start overflow-hidden rounded-lg drop-shadow-lg xl:grid dark:text-white">
-      <div className="dark:bg-dark_component flex flex-col gap-y-4 bg-white drop-shadow-xl dark:text-white">
+      <div className="flex flex-col gap-y-4 bg-white drop-shadow-xl dark:bg-dark_component dark:text-white">
         <span className="pl-5 pt-4 font-bold">목차</span>
         <ul className="space-y-3 px-7 pb-5">
           {headingElements.map(({ index, convertedIndex, size }) => (
@@ -65,7 +65,7 @@ export default function SidebarToc() {
           ))}
         </ul>
       </div>
-      <div className="bg-dark_main flex justify-end gap-x-2 p-2">
+      <div className="flex justify-end gap-x-2 bg-dark_main p-2">
         <button
           className="items-center rounded-md p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToBottom}

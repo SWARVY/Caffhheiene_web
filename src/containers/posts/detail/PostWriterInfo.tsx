@@ -11,10 +11,10 @@ export default function PostWriterInfo() {
           width={150}
           height={150}
           alt="caffhheiene profile image"
-          className="ring-light_main size-36 rounded-full ring-2 dark:ring-white"
+          className="size-36 rounded-full ring-2 ring-light_main dark:ring-white"
         />
         <div className="flex w-full flex-col items-start justify-center">
-          <div className="border-light_main w-full border-b py-2 dark:border-white">
+          <div className="w-full border-b border-light_main py-2 dark:border-white">
             <p className="text-xl font-medium">
               {USER.name} &middot; {USER.id}
             </p>

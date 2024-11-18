@@ -47,7 +47,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ''} />
       </head>
-      <body className="dark:bg-dark_background bg-light_background flex size-full flex-col items-center justify-center font-Pretendard transition-all">
+      <body className="flex size-full flex-col items-center justify-center bg-light_background font-Pretendard transition-all dark:bg-dark_background">
         <JotaiProvider>
           <NextThemeProvider>
             <TopNavigator />

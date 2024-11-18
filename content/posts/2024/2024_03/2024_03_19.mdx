@@ -153,7 +153,7 @@ src 디렉토리에 **\_\_tests\_\_** 디렉토리를 만들고 **App.test.tsx**
 
 ```tsx showLineNumbers
 // Imports
-import { render, screen, fireEvent } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 
 // To Test
 import App from '../App'
@@ -200,9 +200,10 @@ test('Renders main page correctly', async () => {
 
 ```tsx showLineNumbers
 import { useState } from 'react'
+
+import './App.css'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)

@@ -41,7 +41,7 @@ export const USER_SNS = Object.freeze([
   {
     name: 'email',
     svg: (
-      <EnvelopeIcon className="fill-light_main/60 hover:fill-light_main size-full transition-colors dark:fill-white dark:hover:fill-gray-400" />
+      <EnvelopeIcon className="size-full fill-light_main/60 transition-colors hover:fill-light_main dark:fill-white dark:hover:fill-gray-400" />
     ),
     link: 'mailto:swarvy0826@naver.com',
   },

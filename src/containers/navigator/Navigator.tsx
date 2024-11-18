@@ -115,7 +115,7 @@ function NavigatorSection({ children }: PropsWithChildren) {
 
 export default function Navigator({ children }: PropsWithChildren) {
   return (
-    <nav className="bg-light_main/95 dark:bg-dark_main/95 sticky left-0 top-0 z-50 flex w-full flex-col items-center backdrop-blur-lg dark:text-white">
+    <nav className="sticky left-0 top-0 z-50 flex w-full flex-col items-center bg-light_main/95 backdrop-blur-lg dark:bg-dark_main/95 dark:text-white">
       {children}
     </nav>
   )

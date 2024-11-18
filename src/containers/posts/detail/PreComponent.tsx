@@ -34,7 +34,7 @@ export default function PreComponent({
       ref={preDiv}
       className="group mt-7 flex flex-col overflow-hidden rounded-lg"
       onMouseLeave={handleExit}>
-      <div className="bg-dark_main flex items-center justify-between px-4 py-1.5">
+      <div className="flex items-center justify-between bg-dark_main px-4 py-1.5">
         <div className="flex items-center gap-x-4">
           <CodeBracketIcon className="size-5 text-white" />
           <p className="m-0 mt-1 text-white">

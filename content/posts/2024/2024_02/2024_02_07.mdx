@@ -72,12 +72,12 @@ series: 블로그 제작기
 ```tsx showLineNumbers
 'use client'
 
-import { ReactNode, useRef, useState } from 'react'
 import {
   CheckIcon,
   CodeBracketIcon,
   DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline'
+import { ReactNode, useRef, useState } from 'react'
 
 interface PreComponentProps {
   children: ReactNode
@@ -109,7 +109,7 @@ export default function PreComponent({ children }: PreComponentProps) {
       </div>
       <div className="relative">
         <div
-          className={`absolute right-2 top-2 rounded-md ${!copied ? 'bg-ochre_light hover:bg-ochre' : 'bg-green-400 hover:bg-green-500'} p-2 opacity-0 transition-all duration-100 ease-in  group-hover:opacity-100`}>
+          className={`absolute right-2 top-2 rounded-md ${!copied ? 'bg-ochre_light hover:bg-ochre' : 'bg-green-400 hover:bg-green-500'} p-2 opacity-0 transition-all duration-100 ease-in group-hover:opacity-100`}>
           {!copied ? (
             <DocumentDuplicateIcon
               className="h-5 w-5 text-white"

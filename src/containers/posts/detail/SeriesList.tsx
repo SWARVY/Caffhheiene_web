@@ -10,7 +10,7 @@ interface SeriesListProps {
 export default function SeriesList({ seriesName, series }: SeriesListProps) {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg shadow-md dark:text-white">
-      <div className="bg-dark_main flex flex-col gap-y-2 p-4 text-white">
+      <div className="flex flex-col gap-y-2 bg-dark_main p-4 text-white">
         <p className="text-lg font-bold">{seriesName}</p>
         <div className="flex items-center gap-x-2">
           <ListBulletIcon className="h-4 w-4 fill-white" />
@@ -21,7 +21,7 @@ export default function SeriesList({ seriesName, series }: SeriesListProps) {
           </p>
         </div>
       </div>
-      <div className="dark:bg-dark_component flex size-full max-h-60 flex-col justify-start gap-y-3 overflow-y-scroll bg-white px-4 py-6">
+      <div className="flex size-full max-h-60 flex-col justify-start gap-y-3 overflow-y-scroll bg-white px-4 py-6 dark:bg-dark_component">
         {series.map((seriesItem, idx) => (
           <Link
             key={seriesItem[1].title}

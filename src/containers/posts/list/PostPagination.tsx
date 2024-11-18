@@ -28,7 +28,7 @@ export default function PostPagination({
             pageNum === idx + 1
               ? 'bg-light_component_hover dark:bg-dark_component_hover'
               : 'bg-light_component dark:bg-dark_component'
-          } ring-light_main flex size-8 items-center justify-center rounded-md p-1 text-sm transition-all hover:ring-2 dark:text-white dark:ring-white`}>
+          } flex size-8 items-center justify-center rounded-md p-1 text-sm ring-light_main transition-all hover:ring-2 dark:text-white dark:ring-white`}>
           <li>{idx + 1}</li>
         </Link>
       ))}

@@ -46,9 +46,10 @@ series: 블로그 제작기
 저는 포스팅 내부에 존재하는 **h2**태그와 **h3**태그만을 가져오고싶었기때문에 해당하는 컴포넌트에 **id**를 추가해주었습니다.
 
 ```tsx showLineNumbers {15}
-import '../style/Intellij-prism.css'
 import { type Post } from '@/contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+
+import '../style/Intellij-prism.css'
 import mdxComponents from './MdxComponents'
 
 interface MdxRendererProps {
@@ -61,7 +62,7 @@ export default function MdxRenderer({ post }: MdxRendererProps) {
   return (
     <div
       id="content"
-      className="prose prose-neutral font-BlogPost max-w-full overflow-hidden dark:text-white">
+      className="font-BlogPost prose prose-neutral max-w-full overflow-hidden dark:text-white">
       {post.body.code !== undefined && (
         <MDXContent components={mdxComponents} />
       )}

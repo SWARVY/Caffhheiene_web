@@ -20,7 +20,7 @@ export default function MDXContent({ content, components }: MDXProps) {
   return (
     <div
       id="content"
-      className="max-w-full overflow-hidden prose prose-neutral dark:text-white">
+      className="prose prose-neutral max-w-full overflow-hidden dark:text-white">
       {content && <Component components={components} />}
     </div>
   )

@@ -7,7 +7,7 @@ export default function SNSShortcuts() {
       {USER_SNS.map((sns) => (
         <li key={`shortcut-${sns.name}`} className="group">
           <Link href={sns.link} target="_blank">
-            <div className="fill-light_main/60 hover:fill-light_main size-5 transition-colors dark:fill-white dark:hover:fill-gray-400">
+            <div className="size-5 fill-light_main/60 transition-colors hover:fill-light_main dark:fill-white dark:hover:fill-gray-400">
               {sns.svg}
             </div>
           </Link>

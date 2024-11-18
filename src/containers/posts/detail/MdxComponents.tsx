@@ -21,7 +21,7 @@ const MDX: MDXComponents = {
   ),
 
   blockquote: ({ children }) => (
-    <blockquote className="dark:bg-dark_component flex items-center gap-x-3 overflow-hidden rounded-lg bg-gray-100 p-3 not-italic sm:gap-x-6 sm:pl-6 dark:text-white">
+    <blockquote className="flex items-center gap-x-3 overflow-hidden rounded-lg bg-gray-100 p-3 not-italic sm:gap-x-6 sm:pl-6 dark:bg-dark_component dark:text-white">
       <DocumentTextIcon className="size-6 text-gray-700 dark:text-gray-200" />
       <div className="w-full flex-col text-sm leading-7">{children}</div>
     </blockquote>
@@ -50,7 +50,7 @@ const MDX: MDXComponents = {
   ),
 
   h2: ({ id, children }) => (
-    <div className="border-light_main group flex items-center space-x-2 border-b-2 text-xl dark:border-white">
+    <div className="group flex items-center space-x-2 border-b-2 border-light_main text-xl dark:border-white">
       <h2 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h2>
@@ -63,7 +63,7 @@ const MDX: MDXComponents = {
   ),
 
   h3: ({ id, children }) => (
-    <div className="border-light_main group flex items-center space-x-2 border-b-2 text-lg dark:border-white">
+    <div className="group flex items-center space-x-2 border-b-2 border-light_main text-lg dark:border-white">
       <h3 id={id} className="mb-2 mt-2 dark:text-white">
         {children}
       </h3>

@@ -24,7 +24,7 @@ export default function PageLayout({ children }: PropsWithChildren) {
           <NavLinks />
           {children}
         </div>
-        <div className="border-l-light_main hidden w-full max-w-[300px] border-l pl-10 xl:block dark:border-l-white">
+        <div className="hidden w-full max-w-[300px] border-l border-l-light_main pl-10 xl:block dark:border-l-white">
           <Aside />
         </div>
       </div>

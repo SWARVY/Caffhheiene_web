@@ -183,7 +183,7 @@ export default makeSource({
 ### STEP 4. Contentlayer를 사용하여 파일 읽어오기
 
 ```ts
-import { allPosts, type Post } from '@/contentlayer/generated'
+import { type Post, allPosts } from '@/contentlayer/generated'
 
 export function getAllPost(): Array<[number, Post]> {
   return allPosts

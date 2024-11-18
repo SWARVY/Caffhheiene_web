@@ -14,7 +14,7 @@ export default function PostItem({ id, post }: PostItemProps) {
   return (
     <li
       key={id}
-      className="ring-light_main dark:bg-dark_component group rounded-lg bg-white opacity-0 drop-shadow-lg transition-all hover:ring-2 dark:border-white dark:ring-white">
+      className="group rounded-lg bg-white opacity-0 ring-light_main drop-shadow-lg transition-all hover:ring-2 dark:border-white dark:bg-dark_component dark:ring-white">
       <Link
         href={`/posts/detail/${id + 1}`}
         className="flex gap-x-2 p-5 xs:gap-x-0">

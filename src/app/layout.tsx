@@ -1,7 +1,8 @@
 import { USER } from '@/constants/user'
+import PageLayout from '@/containers/layout/PageLayout'
 import BottomNavigator from '@/containers/navigator/BottomNavigator'
 import TopNavigator from '@/containers/navigator/TopNavigator'
-import FramerTransitionProvider from '@/utils/FramerTransitionProvider'
+import JotaiProvider from '@/utils/JotaiProvider'
 import NextThemeProvider from '@/utils/NextThemeProvider'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
@@ -46,12 +47,16 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ''} />
       </head>
-      <body className="flex flex-col items-center justify-center w-full transition duration-100 ease-in bg-blue-950/5 font-Pretendard dark:bg-background_dark">
-        <NextThemeProvider>
-          <TopNavigator />
-          <FramerTransitionProvider>{children}</FramerTransitionProvider>
-          <BottomNavigator />
-        </NextThemeProvider>
+      <body className="dark:bg-dark_background bg-light_background flex size-full flex-col items-center justify-center font-Pretendard transition-all">
+        <JotaiProvider>
+          <NextThemeProvider>
+            <TopNavigator />
+            <div className="mt-[2rem] flex size-full max-w-6xl flex-col justify-center">
+              <PageLayout>{children}</PageLayout>
+            </div>
+            <BottomNavigator />
+          </NextThemeProvider>
+        </JotaiProvider>
         <Analytics />
         <SpeedInsights />
       </body>

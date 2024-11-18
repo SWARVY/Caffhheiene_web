@@ -1,4 +1,3 @@
-import PostFilters from '@/containers/posts/list/PostFilters'
 import PostWrapper from '@/containers/posts/list/PostWrapper'
 import { getSelectedCategoryPost } from '@/utils/getPost'
 import { Metadata, ResolvingMetadata } from 'next'
@@ -50,14 +49,11 @@ export default async function posts({
   )
 
   return (
-    <div className="p-5 space-y-10 md:p-3 xl:p-0">
-      <PostFilters />
-      <PostWrapper
-        category={category}
-        pageNum={Number(pageNum)}
-        selectedPost={selectedPost}
-        selectedAllPostLen={selectedAllPostLen}
-      />
-    </div>
+    <PostWrapper
+      category={category}
+      pageNum={Number(pageNum)}
+      selectedPost={selectedPost}
+      selectedAllPostLen={selectedAllPostLen}
+    />
   )
 }

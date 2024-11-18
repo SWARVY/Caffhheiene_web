@@ -44,20 +44,20 @@ export default function SidebarToc() {
   }, [])
 
   return (
-    <aside className="sticky top-[12rem] hidden w-72 self-start text-black drop-shadow-lg xl:grid dark:text-white">
-      <div className="flex flex-col text-black bg-white border border-black gap-y-4 drop-shadow-xl dark:bg-background_component dark:text-white">
-        <span className="pt-4 pl-5 font-bold">목차</span>
-        <ul className="pb-5 space-y-3 px-7">
+    <aside className="sticky top-[12rem] hidden w-72 self-start overflow-hidden rounded-lg drop-shadow-lg xl:grid dark:text-white">
+      <div className="dark:bg-dark_component flex flex-col gap-y-4 bg-white drop-shadow-xl dark:text-white">
+        <span className="pl-5 pt-4 font-bold">목차</span>
+        <ul className="space-y-3 px-7 pb-5">
           {headingElements.map(({ index, convertedIndex, size }) => (
             <li
               key={`sidebar-toc-content-${index}`}
-              className={`flex items-center justify-between gap-x-2 transition-all ${currentId === convertedIndex ? 'scale-105 text-black dark:text-white' : 'text-gray-600 dark:text-slate-300'}`}
+              className={`flex items-center justify-between gap-x-2 transition-all ${currentId === convertedIndex ? 'scale-105 dark:text-white' : 'text-gray-600 dark:text-slate-300'}`}
               style={{
                 paddingLeft: `${size - 15}px`,
                 fontSize: `${17 - size / 8}px`,
               }}>
               <Link
-                className="break-words break-keep "
+                className="break-words break-keep"
                 href={`#${convertedIndex}`}>
                 {index}
               </Link>
@@ -65,20 +65,20 @@ export default function SidebarToc() {
           ))}
         </ul>
       </div>
-      <div className="flex justify-end p-2 gap-x-2 bg-blue-950/60 dark:bg-blue-600/60">
+      <div className="bg-dark_main flex justify-end gap-x-2 p-2">
         <button
-          className="items-center p-2 transition-all hover:backdrop-brightness-50"
+          className="items-center rounded-md p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToBottom}
           type="button"
           aria-label="scroll to bottom">
-          <ChatBubbleOvalLeftEllipsisIcon className="text-white size-4" />
+          <ChatBubbleOvalLeftEllipsisIcon className="size-4 text-white" />
         </button>
         <button
-          className="items-center p-2 transition-all hover:backdrop-brightness-50"
+          className="items-center rounded-md p-2 transition-all hover:backdrop-brightness-50"
           onClick={scrollToTop}
           type="button"
           aria-label="scroll to top">
-          <ArrowUpIcon className="text-white size-4" />
+          <ArrowUpIcon className="size-4 text-white" />
         </button>
       </div>
     </aside>

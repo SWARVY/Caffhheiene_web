@@ -1,10 +1,6 @@
 import Tag from '@/components/Tag'
 import { Post } from '@/velite'
-import {
-  CalendarIcon,
-  FolderIcon,
-  FolderOpenIcon,
-} from '@heroicons/react/20/solid'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface PostItemProps {
@@ -18,56 +14,45 @@ export default function PostItem({ id, post }: PostItemProps) {
   return (
     <li
       key={id}
-      className="px-5 transition-all bg-white border border-black opacity-0 group py-7 ring-blue-950/60 drop-shadow-lg hover:ring-2 dark:border-blue-50 dark:bg-background_component dark:ring-blue-100">
+      className="ring-light_main dark:bg-dark_component group rounded-lg bg-white opacity-0 drop-shadow-lg transition-all hover:ring-2 dark:border-white dark:ring-white">
       <Link
         href={`/posts/detail/${id + 1}`}
-        className="flex flex-col sm:flex-row sm:gap-x-4">
-        <div className="hidden p-1 font-bold justify-items-center gap-x-1 sm:visible sm:grid sm:p-2 dark:text-white">
-          <div className="flex items-center justify-center text-3xl">
-            <p>{year}</p>
-          </div>
-          <div className="flex items-center justify-center text-xl gap-x-1">
-            <p>{month}</p>
-            <p>/</p>
-            <p>{day}</p>
-          </div>
-        </div>
-        <div className="grid w-full gap-2">
-          <div className="grid gap-1">
+        className="flex gap-x-2 p-5 xs:gap-x-0">
+        <div className="flex w-full flex-col gap-2">
+          <div className="space-y-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-sm text-black dark:text-white">
+                {post.series ? post.series : '시리즈 없음'}
+              </p>
+            </div>
             <div className="flex items-center overflow-hidden">
-              <h3 className="w-full text-xl truncate md:text-2xl dark:text-white">
+              <h3 className="line-clamp-2 w-full text-xl font-medium md:text-2xl dark:text-white">
                 {post.title}
               </h3>
             </div>
-            <p className="text-base text-gray-400 truncate dark:text-gray-300">
+            <p className="line-clamp-1 text-base text-gray-400 xs:line-clamp-none dark:text-gray-300">
               {post.description}
             </p>
           </div>
-          <div className="grid gap-2 sm:grid-cols-2">
-            <div className="flex flex-wrap items-center gap-2 font-BlogContent ">
+          <div className="flex flex-col items-start gap-1 xs:flex-row xs:items-center">
+            <p className="text-xs font-light dark:text-white">
+              {`${year}년 ${month}월 ${day}일 · `}
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
               {post.category.map((tag: string) => (
                 <Tag key={tag} tag={tag} />
               ))}
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <div className="flex flex-wrap items-center gap-2">
-                {post.series ? (
-                  <FolderOpenIcon className="size-4" />
-                ) : (
-                  <FolderIcon className="size-4" />
-                )}
-                <p className="text-sm text-black dark:text-white">
-                  {post.series ? post.series : '-'}
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-2 sm:hidden">
-                <CalendarIcon className="size-4" />
-                <p className="mt-1.5 text-xs font-light text-black dark:text-white">
-                  {post.date}
-                </p>
-              </div>
-            </div>
           </div>
+        </div>
+        <div className="h-28 w-36 shrink-0 overflow-hidden rounded-lg">
+          <Image
+            src={post.thumbnail}
+            width={300}
+            height={200}
+            alt={post.title}
+            className="size-full object-cover"
+          />
         </div>
       </Link>
     </li>

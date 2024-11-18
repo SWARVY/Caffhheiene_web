@@ -11,7 +11,7 @@ export default function Filter({ name, amount = 0 }: FilterProps) {
 
   return (
     <Link href={`/posts/${category}/1`}>
-      <div className="flex px-3 py-1 transition duration-100 ease-in border border-black shadow-md gap-x-1 bg-white_hover ring-blue-950/60 hover:ring-2 dark:bg-background_component dark:text-white">
+      <div className="bg-light_component hover:bg-light_component_hover dark:bg-dark_component dark:hover:bg-dark_component_hover flex gap-x-1 rounded-lg px-3 py-1 shadow-md transition-all dark:text-white">
         <p>{parsedName}</p>
         <p className="text-xs">{amount}</p>
       </div>

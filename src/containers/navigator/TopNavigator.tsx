@@ -1,6 +1,5 @@
 'use client'
 
-import { TOP_NAVBAR } from '@/constants/navbar'
 import DarkmodeButton from '@/containers/navigator/DarkmodeButton'
 import Navigator from '@/containers/navigator/Navigator'
 
@@ -10,20 +9,17 @@ import ProgressBar from './ProgressBar'
 export default function TopNavigator() {
   return (
     <Navigator>
-      <div className="flex flex-col w-full">
-        <Navigator.Brand icon={<LogoSVG className="size-full" />} />
-        <Navigator.Wrapper>
-          <Navigator.Shortcuts />
-          <Navigator.Collapse>
-            {TOP_NAVBAR.tags.map(({ tag, link }) => (
-              <Navigator.Button key={`${tag}-${link}`} tag={tag} link={link} />
-            ))}
-          </Navigator.Collapse>
-          <Navigator.Section>
-            <DarkmodeButton />
-          </Navigator.Section>
-        </Navigator.Wrapper>
-        <ProgressBar />
+      <ProgressBar />
+      <div className="flex w-full justify-between px-4 xs:px-20">
+        <Navigator.Brand
+          icon={
+            <LogoSVG className="size-full transition-colors hover:fill-gray-300" />
+          }
+          link="/posts/all/1"
+        />
+        <div className="flex items-center justify-center gap-x-5">
+          <DarkmodeButton />
+        </div>
       </div>
     </Navigator>
   )

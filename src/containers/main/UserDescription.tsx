@@ -7,7 +7,7 @@ export default function UserDescription() {
       <div>
         <p>안녕하세요, 프론트엔드 개발자 신현호입니다.</p>
         <p>
-          React, Next 기반의 개발을 선호하며, 어제보다 너 나아진 오늘을
+          React, Next 기반의 개발을 선호하며, 어제보다 더 나아진 오늘을
           지향합니다.
         </p>
       </div>
@@ -24,7 +24,7 @@ export default function UserDescription() {
             <CircleArrowOutUpRight className="size-3" />
           </Link>
           <Link
-            href="http://localhost:3000/posts/series-%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%A0%9C%EC%9E%91%EA%B8%B0/1"
+            href="https://caffhheiene.vercel.app/posts/series-%EB%B8%94%EB%A1%9C%EA%B7%B8_%EC%A0%9C%EC%9E%91%EA%B8%B0/1"
             className="flex items-center gap-x-1 underline underline-offset-2">
             블로그 개발기
             <CircleArrowOutUpRight className="size-3" />

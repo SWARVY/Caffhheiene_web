@@ -1,4 +1,3 @@
-import MAIN_SETTING from '@/constants/mainSetting'
 import POST_SETTING from '@/constants/postSetting'
 import { Post, blogPost } from '@/velite'
 
@@ -47,20 +46,6 @@ export const getAllCategory = () => {
   })
 
   return { categories, series: seriesList }
-}
-
-export const getRecentPost = (): {
-  mainPost: [number, Post]
-  subPosts: Array<[number, Post]>
-  postAmount: number
-} => {
-  const [mainPost, ...remainingPosts] = getAllPost()
-
-  return {
-    mainPost,
-    subPosts: remainingPosts.slice(0, MAIN_SETTING.recentlyPostDataAmount - 1),
-    postAmount: remainingPosts.length + 1,
-  }
 }
 
 export const getPostContent = (id: number) => {

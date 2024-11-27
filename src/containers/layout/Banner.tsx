@@ -9,6 +9,7 @@ export default function Banner() {
         alt="Caffhheiene Blog"
         loading="eager"
         fill
+        priority
       />
     </div>
   )

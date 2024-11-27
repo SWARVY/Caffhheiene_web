@@ -30,6 +30,7 @@ export default function PostDetail({ id }: { id: string }) {
                 alt="Post Thumbnail"
                 loading="eager"
                 fill
+                priority
               />
             </div>
           </div>

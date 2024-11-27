@@ -34,7 +34,7 @@ export default function PostDetail({ id }: { id: string }) {
               />
             </div>
           </div>
-          <div className="w-full space-y-10">
+          <div className="grid w-full grid-cols-1 gap-y-10">
             <InternalToc />
             <MDXContent content={curr.content} components={MDX} />
           </div>

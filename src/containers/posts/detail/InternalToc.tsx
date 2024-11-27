@@ -38,7 +38,7 @@ export default function InternalToc() {
           {headingElements.map(({ index, size }) => (
             <li
               key={`internal-toc-content-${index}`}
-              className="dark:hover:text-white_hover_weight group flex items-center gap-x-2 text-gray-600 transition-all hover:text-black dark:text-white"
+              className="dark:hover:text-white_hover_weight group flex items-center gap-x-2 text-gray-600 transition-all hover:text-light_main dark:text-gray-300 dark:hover:text-white"
               style={{
                 paddingLeft: `${size}px`,
                 fontSize: `${17 - size / 20}px`,

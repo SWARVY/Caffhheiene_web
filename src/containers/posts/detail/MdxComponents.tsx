@@ -56,7 +56,7 @@ const MDX: MDXComponents = {
       </h2>
       <Link
         href={`#${id}`}
-        className="invisible text-xl font-bold text-blue-950/60 no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-xl font-bold text-light_progress_inner no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100 dark:text-dark_progress_inner">
         #
       </Link>
     </div>
@@ -69,7 +69,7 @@ const MDX: MDXComponents = {
       </h3>
       <Link
         href={`#${id}`}
-        className="invisible text-lg font-bold text-blue-950/60 no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100">
+        className="invisible text-lg font-bold text-light_progress_inner no-underline opacity-0 transition-all hover:underline group-hover:visible group-hover:opacity-100 dark:text-dark_progress_inner">
         #
       </Link>
     </div>

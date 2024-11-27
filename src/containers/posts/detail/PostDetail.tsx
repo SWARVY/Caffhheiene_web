@@ -19,19 +19,20 @@ export default function PostDetail({ id }: { id: string }) {
       <div className="flex gap-x-12">
         <div className="w-full space-y-10">
           <div className="w-full space-y-6">
-            <h2 className="break-words break-keep text-4xl font-bold sm:text-5xl dark:text-white">
+            <h1 className="break-words break-keep text-4xl font-bold sm:text-5xl dark:text-white">
               {curr.title}
-            </h2>
+            </h1>
             <PostInfo curr={curr} />
-            <Image
-              className="w-full rounded-xl"
-              src={curr.thumbnail}
-              alt="Post Thumbnail"
-              width={800}
-              height={600}
-            />
+            <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
+              <Image
+                className="object-cover"
+                src={curr.thumbnail}
+                alt="Post Thumbnail"
+                fill
+              />
+            </div>
           </div>
-          <div className="grid w-full grid-cols-1 gap-y-10">
+          <div className="w-full space-y-10">
             <InternalToc />
             <MDXContent content={curr.content} components={MDX} />
           </div>

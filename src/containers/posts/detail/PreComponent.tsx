@@ -59,7 +59,7 @@ export default function PreComponent({
             <CheckIcon className="size-5" />
           )}
         </button>
-        <pre className="m-0 px-2 py-6 leading-4">{children}</pre>
+        <pre className="m-0 p-4 leading-4">{children}</pre>
       </div>
     </div>
   )

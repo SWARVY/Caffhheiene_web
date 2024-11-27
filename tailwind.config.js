@@ -16,10 +16,14 @@ export default {
         light_background: '#FFFFFF',
         light_component: '#F2F4F8',
         light_component_hover: '#E4E8F0',
+        light_progress_background: '#E8ECF3',
+        light_progress_inner: '#22C55E',
         dark_main: '#3B4A5C',
         dark_background: '#141923',
         dark_component: '#232B3A',
         dark_component_hover: '#2E3A4D',
+        dark_progress_background: '#1C2432',
+        dark_progress_inner: '#34D399',
       },
       typography: {
         DEFAULT: {

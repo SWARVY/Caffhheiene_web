@@ -12,13 +12,14 @@ interface PostInfoProps {
 export default function PostInfo({ curr }: PostInfoProps) {
   return (
     <div className="flex items-center gap-x-2">
-      <Image
-        className="rounded-full ring-2 ring-blue-950/60"
-        src={USER.profileImg}
-        width={60}
-        height={60}
-        alt="user profile img"
-      />
+      <div className="relative size-[60px] shrink-0 overflow-hidden rounded-full ring-2 ring-light_main dark:ring-white">
+        <Image
+          className="object-cover"
+          src={USER.profileImg}
+          fill
+          alt="user profile img"
+        />
+      </div>
       <div className="flex w-full flex-col gap-2 p-1">
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-x-2">

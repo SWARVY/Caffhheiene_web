@@ -11,11 +11,11 @@ export default function ProgressBar() {
   const { scrollYProgress } = useScroll()
 
   return (
-    <div className="w-full bg-white/50">
+    <div className="w-full bg-light_progress_background dark:bg-dark_progress_background">
       <MotionDiv
         className={`${
           isVisible ? 'visible' : 'hidden'
-        } h-1 w-full origin-left bg-blue-600`}
+        } h-1 w-full origin-left bg-light_progress_inner dark:bg-dark_progress_inner`}
         style={{ scaleX: scrollYProgress }}
       />
     </div>

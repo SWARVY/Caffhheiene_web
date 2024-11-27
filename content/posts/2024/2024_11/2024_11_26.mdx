@@ -47,14 +47,14 @@ series: 트러블 슈팅
 그러나 `App Router`에 들어와서는 동일하게 설정을 해주어도 아래와 같은 오류가 발생했습니다.
 
 ```
-  ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
-    at JSON.parse (<anonymous>)
-    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
+⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+  at JSON.parse (<anonymous>)
+  at AsyncResource.runInAsyncScope (node:async_hooks:206:9)
 ```
 
 ```
-  ⨯ TypeError: Cannot read properties of null (reading 'useContext')
-    at t.useContext (/Users/.../node_modules...)
+⨯ TypeError: Cannot read properties of null (reading 'useContext')
+  at t.useContext (/Users/.../node_modules...)
 ```
 
 위의 오류는 실제로 `App Router` 환경에서 올리브영 기술블로그의 방법을 사용했을 때 발생했던 문제들입니다.
@@ -74,7 +74,7 @@ series: 트러블 슈팅
 먼저 Next 환경을 준비합니다.
 
 ```bash
-  npx create-next-app@latest .
+npx create-next-app@latest .
 ```
 
 ### 필요 패키지 준비
@@ -84,8 +84,8 @@ series: 트러블 슈팅
 타입스크립트 미사용시 `@types` 라이브러리는 설치할 필요 없습니다.
 
 ```bash
-  pnpm add express cors
-  pnpm add -D `MSW` @types/express @types/cors @mswjs/http-middleware
+pnpm add express cors
+pnpm add -D `MSW` @types/express @types/cors @mswjs/http-middleware
 ```
 
 ### express 서버 세팅하기
@@ -95,25 +95,26 @@ series: 트러블 슈팅
 - `mocks/mockServer.ts`
 
 ```ts
-  import cors from 'cors';
-  import express from 'express';
-  import { createMiddleware } from '@mswjs/http-middleware';
-  import { handlers } from './handlers';
+import { createMiddleware } from '@mswjs/http-middleware'
+import cors from 'cors'
+import express from 'express'
 
-  const app = express();
-  const PORT = 8080;
+import { handlers } from './handlers'
 
-  app.use(
-    cors({
-      origin: 'http://localhost:3000',
-      optionsSuccessStatus: 200,
-      credentials: true,
-    })
-  );
-  app.use(express.json());
-  app.use(createMiddleware(...handlers));
+const app = express()
+const PORT = 8080
 
-  app.listen(PORT, () => console.log(`Mock server is running on ${PORT}`));
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+)
+app.use(express.json())
+app.use(createMiddleware(...handlers))
+
+app.listen(PORT, () => console.log(`Mock server is running on ${PORT}`))
 ```
 
 그다음으로, 모킹할 api에 대한 로직을 작성합니다.
@@ -121,18 +122,18 @@ series: 트러블 슈팅
 - `mocks/handlers.ts`
 
 ```ts
-  import { HttpResponse, http } from '`MSW`';
+import { HttpResponse, http } from '`MSW`'
 
-  export const handlers = [
-    http.get('/api/users', () => {
-      return HttpResponse.json([
-        {
-          id: 1,
-          name: 'Caffhheiene',
-        },
-      ]);
-    }),
-  ];
+export const handlers = [
+  http.get('/api/users', () => {
+    return HttpResponse.json([
+      {
+        id: 1,
+        name: 'Caffhheiene',
+      },
+    ])
+  }),
+]
 ```
 
 ### `mockServiceWorker.js` 생성하기
@@ -140,7 +141,7 @@ series: 트러블 슈팅
 콘솔에 커맨드를 입력하여 `mockServiceWorker.js`를 생성해줍니다.
 
 ```bash
-  npx `MSW` init ./public --save
+npx `MSW` init ./public --save
 ```
 
 ### `package.json`에 express 서버 실행 커맨드 추가하기
@@ -148,10 +149,10 @@ series: 트러블 슈팅
 `package.json`에 아래와 같은 스크립트를 추가해줍니다.
 
 ```json
-  "scripts": {
-    ...Your scripts,
-	"mock": "npx tsx watch ./mocks/mockServer.ts",
-  }
+"scripts": {
+  ...Your scripts,
+"mock": "npx tsx watch ./mocks/mockServer.ts",
+}
 ```
 
 ### 사용해보기
@@ -159,8 +160,8 @@ series: 트러블 슈팅
 각 커맨드를 서로 다른 터미널에 입력하여 실행시킵니다.
 
 ```bash
-  pnpm run dev
-  pnpm run mock
+pnpm run dev
+pnpm run mock
 ```
 
 ![image](https://github.com/user-attachments/assets/9372f32f-c483-48ee-b2e2-80715788db2d)

@@ -6,9 +6,9 @@ import UserDescription from './UserDescription'
 export default function Introduce() {
   return (
     <div className="flex w-full flex-col gap-y-4">
-      <p className="text-2xl font-medium">
+      <h1 className="text-2xl font-medium">
         {USER.name} &middot; {USER.description}
-      </p>
+      </h1>
       <UserDescription />
       <hr className="border-light_main dark:border-white" />
       <SNSShortcuts />

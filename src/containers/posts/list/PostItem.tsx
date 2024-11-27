@@ -15,9 +15,7 @@ export default function PostItem({ id, post }: PostItemProps) {
     <li
       key={id}
       className="group rounded-lg bg-white opacity-0 ring-light_main drop-shadow-lg transition-all hover:ring-2 dark:border-white dark:bg-dark_component dark:ring-white">
-      <Link
-        href={`/posts/detail/${id + 1}`}
-        className="flex gap-x-2 p-5 xs:gap-x-0">
+      <Link href={`/posts/detail/${id + 1}`} className="flex gap-x-2 p-5">
         <div className="flex w-full flex-col gap-2">
           <div className="space-y-1">
             <div className="flex flex-wrap items-center gap-2">
@@ -30,7 +28,7 @@ export default function PostItem({ id, post }: PostItemProps) {
                 {post.title}
               </h3>
             </div>
-            <p className="line-clamp-1 text-base text-gray-400 xs:line-clamp-none dark:text-gray-300">
+            <p className="line-clamp-1 break-keep text-base text-gray-400 xs:line-clamp-none dark:text-gray-300">
               {post.description}
             </p>
           </div>

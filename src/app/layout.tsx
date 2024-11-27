@@ -48,15 +48,15 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ''} />
       </head>
       <body className="flex size-full flex-col items-center justify-center bg-light_background font-Pretendard transition-all dark:bg-dark_background">
-        <JotaiProvider>
-          <NextThemeProvider>
+        <NextThemeProvider>
+          <JotaiProvider>
             <TopNavigator />
             <div className="mt-[2rem] flex size-full max-w-6xl flex-col justify-center">
               <PageLayout>{children}</PageLayout>
             </div>
             <BottomNavigator />
-          </NextThemeProvider>
-        </JotaiProvider>
+          </JotaiProvider>
+        </NextThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

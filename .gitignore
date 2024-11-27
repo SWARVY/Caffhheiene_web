@@ -4,6 +4,7 @@ node_modules
 *.git
 *.next
 *.webpack
+patches
 
 .idea
 .vscode

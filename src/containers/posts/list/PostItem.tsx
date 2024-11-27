@@ -28,7 +28,7 @@ export default function PostItem({ id, post }: PostItemProps) {
                 {post.title}
               </h3>
             </div>
-            <p className="line-clamp-1 break-keep text-base text-gray-400 xs:line-clamp-none dark:text-gray-300">
+            <p className="line-clamp-1 break-keep text-base text-gray-600 xs:line-clamp-none dark:text-gray-200">
               {post.description}
             </p>
           </div>

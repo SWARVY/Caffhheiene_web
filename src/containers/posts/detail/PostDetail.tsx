@@ -23,11 +23,12 @@ export default function PostDetail({ id }: { id: string }) {
               {curr.title}
             </h1>
             <PostInfo curr={curr} />
-            <div className="relative h-[600px] w-full overflow-hidden rounded-xl">
+            <div className="relative h-[500px] w-full overflow-hidden rounded-xl">
               <Image
                 className="object-cover"
                 src={curr.thumbnail}
                 alt="Post Thumbnail"
+                loading="eager"
                 fill
               />
             </div>

@@ -14,10 +14,9 @@ export default function TopNavigator() {
         <div className="w-fit">
           <Link
             className="flex flex-col items-center justify-center gap-y-1 border-gray-300 fill-white py-3"
-            href="/posts/all/1">
-            <div className="h-12">
-              <LogoSVG className="size-full transition-colors hover:fill-gray-300" />
-            </div>
+            href="/posts/all/1"
+            aria-label="caffhheiene blog">
+            <LogoSVG className="size-full h-12 transition-colors hover:fill-gray-300" />
           </Link>
         </div>
         <div className="flex items-center justify-center gap-x-5">

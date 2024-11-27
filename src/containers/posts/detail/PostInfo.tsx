@@ -17,6 +17,7 @@ export default function PostInfo({ curr }: PostInfoProps) {
           className="object-cover"
           src={USER.profileImg}
           fill
+          loading="eager"
           alt="user profile img"
         />
       </div>

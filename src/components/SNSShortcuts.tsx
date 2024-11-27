@@ -6,7 +6,10 @@ export default function SNSShortcuts() {
     <ul className="flex items-center gap-x-3 py-3">
       {USER_SNS.map((sns) => (
         <li key={`shortcut-${sns.name}`} className="group">
-          <Link href={sns.link} target="_blank">
+          <Link
+            href={sns.link}
+            target="_blank"
+            aria-label={`caffhheiene's ${sns.name}`}>
             <div className="size-5 fill-light_main/60 transition-colors hover:fill-light_main dark:fill-white dark:hover:fill-gray-400">
               {sns.svg}
             </div>

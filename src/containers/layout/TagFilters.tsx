@@ -9,7 +9,7 @@ interface TagFiltersProps {
 export default function TagFilters({ categories }: TagFiltersProps) {
   return (
     <div className="w-full space-y-4">
-      <h3 className="font-medium">태그</h3>
+      <h2 className="font-medium">태그</h2>
       <div className="flex flex-wrap justify-start justify-items-center gap-3">
         {categories?.map((category) => (
           <Filter

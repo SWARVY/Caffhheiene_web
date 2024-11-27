@@ -1,0 +1,181 @@
+---
+title: 블로그 3.0 업데이트
+description: Next.js 블로그 제작기 (12)
+date: 2024-11-28
+thumbnail: /images/image00.webp
+category:
+  - TypeScript
+  - Next.js
+series: 블로그 제작기
+---
+
+## 서론
+
+한동안 프로젝트로 바뻐서 블로그에는 눈길도 못주다 우테코 프리코스에 후기를 남기며 블로그 글을 다시금 쓰기 시작했습니다.
+블로그에 글을 남기지 않는동안 4학년 2학기에 접어들며 여러 회사에 지원하고 떨어지고 하며 시간을 보냈는데, 어느덧 올해도 얼마 남지 않았네요 ㅎㅎ
+
+작년 이맘때쯤에는 올해 취업을 꼭 하고싶어서 누구에게 쫒기듯이 달렸는데, 어떻게 하다보니 취업도 성공하고 이제 출근을 앞두고 있습니다.
+오랜만에 들어오신 분들은 거의 없을테니, 지금 블로그는 초기와 정말 많이 달라졌습니다. 최근에 수술을 좀 많이 했거든요
+
+당초 계획은 백엔드까지 직접 구성하여 블로그를 새로 만드는 것이었는데, 현실적인 문제로 인해서 그냥 있던 블로그를 뜯기로 했고 결과가 이거네요. 아마 한동안은 블로그 디자인에는 손 안댈 것 같습니다. 진짜로요
+
+## 왜 2.0은 없고 3.0으로?
+
+과도기적인 2.0이 존재하긴 했는데.. 해당 버전은 맘에 안들어서 금방 갈아 엎어버렸기때문에 3.0으로 갑니다.
+변경사항은 아래에 함께 서술하겠습니다 :)
+
+## 뭐가 바뀌었나?
+
+### 사이트 디자인
+
+가장 눈에 띄는 변경점입니다. 기술블로그 여기저기 다니시던분은 무슨 사이트 레이아웃 따왔는지 다 아실 것 같아요 ㅋㅋ (알아도 모른척 해주세요)
+
+사이트의 전반적인 리디자인을 하면서 가장 주요로 생각했던 점은, **중구난방으로 적용되어있던 색상을 변경하는 것** 이었습니다.
+
+또, 배경과 컴포넌트 요소의 대비와 같은 사항들을 고려하여 색상을 선정했고 (via GPT) 해당 내용을 반영했는데, 결과적으로는 매우 만족스럽습니다.
+
+### next-themes를 통한 다크모드 구현
+
+이전까지는 단순 전역상태를 통해 다크모드를 구현했는데, 이렇게 하니 새로고침시에 다크모드의 설정이 유지가 되지 않는 문제가 있었습니다.
+
+`next-themes`는 로컬스토리지에 테마 상태를 저장하고 사용할 수 있도록 해주는데, 저는 `tailwind`를 사용하고 있었기 때문에, 추가적인 설정이 필요했습니다.
+
+우선, `tailwind` 3.4.1 버전부터 이전에 사용하던 `class`를 [`selector`](https://tailwindcss.com/docs/dark-mode)가 대체했습니다.
+
+`class`대비 `selector`가 가지는 장점은 아래와 같습니다.
+
+- `class`와 유사하지만, 다크 모드를 활성화하는 클래스를 `html` 또는 `body` 태그와 같은 상위 요소에 설정하는 방식으로 다루므로 더 유연한 제어가 가능합니다.
+- 사용자가 다크 모드를 수동으로 제어할 수 있어, UI에서 직접 토글할 수 있는 기능을 쉽게 구현할 수 있습니다.
+
+하여, `tailwind.config.js`에서 다크모드를 `selector`로 변경해주고(`[data-mode="dark"]`는 next-themes를 위한 커스텀 셀렉터입니다)
+
+```js
+export default {
+  darkMode: ['selector', '[data-mode="dark"]'],
+  ...
+}
+```
+
+`NextThemeProvider`를 아래와 같이 만들어줬습니다.
+
+```js
+'use client'
+
+import { ThemeProvider } from 'next-themes'
+import { PropsWithChildren, useEffect, useState } from 'react'
+
+export default function NextThemeProvider({ children }: PropsWithChildren) {
+  const [isMount, setMount] = useState(false)
+
+  useEffect(() => {
+    setMount(true)
+  }, [])
+
+  if (!isMount) {
+    return null
+  }
+
+  return <ThemeProvider attribute="data-mode">{children}</ThemeProvider>
+}
+```
+
+위의 설정들을 통해서 간단하게 next app router에서 다크모드를 구현할 수 있었습니다.
+
+### 불필요한 페이지 삭제
+
+업데이트를 잘 하지 않는 스터디, 사이드 프로젝트 항목을 제거하고 블로그를 심플하게 변경했습니다.
+
+### contentlayer -> velite 마이그레이션
+
+`contentlayer`는 현재 `deprecated` 상태입니다. 몇몇 사람들이 fork해서 유지보수를 하고 있다지만 글쎄요..
+이번에 `velite`라는 툴도 나온김에 저는 마이그레이션을 진행해봤습니다.
+
+`contentlayer` 대비 `velite`가 가지는 장점은 다음과 같습니다.
+
+- 유지보수 상태: `velite`는 지속적으로 업데이트되며, 더 활발히 사용되고 있습니다.
+- 성능 최적화: `velite`는 경량화되어 있어 성능이 더 뛰어나며, 불필요한 의존성을 줄여 효율적인 실행이 가능합니다.
+- 타입 안전성: `velite`는 `Zod`와 함께 사용하여 타입 안전을 제공하고, `TypeScript` 환경에서 더욱 강력한 개발 경험을 제공합니다
+- 확장성과 유연성: `velite`는 커스터마이징이 가능하고, 다양한 콘텐츠 타입과 포맷을 처리할 수 있어 프로젝트의 요구 사항에 맞게 손쉽게 확장할 수 있습니다.
+
+```ts
+export const blogPost = defineCollection({
+  name: 'Post',
+  pattern: 'posts/**/*.mdx',
+  schema: s.object({
+    title: s.string().max(99),
+    date: s.string(),
+    description: s.string().max(999),
+    thumbnail: s.string(),
+    category: s.array(s.string().max(50)),
+    series: s.string().max(99).optional(),
+    content: s.mdx(),
+  }),
+}
+```
+
+`contentlayer`에서 `velite`로 마이그레이션을 진행해본 결과 정적 파일 분석에서의 퍼포먼스가 체감이 확 될정도로 향상되지는 않았으나, `Zod`를 통한 타입 체킹은 상당히 마음에 들었습니다.
+
+앞으로도 다시 돌아갈 일은 없을 듯 합니다. 지원하는 기능도 많구요
+
+### Next 14 -> Next 15 마이그레이션
+
+사실 14버전에서 15버전으로의 전반적인 마이그레이션 자체는 next codemod가 다 했습니다. 이번에 breaking change를 봤는데 몇개 있긴 하더라구요
+물론 메이저 버전 업데이트라 터져나가는 부분이 없진 않았는데 해당 항목들은 다음과 같습니다.
+
+1. `turbopack` 과의 충돌
+
+next14 버전부터 next는 [turbopack](https://nextjs-ko.org/docs/architecture/turbopack)이라는 번들러를 도입했습니다. 이전 14버전부터 있던건데 왜 이걸 지금 적냐면, 14버전까지 저는 `turbopack`을 사용하지 않았습니다.
+
+`turbopack`을 적용하니까 정상적으로 작동하던 기능들이 터져나가더라구요, 그 때는 시간이 없어서 `turbopack` 충돌을 잡기보단 사용하지 않음으로써 문제를 해결했는데, 이번 마이그레이션을 진행하면서 해당 충돌을 잡고자 했습니다.
+
+일단 저는 jotai에서부터 문제가 발생했는데, turbopack을 활성화하니 jotai 모듈을 불러오는 과정에서 문제가 발생했습니다.
+
+```text
+⨯ ModuleBuildError: ./node_modules/jotai/esm/react.mjs/proxy.js
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+```
+
+- [Next 14: Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules) #2579](https://github.com/pmndrs/jotai/discussions/2579)
+
+해당 이슈를 통해 살펴본 결과 현재는 두 가지 방법이 존재했습니다.
+
+- `pnpm patch`를 사용하여 `jotai`의 `package.json`에서 **"type": "commonjs" 구문을 삭제**하는 것
+- 2.8.0 버전으로 다운그레이드하여 사용
+
+저는 간단하게 2.8.0버전으로 다운그레이드를 하여 해당 문제를 해결했습니다. 첫 번째 방법을 사용하기에는 vercel에 배포된 상태였기에 pnpm patch를 사용하여 해당 문제를 해결하기에는 어려움이 있었기 때문입니다.
+
+2. SVG 로드 오류
+
+```text
+Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object
+```
+
+이런 오류가 계속 발생하는데, 오류의 원인을 찾아보니 public 경로에 존재하는 SVG 컴포넌트를 사용하려고 할 때 발생했습니다.
+
+이유를 찾고나서 좀 허탈했는데, 저는 `@svgr/webpack` 플러그인을 `next.config.mjs`에 추가한 상태였는데, `turbopack`에도 동일하게 추가해주지 않아서 발생한 문제였습니다.
+
+```js
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+```
+
+위와 같이 설정해줌으로써 간단하게 `turbopack`에서 SVG의 설정을 해줄 수 있었습니다.
+
+## 끝으로
+
+이 외에도 GA 추가와 같은 세부 사항들이 있지만, 크게 중요하지는 않은 것 같아 여기까지만 적어보려고 합니다.
+
+여전히 서치콘솔상에서 색인이 잘 생성되지 않는데 뭐가 문제인지 잘 모르겠네요 ㅠㅠ.. 얼른 이것도 정상화시키고 블로그는 계속 업데이트해나가려고 합니다.
+
+다음주 출근인 나..! 파이팅 아자아자..

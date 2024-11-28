@@ -24,7 +24,7 @@ export default function PostItem({ id, post }: PostItemProps) {
               </p>
             </div>
             <div className="flex items-center overflow-hidden">
-              <h3 className="line-clamp-2 w-full text-xl font-medium md:text-2xl dark:text-white">
+              <h3 className="line-clamp-2 w-full break-keep text-xl font-medium md:text-2xl dark:text-white">
                 {post.title}
               </h3>
             </div>

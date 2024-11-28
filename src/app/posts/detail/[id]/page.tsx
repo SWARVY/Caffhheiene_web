@@ -42,7 +42,7 @@ export default async function postDetail(props: {
 }) {
   const params = await props.params
   return (
-    <div className="flex flex-col gap-y-10 p-5 md:p-3 xl:p-0">
+    <div className="flex flex-col gap-y-10 p-5 xl:p-0">
       <PostDetail id={params.id} />
       <PostComments />
     </div>

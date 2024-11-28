@@ -11,14 +11,12 @@ export default function TopNavigator() {
     <nav className="sticky left-0 top-0 z-50 flex w-full flex-col items-center bg-light_main/95 backdrop-blur-lg dark:bg-dark_main/95 dark:text-white">
       <ProgressBar />
       <div className="flex w-full justify-between px-4 xl:px-20">
-        <div className="w-fit">
-          <Link
-            className="flex flex-col items-center justify-center gap-y-1 border-gray-300 fill-white py-3"
-            href="/posts/all/1"
-            aria-label="caffhheiene blog">
-            <LogoSVG className="size-full h-12 transition-colors hover:fill-gray-300" />
-          </Link>
-        </div>
+        <Link
+          className="flex h-fit w-24 flex-col items-center justify-center border-gray-300 fill-white py-3"
+          href="/posts/all/1"
+          aria-label="caffhheiene blog">
+          <LogoSVG className="size-full h-12 transition-colors hover:fill-gray-300" />
+        </Link>
         <div className="flex items-center justify-center gap-x-5">
           <DarkmodeButton />
         </div>

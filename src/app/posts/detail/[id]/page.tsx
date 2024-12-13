@@ -20,6 +20,9 @@ export const generateMetadata = async (
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://caffhheiene.vercel.app/posts/detail/${(await props.params).id}`,
+    },
     openGraph: {
       ...(await parent).openGraph,
       title,

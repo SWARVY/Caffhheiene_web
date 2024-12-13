@@ -28,6 +28,9 @@ export const generateMetadata = async (
   return {
     title: `기록 | ${pageNum}페이지 [${parseSeries(category)}]`,
     description: `신현호 기술서재 / ${pageNum}페이지[${category}]`,
+    alternates: {
+      canonical: `https://caffhheiene.vercel.app/posts/${category}/${pageNum}`,
+    },
     openGraph: {
       ...(await parent).openGraph,
       title: `기록 | ${pageNum}페이지 [${category}]`,

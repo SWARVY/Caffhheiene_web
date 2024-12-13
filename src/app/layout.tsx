@@ -45,6 +45,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           name="naver-site-verification"
           content={process.env.NAVER_SEARCH_ADVISER_ID}
         />
+        <link rel="canonical" href="https://caffhheiene.vercel.app" />
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID ?? ''} />
       </head>
       <body className="flex size-full flex-col items-center justify-center bg-light_background font-Pretendard transition-all dark:bg-dark_background">

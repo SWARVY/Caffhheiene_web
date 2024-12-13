@@ -49,11 +49,14 @@ export default async function posts({
   )
 
   return (
-    <PostWrapper
-      category={category}
-      pageNum={Number(pageNum)}
-      selectedPost={selectedPost}
-      selectedAllPostLen={selectedAllPostLen}
-    />
+    <>
+      <h1 className="hidden">{`기록 | ${pageNum}페이지 [${parseSeries(category)}]`}</h1>
+      <PostWrapper
+        category={category}
+        pageNum={Number(pageNum)}
+        selectedPost={selectedPost}
+        selectedAllPostLen={selectedAllPostLen}
+      />
+    </>
   )
 }

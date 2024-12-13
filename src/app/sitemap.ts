@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         return Array.from({ length: pageLen }, (_, idx) => idx + 1).map(
           (pageIdx) => ({
-            url: `${USER.URL}/${category.name.toLowerCase()}/${pageIdx}`,
+            url: `${USER.URL}/posts/${category.name.toLowerCase()}/${pageIdx}`,
             lastModified: new Date(),
           })
         )
@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
         return Array.from({ length: pageLen }, (_, idx) => idx + 1).map(
           (pageIdx) => ({
-            url: `${USER.URL}/${seriesItem.name}/${pageIdx}`,
+            url: `${USER.URL}/posts/${seriesItem.name}/${pageIdx}`,
             lastModified: new Date(),
           })
         )

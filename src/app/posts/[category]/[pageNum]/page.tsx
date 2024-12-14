@@ -42,7 +42,7 @@ export const generateMetadata = async (
 }
 
 export async function generateStaticParams() {
-  const { categories } = getAllCategory()
+  const { categories, series } = getAllCategory()
   const staticParams: PageParams[] = []
 
   categories.forEach((category) => {
@@ -54,6 +54,18 @@ export async function generateStaticParams() {
 
     for (let i = 1; i <= pageLen; i += 1) {
       staticParams.push({ category: category.name, pageNum: i.toString() })
+    }
+  })
+
+  series.forEach((val) => {
+    const calculated = {
+      div: val.amount / POST_SETTING.contentsPerPage,
+      mod: val.amount % POST_SETTING.contentsPerPage,
+    }
+    const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
+
+    for (let i = 1; i <= pageLen; i += 1) {
+      staticParams.push({ category: val.name, pageNum: i.toString() })
     }
   })
 

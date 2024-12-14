@@ -1,5 +1,6 @@
+import POST_SETTING from '@/constants/postSetting'
 import PostWrapper from '@/containers/posts/list/PostWrapper'
-import { getSelectedCategoryPost } from '@/utils/getPost'
+import { getAllCategory, getSelectedCategoryPost } from '@/utils/getPost'
 import { Metadata, ResolvingMetadata } from 'next'
 
 interface PageParams {
@@ -38,6 +39,25 @@ export const generateMetadata = async (
       url: `https://caffhheiene.vercel.app/posts/${category}/${pageNum}`,
     },
   }
+}
+
+export async function generateStaticParams() {
+  const { categories } = getAllCategory()
+  const staticParams: PageParams[] = []
+
+  categories.forEach((category) => {
+    const calculated = {
+      div: category.amount / POST_SETTING.contentsPerPage,
+      mod: category.amount % POST_SETTING.contentsPerPage,
+    }
+    const pageLen = calculated.mod > 0 ? calculated.div + 1 : calculated.div
+
+    for (let i = 1; i <= pageLen; i += 1) {
+      staticParams.push({ category: category.name, pageNum: i.toString() })
+    }
+  })
+
+  return staticParams
 }
 
 export default async function posts({

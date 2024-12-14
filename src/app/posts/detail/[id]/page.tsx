@@ -1,6 +1,6 @@
 import PostComments from '@/containers/posts/detail/PostComments'
 import PostDetail from '@/containers/posts/detail/PostDetail'
-import { getSelectedPostDetail } from '@/utils/getPost'
+import { getAllPostLength, getSelectedPostDetail } from '@/utils/getPost'
 import { Metadata, ResolvingMetadata } from 'next'
 
 interface Props {
@@ -38,6 +38,12 @@ export const generateMetadata = async (
       ],
     },
   }
+}
+
+export async function generateStaticParams() {
+  return Array.from({ length: getAllPostLength() }, (_, idx) => ({
+    id: (idx + 1).toString(),
+  }))
 }
 
 export default async function postDetail(props: {
